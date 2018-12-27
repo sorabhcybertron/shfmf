@@ -9,7 +9,7 @@ var app = {
         window.cordova = cordova;
         window.cordova.socialsharing = window.plugins.socialsharing;
         window.cordova.facebookConnectPlugin = facebookConnectPlugin;
-        window.cordova.FirebasePlugin = window.FirebasePlugin;
+        window.cordova.FirebasePlugin = FirebasePlugin;
         console.log('window.plugins');
         console.log(window.plugins);
     },

@@ -5,7 +5,6 @@ import {AppServicesService} from '../app-services.service';
 
 declare var device: any;
 declare var cordova: any;
-declare var FirebasePlugin : any;
 
 @Component({
   selector: 'app-login',
@@ -151,7 +150,7 @@ export class LoginComponent implements OnInit {
   }
    
   addTokenId(){
-    FirebasePlugin.getToken(function(token) {
+    cordova.FirebasePlugin.getToken(function(token) {
         // save this server-side and use it to push notifications to this device
         console.log(token);
         let data = {update_record : 'update',deviceID : token, userID: this.un}
