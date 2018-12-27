@@ -1,0 +1,28 @@
+<div class="wrap yellow pagewrapper workouts">
+    <div class="page-title">
+        <span class="dashicon-cont"><img src="assets/images/new_icons/svg/workouts-icon.svg" alt="" class="dash_icons"></span><h1>Workouts</h1>
+    </div>
+    <!-- <div class="selcont workouts">
+        <div class="selcont-inner">
+            <img src="assets/images/select-arrow.svg" alt="" class="select-arrow">
+            <select class="programs-select" (change)="catChange($event.target.value)" [(ngModel)]="whichToShow">
+                <option value="exercises">Exercises</option>
+                <option value="routines">Routines</option>
+            </select>
+        </div>
+    </div> -->
+    <div class="tgl-btn">
+            <button (click)="whichToShow = 'exercises'" [class.active]="whichToShow == 'exercises'">Exercises</button>
+            <button (click)="whichToShow = 'routines'" [class.active]="whichToShow == 'routines'">Routines</button>
+    </div>
+    <div [ngSwitch]="whichToShow">
+        <div *ngSwitchCase="'routines'">
+            <!-- Routines -->
+            <workout-routines></workout-routines>
+        </div>
+        <div *ngSwitchCase="'exercises'">
+            <!-- Exercises -->
+            <workout-exercises></workout-exercises>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,161 @@
+/deep/ .coachingpopup ul {
+    list-style: none;
+    padding: 0;
+}
+/deep/ .coachingpopup ul li
+ i {
+    color: #12a5f4;
+}
+/deep/ .consultation-popup, /deep/ .consultation-popup *:not(.fa) {
+    font-family: Open Sans !important;
+}
+/deep/ .consultation-popup *{
+    box-sizing: border-box;
+}
+/deep/ .consultation-popup{
+    position: fixed;
+    top: 87px;
+    background: #fff;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 88px);
+    z-index: 1;
+    overflow: auto;
+    overflow-x: hidden;
+    display: none;
+    -webkit-overflow-scrolling: touch;
+}
+/deep/ .consultation-popup img{
+    max-width: 100%
+}
+/deep/ .consultation-popup.show{
+    display: block;
+}
+/deep/ .coaching-close {
+    color: #000;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+/deep/ .coachingpopup {
+    padding: 0 20px 30px;
+}
+/deep/ .consultation-popup .mc-online-coaching-software {
+    width: 100%;
+    background-color: #00b0f0;
+    text-align: center;
+    flex: inherit;
+    border: solid #00b0f0 1px;
+    border-radius: 18px;
+    box-shadow: 0px 4px 12px #b6e5ff;
+    color: #fff;
+    padding: 25px;
+}
+/deep/ .consultation-popup .mc-cons-button {
+    text-transform: uppercase;
+    border: solid black 1px;
+    background-color: #2d2d2d;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    font-size: 13px;
+    color: white!Important;
+    text-decoration: none!Important;
+    border-radius: 50px;
+}
+/deep/ .mc-info-needed-info .mc-cons-flex{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+}
+/deep/ .consultation-popup .mc-info-needed-info .mc-info-n-half {
+    padding: 0px;
+    background-color: #ffffff;
+    border: solid #e4e4e4 1px;
+    margin: 12px 0;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px #f3f3f3;
+    overflow: hidden;
+}
+/deep/ .consultation-popup .mc-online-coaching h5 {
+    font-size: 12pt;
+    color: #2d2d2d;
+    margin-top: 0;
+    background-color: #f5f5f5;
+    padding: 12px!important;
+    text-align: center;
+    border-bottom: solid #e4e4e4 1px;
+}
+/deep/ .consultation-popup .mc-info-needed-info ul li {
+    font-size: 12pt;
+    margin-bottom: 12px;
+    line-height: 1;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-weight: 400;
+    color: #757575;
+}
+/deep/ .consultation-popup .mc-o-c-b-b {
+    background-color: #f3f3f3;
+    padding: 23px;
+    flex: inherit;
+    width: 100%;
+    border-radius: 18px;
+    margin-top: 0px;
+    box-shadow: 0px 4px 12px #d0d0d0;
+}
+/deep/ .consultation-popup .mc-cons-full.mc-cons-flex.mc-online-coaching-full.mc-online-coaching-whats, /deep/ .mc-cons-half.mc-online-coaching-c-right.mc-online-c-padding{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/deep/ .consultation-popup .mc-cons-full.mc-cons-flex.mc-online-coaching-full.mc-online-coaching-whats .mc-cons-half {
+    padding: 25px;
+}
+/deep/ .mc-cons-half.mc-online-coaching-c-right.mc-online-c-padding .mc-online-coaching-book{
+    width: 100%;
+    padding: 23px;
+}
+/deep/ .consultation-popup .mc-online-consultation-fillout .mc-online-c-padding-no-right {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px #d0d0d0;
+    margin-top: 46px;
+    margin-bottom: 46px;
+    padding: 25px;
+}
+@media (min-width: 640px){
+    /deep/ .consultation-popup .mc-info-needed-info .mc-info-n-half {
+        width: calc(50% - 24px);
+        float: left;
+        margin: 12px;
+    }
+    /deep/ .mc-info-needed-info .mc-cons-flex{
+        flex-direction: row; 
+    }
+    /deep/ .consultation-popup .mc-cons-full.mc-cons-flex.mc-online-coaching-full.mc-online-coaching-whats, /deep/ .mc-cons-half.mc-online-coaching-c-right.mc-online-c-padding{
+        flex-direction: row;
+    }
+    /deep/ .consultation-popup .mc-cons-full.mc-cons-flex.mc-online-coaching-full.mc-online-coaching-whats .mc-cons-half, 
+    /deep/ .mc-cons-half.mc-online-coaching-c-right.mc-online-c-padding .mc-online-coaching-book{
+        width: 50%;
+        display: block;
+    }
+}
+/*
+/deep/ .consultation-popup 
+/deep/ .consultation-popup */

@@ -1,0 +1,135 @@
+<div class="wrap crimson pagewrapper">
+	<div class="backlink-container">
+		<a *ngIf="fromFav" class="articles-back" [routerLink]="'/MyProfile'">&#x3008; Back</a>
+		<a *ngIf="!fromFav" [routerLink]="['/Articles']" class="articles-back">&#x3008; Back to Articles</a>
+		<p *ngIf="isLoaded" class="author" (click)="loadAuthor(articleDetails.authorid)">By {{articleDetails.PostedBy}}</p>
+	</div>
+	<p *ngIf=" isLoaded == false " class="loading ptop">Loading Article...</p>
+	<div *ngIf="isLoaded">
+		<div class="page-title ptop">
+			<h1 class="title crimson bordertop">{{articleDetails.title}}</h1>
+			<p class="article-subtitle">{{articleDetails.subtitle}}</p>
+		</div>
+		<br>
+		<div class="card">
+			<div class="inner">
+				<div class="socialIcons">
+					<app-like-button [type]="'article'" [item_id]="articleDetails.id"></app-like-button>
+					<span class="social-cont">
+						<img src="assets/images/newones/fsnew.svg" class="nomargin" (click)="shareArticle('fb');">
+						<span class="fbcounter" *ngIf="fbCounter" (click)="shareArticle('fb');">{{fbCounter}}</span>
+						<img src="assets/images/newones/tsnew.svg" class="nomargin" (click)="shareArticle('tw');">
+						<img src="assets/images/newones/gsnew.svg" class="nomargin" (click)="shareArticle('gp');">
+						<img src="assets/images/newones/wsnew.svg" class="nomargin" (click)="shareArticle('wts');">
+						<img src="assets/images/newones/msnew.svg" class="nomargin" (click)="shareArticle('email');">
+					</span>
+				</div>
+				<div class="article-details" [innerHTML]="articleDetails.description | safeHtml"></div>
+				<div class="socialIcons">
+					<span class="social-cont">
+						<img src="assets/images/newones/fsnew.svg" class="nomargin" (click)="shareArticle('fb');">
+						<span class="fbcounter" *ngIf="fbCounter" (click)="shareArticle('fb');">{{fbCounter}}</span>
+						<img src="assets/images/newones/tsnew.svg" class="nomargin" (click)="shareArticle('tw');">
+						<img src="assets/images/newones/gsnew.svg" class="nomargin" (click)="shareArticle('gp');">
+						<img src="assets/images/newones/wsnew.svg" class="nomargin" (click)="shareArticle('wts');">
+						<img src="assets/images/newones/msnew.svg" class="nomargin" (click)="shareArticle('email');">
+					</span>
+				</div>
+				<!-- About Author -->
+				<div class="about-author mgbtm">
+					<h3>About the Author</h3>
+					<div class="content">
+						<div class="author-img">
+							<!-- <a [routerLink]="['/AboutAuthor',articleDetails['About Author'].link]"> -->
+						    <a [routerLink]="['/Authors',author_id]">
+							<img src="{{articleDetails['About Author'].Profileimage}}">
+						</a>
+						</div>
+						<div class="online-coaching">
+							<p>
+								<!-- <a [routerLink]="['/AboutAuthor',articleDetails['About Author'].link]"> -->
+								<a [routerLink]="['/Authors',author_id]">
+									{{articleDetails['About Author'].Authorname}}
+								</a></p>
+							<div class="findme-links">
+								<img src="assets/images/newones/fnew.svg" (click)="shareMe(articleDetails.find_me_on.fb)">
+								<img src="assets/images/newones/tnew.svg" (click)="shareMe(articleDetails.find_me_on.Tw)">
+								<img src="assets/images/newones/inew.svg" (click)="shareMe(articleDetails.find_me_on.insta)">
+								<img src="assets/images/newones/ynew.svg" (click)="shareMe(articleDetails.find_me_on.YT)">
+							</div>
+							<div class="coaching-links" [innerHtml]="articleDetails.online_coaching | safeHtml"></div>
+						</div>
+					</div>
+				</div>
+				<!-- Member comments -->
+				<div class="member-comments mgbtm">
+					<h3>Member Comments</h3>
+					<div class="content">
+						<div class="art-newcomm article">
+							<span (click)=" CommentPopupOpen = true; replyToID = ''; ">Add new comment</span>
+						</div>
+						<!-- Comments -->
+						<div class="comment" *ngFor=" let comment of articleDetails['Member Comments']; let i = index; ">
+							<div class="member-img">
+								<img class="2" src="{{comment.image}}" alt="" />
+							</div>
+							<div class="msg-block">
+								<p class="name nmcmnt"><strong [routerLink]="['/Authors/0/'+comment.name]">{{comment.name}}</strong>
+									<span [ngClass]="{'likecmnt': true, 'liked': comment.userHasLiked }" (click)=" !comment.userHasLiked ? likeComment(comment.commentid, 'LIKE') : likeComment(comment.commentid, 'UNLIKE')"></span>
+								</p>
+								<p class="cmnt">
+									<span [innerHTML]="comment.comment"></span>
+								</p>
+								<p class="like-etc">
+									<span class="time mgr10"><i class="fa fa-clock-o"></i> {{comment.time}}</span>
+									<span class="like mgr10" [ngClass]="{'likecmnt': true, 'liked': comment.userHasLiked }" (click)=" !comment.userHasLiked ? likeComment(comment.commentid, 'LIKE') : likeComment(comment.commentid, 'UNLIKE')">{{comment.like}} like</span>
+									<span class="reply mgr10" (click)="CommentPopupOpen = true; replyToID = comment.commentid; CommentText='@'+comment.name+' '; commentTo=comment.name;"><i class="fa fa-reply"></i> Reply</span>
+								</p>
+								<p class="viewallreplies" (click)="viewAllReplies(i);">
+									<span [ngClass]="{ 'accordionbtn': true, 'show': !commentsArray[i].open && commentsArray[i].hasChildComments }">
+										VIEW ALL REPLIES +
+									</span>
+									<span [ngClass]="{ 'accordionbtn': true, 'show': commentsArray[i].open && commentsArray[i].hasChildComments }">
+										VIEW ALL REPLIES -
+									</span>
+								</p>
+							</div>
+							<!-- child comments -->
+							<div [ngClass]="{ 'child-comments' : true, 'show' : commentsArray[i].open == true }">
+								<div class="child-comment" *ngFor=" let childcomment of articleDetails['Member Comments'][i]['childcomment']">
+									<div class="member-img">
+										<img class="2" src="{{childcomment.image}}" alt="" />
+									</div>
+									<div class="msg-block">
+										<p class="name nmcmnt"><strong [routerLink]="['/Authors/0/'+childcomment.name]">{{childcomment.name}}</strong>
+											<span [ngClass]="{'likecmnt': true, 'liked': childcomment.userHasLiked }" (click)=" !childcomment.userHasLiked ? likeComment(childcomment.childcommentid, 'LIKE', true, comment.commentid) : likeComment(childcomment.childcommentid, 'UNLIKE', true, comment.commentid)"></span>
+										</p>
+										<p class="cmnt">
+											<span [innerHTML]="childcomment.comment"></span>
+										</p>
+										<p class="like-etc">
+											<span class="time mgr10"><i class="fa fa-clock-o"></i> {{comment.time}}</span>
+											<span class="like mgr10" [ngClass]="{'likecmnt': true, 'liked': childcomment.userHasLiked }" (click)=" !childcomment.userHasLiked ? likeComment(childcomment.childcommentid, 'LIKE', true, comment.commentid) : likeComment(childcomment.childcommentid, 'UNLIKE', true, comment.commentid)">{{childcomment.childlike}} like</span>
+											<span class="reply mgr10" (click)="CommentPopupOpen = true; replyToID = comment.commentid; CommentText='@'+childcomment.name+' '; commentTo=childcomment.name;"><i class="fa fa-reply"></i> Reply</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Add New Comment/Reply Popup -->
+						<div class="newcomment-reply-popup" *ngIf="CommentPopupOpen">
+							<span class="close-pop" (click)="CommentPopupOpen = false;CommentText='';">x</span>
+							<textarea rows="5" [(ngModel)]="CommentText" placeholder="Add Comment" class="newcomtext"></textarea>
+							<button (click)="replyTo('COMMENT_ADD_NEW', replyToID, 'SHFcommentsArticles', articleDetails.id, 'message')" class="addCommentBtn">Comment</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p class="copyright center">Copyright &copy; MuscularStrength.com<br>All Rights Reserved.</p>
+	</div>
+	<div [ngClass]="{'consultation-popup': true, 'show': coachingpopup}">
+		<span (click)="hideCoachingOverlay()" class="coaching-close">&#215;</span>
+		<consultation></consultation>
+	</div>
+</div>

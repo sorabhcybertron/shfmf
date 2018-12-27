@@ -1,0 +1,86 @@
+/* New Comment Popup */
+.addCommentBtn {
+    background: #458DD4;
+    color: #fff;
+    border-color: #458DD4;
+    margin: 8px auto;
+    text-transform: uppercase;
+    font: 16px/1.5 Open Sans;
+    font-weight: 600;
+    padding: 6px 16px 6px 16px;
+    border-radius:3px;
+}
+.newcomment-reply-popup {
+    position:  fixed;
+    top: 87px;
+    height:  calc(100vh - 87px);
+    display:  flex;
+    justify-content:  center;
+    align-items:  center;
+    flex-direction:  column;
+    width:  100%;
+    background: rgba(255,255,255,0.9);
+    left:  0;
+}
+.newcomment-reply-popup .close-pop {
+    position:  absolute;
+    top: 10px;
+    right: 10px;
+    font-size:  30px;
+    width:  30px;
+    height:  30px;
+    display: flex;
+    justify-content:  center;
+    align-items:  center;
+}
+.newcomtext{
+    width: 90%;
+}
+
+.art-newcomm {
+    text-align:  center;
+    margin-bottom: 20px;
+    font-size:  16px;
+    font-family: Open Sans;
+    color: #ff2d55;
+}
+.art-newcomm span {
+    border-radius: 50px;
+    color: #fff;
+    padding: 10px 20px;
+    line-height: 1;
+    display: inline-block;
+}
+/* Article Page */
+.art-newcomm.article span {
+    background-color: #ff2d55;
+}
+/* Workout Routine Page */
+.art-newcomm.workouts span {
+    background-color: #ffcb00;
+}
+/* Recipe Details Page */
+.art-newcomm.recipe span {
+    background-color: #4dd964;
+}
+/* Program Inner */
+.art-newcomm.program span {
+    background-color: #5bc8fa;
+}
+/* Loading in popup when posting comment */
+.gifcont.ptop.addcomment {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 10;
+    left: 0;
+}
+
+.gifcont.ptop.addcomment img {
+    width: 100px;
+}

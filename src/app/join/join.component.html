@@ -1,0 +1,21 @@
+<div class="wrapper login join">
+   <div class="container">
+       <div class="logo">
+           <img src="assets/images/logo.png" alt="logo">
+       </div>
+       <div class="title">
+           <h1>Create an Account</h1>
+       </div>
+       <div class="form clearfix">
+           <form class="joinform">
+               <input name="email" placeholder="Your Email Address" type="text" [(ngModel)]="form.email">
+               <input name="user" placeholder="Username" type="text" [(ngModel)]="form.user">
+               <input name="password" placeholder="Choose A Password" type="password" [(ngModel)]="form.pass">
+               <input name="first name" placeholder="First Name" type="text" [(ngModel)]="form.first_name">
+               <input name="last name" placeholder="Last Name" type="text" [(ngModel)]="form.last_name">
+               <button type="button" (click)="RegisterUser()" [ngClass]="{'signingup' : signingup}">LOGIN</button>
+           </form>
+           <div class="center haveaccount" style=""><a [routerLink]="['/Login']">Already have an account?</a></div>
+       </div>
+   </div>
+</div>

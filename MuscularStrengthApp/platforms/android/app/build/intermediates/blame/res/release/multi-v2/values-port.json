@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/cybertron/Desktop/angular/MuscularStrength/MuscularStrengthApp/platforms/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "/home/cybertron/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/9118886459d4a7630fa1d28d01c44aa9/res/values-port/values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/cybertron/Desktop/angular/MuscularStrength/MuscularStrengthApp/D:\\Simar\\projects\\angular\\MuscularStrength\\MuscularStrengthApp\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-port\\values-port.xml",
+            "map": [
+                {
+                    "source": "/home/cybertron/Desktop/angular/MuscularStrength/MuscularStrengthApp/C:\\Users\\cybertron\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\1c98d8c29d6886eff38bc4d8dcfa650f\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}

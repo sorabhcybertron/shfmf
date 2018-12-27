@@ -1,0 +1,103 @@
+.myaccount.another .newpost {
+	text-align: center;
+}
+.myaccount.another .newpost .center {
+	display: inline-block;
+}
+.myaccount.another .newpost span {
+	margin-right: 0px;
+	vertical-align: top;
+}
+.myaccount.another .ma-tab-head .tab {
+	width: 33.33333%;
+}
+.myaccount.another .addfriend, .myaccount.another .newp, .myaccount.another .blockuser {
+	float: left;
+	padding: 6px 8px;
+	border: 1px solid #c4c4c4;
+	border-radius: 3px;
+	font-size: 11px;
+	position: relative;
+}
+.myaccount.another .newpost .dashicon-cont {
+	height: 12px;
+	width: 12px;
+}
+.myaccount.another .newpost .dash_icons {
+	display: inline-block;
+	max-width: 100%;
+	max-height: 100%;
+}
+.myaccount.another .newpost .addfriend, .myaccount.another .newpost .newp {
+	margin-right: 5px;
+}
+.myaccount.another .addfriend img:not(.loader), .myaccount.another .blockuser img:not(.loader) {
+	width: 25px;
+	height: 25px;
+	margin-right: 3px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/* Loaders */
+.myaccount.another .addfriendloader, .myaccount.another .blockuserloader {
+	display: none;
+	width: 100%;
+	height: 50px !important;
+	position: absolute;
+	top: -12px;
+	left: 0;
+}
+.myaccount.another .addfriendloader.show, .myaccount.another .blockuserloader.show {
+	display: block;
+}
+/deep/ .dim {
+	opacity: 0.1 !important;
+}
+.myaccount.another .gifcont {
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+}
+.myaccount.another .gifcont.ptop {
+	padding-top: 44px;
+}
+.myaccount.another .loading-gif {
+	display: inline-block;
+	width: 80px;
+	height: auto;
+}
+.myaccount.another .loading{
+	text-align: center;
+	margin: 20px 0;
+	font-size: 16px;
+	color: #097aff;
+}
+.myaccount.another .loadingerror{
+	color: red;
+	text-align: center;
+	font: 18px Open Sans;
+}
+.myaccount.another .backlink-container {
+	background-color: #fff;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 44px 20px 5px;
+	box-sizing: border-box;
+	z-index: 11;
+}
+.usprofback {
+	color: #097aff;
+	text-decoration: none;
+	padding: 10px 0;
+	display: inline-block;
+	font-size: 20px;
+	font-family: Open Sans;
+	float: right;
+}
+.myaccount.another .user-info {
+	margin-top: 55px;
+	border-top: 1px solid #c4c4c4;
+	padding: 15px 0;
+}

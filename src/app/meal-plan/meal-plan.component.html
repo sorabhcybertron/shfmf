@@ -1,0 +1,9 @@
+
+	<iframe class="meal-plan-frame" [src]="iFrameBaseSource" *ngIf="getuserPlatinum()">
+	</iframe>
+	<div class="msg failed" *ngIf="!getuserPlatinum()">
+		<a [routerLink]="['/UpgradeMembership']" class="signuplink">Sign up for Platinum now</a>
+	</div>
+	<div class="freefitnesscode" *ngIf="!getuserPlatinum()">
+		<a  class="signuplink">Use the code <span>"FREEFITNESS"</span> for one free month</a>
+	</div>

@@ -1,0 +1,53 @@
+<div class="wrap yellow pagewrapper">
+	<div class="page-title">
+		<h1>Lifts</h1>
+	</div>
+	<div *ngIf="lifts?.length" class="lifts-listing">
+		<div class="card" *ngFor="let lift of lifts; let i = index; ">
+	        <div class="inner">
+				<h2>{{lift.lift_type}}</h2>
+				<p class="lift-details">
+					<span class="lift-weight">{{lift.lift_weight}} <span class="unit">{{lift.lift_weight_unit}}</span></span>
+					<span class="lift-date">{{lift.lift_date}}</span>
+				</p>
+				<p class="edit-lift"><img src="assets/images/edit_icon_new.svg" (click)="showHidePopup(i);"></p>
+			</div>
+		</div>
+    </div>
+
+    <!-- Popup Overlay -->
+    <div [ngClass]="{'edit-popup': true, 'show': popupVisible}" (click)="showHidePopup(1);"></div>
+    <!-- Popup Content -->
+	<div [ngClass]="{'lift-edit-fields': true, 'show': popupVisible}">
+		<div>
+			<span class="closepop" (click)="showHidePopup(1);">&times;</span>
+			<input type="number" name="" [(ngModel)]="liftWeight" class="weight">
+			<!-- Lift Unit -->
+			<select [(ngModel)]="liftUnit" class="unit">
+				<option *ngFor="let unit of Units">{{unit}}</option>
+			</select>
+			<!-- Lift Year -->
+			<select class="year" [(ngModel)]="liftYear" class="year">
+				<option *ngFor="let year of Years">{{year}}</option>
+			</select>
+			<!-- Lift Month -->
+			<select [(ngModel)]="liftMonth" class="month">
+				<option *ngFor="let month of Months">{{month}}</option>
+			</select>
+			<!-- Lift Date -->
+			<select [(ngModel)]="liftDate" class="date">
+				<option *ngFor="let date of Dates">{{date}}</option>
+			</select>
+			<button class="lift-update" (click)="UpdateLift();">Submit</button>
+		</div>
+	</div>
+	<!-- Popup end -->
+
+    <div *ngIf=" loading" class="gifcont">
+        <img src="assets/images/Infinity-workouts.gif" alt="" class="loading-gif" />
+    </div>
+    <p *ngIf=" error" class="center nolifts">{{errorMsg}}</p>
+    <p [ngClass]="{'lift-msg center': true, 'bottom': notify}">
+    	<span [ngClass]="{'success': saveSuccess, 'error': saveSuccess == false}">{{saveCallMsg}}</span>
+    </p>
+</div>

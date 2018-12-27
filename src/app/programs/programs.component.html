@@ -1,0 +1,61 @@
+<div class="wrap cyan pagewrapper">
+    <div class="page-title">
+        <span class="dashicon-cont"><img src="assets/images/new_icons/svg/programs-icon.svg" alt="" class="dash_icons"></span><h1>Programs</h1>
+    </div>
+    <div *ngIf="isLoading" class="gifcont">
+        <img src="assets/images/Infinity-programs.gif" class="loading-gif">
+    </div>
+    <div *ngIf="allCats" class="selcont">
+        <div class="selcont-inner">
+            <img src="assets/images/select-arrow.svg" alt="" class="select-arrow">
+            <select class="programs-select" (change)="catChange($event.target.value)">
+                <option *ngFor="let cat of allCats; let i = index;" value="{{cat.term}}">{{cat.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div *ngIf="allLoadedPrograms">
+        <div class="card" *ngFor="let dt of allLoadedPrograms; let i = index; ">
+            <div class="inner" *ngIf="dt.app_url != null && dt.recordLinkID !=null && dt.dbTable != null">
+                <app-new-content-badge [colorName]="'blue'" [type]="'programs'" [item_id]="dt.id"></app-new-content-badge>
+                <h2 class="bolder">{{dt.mc_w_c_t}}</h2>
+                <p class="flex">
+                    <span class="image-box">
+                        <img src="{{dt.img}}" alt="">
+                    </span>
+                    <span class="prog-right-desc programbtn">
+                        <span [innerHtml]="dt.mc_w_c_p"></span><!-- {{dt.mc_w_c_p}} -->
+                        <span class="get-btn" *ngIf="dt.app_url != null">
+                            <app-like-button [type]="'programs'" [item_id]="dt.id"></app-like-button>
+                            <a class="get-btn-in" [routerLink]="['/Programs', dt.app_url, dt.recordLinkID, dt.dbTable ]" (click)="appService.MarkNewContentsViewded('programs',dt.id)">Get Started</a>
+                        </span>
+                        <span class="get-btn" *ngIf="dt.app_url == null">
+                            <a class="get-btn-in" href="javascript:void(0);">Get Started</a>
+                        </span>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <p *ngIf="noResults != ''" class="noresults">{{noResults}}</p>
+    <!-- <div class="card">
+        <div class="inner">
+            <h2>Beginner’s Guide</h2>
+            <p>This guide will walk you through everything you need for a great workout routine, from warm-up to stretching, strength to conditioning.</p>
+            <div class="get-btn"><a href="javascript:void(0);">GET STARTED</a></div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="inner">
+            <h2>Triceps Horseshoe</h2>
+            <p>Three exercises to build a bigger triceps horseshoe now!</p>
+            <div class="get-btn"><a href="javascript:void(0);">GET STARTED</a></div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="inner">
+            <h2>Build a Bigger Back</h2>
+            <p>Three pull-up variations to help you build bigger back</p>
+            <div class="get-btn"><a href="javascript:void(0);">GET STARTED</a></div>
+        </div>
+    </div> -->
+</div>

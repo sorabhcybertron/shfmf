@@ -1,0 +1,432 @@
+/* Uses styles.css, recipe-details css */
+p, h2, h3, div, span, a {
+    font-family: Open Sans;
+}
+.programs-back{
+    color: #5bc8fa;
+    text-decoration: none;
+    padding: 5px 0px;
+    display: inline-block;
+    font-size: 20px;
+    font-family: Open Sans;
+    margin-top: 10px;
+    cursor: pointer;
+    float: right;
+}
+.proginn .page-title h1 {
+    position: relative;
+    padding-right: 15px;
+    font-size: 23px;
+}
+.prog-in-expand {
+    position: relative;
+    right: 0;
+    /*top: 25px;*/
+    float: right!important;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    margin-top: 2px!important;
+}
+.prog-in-expand .exp {
+    width: 2.2px;
+    height: 15px!important;
+    background: #000;
+    position: relative;
+    top: 0;
+    left: 0px!important;
+    transition: all 1s ease;
+}
+.prog-in-expand .close {
+    width: 16px;
+    height: 2px;
+    position: absolute;
+    background: #000;
+    transition: all 1s ease;
+    top: 8px;
+    right: 0;
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px) rotate(0deg);
+}
+.prog-in-expand.close .exp{
+    opacity: 0;
+    transform: rotate(90deg);
+}
+.prog-in-expand.close .close{
+    transform: translateY(-1px) rotate(360deg);
+}
+.prog-in-expand .more, .prog-in-expand .less {
+    position: absolute;
+    bottom: -12px;
+    line-height: 1;
+    text-transform: lowercase;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.prog-in-expand .more {
+    display:  block;
+    width: 26px;
+}
+.prog-in-expand .less {
+    display: none;
+}
+.prog-in-expand.close .more {
+    display: none;
+}
+.prog-in-expand.close .less {
+    display: block;
+    width: 18px;
+}
+.routines-listing {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+}
+.month-head {
+    display: inline-block;
+    width: 100%;
+    /*margin: 15px 0 15px;
+    text-align: center;
+    border-top: 1px solid #5C5C5C;
+    border-bottom: 1px solid #5C5C5C;*/
+    margin: 0 0;
+    padding: 10px 0 20px;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 20px;
+    color: #AAA;
+}
+.routine-img {
+    width: 100%;
+    margin-bottom: 10px;
+    display: inline-block;
+    position: relative;
+}
+.routine-img img{
+    max-width: 100%;
+}
+.routine-img .plat_img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+/deep/ .program-descrip {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1s ease;
+}
+/deep/ .program-descrip.show {
+    max-height: 2000px;
+}
+/deep/ .program-descrip p {
+    font-size: 15px;
+}
+/deep/ .mc_ind_green {
+    color: green;
+}
+/deep/ .mc_ind_red {
+    color: red;
+}
+/deep/ .member-comments img {
+    max-width: 100%;
+}
+.program-desrip{
+    padding: 0px 10px;
+}
+.progs-err {
+    color: red;
+    padding: 15px;
+    margin: 0;
+}
+.page-title h1{
+    padding-top: 15px;
+    border-top: 1px solid #d7d7d7;
+}
+.weeks_workout_down_12 {
+    /*display: none;*/
+}
+.like-etc span {
+    font-weight: 600 !important;
+    color: #666;
+    font-size: 13px !important;
+}
+.online-coaching {
+    width: 65%;
+    float: left;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.online-coaching p a {
+    text-decoration: none;
+}
+.coaching-links{
+    display: flex;
+    /*justify-content: flex-end;*/
+    align-items: center;
+}
+p span.mgr10 {
+    margin-right: 10px;
+}
+/deep/ .online-coaching a {
+    max-width: 50%;
+}
+/deep/ .online-coaching img {
+    max-width: 100%;
+}
+@media (min-width: 540px){
+    .routine-img {
+        width: 49%;
+        margin-bottom: 1%;
+    }
+    .routine-img:nth-child(even) {
+        margin-right: 1%;
+    }
+}
+@media (min-width: 767px){
+    .routine-img {
+        width: 32%;
+        margin-bottom: 1%;
+        margin-right: 1%;
+    }
+}
+
+/deep/ .like-etc .like.likecmnt.liked {
+    font-size: 14px;
+    color: #e29236;
+}
+.nmcmnt .likecmnt{
+    top: 3px;
+}
+
+.card.nopadtop{
+    background: #fff;
+    padding: 40px 20px 0;
+}
+
+.backlink-container {
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 44px 20px 5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 11;
+}
+
+.page-title.ptop {
+    float: left;
+    padding: 10px 20px;
+    padding-top: 27px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/************/
+.member-comments.mgbtm {
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.member-comments.mgbtm h3 {
+    background: #f9f9f9;
+    padding: 15px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 0 10px 0;
+    font-family: Open Sans;
+}
+
+.content {
+    padding: 0 15px;
+    display: inline-block;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.content.nopad {
+    padding: 0;
+}
+
+.art-newcomm.program {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: Open Sans;
+    color: #ff2d55;
+}
+
+.art-newcomm.program span {
+    background-color: #5bc8fa;
+}
+
+.art-newcomm span {
+    border-radius: 50px;
+    color: #fff;
+    padding: 10px 20px;
+    line-height: 1;
+    display: inline-block;
+}
+
+.comment {
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+.comment .member-img {
+    width: 15%;
+    padding-left: 0;
+    text-align: center;
+}
+.member-img img{
+    border-radius: 50%;
+}
+.member-img {
+    width: 35%;
+    float: left;
+    padding-left: 3%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.msg-block {
+    width: 82%;
+    padding-left: 3%;
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.msg-block .name {
+    position: relative;
+}
+
+.msg-block p {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+strong {
+    font-size: 16px;
+    color: #4a4a4a;
+}
+
+.nmcmnt .likecmnt {
+    position: absolute;
+    right: -5px;
+    top: 0;
+    height: 18px;
+    width: 18px;
+    overflow: hidden;
+    background-image: url(assets/images/arm_like.png);
+    background-position: 0 0px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.nmcmnt .likecmnt.liked {
+    background-position: 0 18px;
+}
+
+.comment .msg-block .cmnt {
+    position: relative;
+}
+
+p span {
+    color: #8a8a8a;
+    font: 14px/1.5 Open Sans !important;
+    margin: 0 0 15px;
+}
+
+span.accordionbtn {
+    display:none;
+}
+
+span.accordionbtn.show {
+    display: block;
+}
+
+.child-comment {
+    padding-left: 5%;
+    width: 100%;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 5px 0;
+    float: left;
+}
+.child-comments {
+    display: none;
+}
+.child-comments.show {
+    display: block;
+}
+
+
+.newcomment-reply-popup {
+    position: fixed;
+    top: 87px;
+    height: calc(100vh - 87px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(255,255,255,0.9);
+    left: 0;
+}
+
+.newcomment-reply-popup .close-pop {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.newcomment-reply-popup .newcomtext {
+    width: 90%;
+}
+
+.newcomment-reply-popup button.addCommentBtn {
+    background: #458DD4;
+    color: #fff;
+    border-color: #458DD4;
+    margin: 8px auto;
+    text-transform: uppercase;
+    font: 16px/1.5 Open Sans;
+    font-weight: 600;
+    padding: 6px 16px 6px 16px;
+    border-radius: 3px;
+}

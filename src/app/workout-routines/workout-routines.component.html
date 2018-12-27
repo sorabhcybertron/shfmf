@@ -1,0 +1,71 @@
+<div id="workoutslisthere">
+	<div class="page-title small">
+		<!-- <span class="dashicon-cont"><img src="assets/images/new_icons/svg/workouts-icon.svg" alt="" class="dash_icons"></span> --><h1>Routines<span class="filterworksicon" (click)="showFilters = true;" *ngIf="isUserPlatinum == 'Platinum'"><img src="assets/images/new_icons/svg/filter-icon.svg"></span></h1>
+	</div>
+	<!-- Checkbox Filters -->
+	<div [ngClass]="{'filters': true, 'show': showFilters}">
+	    <div class="page-title">
+	        <span class="dashicon-cont"><img src="assets/images/new_icons/svg/workouts-icon.svg" alt="" class="dash_icons"></span><h1>Filter Exercises<span class="filterworksicon close" (click)="showFilters = false;">&#x2715;</span></h1>
+	    </div>
+	    <div class="filtersarea">
+	    	<div class="filter-section">
+		    	<p class="filter-toggel" (click)="showfilterlist('body_part')">Body Part
+		    		<span class="toggel-icon" *ngIf="showFilterSectionUl['body_part']" >-</span>
+		        	<span class="toggel-icon" *ngIf="!showFilterSectionUl['body_part']" >+</span>
+		    	</p>
+		        <ul *ngIf="routineCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['body_part']}">
+		            <li *ngFor="let c of routineCats;">
+		                <input type="checkbox" name="m{{c.id}}" id="m{{c.id}}"><label for="m{{c.id}}">{{c.name}}</label>
+		            </li>
+		        </ul>
+	    	</div>
+	    	<div class="filter-section">
+		        <p class="filter-toggel" (click)="showfilterlist('workout_goal')">Workout Goal
+		        	<span class="toggel-icon" *ngIf="showFilterSectionUl['workout_goal']" >-</span>
+		        	<span class="toggel-icon" *ngIf="!showFilterSectionUl['workout_goal']" >+</span>
+		        </p>
+		        <ul *ngIf="routineworkoutCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['workout_goal']}">
+		            <li *ngFor="let c of routineworkoutCats;">
+		                <input type="checkbox" name="r{{c.id}}" id="r{{c.id}}"><label for="r{{c.id}}">{{c.name}}</label>
+		            </li>
+		        </ul>
+		    </div>
+	        <div *ngIf="routineCats.length == 0 && routineworkoutCats.length == 0" class="text-center">No Filters loaded yet!</div>
+	    </div>
+	    <div class="text-center">
+	        <button class="fltrworks" (click)="filterWorkouts()">Search</button>
+	    </div>
+	</div>
+	<!-- Content -->
+	<div class="card" *ngFor="let workout of workouts; let i = index; ">
+	    <div class="inner">
+	    	<app-new-content-badge [colorName]="'yellow'" [type]="'workouts'" [item_id]="workout.id"></app-new-content-badge>
+	        <h2>{{workout.name}}</h2>
+	        <p>
+	            <span _ngcontent-c4="" class="image-box large">
+	                <img _ngcontent-c4="" alt="" [src]="workout.img">
+	            </span>
+	        {{workout.description.trim() != '' ? workout.description : 'No description.'}}</p>
+	        <div class="get-btn">
+	        	<app-like-button [type]="'routines'" [item_id]="workout.id"></app-like-button>
+	        	<a class="get-btn-in" [routerLink]="['/Workouts', workout.id ]">Get Started</a>
+	        </div>
+	    </div>
+	</div>
+	<!-- Failure Message -->
+	<div class="msg failed" *ngIf=" loadError == true && loadErrorMsg != '' && loadErrorMsg != 'User should be a Platinum User' ">
+	    {{loadErrorMsg}}
+	</div>
+	<div class="msg failed" *ngIf=" loadError == true && loadErrorMsg != '' && loadErrorMsg == 'User should be a Platinum User'">
+	    <a [routerLink]="['/UpgradeMembership']" class="signuplink">Sign up for Platinum now</a>
+	</div>
+	<div class="freefitnesscode" *ngIf="loadError == true && loadErrorMsg != '' && loadErrorMsg == 'User should be a Platinum User'">
+		<a  class="signuplink">Use the code <span>"FREEFITNESS"</span> for one free month</a>
+	</div>
+	<!-- Loader -->
+	<div *ngIf=" allWorkoutsLoaded == false  && loadError == '' " class="gifcont">
+	    <img src="assets/images/Infinity-workouts.gif" alt="" class="loading-gif" />
+	</div>
+	<!-- No more results -->
+	<p *ngIf="allWorkoutsLoaded" class="nomore-articles">No more workouts!</p>
+</div>

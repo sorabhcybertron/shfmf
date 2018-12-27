@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">961720861761-k6rs4ln41r4l0guths8q68dugjqv3rd5.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://muscularsrengthcybertron.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">961720861761</string>
+    <string name="google_api_key" translatable="false">AIzaSyCHHyJTLVgNnOKEH43JWPSrD0nh17K-93w</string>
+    <string name="google_app_id" translatable="false">1:961720861761:android:020df62c001ec904</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCHHyJTLVgNnOKEH43JWPSrD0nh17K-93w</string>
+    <string name="google_storage_bucket" translatable="false">muscularsrengthcybertron.appspot.com</string>
+    <string name="project_id" translatable="false">muscularsrengthcybertron</string>
+</resources>

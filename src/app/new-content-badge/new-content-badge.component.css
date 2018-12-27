@@ -1,0 +1,23 @@
+app-new-content-badge{
+	float: right;
+}
+
+
+app-new-content-badge .green{
+    color: #4dd964 !important;
+}
+app-new-content-badge .blue{
+    color: #097aff !important;
+}
+app-new-content-badge .indigo{
+    color: #5bc8fa !important;
+}
+app-new-content-badge .yellow{
+    color: #ffcb00 !important;
+}
+app-new-content-badge .orange{
+    color: #ff9502 !important;
+}
+app-new-content-badge .red{
+    color: #ff2d55 !important;
+}

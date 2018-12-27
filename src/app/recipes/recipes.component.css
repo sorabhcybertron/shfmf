@@ -1,0 +1,37 @@
+.magnifying-glass {
+    width: 28px;
+    height: 28px;
+    float: right;
+    margin-top: 2px;
+}
+.articles-searchinp {
+    width: 100%;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #444;
+    color: #333;
+    display: none;
+    margin-top: 10px;
+}
+.articles-searchinp.show{
+    display: block;
+}
+.noresults{
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 14px;
+    color: #4a4a4a;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+}
+
+
+app-like-button {
+    float: left;
+    font-size: 30px;
+    position: relative;
+    top: 0px;
+}

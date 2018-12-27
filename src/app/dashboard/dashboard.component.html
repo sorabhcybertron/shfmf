@@ -1,0 +1,44 @@
+<div class="wrapper clearfix pagewrapper">
+    <div class="container">
+        <div class="menu">
+            <ul class="clearfix">
+                <!-- <li class="blue">
+                    <a [routerLink]="['/Community']"><span class="box">19</span><h2>Community</h2></a>
+                </li> -->
+                <li>
+                    <a [routerLink]="['/Programs']"><!-- <span class="box">5</span> --><span class="dashicon-cont"><img src="assets/images/new_icons/svg/programs-icon.svg" alt="" class="dash_icons"></span><h2>Programs <span class="new-content-count blue" *ngIf="getCount('programs')">{{getCount('programs')}}</span></h2></a>
+                </li>
+                <li>
+                    <a [routerLink]="['/Workouts']"><!-- <span class="box">5</span> --><span class="dashicon-cont"><img src="assets/images/new_icons/svg/workouts-icon.svg" alt="" class="dash_icons"></span><h2>Workouts <span class="new-content-count yellow" *ngIf="getCount('workouts')">{{getCount('workouts')}}</span></h2></a>
+                </li>
+                <li>
+                    <a [routerLink]="['/Articles']"><!-- <span class="box">-</span> --><span class="dashicon-cont"><img src="assets/images/new_icons/svg/article-icon.svg" alt="" class="dash_icons"></span><h2>Articles <span class="new-content-count red" *ngIf="getCount('articles')">{{getCount('articles')}}</span></h2> </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/Recipes']"><!-- <span class="box">-</span> --><span class="dashicon-cont"><img src="assets/images/new_icons/svg/recipes-icon.svg" alt="" class="dash_icons"></span><h2>Recipes <span class="new-content-count green" *ngIf="getCount('recipes')">{{getCount('recipes')}}</span></h2></a>
+                </li>
+                <li>
+                    <a [routerLink]="['/MealPlan']"><!-- <span class="box">5</span> --><span class="dashicon-cont"><img src="assets/images/new_icons/svg/meal-plan-icon.svg" alt="" class="dash_icons"></span><h2>Meal Plan</h2></a>
+                </li>
+                <hr class="menu-separator">
+                <li class="whatsnew">
+                    <span class="dashicon-cont"><img src="assets/images/new_icons/svg/star-icon.svg"></span>
+                    <div class="wncopy">
+                        <h2>Whatʼs New</h2>
+                        <div [innerHtml]="whatsNewContent">
+                            <!-- <p>Thanks for downloading the new Muscular Strength app for iPhone. In the coming months, weʼll be releasing new content and information, such as community features, exclusive content, and more. Weʼll let you know about all the most exciting updates right here!</p>
+                            <p>Thanks - Scott</p> -->
+                        </div>                    
+                    </div>
+                </li>
+            </ul>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<!-- <div class="progress-bar">
+    <img src="assets/images/bar-progress.jpg" alt="">
+</div> -->
+<div class="">
+    
+</div>

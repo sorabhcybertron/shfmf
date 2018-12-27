@@ -1,0 +1,193 @@
+<div class="wrap cyan pagewrapper prog-routine">
+	<div class="backlink-container">
+		<span *ngIf="fromFav" class="workouts-back" [routerLink]="'/MyProfile'">&#x3008; Back</span>
+		<span *ngIf="!fromFav" class="workouts-back" [routerLink]="'/'+[backUrl]">&#x3008; Back to Workouts</span>
+		<p *ngIf="!loading && error == ''" class="author">By {{routine.posted_by.name}}</p>
+	</div>
+	<div *ngIf="!loading && error == ''" class="page-title ptop">
+		<h1>{{routine.excercise_name}}</h1>
+	</div>
+	<div *ngIf="!loading && error == ''">
+		<div class="card">
+	        <div class="inner">
+	        	<div class="iframe video" *ngIf="routine.video"  [innerHtml]="showyoutubeVideo | safeHtml">
+	        			<!-- <iframe *ngIf="routine.video" [src]="cleanURL(routine.video)"></iframe> -->
+				</div>
+				<div class="iframe video" *ngIf="!routine.video">
+					<video width="100%"  #media id="singleVideo" preload="auto" controls controlsList="nodownload" poster="{{VideoExerciseIcon}}">
+				        <source src="{{videourl}}" type="video/mp4">
+				    </video>
+				</div>
+				<div class="like-button-fav" *ngIf="this.rouType == 'exercise'">
+					<app-like-button [type]="'exercises'" [item_id]="routineID"></app-like-button>
+				</div>
+				<div class="like-button-fav" *ngIf="this.rouType != 'exercise'">
+					<app-like-button [type]="'routines'" [item_id]="routineID"></app-like-button>
+				</div>
+				<div class="routine-details">
+					<div *ngIf=" routine.downloadable_resources.exercises.link != '' || routine.downloadable_resources.routines.link != '' " class="about-author">
+						<!-- Resources to download -->
+						<h3>DOWNLOADABLE RESOURCES</h3>
+						<div class="down-btns center">
+							<span *ngIf="routine.downloadable_resources.exercises.link != ''">
+								<span (click)="downloadResource(routine.downloadable_resources.exercises.link)" class="download-routine resource-downloadbtn">
+									<img src="{{routine.downloadable_resources.exercises.img}}" alt="" />Exercises
+								</span>
+							</span>
+							<span *ngIf="routine.downloadable_resources.routines.link != ''">
+								<span (click)="downloadResource(routine.downloadable_resources.routines.link)" class="download-exercise resource-downloadbtn">
+									<img src="{{routine.downloadable_resources.routines.img}}" alt="" />Routine
+								</span>
+							</span>
+							<span  *ngIf="calendarLink" >
+								<span class="resource-downloadbtn cal" (click)="downloadResource(calendarLink)">
+									<i class="fa fa-calendar"></i>Calendar
+								</span>
+							</span>
+						</div>
+						<!-- <div class="down-btns center">
+							<div class="calendarbtn">
+								<span *ngIf="calendarLink" class="resource-downloadbtn cal" (click)="downloadResource(calendarLink)">
+									<i class="fa fa-calendar"></i>Calendar
+								</span>
+								<span class="resource-downloadbtn"></span>
+							</div>
+						</div> -->
+						<!-- <div class="routine-descrip" [innerHtml]="routine.description"></div> -->
+					</div>
+					<!-- Goal -->
+					<div class="routine-goal about-author">
+						<h3 class="lessmarg">Goal: {{routine.goal}}<span *ngIf="routine.difficulty_level" class="goal-diff-level">{{routine.difficulty_level}}</span></h3>
+						<p class="goal-primary lessmarg">
+							<span class="inlbl"><strong>Primary</strong></span>
+							<span class="inlbl-des">
+								<span *ngFor=" let primary of routine.primary" class="goals-pr">{{primary}}<br></span>
+								<span *ngIf="!routine.primary" class="goals-pr">N/A<br></span>
+							</span>
+						</p>
+						<p class="goal-secondary lessmarg">
+							<span class="inlbl"><strong>Secondary</strong></span>
+							<span class="inlbl-des">
+								<span *ngFor=" let secondary of routine.secondary" class="goals-sec">{{secondary}}<br></span>
+								<span *ngIf="!routine.secondary" class="goals-sec">N/A<br></span>
+							</span>
+						</p>
+						<p class="goal-secondary lessmarg">
+							<span class="inlbl"><strong>Equipment</strong></span>
+							<span class="inlbl-des">
+								<span *ngFor=" let eqp of routine.equipment" class="goals-sec">{{eqp}}<br></span>
+								<span *ngIf="!routine.equipment" class="goals-sec">N/A<br></span>
+							</span>
+						</p>
+					</div>
+					<div class="images">
+						<img *ngFor=" let img of routine.images; let i = index; " src="http://muscularstrength.com/{{img.large}}" alt="" (click)="showOverlay(i)">
+					</div>
+					<div [ngClass]="{'imageoverlay': true, 'show': imgoverlayActive}">
+						<img src="http://muscularstrength.com/{{imgSrc}}">
+						<span (click)="hideOverlay()" class="overlay-close">&#215;</span>
+					</div>
+				</div>
+				<div class="about-author mgbtm">
+					<h3>About the Author</h3>
+					<div class="content">
+						<div class="author-img">
+							<!-- <a [routerLink]="['/AboutAuthor',authorURL ]"> -->
+								<a [routerLink]="['/Authors',routine.posted_by.id]">
+								<img src="http://muscularstrength.com/{{routine.posted_by.profile_pic}}"></a></div>
+						<div class="online-coaching">
+							<p *ngIf="routine.posted_by.name != 0">
+								<!-- <a [routerLink]="['/AboutAuthor',authorURL]"> -->
+									<a [routerLink]="['/Authors',routine.posted_by.id]">
+								{{routine.posted_by.name}}</a></p>
+							<p *ngIf="routine.posted_by.name == 0">Name not available</p>
+							<div class="findme-links ">
+								<img src="assets/images/newones/fnew.svg" (click)="shareMe(routine.find_me_on.fb)">
+								<img src="assets/images/newones/tnew.svg" (click)="shareMe(routine.find_me_on.Tw)">
+								<img src="assets/images/newones/inew.svg" (click)="shareMe(routine.find_me_on.insta)">
+								<img src="assets/images/newones/ynew.svg" (click)="shareMe(routine.find_me_on.YT)">
+							</div>
+							<div class="coaching-links" [innerHtml]="routine.online_coaching | safeHtml"></div>
+						</div>
+					</div>
+				</div>
+				<div class="member-comments mgbtm">
+					<h3>Member Comments</h3>
+					<div class="content">
+						<!-- Add New Comment Button -->
+						<div class="art-newcomm workouts">
+							<span (click)="CommentPopupOpen = true; replyToID = 0; ">Add new comment</span>
+						</div>
+						<div class="comment" *ngFor=" let comment of routine.comments; let i = index; ">
+							<div class="member-img">
+								<img class="2" src="{{comment.image}}" alt="" />
+							</div>
+							<!-- Member Comments -->
+							<div class="msg-block">
+								<p class="name nmcmnt"><strong [routerLink]="['/Authors/0/'+comment.name]">{{comment.name}}</strong>
+									<span [ngClass]="{'likecmnt': true, 'liked': comment.userHasLiked }" (click)=" !comment.userHasLiked ? likeComment(comment.commentid, 'LIKE') : likeComment(comment.commentid, 'UNLIKE')"></span>
+								</p>
+								<p class="cmnt">
+									<span [innerHTML]="comment.comment"></span>
+								</p>
+								<!-- Likes and Time etc -->
+								<p class="like-etc">
+									<span class="time mgr10"><i class="fa fa-clock-o"></i> {{comment.time}}</span>
+									<span class="like mgr10" [ngClass]="{'likecmnt': true, 'liked': comment.userHasLiked }" (click)=" !comment.userHasLiked ? likeComment(comment.commentid, 'LIKE') : likeComment(comment.commentid, 'UNLIKE')">{{comment.like}} like</span>
+									<span class="reply mgr10" (click)="CommentPopupOpen = true; replyToID = comment.commentid; CommentText='@'+comment.name+' '; commentTo=comment.name;"><i class="fa fa-reply"></i> Reply</span>
+								</p>
+								<p class="viewallreplies" (click)="viewAllReplies(i);">
+									<span [ngClass]="{ 'accordionbtn' : true, 'show': !commentsArray[i].open && commentsArray[i].hasChildComments }">
+										VIEW ALL REPLIES +
+									</span>
+									<span [ngClass]="{ 'accordionbtn' : true, 'show': commentsArray[i].open && commentsArray[i].hasChildComments }">
+										VIEW ALL REPLIES -
+									</span>
+								</p>
+							</div>
+							<!-- Child Comments -->
+							<div [ngClass]="{ 'child-comments' : true, 'show' : commentsArray[i].open }">
+								<div class="child-comment" *ngFor=" let childcomment of routine.comments[i]['childcomment']">
+									<div class="member-img">
+										<img class="2" src="{{childcomment.image}}" alt="" />
+									</div>
+									<div class="msg-block">
+										<p class="name nmcmnt"><strong [routerLink]="['/Authors/0/'+childcomment.name]">{{childcomment.name}}</strong>
+											<span [ngClass]="{'likecmnt': true, 'liked': childcomment.userHasLiked }" (click)=" !childcomment.userHasLiked ? likeComment(childcomment.childcommentid, 'LIKE', true, comment.commentid) : likeComment(childcomment.childcommentid, 'UNLIKE', true, comment.commentid)"></span>
+										</p>
+										<p class="cmnt">
+											<span [innerHTML]="childcomment.comment"></span>
+										</p>
+										<!-- Likes and Time etc -->
+										<p class="like-etc">
+											<span class="time mgr10"><i class="fa fa-clock-o"></i> {{childcomment.time}}</span>
+											<span class="like mgr10" [ngClass]="{'likecmnt': true, 'liked': childcomment.userHasLiked }" (click)=" !childcomment.userHasLiked ? likeComment(childcomment.childcommentid, 'LIKE', true, comment.commentid) : likeComment(childcomment.childcommentid, 'UNLIKE', true, comment.commentid)">{{childcomment.childlike || 0}} like</span>
+											<span class="reply mgr10" (click)="CommentPopupOpen = true; replyToID = comment.commentid; CommentText='@'+childcomment.name+' '; commentTo=childcomment.name;"><i class="fa fa-reply"></i> Reply</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Add New Comment/Reply Popup -->
+						<div class="newcomment-reply-popup" *ngIf="CommentPopupOpen">
+							<span class="close-pop" (click)="CommentPopupOpen = false; CommentText='';">x</span>
+							<textarea rows="5" [(ngModel)]="CommentText" id="newcomtext-textarea" placeholder="Add Comment" class="newcomtext"></textarea>
+							<button (click)="replyTo()" class="addCommentBtn">Comment</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p class="copyright center">Copyright &copy; MuscularStrength.com<br>All Rights Reserved.</p>
+		</div>
+		<div [ngClass]="{'consultation-popup': true, 'show': coachingpopup}">
+			<span (click)="hideCoachingOverlay()" class="coaching-close">&#215;</span>
+			<consultation></consultation>
+		</div>
+	</div>
+	<div *ngIf="loading && error == ''" class="gifcont ptop">
+        <img src="assets/images/Infinity-workouts.gif" class="loading-gif">
+    </div>
+    <p *ngIf="error != ''" class="progs-err center">{{error}}</p>
+</div>
+
+

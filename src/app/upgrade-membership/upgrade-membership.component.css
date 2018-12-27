@@ -1,0 +1,90 @@
+select.error,input.error{
+    border: 1px solid red!important;
+}
+p.error-msg {
+    color: red!important;
+}
+.success-msg{
+    color : green!important;
+}
+
+.upgradepage .backlink-container {
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 44px 20px 5px;
+    box-sizing: border-box;
+    z-index: 11;
+}
+.upgradepage .card {
+    padding: 0 20px 0;
+}
+.upgradepage .card .inner {
+  padding-bottom: 20px;
+}
+.upgrade-back {
+  color: #5bc8fa;
+    text-decoration: none;
+    padding: 5px 0px;
+    display: inline-block;
+    font-size: 20px;
+    font-family: Open Sans;
+    margin-top: 10px;
+    cursor: pointer;
+    float: right;
+}
+.upgrade-form {
+  padding: 10px 0;
+    /*border: 1px solid #ccc;*/
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+.upgrade-form input, .upgrade-form select {
+  padding: 6px;
+    width: 100%;
+    margin: 6px 0;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.text-center {
+  text-align: center;
+}
+.submitbtn {
+  border: none;
+  background-color: green;
+  color: #fff;
+    padding: 6px;
+    margin: 5px 0;
+    border-radius: 3px;
+    outline: none;
+}
+.copyright {
+    color: #8a8a8a;
+    font: 14px/1.5 Open Sans !important;
+    margin: 0 0 15px;
+    display: inline-block;
+    width: 100%;
+}
+.center {
+    text-align: center;
+}
+.billingcheck {
+    margin-bottom: 6px;
+}
+.billingcheck input {
+    display:  inline-block;
+    width: 12px !important;
+    height: 12px;
+    margin-right: 5px !important;
+    line-height:  1;
+    vertical-align: middle;
+}
+.billingcheck label {
+    font-size: 12px;
+    font-family:  Open Sans;
+}

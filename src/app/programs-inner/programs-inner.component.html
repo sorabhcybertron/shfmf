@@ -1,0 +1,151 @@
+<div class="wrap pagewrapper">
+	<div class="backlink-container">
+		<a *ngIf="fromFav" class="programs-back" [routerLink]="'/MyProfile'">&#x3008; Back</a>
+		<a *ngIf="!fromFav" [routerLink]="['/Programs']" class="programs-back">&#x3008; Back to Programs</a>
+		<p *ngIf="!loading && error == ''" class="author center">By {{data['About Author'].Authorname}}</p>
+	</div>
+	<div *ngIf="!loading && error == ''" class="proginn">
+		<div class="page-title ptop">
+			<h1 (click)="showDesc = !showDesc">{{data.title}}
+			</h1>
+		</div>
+		<div class="card nopadtop">
+			<div class="inner">
+				<div class="socialIcons" *ngIf="data.share_this_link">
+					<span class="social-cont">
+						<img src="assets/images/newones/fsnew.svg" class="nomargin" (click)="shareArticle('fb');">
+						<span class="fbcounter" *ngIf="fbCounter" (click)="shareArticle('fb');">{{fbCounter}}</span>
+						<img src="assets/images/newones/tsnew.svg" class="nomargin" (click)="shareArticle('tw');">
+						<img src="assets/images/newones/gsnew.svg" class="nomargin" (click)="shareArticle('gp');">
+						<span class="gpluscounter" *ngIf="gplusCounter" (click)="shareArticle('fb');">{{gplusCounter}}</span>
+						<img src="assets/images/newones/wsnew.svg" class="nomargin" (click)="shareArticle('wts');">
+						<img src="assets/images/newones/msnew.svg" class="nomargin" (click)="shareArticle('email');">
+						<div [ngClass]="{'prog-in-expand': true, 'close': showDesc}" (click)="showDesc = !showDesc">
+							<span class="exp"></span>
+							<span class="close"></span>
+							<span class="more">More</span>
+							<span class="less">Less</span>
+						</div>
+					</span>
+				</div>
+				<div [ngClass]="{'program-descrip': true, 'show': showDesc}" [innerHTML]="data.description | safeHtml"></div>
+				<div class="weeks_workout_down_12 center" *ngIf="data.weeks_calendar.link">
+					<span (click)="download12WeeksWorkout(data.weeks_calendar.link)"><img src="{{data.weeks_calendar.img}}"></span>
+				</div>
+				<div *ngFor=" let months of data.data; let i = index; " class="routines-listing">
+					<h3 *ngIf="data.month && months.data.length > 0" class="month-head">{{months.month}}</h3>
+					<div *ngFor=" let d of months.data; let j = index; " class="routine-img">
+						<a *ngIf="!d.plat || (d.plat && isUserPlatium == 'Platinum')" [routerLink]="['/Routine', d.link.split('/routine/')[1] ]">
+							<img src="{{d.img}}" alt="{{months.month}} Routine">
+						</a>
+						<a *ngIf="d.plat && isUserPlatium != 'Platinum'" [routerLink]="['/UpgradeMembership']">
+							<img src="{{d.img}}">
+							<img src="{{data.plat_img}}" class="plat_img" alt="Routine (for Platinum users)">
+						</a>
+					</div>
+				</div>
+				<div class="about-author mgbtm">
+					<h3>About the Author</h3>
+					<div class="content nopad">
+						<div class="author-img">
+							<!-- <a [routerLink]="['/AboutAuthor',data['About Author'].link ]"> -->
+							<a [routerLink]="['/Authors',data['authorid']]">
+							<img src="{{data['About Author'].Profileimage}}">
+						</a></div>
+						<div class="online-coaching">
+							<p>
+								<!-- <a [routerLink]="['/AboutAuthor',data['About Author'].link ]"> -->
+							   <a [routerLink]="['/Authors',data['authorid']]">
+								{{data['About Author'].Authorname}}</a></p>
+							<div class="findme-links ">
+								<img src="assets/images/newones/fnew.svg" (click)="shareMe(data.find_me_on.fb)">
+								<img src="assets/images/newones/tnew.svg" (click)="shareMe(data.find_me_on.Tw)">
+								<img src="assets/images/newones/inew.svg" (click)="shareMe(data.find_me_on.insta)">
+								<img src="assets/images/newones/ynew.svg" (click)="shareMe(data.find_me_on.YT)">
+							</div>
+							<div class="coaching-links" [innerHtml]="data.online_coaching | safeHtml"></div>
+						</div>
+					</div>
+				</div>
+				<div class="member-comments mgbtm">
+					<h3>Member Comments</h3>
+					<div class="content nopad">
+						<!-- Add New Comment Button -->
+						<div class="art-newcomm program">
+							<span (click)=" CommentPopupOpen = true; replyToID = ''; ">Add new comment</span>
+						</div>
+						<!-- All User Comments -->
+						<div class="comment" *ngFor=" let comment of data['Member Comments']; let i = index; ">
+							<div class="member-img">
+								<img class="2" src="{{comment.image}}" alt="" />
+							</div>
+							<div class="msg-block">
+								<p class="name nmcmnt"><strong [routerLink]="['/Authors/0/'+comment.name]">{{comment.name}}</strong>
+									<span [ngClass]="{'likecmnt': true, 'liked': comment.userHasLiked }" (click)=" !comment.userHasLiked ? likeComment(comment.commentid, 'LIKE') : likeComment(comment.commentid, 'UNLIKE')"></span>
+								</p>
+								<p class="cmnt">
+									<span [innerHTML]="comment.comment"></span>
+								</p>
+								<!-- Likes and Time etc -->
+								<p class="like-etc">
+									<span class="time mgr10"><i class="fa fa-clock-o"></i> {{comment.time}}</span>
+									<span class="like mgr10" [ngClass]="{'likecmnt': true, 'liked': comment.userHasLiked }" (click)=" !comment.userHasLiked ? likeComment(comment.commentid, 'LIKE') : likeComment(comment.commentid, 'UNLIKE')">{{comment.like}} like</span>
+									<span class="reply mgr10" (click)="CommentPopupOpen = true; replyToID = comment.commentid; CommentText='@'+comment.name+' '; commentTo=comment.name;"><i class="fa fa-reply"></i> Reply</span>
+								</p>
+								<!-- View All Replies Toggle -->
+								<p class="viewallreplies" (click)="viewAllReplies(i);">
+									<span [ngClass]="{ 'accordionbtn' : true, 'show': !commentsArray[i].open && commentsArray[i].hasChildComments }">
+										VIEW ALL REPLIES +
+									</span>
+									<span [ngClass]="{ 'accordionbtn' : true, 'show': commentsArray[i].open && commentsArray[i].hasChildComments }">
+										VIEW ALL REPLIES -
+									</span>
+								</p>
+							</div>
+							<!-- Child Comments of comments -->
+							<div [ngClass]="{ 'child-comments' : true, 'show' : commentsArray[i].open == true }">
+								<div class="child-comment" *ngFor=" let childcomment of data['Member Comments'][i]['childcomment']">
+									<div class="member-img">
+										<img class="2" src="{{childcomment.image}}" alt="" />
+									</div>
+									<div class="msg-block">
+										<p class="name nmcmnt"><strong [routerLink]="['/Authors/0/'+childcomment.name]">{{childcomment.name}}</strong>
+											<span [ngClass]="{'likecmnt': true, 'liked': childcomment.userHasLiked }" (click)=" !childcomment.userHasLiked ? likeComment(childcomment.childcommentid, 'LIKE', true, comment.commentid) : likeComment(childcomment.childcommentid, 'UNLIKE', true, comment.commentid)"></span>
+										</p>
+										<p class="cmnt">
+											<span [innerHTML]="childcomment.comment"></span>
+										</p>
+										<p class="like-etc">
+											<span class="time mgr10"><i class="fa fa-clock-o"></i> {{childcomment.time}}</span>
+											<span class="like mgr10" [ngClass]="{'likecmnt': true, 'liked': childcomment.userHasLiked }" (click)=" !childcomment.userHasLiked ? likeComment(childcomment.childcommentid, 'LIKE', true, comment.commentid) : likeComment(childcomment.childcommentid, 'UNLIKE', true, comment.commentid)">{{childcomment.childlike || 0}} like</span>
+											<span class="reply mgr10" (click)="CommentPopupOpen = true; replyToID = comment.commentid; CommentText='@'+childcomment.name+' '; commentTo=childcomment.name;"><i class="fa fa-reply"></i> Reply</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Add New Comment/Reply Popup -->
+						<div class="newcomment-reply-popup" *ngIf="CommentPopupOpen">
+							<span class="close-pop" (click)="CommentPopupOpen = false; CommentText='';">x</span>
+							<div *ngIf="posting" class="gifcont ptop addcomment">
+						        <img src="assets/images/Infinity-programs.gif" class="loading-gif">
+						    </div>
+							<textarea rows="5" [(ngModel)]="CommentText" placeholder="Your Comment here..." class="newcomtext"></textarea>
+							<button (click)="addCommentOrReply()" class="addCommentBtn">Comment</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p class="copyright center">Copyright &copy; MuscularStrength.com<br>All Rights Reserved.</p>
+		</div>
+		<!-- Consultation Popup -->
+		<div [ngClass]="{'consultation-popup': true, 'show': coachingpopup}">
+			<span (click)="hideOverlay()" class="coaching-close">&#215;</span>
+			<consultation></consultation>
+		</div>
+	</div>
+	<div *ngIf="loading" class="gifcont ptop">
+        <img src="assets/images/Infinity-programs.gif" class="loading-gif">
+    </div>
+    <p *ngIf="error != ''" class="progs-err center">{{error}}</p>
+</div>

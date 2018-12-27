@@ -1,0 +1,229 @@
+<div [ngClass]="{'wrap cyan pagewrapper myaccount': true, 'ovh': showNewPostPopOver}">
+	<div class="user-info">
+		<span *ngIf="loaded && !error" class="userprofimgcont">
+			<img [src]="userProfImage" alt="user_image">
+		</span>
+		<span class="userprofname">{{name}}<br>
+			<span class="usr-socials" *ngIf="loaded && !error">
+				<span><img src="assets/images/newones/fnew.svg" (click)="OpenSocialLinksInAppBrowser(data.social_links.fb, 'https://www.facebook.com/')"></span>
+				<span><img src="assets/images/newones/tnew.svg" (click)="OpenSocialLinksInAppBrowser(data.social_links.tw, 'https://twitter.com/')"></span>
+				<span><img src="assets/images/newones/inew.svg" (click)="OpenSocialLinksInAppBrowser(data.social_links.insta, 'https://www.instagram.com/')"></span>
+				<span><img src="assets/images/newones/ynew.svg" (click)="OpenSocialLinksInAppBrowser(data.social_links.yt, 'https://www.youtube.com/')"></span>
+			</span>
+		</span>
+	</div>
+	<div class="newpost">
+		<span class="dashicon-cont">
+			<img src="assets/images/new_icons/svg/post-icon.svg" class="dash_icons" (click)="showNewPostPopOver=true">
+		</span><span (click)="showNewPostPopOver=true">New Post</span>
+	</div>
+	<div [ngClass]="{'newpost-popover': true, 'show': showNewPostPopOver}">
+		<div [ngClass]="{'postloading': true, 'show': postloading}">
+			<img src="assets/images/Infinity-myaccount.svg">
+		</div>
+		
+		
+		<div [froalaEditor]="options" [(froalaModel)]="editorContent"></div>
+		<div class="newpostbtn">
+			<button (click)="cancelPost()" class="cancelpost">Cancel</button>
+			<button (click)="postComment()" class="postnewp">POST</button>
+		</div>
+	</div>
+	<div class="ma-tab-head">
+		<span [ngClass]="{'tab': true, 'active': activeTab == 'Board'}" (click)="activeTab = 'Board';checkInAppEventAttached();">Board</span>
+		<span [ngClass]="{'tab': true, 'active': activeTab == 'Photos'}" (click)="activeTab = 'Photos';checkInAppEventAttached();">Photos</span>
+		<span [ngClass]="{'tab': true, 'active': activeTab == 'Videos'}" (click)="activeTab = 'Videos';checkInAppEventAttached();">Videos</span>
+		<span [ngClass]="{'tab': true, 'active': activeTab == 'Gains'}" (click)="activeTab = 'Gains';checkInAppEventAttached();">Gains</span>
+		<span [ngClass]="{'tab': true, 'active': activeTab == 'Favorites'}" (click)="activeTab = 'Favorites';checkInAppEventAttached();">Favorites</span>
+	</div>
+	<div class="ma-tab-content" [ngSwitch]="activeTab">
+		<div *ngSwitchCase="'Board'" class="board" id="board">
+			<div class="tb-content">FULL BOARD FUNCTIONS COMING IN NEXT APP UPDATE!</div>
+			<p *ngIf="error" class="ma_red">Some error occurred!</p>
+			<div *ngIf="!loaded && !error" class="gifcont ptop">
+				<img src="assets/images/Infinity-myaccount.svg" class="loading-gif">
+			</div>
+			<div class="tb-content" *ngIf="loaded && !error">
+				<div *ngIf="data.board.has_results">
+					<div *ngFor=" let d of data.board.data; let i = index; " class="feedscont">
+						<div class="feed-top">
+							<div class="profimg">
+								<img src="{{d.userimage}}" alt="image">
+							</div>
+							<div class="userinfo">
+								<div>
+									<p class="uname" [routerLink]="['/Authors/0/'+d.username]">{{d.username}}</p>
+									<p class="time">{{d.time}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="feed-copy" [innerHtml]="d.commentText | safeHtml"></div>
+						<div class="like-comnt">
+							<span class="like" [ngClass]="{'likecmnt': true, 'liked': d.userHasLiked}" (click)=" !d.userHasLiked ? likeComment(d.postid, 'LIKE') : likeComment(d.postid, 'UNLIKE')" >{{ d.like!=0?d.like+" ":'' }}Like</span>
+							<span class="reply" (click)="CommentPopupOpen =true; postId=d.postid; replyTo=d.username; CommentText='@'+d.username+' '" ><i class="fa fa-reply"></i> Reply</span>
+						</div>
+						<p class="viewallreplies" (click)="commentsArray[i].open = !commentsArray[i].open">
+							<span *ngIf="!commentsArray[i].open && commentsArray[i].hasChildComments">
+								VIEW ALL REPLIES +
+							</span>
+							<span *ngIf="commentsArray[i].open">
+								VIEW ALL REPLIES -
+							</span>
+						</p>
+						<!-- <div *ngIf="commentsArray[i].open"> -->
+							<div  [ngClass]="{ 'child-comments' : true, 'show' : commentsArray[i].open == true }">
+							<div class="child-comment" *ngFor=" let childcomment of d.childcomment">
+								<div class="member-img">
+									<img class="2" src="{{childcomment.userimage}}" alt="" />
+								</div>
+								<div class="msg-block">
+									<p class="name nmcmnt"><strong [routerLink]="['/Authors/0/'+childcomment.username]">{{childcomment.username}}</strong>
+										<span class="musclehand" [ngClass]="{'likecmnt': true, 'liked': childcomment.userHasLiked }" (click)=" !childcomment.userHasLiked ? likeComment(childcomment.commentid, 'LIKE',true,d.postid) : likeComment(childcomment.commentid, 'UNLIKE',true,d.postid)"></span>
+										<span class="time">
+											{{childcomment.time}}
+										</span>
+									</p>
+									
+									<p class="cmnt">
+										<span [innerHTML]="childcomment.commentText"></span>
+									</p>
+									<div class="like-etc">
+										<span class="like" [ngClass]="{'likecmnt': true, 'liked': childcomment.userHasLiked }" (click)=" !childcomment.userHasLiked ? likeComment(childcomment.commentid, 'LIKE',true,d.postid) : likeComment(childcomment.commentid, 'UNLIKE',true,d.postid)">{{ childcomment.like!=0?childcomment.like + " ":'' }}Like</span>
+										<span class="reply" (click)="openCommentBox(d.postid,childcomment.username);"><i class="fa fa-reply"></i> Reply</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div *ngIf="!data.board.has_results" class="noboardresults">
+					{{data.board.msg}}
+				</div>
+				<div class="newcomment-reply-popup" *ngIf="CommentPopupOpen">
+					<span class="close-pop" (click)="CommentPopupOpen = false">x</span>
+					<div *ngIf="posting" class="gifcont ptop addcomment">
+						<img src="assets/images/Infinity-programs.gif" class="loading-gif">
+					</div>
+					<textarea rows="5" [(ngModel)]="CommentText" placeholder="Your Comment here..." class="newcomtext"></textarea>
+					<button (click)="postCommentReply()" class="addCommentBtn">Comment</button>
+				</div>
+			</div>
+		</div>
+		<div *ngSwitchCase="'Photos'" class="photos">
+			<div class="tb-content">COMING IN NEXT APP UPDATE!</div>
+		</div>
+		<div *ngSwitchCase="'Videos'" class="videos">
+			<div class="tb-content">COMING IN NEXT APP UPDATE!</div>
+		</div>
+		<div *ngSwitchCase="'Gains'" class="gains">
+			<p *ngIf="error" class="ma_red">Some error occurred!</p>
+			<div *ngIf="!loaded && !error" class="gifcont">
+				<img src="assets/images/Infinity-myaccount.svg" class="loading-gif">
+			</div>
+			<div class="tb-content" *ngIf="loaded && !error">
+				<div class="fullw">
+					<span class="flag">Location: {{data.gain.location}}
+						<em class="flag {{data.gain.country}}"></em>
+					</span>
+				</div>
+				<div class="two">
+					<span>Gender: <b>{{data.gain.gender}}</b></span>
+					<span>Hip: <b>{{data.gain.measurement_hip}}</b></span>
+					<span>Arm: <b>{{data.gain.measurement_arm}}</b></span>
+					<span>Neck: <b>{{data.gain.measurement_neck}}</b></span>
+					<span>Age: <b>{{data.gain.age}}</b></span>
+					<span>Waist: <b>{{data.gain.measurement_waist}}</b></span>
+					<span>Chest: <b>{{data.gain.measurement_chest}}</b></span>
+					<span>Calve: <b>{{data.gain.measurement_calve}}</b></span>
+					<span>Weight: <b>{{data.gain.weight}}</b></span>
+					<span>Goal: <b>{{data.gain.goal}}</b></span>
+					<span>Shoulder: <b>{{data.gain.measurement_shoulder}}</b></span>
+					<span>Thigh: <b>{{data.gain.measurement_thigh}}</b></span>
+					<span>Forearm: <b>{{data.gain.measurement_forearm}}</b></span>
+					<span>Height: <b>{{data.gain.height}}</b></span>
+					<span>Body Fat: <b>{{data.gain.measurement_bf}}</b></span>
+				</div>
+			</div>
+		</div>
+		<div *ngSwitchCase="'Favorites'" class="favorites">
+			<!-- <div class="tb-content">COMING IN NEXT APP UPDATE!</div> -->
+			<div *ngIf="appService.favorites">
+				<div *ngIf="appService.favorites.programs && getuserPlatinum()" class="favorite-items programs">
+				 	<h2 class="fav-title">Programs</h2>
+				 	<div class="card" *ngFor="let program of appService.favorites.programs">
+				 		<div class="inner">
+					 		<a [routerLink]="['/Programs/'+program.app_url+'/'+program.recordLinkID+'/'+program.dbTable+'/fav']">
+					 		 <div class="lessmarg">
+					 		 	<span class="image-box"><img src="{{program.img}}" alt=""></span>
+						 		<h2 *ngIf="program.item_title && program.item_title.length > 50" >{{program.item_title | slice : 0: 50	}}</h2>
+						 		<h2 *ngIf="program.item_title && program.item_title.length < 50">{{program.item_title}}</h2>
+					 		 </div>
+						 	</a>
+						 	<app-like-button [type]="program.fav_item_type" [item_id]="program.fav_item_id"></app-like-button>
+				 		</div>
+				 	</div>
+				 </div>
+				<div *ngIf="appService.favorites.routines && getuserPlatinum()" class="favorite-items routines">
+				 	<h2 class="fav-title">Routines</h2>
+				 	<div class="card" *ngFor="let routine of appService.favorites.routines">
+				 		<div class="inner">
+					 		<a [routerLink]="['/Workouts/'+routine.fav_item_id+'/routines/fav']">
+					 		 <div class="lessmarg">
+					 		 	<span class="image-box"><img src="{{routine.img}}" alt=""></span>
+						 		<h2 *ngIf="routine.item_title && routine.item_title.length > 50" >{{routine.item_title | slice : 0: 50	}}</h2>
+						 		<h2 *ngIf="routine.item_title && routine.item_title.length < 50">{{routine.item_title}}</h2>
+					 		 </div>
+						 	</a>
+						 	<app-like-button [type]="routine.fav_item_type" [item_id]="routine.fav_item_id"></app-like-button>
+				 		</div>
+				 	</div>
+				 </div>
+				 <div *ngIf="appService.favorites.exercises && getuserPlatinum()" class="favorite-items exercises">
+				 	<h2 class="fav-title">Exercise</h2>
+				 	<div class="card" *ngFor="let exercise of appService.favorites.exercises">
+				 		<div class="inner">
+					 		<a [routerLink]="['/Workouts/'+exercise.fav_item_id+'/exercise/fav']">
+					 		 <div class="lessmarg">
+					 		 	<span class="image-box"><img src="{{exercise.img}}" alt=""></span>
+						 		<h2 *ngIf="exercise.item_title && exercise.item_title.length > 50" >{{exercise.item_title | slice : 0: 50	}}</h2>
+						 		<h2 *ngIf="exercise.item_title && exercise.item_title.length < 50">{{exercise.item_title}}</h2>
+					 		 </div>
+						 	</a>
+						 	<app-like-button [type]="exercise.fav_item_type" [item_id]="exercise.fav_item_id"></app-like-button>
+				 		</div>
+				 	</div>
+				 </div>
+				 <div *ngIf="appService.favorites.recipes" class="favorite-items recipes">
+				 	<h2 class="fav-title">Recipes</h2>
+				 	<div class="card" *ngFor="let recipe of appService.favorites.recipes" >
+				 		<div class="inner">
+					 		<a [routerLink]="['/Recipes/'+recipe.fav_item_id+'/fav']">
+					 		 <div class="lessmarg">
+					 		 	<span class="image-box"><img src="{{recipe.img}}" alt=""></span>
+					 		 	<h2 *ngIf="recipe.item_title && recipe.item_title.length > 50" >{{recipe.item_title | slice : 0: 50	}}</h2>
+					 		 	<h2 *ngIf="recipe.item_title && recipe.item_title.length < 50">{{recipe.item_title}}</h2>
+					 		 </div>
+						 	</a>
+						 	<app-like-button [type]="recipe.fav_item_type" [item_id]="recipe.fav_item_id"></app-like-button>
+				 		</div>
+				 	</div>
+				 </div>
+				 <div *ngIf="appService.favorites.article" class="favorite-items article">
+				 	<h2 class="fav-title">Articles</h2>
+				 	<div class="card" *ngFor="let articl of appService.favorites.article">
+				 		<div class="inner">
+					 		<a [routerLink]="['/Articles/'+articl.fav_item_id+'/fav']">
+					 		 <div class="lessmarg">
+					 		 	<span class="image-box"><img src="{{articl.img}}" alt=""></span>
+						 		<h2 *ngIf="articl.item_title && articl.item_title.length > 50">{{articl.item_title | slice : 0: 50	}}</h2>
+						 		<h2 *ngIf="articl.item_title && articl.item_title.length < 50" >{{articl.item_title}}</h2>
+					 		 </div>
+						 	</a>
+						 	<app-like-button [type]="articl.fav_item_type" [item_id]="articl.fav_item_id"></app-like-button>
+				 		</div>
+				 	</div>
+				 </div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,52 @@
+.programs-select {
+    width: 100%;
+    padding: 10px;
+    color: #d7d7d7;
+    outline: 0 none;
+    border-radius: 0;
+    background: transparent;
+    font: 22px Open Sans;
+    border: 0 none;
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: none;
+}
+.selcont-inner {
+    border:  1px solid #d7d7d7;
+    border-radius: 3px;
+    width: 100%;
+    position: relative;
+}
+
+img.select-arrow {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    z-index: -1;
+}
+.noresults{
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 14px;
+    color: #4a4a4a;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+}
+p, h2, div, span, a{
+    font-family: Open Sans;
+}
+.get-btn .get-btn-in{
+    float: right;
+}
+
+.programbtn .get-btn-in{
+    padding-left: 15px!important;
+    padding-right: 15px!important;
+}
+.programbtn .get-btn app-like-button{
+    font-size: 25px!important;
+}

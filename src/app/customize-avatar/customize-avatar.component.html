@@ -1,0 +1,15 @@
+<div class="wrap yellow pagewrapper">
+	<div class="current-avatar"></div>
+	<div class="customize-here">
+		<div *ngFor=" let option of customizeAvOps; let i = index; " [ngClass]="{'option-cat': true, 'show': option.visible }">
+			<!-- outer item -->
+			<div class="cat-parent" [ngStyle]="{ 'background-image': 'url(' + option.Items[0].image + ')' }" (click)="showOverlay(i);">
+				<span class="opt-title">{{option.Title}}</span>
+			</div>
+			<!-- child items overlay -->
+			<div class="cat-items">
+				<div *ngFor="let item of option.Items; let j = index;" [ngStyle]="{ 'background-image': 'url(' + item.image + ')' }" [ngClass]="{'cat-item': true, 'grey': item.unlock == 'false'}" (click)="item.unlock ? showOverlay(i) : '';"></div>
+			</div>
+		</div>
+	</div>
+</div>

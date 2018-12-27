@@ -1,0 +1,40 @@
+<div class="wrap cyan pagewrapper">
+    <div class="page-title">
+        <h1>Programs</h1>
+    </div>
+    <div class="card">
+        <div class="inner">
+            <h2>Beginner’s Guide</h2>
+            <p>This guide will walk you through everything you need for a great workout routine, from warm-up to stretching, strength to conditioning.</p>
+        </div>
+    </div>
+    <div class="card accordian" *ngFor="let d of data; let i = index; ">
+        <h2 class="accor" (click)="accordion(i)" [ngClass]="{'open': dataAccordionOpen[i]}">{{d.heading}}
+            <span class="icon-arrow">
+                <img src="assets/images/double-down.svg" class="down" alt="">
+                <img src="assets/images/double-up.svg" class="up" alt="">
+            </span>
+        </h2>
+        <div class="guide">
+            <h3>{{d.day}}</h3>
+            <ul>
+                <li>
+                    <ul class="clearfix">
+                        <li class="excercise">{{d.workoutData.head.exercise}}</li>
+                        <li class="set">{{d.workoutData.head.sets}}</li>
+                        <li class="rep">{{d.workoutData.head.reps}}</li>
+                        <li class="vid">{{d.workoutData.head.video}}</li>
+                    </ul>
+                </li>
+                <li *ngFor="let data of d.workoutData.wdata; let j = index; ">
+                    <ul class="clearfix">
+                        <li class="excercise">{{data.exercise}}</li>
+                        <li class="set">{{data.sets}}</li>
+                        <li class="rep">{{data.reps}}</li>
+                        <li class="vid"><a href="{{nullAnchor}}"><img src="assets/images/vid.svg" alt=""></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="wrap green pagewrapper">
+    <div class="page-title">
+        <span class="dashicon-cont"><img src="assets/images/new_icons/svg/recipes-icon.svg" alt="" class="dash_icons"></span>
+        <h1>Recipes<span><img src="assets/images/search_svg_icon.svg" class="magnifying-glass" (click)="toggleSearchInput();"><input type="text" name="article" placeholder="Search" [(ngModel)]="searchArticle" (ngModelChange)="articlesSearch($event)" [ngClass]="{'articles-searchinp': true, 'show': showSearchInput}"></span></h1>
+    </div>
+    <div class="card" *ngFor="let recipe of recipes; let i = index; ">
+        <div class="inner">
+            <app-new-content-badge [colorName]="'green'" [type]="'recipes'" [item_id]="recipe.id"></app-new-content-badge>
+            <h2>{{recipe.heading}}</h2>
+            <p class="lessmarg"><span class="image-box"><img src="{{recipe.image}}" alt=""></span>{{recipe.description}}</p>
+            <div class="get-btn nomargin text-right">
+                <app-like-button [type]="'recipes'" [item_id]="recipe.id"></app-like-button>
+                <a [routerLink]="['/Recipes', recipe.id ]" class="lesspd">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div *ngIf=" allRecipesLoaded == false && noResults == ''" class="gifcont">
+        <img src="assets/images/Infinity-recipes.gif" alt="" class="loading-gif" />
+    </div>
+    <p *ngIf="allRecipesLoaded" class="nomore-articles">No more recipes!</p>
+    <p *ngIf="noResults != ''" class="noresults">{{noResults}}</p>
+</div>

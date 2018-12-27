@@ -1,0 +1,141 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/cybertron/Desktop/angular/testMuscular/MuscularStrengthApp/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bn/values-bn.xml",
+            "map": [
+                {
+                    "source": "/home/cybertron/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/536ab3f29a2474e830689c50da7b67c6/res/values-bn/values-bn.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "45",
+                        "startColumns": "4",
+                        "startOffsets": "5537",
+                        "endColumns": "100",
+                        "endOffsets": "5633"
+                    }
+                },
+                {
+                    "source": "/home/cybertron/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/4ef1a8c6c2030daa262e5abc83f95155/res/values-bn/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,352,543,669,778,974,1094,1232,1361,1565,1672,1859,1985,2178,2352,2438,2531",
+                        "endColumns": "106,190,125,108,195,119,137,128,203,106,186,125,192,173,85,92,114",
+                        "endOffsets": "351,542,668,777,973,1093,1231,1360,1564,1671,1858,1984,2177,2351,2437,2530,2645"
+                    },
+                    "to": {
+                        "startLines": "25,26,27,28,29,30,31,32,34,35,36,37,38,39,40,41,42",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2706,2817,3008,3138,3251,3447,3571,3713,4057,4261,4372,4559,4689,4882,5060,5150,5247",
+                        "endColumns": "110,190,129,112,195,123,141,132,203,110,186,129,192,177,89,96,118",
+                        "endOffsets": "2812,3003,3133,3246,3442,3566,3708,3841,4256,4367,4554,4684,4877,5055,5145,5242,5361"
+                    }
+                },
+                {
+                    "source": "/home/cybertron/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.26.0.aar/dfeff76ea9b4f1c0094e943785624f6e/res/values-bn/values-bn.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,214,354,490,603,691,776,853,946,1039,1159,1270,1365,1460,1571,1711,1792,1880,2075,2169,2268,2387,2495,2656",
+                        "endColumns": "158,139,135,112,87,84,76,92,92,119,110,94,94,110,139,80,87,194,93,98,118,107,160,66",
+                        "endOffsets": "209,349,485,598,686,771,848,941,1034,1154,1265,1360,1455,1566,1706,1787,1875,2070,2164,2263,2382,2490,2651,2718"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,44",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,264,404,540,653,741,826,903,996,1089,1209,1320,1415,1510,1621,1761,1842,1930,2125,2219,2318,2437,2545,5470",
+                        "endColumns": "158,139,135,112,87,84,76,92,92,119,110,94,94,110,139,80,87,194,93,98,118,107,160,66",
+                        "endOffsets": "259,399,535,648,736,821,898,991,1084,1204,1315,1410,1505,1616,1756,1837,1925,2120,2214,2313,2432,2540,2701,5532"
+                    }
+                },
+                {
+                    "source": "/home/cybertron/.gradle/caches/transforms-1/files-1.1/firebase-messaging-17.3.4.aar/3145f07a3d9b425f07940a202cda05df/res/values-bn/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "205",
+                        "endColumns": "99",
+                        "endOffsets": "304"
+                    },
+                    "to": {
+                        "startLines": "43",
+                        "startColumns": "4",
+                        "startOffsets": "5366",
+                        "endColumns": "103",
+                        "endOffsets": "5465"
+                    }
+                },
+                {
+                    "source": "/home/cybertron/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.1.0.aar/8c11fc2788876b3c46e037f766c8bf1e/res/values-bn/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "210",
+                        "endOffsets": "457"
+                    },
+                    "to": {
+                        "startLines": "33",
+                        "startColumns": "4",
+                        "startOffsets": "3846",
+                        "endColumns": "210",
+                        "endOffsets": "4052"
+                    }
+                },
+                {
+                    "source": "/home/cybertron/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-16.0.6.aar/a707d531ba44491a2dcba69cae10ad15/res/values-bn/values.xml",
+                    "from": {
+                        "startLines": "4,5,6",
+                        "startColumns": "0,0,0",
+                        "startOffsets": "208,307,425",
+                        "endColumns": "98,117,93",
+                        "endOffsets": "306,424,518"
+                    },
+                    "to": {
+                        "startLines": "46,47,48",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "5638,5741,5863",
+                        "endColumns": "102,121,97",
+                        "endOffsets": "5736,5858,5956"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/cybertron/Desktop/angular/MuscularStrength/MuscularStrengthApp/D:\\Simar\\projects\\angular\\MuscularStrength\\MuscularStrengthApp\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bn\\values-bn.xml",
+            "map": [
+                {
+                    "source": "/home/cybertron/Desktop/angular/MuscularStrength/MuscularStrengthApp/C:\\Users\\cybertron\\.gradle\\caches\\transforms-1\\files-1.1\\facebook-android-sdk-4.26.0.aar\\fdb6a5ef60b804042aef24115f1479ea\\res\\values-bn\\values-bn.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,214,354,490,603,691,776,853,946,1039,1159,1270,1365,1460,1571,1711,1792,1880,2075,2169,2268,2387,2495,2656",
+                        "endColumns": "158,139,135,112,87,84,76,92,92,119,110,94,94,110,139,80,87,194,93,98,118,107,160,66",
+                        "endOffsets": "209,349,485,598,686,771,848,941,1034,1154,1265,1360,1455,1566,1706,1787,1875,2070,2164,2263,2382,2490,2651,2718"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/cybertron/Desktop/angular/MuscularStrength/MuscularStrengthApp/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bn/values-bn.xml",
+            "map": [
+                {
+                    "source": "/home/cybertron/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.26.0.aar/69d3e919a872ec3e16b3882c29609c91/res/values-bn/values-bn.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,214,354,490,603,691,776,853,946,1039,1159,1270,1365,1460,1571,1711,1792,1880,2075,2169,2268,2387,2495,2656",
+                        "endColumns": "158,139,135,112,87,84,76,92,92,119,110,94,94,110,139,80,87,194,93,98,118,107,160,66",
+                        "endOffsets": "209,349,485,598,686,771,848,941,1034,1154,1265,1360,1455,1566,1706,1787,1875,2070,2164,2263,2382,2490,2651,2718"
+                    }
+                }
+            ]
+        }
+    ]
+}

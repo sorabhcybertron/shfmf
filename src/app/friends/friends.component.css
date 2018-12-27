@@ -1,0 +1,182 @@
+.friendspage .friends-content {
+    padding: 20px;
+    float: left;
+    width: 100%;
+}
+.friendslist {
+    height: calc(100vh - 182px);
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    left: 0;
+    padding: 0 20px;
+    overflow: auto;
+}
+.friendslist div {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+.friendslist h3 {
+    margin: 0;
+    padding: 8px 20px;
+    /*float: left;
+    width: 100%;*/
+    border-radius: 3px;
+    font: 25px/1 Open Sans;
+    /*background: rgba(0, 0, 0, 0.05);*/
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: #f2f2f2;
+    z-index: 1111;
+    border: 0;
+    margin: 0px -20px;
+    box-shadow: -4px -3px 0 #fff;
+}
+.friendspage .ma-tab-head .tab {
+	width: 25%;
+    font: 12px/1 Open Sans;
+    word-wrap: break-word;
+}
+.friendspage .ma-tab-head {
+    padding: 1% 0;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+.friendspage .ma-tab-head .tab {
+    float:  left;
+    padding: 8px 4px;
+    box-sizing:  border-box;
+    text-align:  center;
+    border: 1px solid #d7d7d7;
+    font-size: 0.7em;
+    transition: all 0.4s ease;
+}
+.friendspage .ma-tab-head .tab:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.friendspage .ma-tab-head .tab:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.friendspage .ma-tab-head .tab:not(:first-child){
+    border-left: none;
+}
+.friendspage .ma-tab-head .tab.active {
+    color: #fff;
+    background: #292929;
+    border-color: #292929;
+}
+.friendspage .ma-tab-content {
+    padding: 15px 0 0;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+.friendslist .card{
+    padding: 15px 0;
+    border-top: 1px solid #d7d7d7;
+}
+.friendslist .friends-noresults {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    color: red;
+}
+.friendslist .card .inner{
+    padding-bottom: 0px;
+    border: none;
+}
+.friendslist .card .inner .upimg {
+	height: 45px;
+	width: 45px;
+	border-radius: 50%;
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.friendslist .card .inner .upimg img {
+	max-width: 100%;
+	max-height: 100%;
+}
+.friendslist .card .inner .upname {
+	padding-left: 3%;
+	font: 16px Open Sans;
+	display:  inline-block;
+	vertical-align:  middle;
+	width: calc(100% - 120px);
+}
+.friendslist .card .inner {
+	position: relative;
+	display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.friendslist .card.req .inner {
+    display: block !important;
+}
+.friendslist .card.req .inner .upimg {
+	float: left;
+}
+.friendslist .accdeny-actions {
+    width: 100%;
+    padding: 3% 0 0 3%;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.friendslist .accdeny-actions.dim {
+	opacity: 0.5;
+}
+.friendslist .card.req .acceptdeny {
+    width: calc(100% - 45px);
+    float: left;
+}
+.accdeny.accept {
+    color: green;
+    margin-right: 15px;
+}
+.accdeny.deny {
+    color: red;
+}
+.accdeny-actions span {
+    font: 13px Open Sans;
+}
+.friendslist .card.req .inner .upname {
+    width: 100%;
+}
+.friendslist .card .inner a {
+	text-decoration:  none;
+	color: #097aff;
+	display: inline-block;
+}
+.friendspage .loadingerror{
+	color: red;
+	text-align: center;
+	font: 18px Open Sans;
+	float: left;
+	width: 100%;
+}
+.friendspage .gifcont {
+	text-align: center;
+}
+.friendspage .gifcont.ptop {
+	padding-top: 44px;
+}
+.friendspage .loading-gif {
+	display: inline-block;
+	width: 80px;
+	height: auto;
+}
+.friendslist .unfriendme {
+    position: absolute;
+    top: calc(50% - 6px);
+    right: 0;
+    font: 12px Open Sans;
+	color: red;
+}
+.friendslist .unfriendme.unblock {
+    color: green;
+}

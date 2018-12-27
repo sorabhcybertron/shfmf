@@ -1,0 +1,207 @@
+.images img{
+    cursor: pointer;
+    width: 100%;
+    padding: 1%;
+}
+.imageoverlay {
+    display: none;
+    position: fixed;
+    top: 87px;
+    left: 0;
+    height: calc(100% - 87px);
+    width: 100%;
+    background: rgba(0,0,0,0.97);
+    z-index: 1;
+}
+.imageoverlay.show{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.imageoverlay img{
+    max-height: 100%;
+}
+.overlay-close{
+    color: #fff;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+.routine-descrip {
+    font-size: 14px;
+    text-align: center;
+}
+/deep/ .comment{
+   width: 100%;
+   overflow: auto;
+}
+.download-routine{
+    background: #ee1e24;
+    background: -moz-linear-gradient(top, #ee1e24 1%, #dc1218 100%);
+    background: -webkit-linear-gradient(top, #ee1e24 1%,#dc1218 100%);
+    background: linear-gradient(to bottom, #ee1e24 1%,#dc1218 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee1e24', endColorstr='#dc1218',GradientType=0 );
+    border: solid #a50e13 1px;
+}
+.download-exercise{
+    background: #19b810;
+    background: -moz-linear-gradient(top, #19b810 1%, #147c11 100%);
+    background: -webkit-linear-gradient(top, #19b810 1%,#147c11 100%);
+    background: linear-gradient(to bottom, #19b810 1%,#147c11 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#19b810', endColorstr='#147c11',GradientType=0 );
+    border: solid #245e0a 1px;
+}
+.resource-downloadbtn {
+    display: inline-block;
+    line-height: 30px;
+    padding: 2px 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-right: 5px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px #dedede;
+    text-decoration: none!important;
+    color: rgba(255, 255, 255, 0.98)!important;
+    /*font-size: 13pt;*/
+    /*may */
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+}
+.resource-downloadbtn.cal{
+    /*color: #428bca !important;*/
+    /* 3 may */
+    color: #fff!important;
+    background: #ffcb00;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #9e8c45),to(#ffcb00));
+    background: linear-gradient(to bottom,#9e8c45 1%,#ffcb00 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee1e24', endColorstr='#dc1218',GradientType=0 );
+    border: solid #ffcb00 1px;
+}
+span.resource-downloadbtn.cal .fa{
+    margin-right: 5px;
+    color: red;
+}
+.resource-downloadbtn img {
+    float: left;
+    margin-right: 4px;
+    width: 15px;
+    height:  15px !important;
+}
+/deep/ .routine-descrip * {
+    display: none;
+}
+/deep/ .specialDownload {
+    display: inline-block;
+    border: solid #efefef 1px;
+    padding: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0px 1px 4px rgb(226, 226, 226);
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 12px;
+    /*width: 100%;*/
+    box-sizing: border-box;
+    text-align: center;
+    color: #428bca;
+}
+/deep/ .specialDownload a {
+    color: #428bca;
+    display: inline-block;
+    text-decoration: none;
+}
+.goal-primary, .goal-secondary {
+    border-bottom: solid #e5e5e5 1px;
+    width: 100%;
+    float: left;
+}
+span span.goals-pr, span span.goals-sec {
+    background: #d9d8d8;
+    display: inline-block;
+    padding: 0 8px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    color: #3a3a3a;
+    font-size: 9pt;
+    text-decoration: none;
+}
+.down-btns {
+    margin-bottom: 15px;
+}
+p span.inlbl {
+    width: 30%;
+    float: left;
+    margin-bottom: 5px;
+}
+p span.inlbl-des {
+    width: 70%;
+    float: left;
+    margin-bottom: 5px;
+}
+.goal-diff-level {
+    margin-left: 6px;
+    padding: 2px 2px;
+    background-color: #91a3c6;
+    line-height: 19px;
+    font-size: 7pt;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    float: right;
+}
+/* Workout Single */
+.workouts-back {
+    color: #ffcb00;
+    text-decoration: none;
+    padding: 5px 0;
+    display: inline-block;
+    font-size: 20px;
+    font-family: Open Sans;
+    margin-top: 10px;
+    float: right;
+}
+.prog-routine .about-author .content, .prog-routine .member-comments h3, .prog-routine .member-comments .content {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 360px){
+    .goal-diff-level {
+        padding: 2px 8px;
+        font-size: 9pt;
+    }
+}
+
+/*3 - may*/
+/deep/ .like-etc .like.likecmnt.liked {
+    color: #e29236;
+}
+/deep/ .page-title.ptop{
+    word-break: initial!important;
+}
+.routine-details .down-btns>span {
+    display: inline-block;
+    vertical-align: middle;
+}
+@media (max-width: 420px){
+    /deep/ .routine-details .down-btns {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

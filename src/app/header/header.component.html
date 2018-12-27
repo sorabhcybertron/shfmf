@@ -1,0 +1,74 @@
+<header class="header clearfix">
+    <div id="ham-nav" class="ham-nav" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="menu-cont" [ngClass]="{'open': menuOpen }">
+        <div class="header-top">
+            <span class="hi-user">
+                <span class="borderbottom">
+                    Hi <span class="uppercase">{{username}}</span>
+                </span>
+            </span>
+            <span class="close-menu" (click)="closeMenu()">&#x2715;</span>
+        </div>
+        <div class="menu">
+            <ul class="clearfix">
+                <!-- <li class="green"><a [routerLink]="['/Dashboard']" (click)="closeMenu()"><h2>Dashboard</h2></a></li>
+                <li class="blue"><a [routerLink]="['/Community']" (click)="closeMenu()"><h2>Community</h2></a></li>
+                <li class="cyan"><a [routerLink]="['/Programs']" (click)="closeMenu()"><h2>Programs</h2></a></li>
+                <li class="yellow"><a [routerLink]="['/Workouts']" (click)="closeMenu()"><h2>Workouts</h2></a></li>
+                <li class="yellow"><a [routerLink]="['/Lifts']" (click)="closeMenu()"><h2>Lifts</h2></a></li>
+                <li class="orange"><a [routerLink]="['/Exclusives']" (click)="closeMenu()"><h2>Exclusives</h2></a></li>
+                <li class="crimson"><a [routerLink]="['/Articles']" (click)="closeMenu()"><h2>Articles</h2></a></li>
+                <li class="green"><a [routerLink]="['/Recipes']" (click)="closeMenu()"><h2>Recipes</h2></a></li>
+                <li class="cyan"><a [routerLink]="['/ProgramsDetail']" (click)="closeMenu()"><h2>ProgramsDetail</h2></a></li>
+                <li class="blue"><a [routerLink]="['/CustomizeAvatar']" (click)="closeMenu()"><h2>Customize Avatar</h2></a></li> -->
+                <li>
+                    <a [routerLink]="['/Programs']" (click)="closeMenu()"><span class="dashicon-cont"><img src="assets/images/new_icons/svg/programs-icon.svg" alt="" class="dash_icons"></span><h2>Programs  <span class="new-content-count blue" *ngIf="getCount('programs')">{{getCount('programs')}}</span></h2></a>
+                </li>
+                <li>
+                    <a [routerLink]="['/Workouts']" (click)="closeMenu()"><span class="dashicon-cont"><img src="assets/images/new_icons/svg/workouts-icon.svg" alt="" class="dash_icons"></span><h2>Workouts <span class="new-content-count yellow" *ngIf="getCount('workouts')">{{getCount('workouts')}}</span></h2></a>
+                </li>
+                <li>
+                    <a [routerLink]="['/Articles']" (click)="closeMenu()"><span class="dashicon-cont"><img src="assets/images/new_icons/svg/article-icon.svg" alt="" class="dash_icons"></span><h2>Articles <span class="new-content-count red" *ngIf="getCount('articles')">{{getCount('articles')}}</span></h2></a>
+                </li>
+                <li>
+                    <a [routerLink]="['/Recipes']" (click)="closeMenu()"><span class="dashicon-cont"><img src="assets/images/new_icons/svg/recipes-icon.svg" alt="" class="dash_icons"></span><h2>Recipes <span class="new-content-count green" *ngIf="getCount('recipes')">{{getCount('recipes')}}</span></h2></a>
+                </li>
+                <li>
+                    <a [routerLink]="['/MealPlan']" (click)="closeMenu()"><span class="dashicon-cont"><img src="assets/images/new_icons/svg/meal-plan-icon.svg" alt="" class="dash_icons"></span><h2>Meal Plan</h2></a>
+                </li>
+                <li>
+                    <a [routerLink]="['/Dashboard']" (click)="closeMenu()"><span class="dashicon-cont"><img src="assets/images/new_icons/svg/dashboard.png" alt="" class="dash_icons"></span><h2>Dashboard</h2></a>
+                </li>
+                <hr class="menu-separator">
+                <li>
+                    <a href="javascript:void(0);" (click)="logoutUser()"><span class="dashicon-cont"><img src="assets/images/new_icons/svg/logout.png" class="dash_icons"></span><h2>Logout</h2></a>
+                </li>
+                <li>
+                    <a [routerLink]="['/MyAccount']" (click)="closeMenu()"><span class="dashicon-cont"><img src="assets/images/new_icons/svg/myaccount.png" class="dash_icons" style="width: 29.7px; height: 29.7px"></span><h2>My Account</h2></a>
+                </li>
+                <li>
+                    <a [routerLink]="['/MyProfile']" (click)="closeMenu()"><span class="dashicon-cont"><img src="assets/images/new_icons/svg/user-icon.svg" class="dash_icons"></span><h2>My Profile</h2></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="menushade" [ngClass]="{'visible': menuOpen }" (click)="closeMenu()"></div>
+    <div class="logo">
+        <a [routerLink]="['/Dashboard']"><img src="assets/images/logo.svg" alt=""></a>
+    </div>
+    <div class="right-nav">
+        <ul>
+            <li>
+                <a href="javascript:void(0);"><img src="assets/images/user.svg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><img src="assets/images/not-red.svg" alt=""></a>
+            </li>
+        </ul>
+    </div>
+</header>

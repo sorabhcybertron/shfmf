@@ -1,0 +1,662 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+/* Begin PBXBuildFile section */
+		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
+		0532120ACEFC4B5EAC195A3D /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = F26CA1598E064436B547F99F /* SocialSharing.m */; };
+		1393F7C05CC240F7843D1646 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 851537D256E84991845BF77A /* CDVStatusBar.m */; };
+		14D01A2404274ED9ADB0248C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9C0F3FB13A4EAA909CF961 /* Bolts.framework */; };
+		1BB4179EC466479EB05F910B /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = B97C21624BD34C24B2F5BB43 /* CDVSplashScreen.m */; };
+		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; };
+		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
+		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
+		34773519B9A24063A886694C /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 162D9EDE9CCF44348E3D55A1 /* CDVDevice.m */; };
+		520D007D2E5D4CAF8995735B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BCF0443572453F87F25854 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5DA950C271944220A8AFDF1E /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90D422C54A543E4BE4EB85B /* FBSDKShareKit.framework */; };
+		67CCA9E315CA467988C9B8F1 /* NSString+SSURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A69648394F432495B9A32D /* NSString+SSURLEncoding.m */; };
+		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
+		863818101AEC4AA8A63437FE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54CCF5A3396A4245A499726B /* FBSDKCoreKit.framework */; };
+		9A76AA0823114AA9B6A636DC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5EFD9E224BC4912833BBBC2 /* FBSDKLoginKit.framework */; };
+		AAD7ABC51D454B26802FAEC1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68859FBB9BC442C7B85D4BF2 /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C2DD6DC7F9054CF88F56B258 /* FacebookConnectPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 052A553156204586AD47957E /* FacebookConnectPlugin.m */; };
+		C5AA6122BE494C4886AD7DE5 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6EA93029E649BC9C346DEF /* CDVInAppBrowser.m */; };
+		E1D2E999BBE2443BBF35FE25 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 82ACE58961BC4EDFA8659FC0 /* CDVViewController+SplashScreen.m */; };
+		B1B5DBEE0469420FAB0811A8 /* AppDelegate+FirebasePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE45D42B7A14A0CAB83A854 /* AppDelegate+FirebasePlugin.m */; };
+		957C83C63F1149B0B58BC243 /* FirebasePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = B74F4DD86D42470DAF09CFAA /* FirebasePlugin.m */; };
+		ACA680BF044A49AEAD7DB9AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D14C8E275284BAE818C43DB /* GoogleService-Info.plist */; };
+		D8A08F19EC31424FBE406795 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B1BFDE7F374CCDA5B8473F /* Crashlytics.framework */; };
+		8F5AE057B5C84E31954AD280 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E5BCD779CE4EEDA50469E4 /* Fabric.framework */; };
+		5E23DF21602A43D4BFAC298B /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DCDCA61C7F40128BDB56C7 /* GoogleAppMeasurement.framework */; };
+		F53B66A5F54A4E5A9C1C2260 /* MeasurementNanoPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980AFDB6DD1E4487A8EA0595 /* MeasurementNanoPB.framework */; };
+		168C3D164FD344F79175D53C /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13CB666722F4615B9F57E33 /* FirebaseCore.framework */; };
+		3E85E335A92F4A9DB31867E5 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401821078340460A94A3A880 /* FirebaseAnalytics.framework */; };
+		6811BF56F55B4C47BB203667 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC486B079A84866836D9CB3 /* GoogleUtilities.framework */; };
+		4A11B7C4693D40BA9B353C01 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5053C6F4C1B64582B1A854E4 /* nanopb.framework */; };
+		4EECE31F47494F4587A365D9 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D98C283F7634F81A25F27D8 /* FirebaseInstanceID.framework */; };
+		22FB8D5E485C458CA63B6A1E /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F4BE3BEAEF4F46B97B8825 /* FirebaseCoreDiagnostics.framework */; };
+		A6C11E969F8E4DDEB87248EB /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDA7020A6B04FBDBB18F966 /* GTMSessionFetcher.framework */; };
+		85EE1780B1A441889740CDD5 /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B49CD916F5421CAC20E1E9 /* FirebaseAuth.framework */; };
+		194C59B1EAA54D0BBC9A2329 /* FirebaseMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74B9BDAD90466ABF7681DD /* FirebaseMessaging.framework */; };
+		B233F142291A4ABAA16EE6A7 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48122D82D1A44B49823F16F0 /* GoogleToolboxForMac.framework */; };
+		309BB72A6F1942C291C28388 /* FirebasePerformance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D81C86355A405194C647ED /* FirebasePerformance.framework */; };
+		9FBB9FD4092341E58DB87A34 /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD84A6909734DDF9A99FBE5 /* Protobuf.framework */; };
+		17C98E2CCD0746BBA5425872 /* FirebaseRemoteConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAB4B19C92F4CF18D451F78 /* FirebaseRemoteConfig.framework */; };
+		36B2C45A5B1D4FE3954AFEB8 /* FirebaseABTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5471CAC9414C38ABD507F0 /* FirebaseABTesting.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0946A452212C5BE40063E92D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib/CordovaLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C0C01EB21E3911D50056E6CB;
+			remoteInfo = Cordova;
+		};
+		301BF534109A57CC0062928A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib/CordovaLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = CordovaLib;
+		};
+		301BF550109A68C00062928A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib/CordovaLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = CordovaLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0207DA571B56EA530066E2B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MuscularStrength/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		052A553156204586AD47957E /* FacebookConnectPlugin.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = FacebookConnectPlugin.m; path = "cordova-plugin-facebook4/FacebookConnectPlugin.m"; sourceTree = "<group>"; };
+		162D9EDE9CCF44348E3D55A1 /* CDVDevice.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; };
+		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* MuscularStrength.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuscularStrength.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		301BF52D109A57CC0062928A /* CordovaLib/CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
+		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
+		302D95EE14D2391D003F00A1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		302D95EF14D2391D003F00A1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		302D95F014D2391D003F00A1 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		3047A50F1AB8059700498E2A /* build-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-debug.xcconfig"; path = "cordova/build-debug.xcconfig"; sourceTree = SOURCE_ROOT; };
+		3047A5101AB8059700498E2A /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-release.xcconfig"; path = "cordova/build-release.xcconfig"; sourceTree = SOURCE_ROOT; };
+		3047A5111AB8059700498E2A /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = build.xcconfig; path = cordova/build.xcconfig; sourceTree = SOURCE_ROOT; };
+		32CA4F630368D1EE00C91783 /* MuscularStrength-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MuscularStrength-Prefix.pch"; sourceTree = "<group>"; };
+		3C9C0F3FB13A4EAA909CF961 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "MuscularStrength/Plugins/cordova-plugin-facebook4/Bolts.framework"; sourceTree = "<group>"; };
+		3CF35306690548D3A1CFC6AD /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; };
+		5493D843E5174B838727EFFB /* CDVDevice.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; };
+		54CCF5A3396A4245A499726B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "MuscularStrength/Plugins/cordova-plugin-facebook4/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		63D7ED7798954EE385373BC3 /* CDVSplashScreen.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; };
+		68859FBB9BC442C7B85D4BF2 /* MessageUI.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CDVLaunchScreen.storyboard; path = MuscularStrength/CDVLaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		7369007B1B6847E29E729E42 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVInAppBrowser.h; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; };
+		82ACE58961BC4EDFA8659FC0 /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; };
+		851537D256E84991845BF77A /* CDVStatusBar.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVStatusBar.m; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* MuscularStrength-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MuscularStrength-Info.plist"; path = "MuscularStrength/MuscularStrength-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
+		9057534A3BB04BF7BD32F7BC /* NSString+SSURLEncoding.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "NSString+SSURLEncoding.h"; path = "cordova-plugin-x-socialsharing/NSString+SSURLEncoding.h"; sourceTree = "<group>"; };
+		A90D422C54A543E4BE4EB85B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "MuscularStrength/Plugins/cordova-plugin-facebook4/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		AAF837FEE71D4D7FB95F670D /* CDVStatusBar.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; };
+		B32B6AF26F7446039A7D4FA8 /* FacebookConnectPlugin.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = FacebookConnectPlugin.h; path = "cordova-plugin-facebook4/FacebookConnectPlugin.h"; sourceTree = "<group>"; };
+		B97C21624BD34C24B2F5BB43 /* CDVSplashScreen.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVSplashScreen.m; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; };
+		B9D79ECE2A6F4BC9B6EBB2A7 /* SocialSharing.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = SocialSharing.h; path = "cordova-plugin-x-socialsharing/SocialSharing.h"; sourceTree = "<group>"; };
+		DA6EA93029E649BC9C346DEF /* CDVInAppBrowser.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVInAppBrowser.m; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; };
+		E2A69648394F432495B9A32D /* NSString+SSURLEncoding.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "NSString+SSURLEncoding.m"; path = "cordova-plugin-x-socialsharing/NSString+SSURLEncoding.m"; sourceTree = "<group>"; };
+		E6BCF0443572453F87F25854 /* Social.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
+		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
+		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		F26CA1598E064436B547F99F /* SocialSharing.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = SocialSharing.m; path = "cordova-plugin-x-socialsharing/SocialSharing.m"; sourceTree = "<group>"; };
+		F5EFD9E224BC4912833BBBC2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "MuscularStrength/Plugins/cordova-plugin-facebook4/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = MuscularStrength/config.xml; sourceTree = "<group>"; };
+		4CE45D42B7A14A0CAB83A854 /* AppDelegate+FirebasePlugin.m */ = {isa = PBXFileReference; name = "AppDelegate+FirebasePlugin.m"; path = "cordova-plugin-firebase/AppDelegate+FirebasePlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		B74F4DD86D42470DAF09CFAA /* FirebasePlugin.m */ = {isa = PBXFileReference; name = "FirebasePlugin.m"; path = "cordova-plugin-firebase/FirebasePlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		B6028F026A344F189751DF6C /* AppDelegate+FirebasePlugin.h */ = {isa = PBXFileReference; name = "AppDelegate+FirebasePlugin.h"; path = "cordova-plugin-firebase/AppDelegate+FirebasePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		72E5E5C9D4F047759BD2165A /* FirebasePlugin.h */ = {isa = PBXFileReference; name = "FirebasePlugin.h"; path = "cordova-plugin-firebase/FirebasePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		E0C5026EB8D34BDD9D549A26 /* Firebase.h */ = {isa = PBXFileReference; name = "Firebase.h"; path = "cordova-plugin-firebase/Firebase.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		4D14C8E275284BAE818C43DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; name = "GoogleService-Info.plist"; path = "GoogleService-Info.plist"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.xml; explicitFileType = undefined; includeInIndex = 0; };
+		B0B1BFDE7F374CCDA5B8473F /* Crashlytics.framework */ = {isa = PBXFileReference; name = "Crashlytics.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/Crashlytics.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		C5E5BCD779CE4EEDA50469E4 /* Fabric.framework */ = {isa = PBXFileReference; name = "Fabric.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/Fabric.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		42DCDCA61C7F40128BDB56C7 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; name = "GoogleAppMeasurement.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/GoogleAppMeasurement.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		980AFDB6DD1E4487A8EA0595 /* MeasurementNanoPB.framework */ = {isa = PBXFileReference; name = "MeasurementNanoPB.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/MeasurementNanoPB.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		F13CB666722F4615B9F57E33 /* FirebaseCore.framework */ = {isa = PBXFileReference; name = "FirebaseCore.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/FirebaseCore.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		401821078340460A94A3A880 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; name = "FirebaseAnalytics.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/FirebaseAnalytics.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		9AC486B079A84866836D9CB3 /* GoogleUtilities.framework */ = {isa = PBXFileReference; name = "GoogleUtilities.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/GoogleUtilities.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		5053C6F4C1B64582B1A854E4 /* nanopb.framework */ = {isa = PBXFileReference; name = "nanopb.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/nanopb.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		6D98C283F7634F81A25F27D8 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; name = "FirebaseInstanceID.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/FirebaseInstanceID.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		20F4BE3BEAEF4F46B97B8825 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; name = "FirebaseCoreDiagnostics.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/FirebaseCoreDiagnostics.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		DFDA7020A6B04FBDBB18F966 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; name = "GTMSessionFetcher.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/GTMSessionFetcher.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		25B49CD916F5421CAC20E1E9 /* FirebaseAuth.framework */ = {isa = PBXFileReference; name = "FirebaseAuth.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/FirebaseAuth.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		3B74B9BDAD90466ABF7681DD /* FirebaseMessaging.framework */ = {isa = PBXFileReference; name = "FirebaseMessaging.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/FirebaseMessaging.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		48122D82D1A44B49823F16F0 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; name = "GoogleToolboxForMac.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/GoogleToolboxForMac.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		D3D81C86355A405194C647ED /* FirebasePerformance.framework */ = {isa = PBXFileReference; name = "FirebasePerformance.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/FirebasePerformance.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		CBD84A6909734DDF9A99FBE5 /* Protobuf.framework */ = {isa = PBXFileReference; name = "Protobuf.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/Protobuf.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		ECAB4B19C92F4CF18D451F78 /* FirebaseRemoteConfig.framework */ = {isa = PBXFileReference; name = "FirebaseRemoteConfig.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/FirebaseRemoteConfig.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		5E5471CAC9414C38ABD507F0 /* FirebaseABTesting.framework */ = {isa = PBXFileReference; name = "FirebaseABTesting.framework"; path = "MuscularStrength/Plugins/cordova-plugin-firebase/FirebaseABTesting.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
+				14D01A2404274ED9ADB0248C /* Bolts.framework in Frameworks */,
+				863818101AEC4AA8A63437FE /* FBSDKCoreKit.framework in Frameworks */,
+				9A76AA0823114AA9B6A636DC /* FBSDKLoginKit.framework in Frameworks */,
+				5DA950C271944220A8AFDF1E /* FBSDKShareKit.framework in Frameworks */,
+				520D007D2E5D4CAF8995735B /* Social.framework in Frameworks */,
+				AAD7ABC51D454B26802FAEC1 /* MessageUI.framework in Frameworks */,
+				D8A08F19EC31424FBE406795 /* Crashlytics.framework in Frameworks */,
+				8F5AE057B5C84E31954AD280 /* Fabric.framework in Frameworks */,
+				5E23DF21602A43D4BFAC298B /* GoogleAppMeasurement.framework in Frameworks */,
+				F53B66A5F54A4E5A9C1C2260 /* MeasurementNanoPB.framework in Frameworks */,
+				168C3D164FD344F79175D53C /* FirebaseCore.framework in Frameworks */,
+				3E85E335A92F4A9DB31867E5 /* FirebaseAnalytics.framework in Frameworks */,
+				6811BF56F55B4C47BB203667 /* GoogleUtilities.framework in Frameworks */,
+				4A11B7C4693D40BA9B353C01 /* nanopb.framework in Frameworks */,
+				4EECE31F47494F4587A365D9 /* FirebaseInstanceID.framework in Frameworks */,
+				22FB8D5E485C458CA63B6A1E /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				A6C11E969F8E4DDEB87248EB /* GTMSessionFetcher.framework in Frameworks */,
+				85EE1780B1A441889740CDD5 /* FirebaseAuth.framework in Frameworks */,
+				194C59B1EAA54D0BBC9A2329 /* FirebaseMessaging.framework in Frameworks */,
+				B233F142291A4ABAA16EE6A7 /* GoogleToolboxForMac.framework in Frameworks */,
+				309BB72A6F1942C291C28388 /* FirebasePerformance.framework in Frameworks */,
+				9FBB9FD4092341E58DB87A34 /* Protobuf.framework in Frameworks */,
+				17C98E2CCD0746BBA5425872 /* FirebaseRemoteConfig.framework in Frameworks */,
+				36B2C45A5B1D4FE3954AFEB8 /* FirebaseABTesting.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				302D95EE14D2391D003F00A1 /* MainViewController.h */,
+				302D95EF14D2391D003F00A1 /* MainViewController.m */,
+				302D95F014D2391D003F00A1 /* MainViewController.xib */,
+				1D3623240D0F684500981E51 /* AppDelegate.h */,
+				1D3623250D0F684500981E51 /* AppDelegate.m */,
+			);
+			name = Classes;
+			path = MuscularStrength/Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* MuscularStrength.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				EB87FDF41871DAF40020F90C /* config.xml */,
+				EB87FDF31871DA8E0020F90C /* www */,
+				EB87FDF11871DA420020F90C /* Staging */,
+				301BF52D109A57CC0062928A /* CordovaLib/CordovaLib.xcodeproj */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				307C750510C5A3420062BCA9 /* Plugins */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* MuscularStrength-Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */,
+			);
+			name = "Other Sources";
+			path = MuscularStrength;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0207DA571B56EA530066E2B4 /* Images.xcassets */,
+				3047A50E1AB8057F00498E2A /* config */,
+				8D1107310486CEB800E47090 /* MuscularStrength-Info.plist */,
+				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
+				4D14C8E275284BAE818C43DB /* GoogleService-Info.plist */,
+			);
+			name = Resources;
+			path = MuscularStrength/Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C0F3FB13A4EAA909CF961 /* Bolts.framework */,
+				54CCF5A3396A4245A499726B /* FBSDKCoreKit.framework */,
+				F5EFD9E224BC4912833BBBC2 /* FBSDKLoginKit.framework */,
+				A90D422C54A543E4BE4EB85B /* FBSDKShareKit.framework */,
+				E6BCF0443572453F87F25854 /* Social.framework */,
+				68859FBB9BC442C7B85D4BF2 /* MessageUI.framework */,
+				B0B1BFDE7F374CCDA5B8473F /* Crashlytics.framework */,
+				C5E5BCD779CE4EEDA50469E4 /* Fabric.framework */,
+				42DCDCA61C7F40128BDB56C7 /* GoogleAppMeasurement.framework */,
+				980AFDB6DD1E4487A8EA0595 /* MeasurementNanoPB.framework */,
+				F13CB666722F4615B9F57E33 /* FirebaseCore.framework */,
+				401821078340460A94A3A880 /* FirebaseAnalytics.framework */,
+				9AC486B079A84866836D9CB3 /* GoogleUtilities.framework */,
+				5053C6F4C1B64582B1A854E4 /* nanopb.framework */,
+				6D98C283F7634F81A25F27D8 /* FirebaseInstanceID.framework */,
+				20F4BE3BEAEF4F46B97B8825 /* FirebaseCoreDiagnostics.framework */,
+				DFDA7020A6B04FBDBB18F966 /* GTMSessionFetcher.framework */,
+				25B49CD916F5421CAC20E1E9 /* FirebaseAuth.framework */,
+				3B74B9BDAD90466ABF7681DD /* FirebaseMessaging.framework */,
+				48122D82D1A44B49823F16F0 /* GoogleToolboxForMac.framework */,
+				D3D81C86355A405194C647ED /* FirebasePerformance.framework */,
+				CBD84A6909734DDF9A99FBE5 /* Protobuf.framework */,
+				ECAB4B19C92F4CF18D451F78 /* FirebaseRemoteConfig.framework */,
+				5E5471CAC9414C38ABD507F0 /* FirebaseABTesting.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		301BF52E109A57CC0062928A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				301BF535109A57CC0062928A /* libCordova.a */,
+				0946A453212C5BE40063E92D /* Cordova.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3047A50E1AB8057F00498E2A /* config */ = {
+			isa = PBXGroup;
+			children = (
+				3047A50F1AB8059700498E2A /* build-debug.xcconfig */,
+				3047A5101AB8059700498E2A /* build-release.xcconfig */,
+				3047A5111AB8059700498E2A /* build.xcconfig */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
+		307C750510C5A3420062BCA9 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				162D9EDE9CCF44348E3D55A1 /* CDVDevice.m */,
+				5493D843E5174B838727EFFB /* CDVDevice.h */,
+				052A553156204586AD47957E /* FacebookConnectPlugin.m */,
+				B32B6AF26F7446039A7D4FA8 /* FacebookConnectPlugin.h */,
+				DA6EA93029E649BC9C346DEF /* CDVInAppBrowser.m */,
+				7369007B1B6847E29E729E42 /* CDVInAppBrowser.h */,
+				B97C21624BD34C24B2F5BB43 /* CDVSplashScreen.m */,
+				82ACE58961BC4EDFA8659FC0 /* CDVViewController+SplashScreen.m */,
+				63D7ED7798954EE385373BC3 /* CDVSplashScreen.h */,
+				3CF35306690548D3A1CFC6AD /* CDVViewController+SplashScreen.h */,
+				851537D256E84991845BF77A /* CDVStatusBar.m */,
+				AAF837FEE71D4D7FB95F670D /* CDVStatusBar.h */,
+				E2A69648394F432495B9A32D /* NSString+SSURLEncoding.m */,
+				F26CA1598E064436B547F99F /* SocialSharing.m */,
+				9057534A3BB04BF7BD32F7BC /* NSString+SSURLEncoding.h */,
+				B9D79ECE2A6F4BC9B6EBB2A7 /* SocialSharing.h */,
+				4CE45D42B7A14A0CAB83A854 /* AppDelegate+FirebasePlugin.m */,
+				B74F4DD86D42470DAF09CFAA /* FirebasePlugin.m */,
+				B6028F026A344F189751DF6C /* AppDelegate+FirebasePlugin.h */,
+				72E5E5C9D4F047759BD2165A /* FirebasePlugin.h */,
+				E0C5026EB8D34BDD9D549A26 /* Firebase.h */,
+			);
+			name = Plugins;
+			path = MuscularStrength/Plugins;
+			sourceTree = SOURCE_ROOT;
+		};
+		EB87FDF11871DA420020F90C /* Staging */ = {
+			isa = PBXGroup;
+			children = (
+				F840E1F0165FE0F500CFE078 /* config.xml */,
+				301BF56E109A69640062928A /* www */,
+			);
+			name = Staging;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* MuscularStrength */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "MuscularStrength" */;
+			buildPhases = (
+				304B58A110DAC018002A0835 /* Copy www directory */,
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				880FB740E68C4D49A2614C3F /* "Crashlytics" */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				301BF551109A68C00062928A /* PBXTargetDependency */,
+			);
+			name = MuscularStrength;
+			productName = MuscularStrength;
+			productReference = 1D6058910D05DD3D006BFB54 /* MuscularStrength.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 510;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = 4ARR8QSDKL;
+					};
+				};
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MuscularStrength" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 301BF52E109A57CC0062928A /* Products */;
+					ProjectRef = 301BF52D109A57CC0062928A /* CordovaLib/CordovaLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* MuscularStrength */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0946A453212C5BE40063E92D /* Cordova.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cordova.framework;
+			remoteRef = 0946A452212C5BE40063E92D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		301BF535109A57CC0062928A /* libCordova.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCordova.a;
+			remoteRef = 301BF534109A57CC0062928A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
+				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
+				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+				ACA680BF044A49AEAD7DB9AB /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		304B58A110DAC018002A0835 /* Copy www directory */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy www directory";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "NODEJS_PATH=/usr/local/bin; NVM_NODE_PATH=~/.nvm/versions/node/`nvm version 2>/dev/null`/bin; N_NODE_PATH=`find /usr/local/n/versions/node/* -maxdepth 0 -type d 2>/dev/null | tail -1`/bin; XCODE_NODE_PATH=`xcode-select --print-path`/usr/share/xcs/Node/bin; PATH=$NODEJS_PATH:$NVM_NODE_PATH:$N_NODE_PATH:$XCODE_NODE_PATH:$PATH && node cordova/lib/copy-www-build-step.js";
+			showEnvVarsInLog = 0;
+		};
+		880FB740E68C4D49A2614C3F /* "Crashlytics" */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Crashlytics";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}\"/\"MuscularStrength\"/Plugins/cordova-plugin-firebase/Fabric.framework/run";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
+				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
+				34773519B9A24063A886694C /* CDVDevice.m in Sources */,
+				C2DD6DC7F9054CF88F56B258 /* FacebookConnectPlugin.m in Sources */,
+				C5AA6122BE494C4886AD7DE5 /* CDVInAppBrowser.m in Sources */,
+				1BB4179EC466479EB05F910B /* CDVSplashScreen.m in Sources */,
+				E1D2E999BBE2443BBF35FE25 /* CDVViewController+SplashScreen.m in Sources */,
+				1393F7C05CC240F7843D1646 /* CDVStatusBar.m in Sources */,
+				67CCA9E315CA467988C9B8F1 /* NSString+SSURLEncoding.m in Sources */,
+				0532120ACEFC4B5EAC195A3D /* SocialSharing.m in Sources */,
+				B1B5DBEE0469420FAB0811A8 /* AppDelegate+FirebasePlugin.m in Sources */,
+				957C83C63F1149B0B58BC243 /* FirebasePlugin.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		301BF551109A68C00062928A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CordovaLib;
+			targetProxy = 301BF550109A68C00062928A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3047A50F1AB8059700498E2A /* build-debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 4ARR8QSDKL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"MuscularStrength/Plugins/cordova-plugin-facebook4\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-facebook4\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-facebook4\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-facebook4\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MuscularStrength/MuscularStrength-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "MuscularStrength/MuscularStrength-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.muscular.test;
+				PRODUCT_NAME = MuscularStrength;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3047A5101AB8059700498E2A /* build-release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 4ARR8QSDKL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"MuscularStrength/Plugins/cordova-plugin-facebook4\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-facebook4\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-facebook4\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-facebook4\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+					"\"MuscularStrength/Plugins/cordova-plugin-firebase\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MuscularStrength/MuscularStrength-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "MuscularStrength/MuscularStrength-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.muscular.test;
+				PRODUCT_NAME = MuscularStrength;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3047A5111AB8059700498E2A /* build.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3047A5111AB8059700498E2A /* build.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "MuscularStrength" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MuscularStrength" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

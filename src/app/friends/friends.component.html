@@ -1,0 +1,56 @@
+<div class="wrap cyan pagewrapper friendspage">
+	<div class="page-title">
+        <span class="dashicon-cont">
+        	<img src="assets/images/new_icons/svg/friends-icon.svg" alt="" class="dash_icons">
+        </span>
+        <h1>Friends</h1>
+    </div>
+    <div class="friends-content">
+        <!-- Content Tabs Headings -->
+        <div class="ma-tab-head" *ngIf="!error">
+            <span [ngClass]="{'tab': true, 'active': activeTab == 'FRIENDS'}" (click)="activeTab = 'FRIENDS'; changeViewTo('FRIENDS')">Friends</span>
+            <span [ngClass]="{'tab': true, 'active': activeTab == 'PENDINGS'}" (click)="activeTab = 'PENDINGS'; changeViewTo('PENDINGS')">Pending</span>
+            <span [ngClass]="{'tab': true, 'active': activeTab == 'REQUESTS'}" (click)="activeTab = 'REQUESTS'; changeViewTo('REQUESTS')">Requests</span>
+            <span [ngClass]="{'tab': true, 'active': activeTab == 'BLOCKS'}" (click)="activeTab = 'BLOCKS'; changeViewTo('BLOCKS')">Blocked</span>
+        </div>
+        <!-- Tabs Content -->
+        <div class="ma-tab-content" *ngIf="loaded && !error">
+            <div class="board" id="board">
+                <div *ngIf="!currentLoading" class="friendslist">
+                    <div *ngFor="let f of currentlyShowing; let i = index; ">
+                        <h3>{{f.l}}</h3>
+                        <div [ngClass]="{'card': true, 'req': activeTab == 'REQUESTS'}" *ngFor="let d of f.d; let j = index; ">
+                            <div class="inner">
+                                <span class="upimg"><a [routerLink]="['/AnotherUser', d.id]"><img src="http://muscularstrength.com/{{d.image}}"></a></span>
+                                <span *ngIf="activeTab != 'REQUESTS'" class="upname"><a [routerLink]="['/AnotherUser', d.id]">{{d.name.trim() || d.user}}</a></span>
+                                <span *ngIf="activeTab == 'REQUESTS'" class="acceptdeny">
+                                    <span class="upname"><a [routerLink]="['/AnotherUser', d.id]">{{d.name.trim() || d.user}}</a></span>
+                                    <!-- Requests Tab Action - Accept/Deny User's Request -->
+                                    <span [ngClass]="{'accdeny-actions': true, 'dim': acceptDenyLoader}" *ngIf="activeTab == 'REQUESTS'">
+                                        <span class="accdeny accept" (click)="acceptDeny(activeTab, d.id, f.l, j, 'ACCEPT')">Accept</span>
+                                        <span class="accdeny deny" (click)="acceptDeny(activeTab, d.id, f.l, j, 'DENY')">Deny</span>
+                                    </span>
+                                </span>
+                                <!-- Friends Tab Action - Unfriend -->
+                                <span class="unfriendme" (click)="unfriendUser(activeTab, d.id, f.l, j)" *ngIf="activeTab == 'FRIENDS'">Unfriend?</span>
+                                <!-- Requests Tab Action - Cancel Sent Request -->
+                                <span class="unfriendme" (click)="cancelRequest(activeTab, d.id, f.l, j)" *ngIf="activeTab == 'PENDINGS'">Cancel Req?</span>
+                                <!-- Blocks Tab Action - Unblock User -->
+                                <span class="unfriendme unblock" (click)="unblockUser(activeTab, d.id, f.l, j)" *ngIf="activeTab == 'BLOCKS'">Unblock?</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="!currentlyShowing.length">
+                        <p class="friends-noresults">No Results!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    	<!-- Loader -->
+        <div *ngIf=" !loaded && !error" class="gifcont">
+            <img src="assets/images/Infinity-myaccount.svg" alt="" class="loading-gif" />
+        </div>
+        <!-- Loading Error -->
+        <p *ngIf="loaded && error" class="loadingerror">Some error occurred!</p>
+    </div>
+</div>

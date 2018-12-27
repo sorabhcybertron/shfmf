@@ -1,0 +1,56 @@
+<div class="wrap crimson pagewrapper upgradepage">
+    <div class="backlink-container">
+        <a href="javascript:void(0);" (click)="goback()" class="upgrade-back">&#x3008; Back</a>
+    </div>
+    <p *ngIf=" isLoaded == false " class="loading ptop">Loading Article...</p>
+    <div *ngIf="isLoaded">
+        <div class="page-title ptop">
+            <h1 class="title crimson bordertop">UPGRADE</h1>
+        </div>
+        <br>
+        <div class="card">
+            <div class="inner">
+                <div class="success" *ngIf="success">
+                    <div class="upgrade-form">
+                        <div class="text-center">
+                            <p class="success-msg" [innerHTML]="successToShow"></p>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" (click)="goback()" class="submitbtn">DONE</button>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="!success">
+                    <div class="upgrade-form">
+                        <div class="billingcheck" *ngIf="form.membershipChange != 20">
+                            <input type="checkbox" name="billingsameaddr" id="sameaddr" (change)="infoSameAsPersonal($event)">
+                            <label for="sameaddr">Billing information is the same as personal information</label>
+                        </div>
+                        <select name="membershipChange" [ngClass]="{'error': havevalue('membershipChange')}" [(ngModel)]="form.membershipChange">
+                            <option value="">Select Plan</option>
+                            <option *ngFor=" let opt of memberships; let i = index; " value="{{opt.membershipID}}">{{opt.name+' - $'+opt.amount+' a month'}}</option>
+                        </select>
+                        <div *ngIf="form.membershipChange != 20">
+                            <input type="text" name="changeFirstName" [ngClass]="{'error': havevalue('changeFirstName')}" [(ngModel)]="form.changeFirstName" placeholder="First Name">
+                            <input type="text" name="changeLastName" [ngClass]="{'error': havevalue('changeLastName')}" [(ngModel)]="form.changeLastName" placeholder="Last Name">
+                            <input type="text" name="chanceAddress" [ngClass]="{'error': havevalue('chanceAddress')}" [(ngModel)]="form.chanceAddress" placeholder="Address">
+                            <input type="text" name="changeCity" [ngClass]="{'error': havevalue('changeCity')}" [(ngModel)]="form.changeCity" placeholder="City">
+                            <input type="text" name="changeZip" [ngClass]="{'error': havevalue('changeZip')}" [(ngModel)]="form.changeZip" placeholder="Zip">
+                            <input type="text" name="changeCC" [ngClass]="{'error': havevalue('changeCC')}" [(ngModel)]="form.changeCC" placeholder="CardNumber">
+                            <input type="text" name="changeExpire" [ngClass]="{'error': havevalue('changeExpire')}" [(ngModel)]="form.changeExpire" placeholder="Expiration date - mm/yyyy">
+                            <input type="text" name="changeCCV" [ngClass]="{'error': havevalue('changeCCV')}" [(ngModel)]="form.changeCCV" placeholder="Card CCV">
+                            <input type="text" name="changePromo" [ngClass]="{'error': havevalue('changePromo')}" [(ngModel)]="form.changePromo" placeholder="Promo Code">                        
+                            <div class="text-center">
+                                <p class="error-msg" [innerHTML]="errorToShow">Error</p>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" (click)="submitForm()" class="submitbtn">UPDATE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="copyright center">Copyright &copy; MuscularStrength.com<br>All Rights Reserved.</p>
+    </div> 
+</div>
