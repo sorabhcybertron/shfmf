@@ -13,6 +13,7 @@ export class AppServicesService {
 	public loginChange: Subject<boolean> = new Subject<boolean>();
 	public favorites :any = null;
 	public newContents :any = null;
+	public deviceToken :any = null;
 	constructor(public http:Http) {
 		this.loginChange.subscribe((value) => {
 			console.log('value');
@@ -225,5 +226,42 @@ export class AppServicesService {
 		}else{
 			return false;
 		}
+	}
+
+	//FCM
+
+	addTokenId(id){
+	    if(id && this.deviceToken){
+	      let data = {
+	          update_record: 'update',
+	          deviceID : this.deviceToken,
+	          userID : id
+	      };
+	      
+	      this.postCall(this.siteBaseUrl+'SHFadmin/app_update_device_token.php',data).subscribe(
+	      	res=>{
+	      		if(res.status){
+	      			let strdItem = JSON.parse(window.localStorage.getItem('userInfo'));
+					if(strdItem !== null){
+						strdItem['device_ids'] =  res.data.device_id;
+						window.localStorage.setItem('userInfo', JSON.stringify(strdItem));
+					}
+	      		}
+	      	}	
+	      );
+	    }
+	}
+
+	removeToken(id){
+		if(id && this.deviceToken){
+	      let data = {
+	          update_record: 'delete',
+	          deviceID : this.deviceToken,
+	          userID : id
+	      };
+
+	      this.postCall(this.siteBaseUrl+'SHFadmin/app_update_device_token.php',data).subscribe(
+	      );
+	    }
 	}
 }

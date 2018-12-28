@@ -5,7 +5,6 @@ import {AppServicesService} from '../app-services.service';
 
 declare var device: any;
 declare var cordova: any;
-declare var window: any;
 
 @Component({
   selector: 'app-login',
@@ -47,7 +46,7 @@ export class LoginComponent implements OnInit {
           self.loginSuccess = true;
           window.localStorage.setItem('key1',btoa(this.un));
           window.localStorage.setItem('key2',btoa(this.ps));
-          this.addTokenId();
+          this.checkToken(data);
           // setTimeout(function () {
             // window.localStorage.setItem('login', 'true');
             self.appService.setLogin(true);
@@ -105,6 +104,7 @@ export class LoginComponent implements OnInit {
                         // window.localStorage.setItem('login', 'true');
                         window.localStorage.setItem
                         scope.appService.setLogin(true);
+                        this.checkToken(res);
                         scope.router.navigate(['/Dashboard']);
                       } else{
                         window.localStorage.setItem('userInfo', '');
@@ -149,17 +149,23 @@ export class LoginComponent implements OnInit {
     console.log('err');
     console.log(err);
   }
-   
-  addTokenId(){
-    cordova.FirebasePlugin.getToken(function(token) {
-        // save this server-side and use it to push notifications to this device
-        console.log(token);
-        let data = {update_record : 'update',deviceID : token, userID: this.un}
-        this.appService.postCall(this.appService.siteBaseUrl+'SHFadmin/app_update_device_token.php', data).subscribe(res => {
-          console.log(res);
-        });
-    }, function(error) {
-        console.error(error);
-    });
-  } 
+  
+  checkToken(data){
+    if(this.appService.deviceToken){
+      if(data.device_ids && data.device_ids.length > 0){
+        let found = false;
+        var i;
+        for(i == 0; i < data.device_ids.length; i++){
+           if( data.device_ids[i] == this.appService.deviceToken){
+             found = true;
+           } 
+        }
+        if(!found){
+          this.appService.addTokenId(data['User Id']);
+        }
+      }else{
+        this.appService.addTokenId(data['User Id']);
+      }
+    }
+  }
 }

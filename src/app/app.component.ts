@@ -64,6 +64,25 @@ export class AppComponent implements OnInit{
   }*/
 
   ngOnInit(){
+    cordova.FirebasePlugin.getToken(function(token) {
+        console.log(token);
+        this.appService.deviceToken = token;
+    }, function(error) {
+        console.error(error);
+    });
+
+    cordova.FirebasePlugin.onTokenRefresh(function(token) {
+        this.appService.deviceToken = token;
+    }, function(error) {
+        alert(error);
+    });
+
+    cordova.FirebasePlugin.onNotificationOpen(function(notification) {
+        console.log(JSON.stringify(notification));
+        alert("The notification is open!");
+    }, function(error) {
+        console.error(error);
+    }); 
   }
 
   ngDoCheck() {

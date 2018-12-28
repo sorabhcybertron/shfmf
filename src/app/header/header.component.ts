@@ -36,6 +36,8 @@ export class HeaderComponent implements OnInit {
   }
   logoutUser() {
     this.menuOpen = false;
+    let userID = this.appService.getUserInfo('User Id');
+    this.appService.removeToken(userID);
     this.appService.setLogin(false);
     window.localStorage.removeItem("userInfo");
     window.localStorage.removeItem("nm");
