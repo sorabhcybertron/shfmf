@@ -3,7 +3,8 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { AppServicesService } from './app-services.service';
 import 'rxjs/add/operator/switchMap';
 
-declare var cordova;
+declare var window: any; 
+declare var cordova : any;
 
 @Component({
   selector: 'app-root',
@@ -32,6 +33,7 @@ export class AppComponent implements OnInit{
   constructor(public router: Router, public appService: AppServicesService, public zone: NgZone){
     let scope = this;
     this.login = this.appService.checkLogin();
+    this.doTokenThings();
     this.appService.loginChange.subscribe(value => {
       this.zone.run(() => {
         scope.login = value;
@@ -64,25 +66,6 @@ export class AppComponent implements OnInit{
   }*/
 
   ngOnInit(){
-    cordova.FirebasePlugin.getToken(function(token) {
-        console.log(token);
-        this.appService.deviceToken = token;
-    }, function(error) {
-        console.error(error);
-    });
-
-    cordova.FirebasePlugin.onTokenRefresh(function(token) {
-        this.appService.deviceToken = token;
-    }, function(error) {
-        alert(error);
-    });
-
-    cordova.FirebasePlugin.onNotificationOpen(function(notification) {
-        console.log(JSON.stringify(notification));
-        alert("The notification is open!");
-    }, function(error) {
-        console.error(error);
-    }); 
   }
 
   ngDoCheck() {
@@ -91,5 +74,31 @@ export class AppComponent implements OnInit{
     for(let i in this.headerBorderColor)
       if(this.headerBorderColor[i].path.includes(this.router.url.split('/')[1]))
           scope.borderColor = scope.headerBorderColor[i].color;
+  }
+
+  doTokenThings(){
+    let scope = this;
+    if(window.cordova && window.cordova.FirebasePlugin){
+      window.cordova.FirebasePlugin.getToken(function(token) {
+        console.log(token);
+          scope.appService.deviceToken = token;
+          console.log(scope.appService.deviceToken);
+      }, function(error) {
+          console.error(error);
+      });
+
+      window.cordova.FirebasePlugin.onTokenRefresh(function(token) {
+          scope.appService.deviceToken = token;
+      }, function(error) {
+          alert(error);
+      });
+
+      window.cordova.FirebasePlugin.onNotificationOpen(function(notification) {
+          console.log(JSON.stringify(notification));
+          alert("The notification is open!");
+      }, function(error) {
+          console.error(error);
+      }); 
+    }
   }
 }
