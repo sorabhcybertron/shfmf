@@ -5,6 +5,7 @@ import {AppServicesService} from '../app-services.service';
 
 declare var device: any;
 declare var cordova: any;
+declare var window: any;
 
 @Component({
   selector: 'app-login',
