@@ -1,10 +1,12 @@
-import { Component, OnInit, ViewEncapsulation, NgZone } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, NgZone, Renderer } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { AppServicesService } from './app-services.service';
 import 'rxjs/add/operator/switchMap';
 
 declare var window: any; 
 declare var cordova : any;
+declare var FirebasePlugin : any;
+
 
 @Component({
   selector: 'app-root',
@@ -30,10 +32,13 @@ export class AppComponent implements OnInit{
     { color: 'green', path: ['Authors'] }
   ];
 
-  constructor(public router: Router, public appService: AppServicesService, public zone: NgZone){
+  constructor(public router: Router, public appService: AppServicesService, public zone: NgZone, private renderer: Renderer){
     let scope = this;
+    this.renderer.listenGlobal('document', 'deviceready', () => {
+      this.doTokenThings();
+    });
     this.login = this.appService.checkLogin();
-    this.doTokenThings();
+    
     this.appService.loginChange.subscribe(value => {
       this.zone.run(() => {
         scope.login = value;
@@ -78,25 +83,26 @@ export class AppComponent implements OnInit{
 
   doTokenThings(){
     let scope = this;
-    if(window.cordova && window.cordova.FirebasePlugin){
-      window.cordova.FirebasePlugin.getToken(function(token) {
+    if(cordova){
+      FirebasePlugin.getToken((token) => {
         console.log(token);
           scope.appService.deviceToken = token;
           console.log(scope.appService.deviceToken);
-      }, function(error) {
+      }, (error) => {
           console.error(error);
       });
 
-      window.cordova.FirebasePlugin.onTokenRefresh(function(token) {
-          scope.appService.deviceToken = token;
-      }, function(error) {
+      FirebasePlugin.onTokenRefresh((token) => {
+        console.log(token);
+        scope.appService.deviceToken = token;
+      }, (error) => {
           alert(error);
       });
 
-      window.cordova.FirebasePlugin.onNotificationOpen(function(notification) {
+      FirebasePlugin.onNotificationOpen((notification) => {
           console.log(JSON.stringify(notification));
           alert("The notification is open!");
-      }, function(error) {
+      }, (error) => {
           console.error(error);
       }); 
     }
