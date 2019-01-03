@@ -59,8 +59,11 @@ const appRoutes: Routes = [
    { path: 'Exclusives', component: ExclusivesComponent },
    { path: 'Programs', component: ProgramsComponent },
    { path: 'Programs/:link/:recordLink/:dbTable', component: ProgramsInnerComponent },
+   { path: 'Programs/:link/:recordLink/:dbTable/:programid', component: ProgramsInnerComponent },
    { path: 'Programs/:link/:recordLink/:dbTable/:from', component: ProgramsInnerComponent },
+   { path: 'Programs/:link/:recordLink/:dbTable/:programid/:from', component: ProgramsInnerComponent },
    { path: 'Routine/:id', component: RoutineSingleComponent },  // load Routine, linked to programs listing page
+   { path: 'Routine/:id/:programid', component: RoutineSingleComponent },  // load Routine, linked to programs listing page
    { path: 'ProgramsDetail', component: ProgramsDetailComponent },
    { path: 'Recipes', component: RecipesComponent },
    { path: 'Recipes/:id', component: RecipeDetailsComponent },

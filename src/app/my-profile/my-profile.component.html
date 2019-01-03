@@ -152,11 +152,12 @@
 				 	<h2 class="fav-title">Programs</h2>
 				 	<div class="card" *ngFor="let program of appService.favorites.programs">
 				 		<div class="inner">
-					 		<a [routerLink]="['/Programs/'+program.app_url+'/'+program.recordLinkID+'/'+program.dbTable+'/fav']">
+					 		<a [routerLink]="['/Programs/'+program.app_url+'/'+program.recordLinkID+'/'+program.dbTable+'/'+program.fav_item_id+'/fav']">
 					 		 <div class="lessmarg">
 					 		 	<span class="image-box"><img src="{{program.img}}" alt=""></span>
 						 		<h2 *ngIf="program.item_title && program.item_title.length > 50" >{{program.item_title | slice : 0: 50	}}</h2>
 						 		<h2 *ngIf="program.item_title && program.item_title.length < 50">{{program.item_title}}</h2>
+						 		<p class="item_descc">{{program.item_desc}}</p>
 					 		 </div>
 						 	</a>
 						 	<app-like-button [type]="program.fav_item_type" [item_id]="program.fav_item_id"></app-like-button>
@@ -172,6 +173,7 @@
 					 		 	<span class="image-box"><img src="{{routine.img}}" alt=""></span>
 						 		<h2 *ngIf="routine.item_title && routine.item_title.length > 50" >{{routine.item_title | slice : 0: 50	}}</h2>
 						 		<h2 *ngIf="routine.item_title && routine.item_title.length < 50">{{routine.item_title}}</h2>
+						 		<p class="item_descc">{{routine.item_desc}}</p>
 					 		 </div>
 						 	</a>
 						 	<app-like-button [type]="routine.fav_item_type" [item_id]="routine.fav_item_id"></app-like-button>
@@ -187,6 +189,7 @@
 					 		 	<span class="image-box"><img src="{{exercise.img}}" alt=""></span>
 						 		<h2 *ngIf="exercise.item_title && exercise.item_title.length > 50" >{{exercise.item_title | slice : 0: 50	}}</h2>
 						 		<h2 *ngIf="exercise.item_title && exercise.item_title.length < 50">{{exercise.item_title}}</h2>
+						 		<p class="item_descc">{{exercise.item_desc}}</p>
 					 		 </div>
 						 	</a>
 						 	<app-like-button [type]="exercise.fav_item_type" [item_id]="exercise.fav_item_id"></app-like-button>
@@ -202,6 +205,7 @@
 					 		 	<span class="image-box"><img src="{{recipe.img}}" alt=""></span>
 					 		 	<h2 *ngIf="recipe.item_title && recipe.item_title.length > 50" >{{recipe.item_title | slice : 0: 50	}}</h2>
 					 		 	<h2 *ngIf="recipe.item_title && recipe.item_title.length < 50">{{recipe.item_title}}</h2>
+					 		 	<p class="item_descc">{{recipe.item_desc}}</p>
 					 		 </div>
 						 	</a>
 						 	<app-like-button [type]="recipe.fav_item_type" [item_id]="recipe.fav_item_id"></app-like-button>
@@ -217,6 +221,7 @@
 					 		 	<span class="image-box"><img src="{{articl.img}}" alt=""></span>
 						 		<h2 *ngIf="articl.item_title && articl.item_title.length > 50">{{articl.item_title | slice : 0: 50	}}</h2>
 						 		<h2 *ngIf="articl.item_title && articl.item_title.length < 50" >{{articl.item_title}}</h2>
+						 		<p class="item_descc">{{articl.item_desc}}</p>
 					 		 </div>
 						 	</a>
 						 	<app-like-button [type]="articl.fav_item_type" [item_id]="articl.fav_item_id"></app-like-button>

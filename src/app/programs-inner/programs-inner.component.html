@@ -11,8 +11,9 @@
 		</div>
 		<div class="card nopadtop">
 			<div class="inner">
-				<div class="socialIcons" *ngIf="data.share_this_link">
-					<span class="social-cont">
+				<div class="socialIcons" >
+					<app-like-button [type]="'programs'" [item_id]="programID"></app-like-button>
+					<span class="social-cont" *ngIf="data.share_this_link">
 						<img src="assets/images/newones/fsnew.svg" class="nomargin" (click)="shareArticle('fb');">
 						<span class="fbcounter" *ngIf="fbCounter" (click)="shareArticle('fb');">{{fbCounter}}</span>
 						<img src="assets/images/newones/tsnew.svg" class="nomargin" (click)="shareArticle('tw');">
@@ -35,7 +36,7 @@
 				<div *ngFor=" let months of data.data; let i = index; " class="routines-listing">
 					<h3 *ngIf="data.month && months.data.length > 0" class="month-head">{{months.month}}</h3>
 					<div *ngFor=" let d of months.data; let j = index; " class="routine-img">
-						<a *ngIf="!d.plat || (d.plat && isUserPlatium == 'Platinum')" [routerLink]="['/Routine', d.link.split('/routine/')[1] ]">
+						<a *ngIf="!d.plat || (d.plat && isUserPlatium == 'Platinum')" [routerLink]="['/Routine', d.link.split('/routine/')[1], programID]">
 							<img src="{{d.img}}" alt="{{months.month}} Routine">
 						</a>
 						<a *ngIf="d.plat && isUserPlatium != 'Platinum'" [routerLink]="['/UpgradeMembership']">

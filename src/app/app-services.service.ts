@@ -123,7 +123,6 @@ export class AppServicesService {
 					err=>{
 						this.favorites = null;
 					}
-
 				);;
 			}
 		}else{

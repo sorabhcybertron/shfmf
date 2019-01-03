@@ -17,6 +17,9 @@
 				        <source [src]="cleanURL(videourl)" type="video/mp4">
 				    </video>
 				</div>
+				<div class="like-button-fav" *ngIf="programID">
+					<app-like-button [type]="'programs'" [item_id]="programID"></app-like-button>
+				</div>
 				<div class="routine-details">
 					<div *ngIf=" routine.downloadable_resources.exercises.link != '' || routine.downloadable_resources.routines.link != '' " class="about-author">
 						<!-- Resources to download -->

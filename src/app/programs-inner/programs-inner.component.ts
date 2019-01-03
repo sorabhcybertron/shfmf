@@ -39,6 +39,7 @@ export class ProgramsInnerComponent implements OnInit {
 	public commentLikeAction: any = 'LIKE_COMMENT';
 	public commentUnlikeAction: any = 'UNLIKE_COMMENT';
   public likeOnTheWay: boolean = false;
+  public programID : number = 0;
 
   public thisRoute: string = "";
 
@@ -65,6 +66,9 @@ export class ProgramsInnerComponent implements OnInit {
 			self.linkToLoad = params['link'];
 			self.recordLinkID = params['recordLink'];
 			self.dbTable = params['dbTable'];
+			if(params['programid']){
+				self.programID = params['programid'];
+			}
 			if(params['from'] && params['from'] == "fav"){
 				self.fromFav = true;
 			}

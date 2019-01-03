@@ -35,6 +35,7 @@ export class RoutineSingleComponent implements OnInit {
   public myId: any = '';
   public backUrl: string;
   public authorURL: string;
+  public programID : number = 0;
 
 	/* FOR LIKING A COMMENT */
 	public likeOnTheWay: boolean = false;
@@ -50,6 +51,9 @@ export class RoutineSingleComponent implements OnInit {
 		this.myId = this.appService.getUserInfo('User Id');
 		this.sub = this.route.params.subscribe(params => {
 			self.routineID = params['id'];
+			if(params['programid']){
+				self.programID = params['programid'];
+			}
 			self.baseUrl += 'rid='+params['id']+'&mid='+self.appService.getUserInfo('User Id');
 			self.appService.loadArticles(self.baseUrl).subscribe(res => {
 				console.log(res);

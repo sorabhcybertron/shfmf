@@ -55,7 +55,8 @@ export class AppComponent implements OnInit{
     });
     // this.headerShow();
     if(this.login){
-      this.router.navigate(['/Dashboard']);
+      // this.router.navigate(['/Dashboard']);
+      this.router.navigate(['/Programs/full_body_evolution_json/6/SHFcommentsBodyEvolution']);
       // this.router.navigate(['/Authors/0/Scott_Herman']);
       // this.router.navigate(['/MyAccount']);
       // this.router.navigate(['/Programs/push_pull_legs_json/3/SHFcommentsPushLeg']);
@@ -100,8 +101,23 @@ export class AppComponent implements OnInit{
       });
 
       FirebasePlugin.onNotificationOpen((notification) => {
-          console.log(JSON.stringify(notification));
-          alert("The notification is open!");
+        // console.log(notification);
+        // if(notification && notification.data){
+        //   notification.data = JSON.parse(notification.data);
+        //   if(notification.data.type && notification.data.id){
+        //     if(notification.data.type.toLowerCase() == 'article'){
+        //       this.router.navigate(['/Articles/'+notification.data.id+'']);
+        //     }else if(notification.data.type.toLowerCase() == 'recipe'){
+        //       this.router.navigate(['/Recipes/'+notification.data.id+'']);
+        //     }else if(notification.data.type.toLowerCase() == 'exercise'){
+        //       this.router.navigate(['/Workouts/'+notification.data.id+'/exercise/']);
+        //     }else if(notification.data.type.toLowerCase() == 'routine'){
+        //       this.router.navigate(['/Workouts/'+notification.data.id+'']);
+        //     }else if(notification.data.type.toLowerCase() == 'program'){
+        //       this.router.navigate(['/Programs/']);
+        //     }
+        //   }
+        // }
       }, (error) => {
           console.error(error);
       }); 

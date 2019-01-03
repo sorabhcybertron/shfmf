@@ -104,7 +104,7 @@ export class LoginComponent implements OnInit {
                         // window.localStorage.setItem('login', 'true');
                         window.localStorage.setItem
                         scope.appService.setLogin(true);
-                        this.checkToken(res);
+                        scope.checkToken(res);
                         scope.router.navigate(['/Dashboard']);
                       } else{
                         window.localStorage.setItem('userInfo', '');

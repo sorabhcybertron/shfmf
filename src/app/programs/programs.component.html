@@ -26,7 +26,7 @@
                         <span [innerHtml]="dt.mc_w_c_p"></span><!-- {{dt.mc_w_c_p}} -->
                         <span class="get-btn" *ngIf="dt.app_url != null">
                             <app-like-button [type]="'programs'" [item_id]="dt.id"></app-like-button>
-                            <a class="get-btn-in" [routerLink]="['/Programs', dt.app_url, dt.recordLinkID, dt.dbTable ]" (click)="appService.MarkNewContentsViewded('programs',dt.id)">Get Started</a>
+                            <a class="get-btn-in" [routerLink]="['/Programs', dt.app_url, dt.recordLinkID, dt.dbTable,dt.id]" (click)="appService.MarkNewContentsViewded('programs',dt.id)">Get Started</a>
                         </span>
                         <span class="get-btn" *ngIf="dt.app_url == null">
                             <a class="get-btn-in" href="javascript:void(0);">Get Started</a>

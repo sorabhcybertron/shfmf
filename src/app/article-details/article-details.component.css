@@ -263,7 +263,7 @@ strong {
     line-height: 14px;
     vertical-align: middle;
     margin: -22px 0px 0 -13px;
-    font-size: 12px;
+    font-size: 16px;
     color: #fff;
     padding: 8px 8px 8px 4px;
     background: #3c599b;
@@ -391,6 +391,7 @@ a.authorpflink{
 
 app-like-button {
     position: relative;
-    top: -3px;
-    font-size: 30px;
+    top: -5px;
+    padding-right: 5px;
+    font-size: 28px;
 }
