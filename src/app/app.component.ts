@@ -55,8 +55,8 @@ export class AppComponent implements OnInit{
     });
     // this.headerShow();
     if(this.login){
-      // this.router.navigate(['/Dashboard']);
-      this.router.navigate(['/Programs/full_body_evolution_json/6/SHFcommentsBodyEvolution']);
+      this.router.navigate(['/Dashboard']);
+      // this.router.navigate(['/Programs/full_body_evolution_json/6/SHFcommentsBodyEvolution']);
       // this.router.navigate(['/Authors/0/Scott_Herman']);
       // this.router.navigate(['/MyAccount']);
       // this.router.navigate(['/Programs/push_pull_legs_json/3/SHFcommentsPushLeg']);
