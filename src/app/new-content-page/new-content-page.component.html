@@ -1,0 +1,89 @@
+<div class="wrap cyan pagewrapper myaccount" >
+	<div class="ma-tab-content" [ngSwitch]="activeTab">
+		<div class="favorites">
+			<!-- <div class="tb-content">COMING IN NEXT APP UPDATE!</div> -->
+			<div *ngIf="appService.favorites">
+				<div *ngIf="appService.favorites.programs && getuserPlatinum()" class="favorite-items programs">
+				 	<h2 class="fav-title">Programs</h2>
+				 	<div class="card" *ngFor="let program of appService.favorites.programs">
+				 		<div class="inner">
+					 		<a [routerLink]="['/Programs/'+program.app_url+'/'+program.recordLinkID+'/'+program.dbTable+'/'+program.fav_item_id+'/newNotify']">
+					 		 <div class="lessmarg">
+					 		 	<span class="image-box"><img src="{{program.img}}" alt=""></span>
+						 		<h2 *ngIf="program.item_title && program.item_title.length > 50" >{{program.item_title | slice : 0: 50	}}</h2>
+						 		<h2 *ngIf="program.item_title && program.item_title.length < 50">{{program.item_title}}</h2>
+						 		<p class="item_descc">{{program.item_desc}}</p>
+					 		 </div>
+						 	</a>
+						 	<app-like-button [type]="program.fav_item_type" [item_id]="program.fav_item_id"></app-like-button>
+				 		</div>
+				 	</div>
+				 </div>
+				<div *ngIf="appService.favorites.routines && getuserPlatinum()" class="favorite-items routines">
+				 	<h2 class="fav-title">Routines</h2>
+				 	<div class="card" *ngFor="let routine of appService.favorites.routines">
+				 		<div class="inner">
+					 		<a [routerLink]="['/Workouts/'+routine.fav_item_id+'/routines/newNotify']">
+					 		 <div class="lessmarg">
+					 		 	<span class="image-box"><img src="{{routine.img}}" alt=""></span>
+						 		<h2 *ngIf="routine.item_title && routine.item_title.length > 50" >{{routine.item_title | slice : 0: 50	}}</h2>
+						 		<h2 *ngIf="routine.item_title && routine.item_title.length < 50">{{routine.item_title}}</h2>
+						 		<p class="item_descc">{{routine.item_desc}}</p>
+					 		 </div>
+						 	</a>
+						 	<app-like-button [type]="routine.fav_item_type" [item_id]="routine.fav_item_id"></app-like-button>
+				 		</div>
+				 	</div>
+				 </div>
+				 <div *ngIf="appService.favorites.exercises && getuserPlatinum()" class="favorite-items exercises">
+				 	<h2 class="fav-title">Exercise</h2>
+				 	<div class="card" *ngFor="let exercise of appService.favorites.exercises">
+				 		<div class="inner">
+					 		<a [routerLink]="['/Workouts/'+exercise.fav_item_id+'/exercise/newNotify']">
+					 		 <div class="lessmarg">
+					 		 	<span class="image-box"><img src="{{exercise.img}}" alt=""></span>
+						 		<h2 *ngIf="exercise.item_title && exercise.item_title.length > 50" >{{exercise.item_title | slice : 0: 50	}}</h2>
+						 		<h2 *ngIf="exercise.item_title && exercise.item_title.length < 50">{{exercise.item_title}}</h2>
+						 		<p class="item_descc">{{exercise.item_desc}}</p>
+					 		 </div>
+						 	</a>
+						 	<app-like-button [type]="exercise.fav_item_type" [item_id]="exercise.fav_item_id"></app-like-button>
+				 		</div>
+				 	</div>
+				 </div>
+				 <div *ngIf="appService.favorites.recipes" class="favorite-items recipes">
+				 	<h2 class="fav-title">Recipes</h2>
+				 	<div class="card" *ngFor="let recipe of appService.favorites.recipes" >
+				 		<div class="inner">
+					 		<a [routerLink]="['/Recipes/'+recipe.fav_item_id+'/newNotify']">
+					 		 <div class="lessmarg">
+					 		 	<span class="image-box"><img src="{{recipe.img}}" alt=""></span>
+					 		 	<h2 *ngIf="recipe.item_title && recipe.item_title.length > 50" >{{recipe.item_title | slice : 0: 50	}}</h2>
+					 		 	<h2 *ngIf="recipe.item_title && recipe.item_title.length < 50">{{recipe.item_title}}</h2>
+					 		 	<p class="item_descc">{{recipe.item_desc}}</p>
+					 		 </div>
+						 	</a>
+						 	<app-like-button [type]="recipe.fav_item_type" [item_id]="recipe.fav_item_id"></app-like-button>
+				 		</div>
+				 	</div>
+				 </div>
+				 <div *ngIf="appService.favorites.article" class="favorite-items article">
+				 	<h2 class="fav-title">Articles</h2>
+				 	<div class="card" *ngFor="let articl of appService.favorites.article">
+				 		<div class="inner">
+					 		<a [routerLink]="['/Articles/'+articl.fav_item_id+'/newNotify']">
+					 		 <div class="lessmarg">
+					 		 	<span class="image-box"><img src="{{articl.img}}" alt=""></span>
+						 		<h2 *ngIf="articl.item_title && articl.item_title.length > 50">{{articl.item_title | slice : 0: 50	}}</h2>
+						 		<h2 *ngIf="articl.item_title && articl.item_title.length < 50" >{{articl.item_title}}</h2>
+						 		<p class="item_descc">{{articl.item_desc}}</p>
+					 		 </div>
+						 	</a>
+						 	<app-like-button [type]="articl.fav_item_type" [item_id]="articl.fav_item_id"></app-like-button>
+				 		</div>
+				 	</div>
+				 </div>
+			</div>
+		</div>
+	</div>
+<div>

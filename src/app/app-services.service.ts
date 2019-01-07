@@ -209,6 +209,24 @@ export class AppServicesService {
 		}
 	}
 
+	GetAllCountOfNewContents(){
+		if(this.checkLogin()){
+			let userID =  this.getUserInfo('User Id');
+			if(userID){
+				if(this.newContents){
+					let count  = 0;
+					count += this.newContents.recipes.length;
+					count += this.newContents.articles.length;
+					count += this.newContents.workouts.length;
+					count += this.newContents.programs.length;
+					return count;
+				}else return 0;
+			}else return 0
+		}else{
+			return 0;
+		}
+	}
+
 	MarkNewContentsViewded(type,id){
 		if(this.checkLogin()){
 			let userID =  this.getUserInfo('User Id');
