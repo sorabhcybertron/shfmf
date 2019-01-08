@@ -63,8 +63,8 @@
     </div>
     <div class="right-nav">
         <ul>
-            <li>
-                <a class="badge" *ngIf="appService.GetAllCountOfNewContents()">{{appService.GetAllCountOfNewContents()}}</a>
+            <li *ngIf="appService.GetAllCountOfNewContents()">
+                <a [routerLink]="['/newcontent']" class="badge" >{{appService.GetAllCountOfNewContents()}}</a>
                 <a  [routerLink]="['/newcontent']"><img src="assets/images/notify-bell.png" alt=""></a>
             </li>
         </ul>

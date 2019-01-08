@@ -68,6 +68,7 @@ export class ProgramsInnerComponent implements OnInit {
 			self.dbTable = params['dbTable'];
 			if(params['programid']){
 				self.programID = params['programid'];
+				this.appService.MarkNewContentsViewded('programs',self.programID );
 			}
 			if(params['from'] && params['from'] == "fav"){
 				self.fromFav = true;

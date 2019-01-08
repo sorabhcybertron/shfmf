@@ -7,7 +7,7 @@ declare var cordova;
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
-  styleUrls: ["../../assets/styles/css.css"]
+  styleUrls: ["../../assets/styles/css.css","./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
   un: string;
