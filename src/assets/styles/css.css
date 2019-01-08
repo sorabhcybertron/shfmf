@@ -98,7 +98,7 @@
 
 .header .right-nav {
     float: right;
-    display: none;
+    /* display: none; */
 }
 
 .header .right-nav ul {

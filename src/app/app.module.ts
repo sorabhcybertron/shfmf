@@ -47,6 +47,7 @@ import { ViewPhotoAlbumComponent } from './view-photo-album/view-photo-album.com
 import { ViewVideoAlbumComponent } from './view-video-album/view-video-album.component';
 import { LikeButtonComponent } from './like-button/like-button.component';
 import { NewContentBadgeComponent } from './new-content-badge/new-content-badge.component';
+import { NewContentPageComponent } from './new-content-page/new-content-page.component';
 
 const appRoutes: Routes = [
    { path: 'Login', component: LoginComponent }, 
@@ -85,7 +86,8 @@ const appRoutes: Routes = [
    { path: 'UpgradeMembership/:showGold', component: UpgradeMembershipComponent },
    { path: 'AboutAuthor/:url', component: AboutAuthorComponent },
    { path: 'view-album/photos/:id/:profileid', component: ViewPhotoAlbumComponent },
-   { path: 'view-album/videos/:id/:profileid', component: ViewVideoAlbumComponent }
+   { path: 'view-album/videos/:id/:profileid', component: ViewVideoAlbumComponent },
+   { path: 'newcontent', component: NewContentPageComponent }
    // { path: 'Friends', component: FriendsComponent },
    // { path:'', redirectTo: '/Dashboard', pathMatch: 'full'},
 ];
@@ -128,7 +130,8 @@ const appRoutes: Routes = [
     ViewPhotoAlbumComponent,
     ViewVideoAlbumComponent,
     LikeButtonComponent,
-    NewContentBadgeComponent
+    NewContentBadgeComponent,
+    NewContentPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,345 @@
+/deep/ .myaccount {
+    font-family: Open Sans;
+    padding: 38px 20px 0;
+    max-height: 100vh;
+    box-sizing: border-box;
+}
+/deep/ .myaccount.ovh {
+    overflow: hidden;
+}
+/deep/ .feed-copy * {
+    max-width: 100%;
+    color: #000 !important;
+    font: 18px Open Sans !important;
+}
+/deep/ .feed-copy a {
+    color: #ff3136 !important;
+}
+
+.ma-tab-head {
+    padding: 1% 0;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+.myaccount .ma-tab-head .tab {
+    width:  20%;
+    float:  left;
+    padding: 8px 4px;
+    box-sizing:  border-box;
+    text-align:  center;
+    border: 1px solid #d7d7d7;
+    font-size: 0.7em;
+    transition: all 0.4s ease;
+}
+.myaccount .ma-tab-head .tab:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.myaccount .ma-tab-head .tab:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.myaccount .ma-tab-head .tab:not(:first-child){
+    border-left: none;
+}
+.myaccount .ma-tab-head .tab.active {
+    color: #fff;
+    background: #292929;
+    border-color: #292929;
+}
+.myaccount .ma-tab-content {
+    padding: 15px 0 0;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    /*height: calc(100vh - 210px);
+    overflow: auto;*/
+}
+
+/* New Post Popover Styling*/
+/deep/ .fr-box{
+    display: flex;
+    flex-direction: column-reverse;
+    height: calc(100% - 45px);
+}
+/deep/ .fr-popup.fr-active {
+    z-index: 11 !important;
+}
+/deep/ .fr-popup.fr-active .fr-arrow {
+    display: none;
+}
+/*/deep/ .fr-element.fr-view {*/
+/deep/ .fr-wrapper {
+    height: calc(100% - 43px) !important;
+}
+/deep/ .fr-wrapper {
+    overflow: auto;
+}
+/deep/ .fr-toolbar, .fr-wrapper {
+    width: 100%;
+    /*height: calc(100% - 43px);*/
+}
+/deep/ .fr-box.fr-basic .fr-element {
+    min-height: 100% !important;
+}
+/deep/ .fr-box.fr-basic .fr-element img {
+    max-width: 100%;
+}
+/deep/ .fr-popup.fr-active {
+    display: block;
+    bottom: 42px;
+    top: initial !important;
+    border-bottom: 5px solid #222;
+    border-top: none;
+}
+/deep/ .fr-popup .fr-arrow{
+    top: initial !important;
+    bottom: -10px;
+    transform: rotate(180deg);
+}
+/deep/ button[id*='insertImage'] {
+    border: solid #007167 1px !important;
+    color: #FFFFFD!important;
+    background-color: #009688 !important;
+    border-radius: 50% !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    width: 32px !important;
+    height: 32px !important;
+}
+/deep/ button[id*='insertVideo'] {
+    color: #FFFFFF !important;
+    border: solid #d40000 1px !important;
+    background-color: red !important;
+    border-radius:  50% !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    width: 32px !important;
+    height: 32px !important;
+}
+/deep/ button[id*='emoticons'] {
+    background-color: #FFC107 !important;
+    color: #000!important;
+    border: solid #e8af00 1px !important;
+    border-radius: 50% !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    width: 32px !important;
+    height: 32px !important;
+}
+/deep/ .fr-toolbar button i.fa {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding:  0 !important;
+    width: 100% !important;
+    height: 100%;
+}
+/deep/ .newpostbtn {
+    text-align:  center;
+    margin-top: 10px;
+}
+/deep/ .newpostbtn button{
+    border: none;
+    padding: 6px 10px;
+    color:  #fff;
+    border-radius: 2px;
+    font-size: 16px;
+}
+/deep/ .newpostbtn button.postnewp {
+    background: green;
+}
+/deep/ .newpostbtn button.cancelpost {
+    background: red;
+    margin-right: 10px;
+}
+
+/*may*/
+/deep/ app-my-profile button[id^=emoticons-] {
+    display: none !important;
+}
+.board .like-comnt, .board .viewallreplies {
+    float: left;
+    padding-left: 15%;
+    max-width: 100%;
+    width: 100%;
+}
+.board .like-comnt{
+    font-size: 14px;
+    margin-top: 10px;   
+}
+
+.board .like-comnt span{
+    margin-right: 14px;
+}
+
+/deep/ .board .like-comnt.liked{
+    width: 100%;
+    color: #e29236;
+
+}
+
+.board .newcomment-reply-popup {
+    position:  fixed;
+    top: 87px;
+    height:  calc(100vh - 87px);
+    display:  flex;
+    justify-content:  center;
+    align-items:  center;
+    flex-direction:  column;
+    width:  100%;
+    background: rgba(255,255,255,0.9);
+    left:  0;
+}
+.board .newcomment-reply-popup .close-pop {
+    position:  absolute;
+    top: 10px;
+    right: 10px;
+    font-size:  30px;
+    width:  30px;
+    height:  30px;
+    display: flex;
+    justify-content:  center;
+    align-items:  center;
+}
+.board .newcomtext{
+    width: 90%;
+    border: 1px solid black;
+}
+.board .addCommentBtn {
+    background: #458DD4;
+    color: #fff;
+    border-color: #458DD4;
+    margin: 8px auto;
+    text-transform: uppercase;
+    font: 16px/1.5 Open Sans;
+    font-weight: 600;
+    padding: 6px 16px 6px 16px;
+    border-radius:3px;
+}
+.board .viewallreplies{
+    margin: auto;
+    font-size: 14px;
+    color: grey;
+    margin-top: 14px;
+}
+.board .child-comment{
+    float: left;
+    padding-left: 10%;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.board .child-comment .member-img{
+    float: left;
+    padding-left: 2%;
+    max-width: 10%;
+    width: 10%;
+    text-align: center;
+}
+
+
+
+.board .child-comment .msg-block{
+    float:left;
+    width: 60%;
+    padding-left: 2%;
+}
+.board .child-comment .member-img img{
+    border-radius: 50%;
+}
+.board .child-comment .name{
+    float: left;
+    width: 100%;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #CB0000;
+    margin-top: 0px;
+}
+.board .child-comment .name .time{
+    color: gray;
+    font-size: 12px;
+    text-transform: lowercase;
+    width:100%;
+    float: left;
+    margin-top: 7px;
+}
+
+.board .child-comment .cmnt{
+    float: left;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font: 18px Open Sans !important;
+}
+.board .child-comment .like-etc{
+    float: left;
+    font-size: 16px;
+    width: 100%;
+}
+
+.board .child-comment .like-etc span{
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.lessmarg {
+    position: relative;
+}
+
+.lessmarg span.image-box img {
+    float: left;
+    margin-right: 9px;
+}
+
+.lessmarg h2 {
+    font-size: 14px;
+    color: #000;
+    margin:0px; 
+}
+
+.favorites {
+    display: table;
+    position: relative;
+}
+
+
+
+.favorites .card {
+    padding-top: 10px !important;
+    float: left;
+    display: inherit;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+.favorites .card .inner a{
+    float: left;
+    width: 90%;
+    text-decoration: none;
+}
+.favorites .card .inner a span.image-box{
+      float: left;
+    width: 40%;
+    padding-right: 10px;
+}
+.favorites .card .inner a span.image-box img{
+    width: 100%;
+}
+.favorites app-like-button{
+    float: right;
+    font-size: 25px;
+}
+
+.favorites h2.fav-title {
+    float: left;
+    width: 100%;
+    margin: 15px 0px;
+}
+.favorites .item_descc{
+    color: #8a8a8a;
+    font: 14px/1.5 Open Sans;
+}

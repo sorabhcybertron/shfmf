@@ -1,0 +1,19 @@
+.right-nav ul li {
+    position: relative;
+}
+
+.right-nav ul li a.badge {
+    position: absolute;
+    top: -5px;
+    left: -12px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    min-width: 20px;
+    height: 20px;
+    font-size: 13px;
+    text-align: center;
+    padding: 2px;
+    font-weight: lighter;
+    text-decoration: none;
+}
