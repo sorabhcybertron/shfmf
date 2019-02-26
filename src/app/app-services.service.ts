@@ -118,11 +118,11 @@ export class AppServicesService {
 			if(userID){
 				let data = { view_fav : 'view', mid : userID ,page:page,display:display}
 				this.postCall(this.siteBaseUrl+'app_favorite_stuff_json.php',data).subscribe(
-					res =>{
+					res => {
 						if(res.status) this.favorites  = res.data;
 						else this.favorites = null;
 					},
-					err=>{
+					err => {
 						this.favorites = null;
 					}
 				);;

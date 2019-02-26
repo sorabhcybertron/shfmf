@@ -6,10 +6,12 @@
     <div class="card" *ngFor="let recipe of recipes; let i = index; ">
         <div class="inner">
             <app-new-content-badge [colorName]="'green'" [type]="'recipes'" [item_id]="recipe.id"></app-new-content-badge>
-            <h2>{{recipe.heading}}</h2>
+            <div class="recipe-title">
+                <app-like-button class="fav" [type]="'recipes'" [item_id]="recipe.id"></app-like-button>
+                <h2 class="bolder">{{recipe.heading}}</h2>
+            </div>
             <p class="lessmarg"><span class="image-box"><img src="{{recipe.image}}" alt=""></span>{{recipe.description}}</p>
             <div class="get-btn nomargin text-right">
-                <app-like-button [type]="'recipes'" [item_id]="recipe.id"></app-like-button>
                 <a [routerLink]="['/Recipes', recipe.id ]" class="lesspd">Read More</a>
             </div>
         </div>

@@ -35,3 +35,13 @@ app-like-button {
     position: relative;
     top: 0px;
 }
+
+.recipe-title .fav {
+    display: inline-block;
+    font-size: 30px;
+}
+
+.recipe-title .bolder {
+    display: inline-block;
+    margin-left: 10px;
+}

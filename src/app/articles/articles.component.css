@@ -45,3 +45,13 @@ app-like-button {
     position: relative;
     top: 0px;
 }
+
+.article-title .fav {
+    display: inline-block;
+    font-size: 30px;
+}
+
+.article-title .bolder {
+    display: inline-block;
+    margin-left: 10px;
+}

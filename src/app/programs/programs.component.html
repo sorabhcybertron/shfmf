@@ -17,7 +17,10 @@
         <div class="card" *ngFor="let dt of allLoadedPrograms; let i = index; ">
             <div class="inner" *ngIf="dt.app_url != null && dt.recordLinkID !=null && dt.dbTable != null">
                 <app-new-content-badge [colorName]="'blue'" [type]="'programs'" [item_id]="dt.id"></app-new-content-badge>
-                <h2 class="bolder">{{dt.mc_w_c_t}}</h2>
+                <div class="program-title">
+                    <app-like-button class="fav" [type]="'programs'" [item_id]="dt.id"></app-like-button>
+                    <h2 class="bolder">{{dt.mc_w_c_t}}</h2>
+                </div>
                 <p class="flex">
                     <span class="image-box">
                         <img src="{{dt.img}}" alt="">
@@ -25,7 +28,7 @@
                     <span class="prog-right-desc programbtn">
                         <span [innerHtml]="dt.mc_w_c_p"></span><!-- {{dt.mc_w_c_p}} -->
                         <span class="get-btn" *ngIf="dt.app_url != null">
-                            <app-like-button [type]="'programs'" [item_id]="dt.id"></app-like-button>
+                            
                             <a class="get-btn-in" [routerLink]="['/Programs', dt.app_url, dt.recordLinkID, dt.dbTable,dt.id]" (click)="appService.MarkNewContentsViewded('programs',dt.id)">Get Started</a>
                         </span>
                         <span class="get-btn" *ngIf="dt.app_url == null">

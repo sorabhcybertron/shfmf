@@ -50,3 +50,12 @@ p, h2, div, span, a{
 .programbtn .get-btn app-like-button{
     font-size: 25px!important;
 }
+
+.program-title .fav {
+    display: inline-block;
+    font-size: 30px;
+}
+
+.program-title .bolder {
+    display: inline-block;
+}

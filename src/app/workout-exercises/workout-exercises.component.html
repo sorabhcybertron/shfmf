@@ -29,7 +29,10 @@
 	<div class="card" *ngFor="let workout of workouts; let i = index; ">
 	    <div class="inner">
 	    	<app-new-content-badge [colorName]="'yellow'" [type]="'workouts'" [item_id]="workout.id"></app-new-content-badge>
-	        <h2>{{workout.name}}</h2>
+			<div class="workout-title">
+				<app-like-button class="fav" [type]="'exercises'" [item_id]="workout.id"></app-like-button>
+				<h2 class="bolder">{{workout.name}}</h2>
+			</div>
 	        <p class="lessmarg">
 	            <span _ngcontent-c4="" class="image-box">
 	                <img _ngcontent-c4="" alt="" [src]="workout.img">
@@ -42,7 +45,6 @@
 			   </p>
 
 			   <span class="get-btn">
-			   	<app-like-button [type]="'exercises'" [item_id]="workout.id"></app-like-button>
 				<a class="get-btn-in" [routerLink]="['/Workouts', workout.id,'exercise']">Get Started</a>
 			</span>
 	    </div>

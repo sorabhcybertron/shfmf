@@ -11,7 +11,7 @@ export class ProgramsComponent implements OnInit {
 	allData: any;
 	noResults: any;
 	allLoadedPrograms: any;
-	allCats: any;
+	allCats: any[];
 	isLoading: boolean;
 
 	constructor(router: Router, public appService: AppServicesService, public zone: NgZone) {
@@ -45,6 +45,7 @@ export class ProgramsComponent implements OnInit {
 						if(res.has_data){
 							scope.allData = res.workouts;
 							scope.allCats = res.allCats;
+							scope.allCats.reverse();
 							for(var i in res.workouts){
 								if(res.workouts[i].has_data){
 									scope.allLoadedPrograms = res.workouts[i].data;
