@@ -343,3 +343,16 @@
     color: #8a8a8a;
     font: 14px/1.5 Open Sans;
 }
+.read-all-btn{
+    background: goldenrod;
+    color: #fff;
+    display: inline-block;
+    font: 14px/1.2 Open Sans;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 3px;
+    float: right;
+}
+.text-center{
+    text-align: center;
+}

@@ -1,7 +1,13 @@
 <div class="wrap cyan pagewrapper myaccount" >
 	<div class="ma-tab-content">
+		<div class="text-center" *ngIf="!this.appService.GetAllCountOfNewContents()">
+			You have read all.
+		</div>
 		<div class="favorites">
 			<!-- <div class="tb-content">COMING IN NEXT APP UPDATE!</div> -->
+			<div class="get-btn text-right" *ngIf="this.appService.GetAllCountOfNewContents()" >
+				<a class="read-all-btn" (click)="markeAllViewed()">Mark all as read</a>
+			</div>
 			<div *ngIf="appService.newContents">
 				<div *ngIf="appService.newContents.programs && getuserPlatinum() && appService.newContents.programs.length > 0" class="favorite-items programs">
 				 	<h2 class="fav-title">Programs</h2>

@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class NewContentPageComponent implements OnInit {
   public  userinfo : any ;
-  constructor(public appService: AppServicesService) { 
+  constructor(public router: Router, public appService: AppServicesService) { 
   	this.userinfo = JSON.parse(window.localStorage.getItem('userInfo'));
   }
 
@@ -23,4 +23,18 @@ export class NewContentPageComponent implements OnInit {
 			return false;
 		}
 	}
+
+  markeAllViewed(){
+    let userID =  this.appService.getUserInfo('User Id');
+    if(userID){
+      let data = {mid : userID, update_record : 'all'};
+      this.appService.postCall(this.appService.siteBaseUrl+'app_new_content_check.php',data).subscribe(
+        res =>{
+          this.appService.getNewContents();
+        },
+        err=>{
+        }
+      );
+    }
+  }
 }
