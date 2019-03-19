@@ -131,8 +131,10 @@
 							<div *ngIf="posting" class="gifcont ptop addcomment">
 						        <img src="assets/images/Infinity-programs.gif" class="loading-gif">
 						    </div>
-							<textarea rows="5" [(ngModel)]="CommentText" placeholder="Your Comment here..." class="newcomtext"></textarea>
-							<button (click)="addCommentOrReply()" class="addCommentBtn">Comment</button>
+						    <div class="absolute-move-down">
+								<textarea rows="5" [(ngModel)]="CommentText" placeholder="Your Comment here..." class="newcomtext"></textarea>
+								<button (click)="addCommentOrReply()" class="addCommentBtn">Comment</button>
+							</div>
 						</div>
 					</div>
 				</div>

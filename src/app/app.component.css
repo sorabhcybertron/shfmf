@@ -87,3 +87,14 @@ app-new-content-badge .orange{
 app-new-content-badge .red{
     color: #ff2d55 !important;
 }
+
+
+.newcomtext{
+    width: 100%!important;
+}
+.absolute-move-down {
+    position: absolute;
+    top: 60px;
+    width: 90%;
+    text-align: center;
+}

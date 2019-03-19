@@ -119,8 +119,10 @@
 						<!-- Add New Comment/Reply Popup -->
 						<div class="newcomment-reply-popup" *ngIf="CommentPopupOpen">
 							<span class="close-pop" (click)="CommentPopupOpen = false;CommentText='';">x</span>
+							<div class="absolute-move-down">
 							<textarea rows="5" [(ngModel)]="CommentText" placeholder="Add Comment" class="newcomtext"></textarea>
 							<button (click)="replyTo('COMMENT_ADD_NEW', replyToID, 'SHFcommentsArticles', articleDetails.id, 'message')" class="addCommentBtn">Comment</button>
+							</div>
 						</div>
 					</div>
 				</div>
