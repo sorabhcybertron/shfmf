@@ -1,6 +1,6 @@
 <div class="wrap crimson pagewrapper">
 	<div class="backlink-container">
-		<a *ngIf="fromFav" class="articles-back" [routerLink]="'/MyProfile'">&#x3008; Back</a>
+		<a *ngIf="fromFav" class="articles-back" (click)="navigateTopage()">&#x3008; Back</a>
 		<a *ngIf="!fromFav" [routerLink]="['/Articles']" class="articles-back">&#x3008; Back to Articles</a>
 		<p *ngIf="isLoaded" class="author" (click)="loadAuthor(articleDetails.authorid)">By {{articleDetails.PostedBy}}</p>
 	</div>

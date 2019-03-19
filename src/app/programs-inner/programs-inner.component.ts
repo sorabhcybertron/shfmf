@@ -11,7 +11,7 @@ declare var cordova;
 	styleUrls: ['../../assets/styles/css.css', '../recipe-details/recipe-details.component.css', './programs-inner.component.css', '../common_styles/newcomment_style.css']
 })
 export class ProgramsInnerComponent implements OnInit {
-	public fromFav : boolean = false;
+	public fromFav :  string = '';
 	public sub: any;
 	public linkToLoad: any = '';
 	public error: any = '';
@@ -49,6 +49,14 @@ export class ProgramsInnerComponent implements OnInit {
 		this.commentsArray[i].open = !this.commentsArray[i].open;
 	}
 
+	navigateTopage(){
+		if(this.fromFav == 'fav'){
+			this.router.navigate(['/MyProfile']);
+		}else if(this.fromFav == 'newNotify'){
+			this.router.navigate(['/newcontent']);
+		}
+	}
+
 	ngOnInit() {
 		this.appService.setAuthorUrl(this.route.url["_value"]);
 		let self = this;
@@ -70,8 +78,8 @@ export class ProgramsInnerComponent implements OnInit {
 				self.programID = params['programid'];
 				this.appService.MarkNewContentsViewded('programs',self.programID );
 			}
-			if(params['from'] && params['from'] == "fav"){
-				self.fromFav = true;
+			if(params['from'] && params['from'] != ""){
+				self.fromFav = params['from'];
 			}
 			self.appService.postCall('http://muscularstrength.com/'+self.linkToLoad+'.php', {mid: self.appService.getUserInfo('User Id')}).subscribe(
 				res => {

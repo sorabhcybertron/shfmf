@@ -1,6 +1,6 @@
 <div class="wrap green pagewrapper">
 	<div class="backlink-container">
-		<a *ngIf="fromFav" class="recipes-back" [routerLink]="'/MyProfile'">&#x3008; Back</a>
+		<a *ngIf="fromFav" class="recipes-back" (click)="navigateTopage()">&#x3008; Back</a>
 		<a *ngIf="!fromFav" [routerLink]="['/Recipes']" class="recipes-back">&#x3008; Back to Recipes</a>
 		<p *ngIf="isLoaded" class="author" (click)="loadAuthor(articleDetails.authorid)">By {{articleDetails.author[0].author_name}}</p>
 	</div>

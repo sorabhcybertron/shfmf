@@ -1,6 +1,6 @@
 <div class="wrap pagewrapper">
 	<div class="backlink-container">
-		<a *ngIf="fromFav" class="programs-back" [routerLink]="'/MyProfile'">&#x3008; Back</a>
+		<a *ngIf="fromFav" class="programs-back" (click)="navigateTopage()">&#x3008; Back</a>
 		<a *ngIf="!fromFav" [routerLink]="['/Programs']" class="programs-back">&#x3008; Back to Programs</a>
 		<p *ngIf="!loading && error == ''" class="author center">By {{data['About Author'].Authorname}}</p>
 	</div>

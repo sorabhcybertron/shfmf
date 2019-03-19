@@ -42,14 +42,21 @@ export class WorkoutSingleComponent implements OnInit {
   public myId: any = '';
   public backUrl: string;
   public authorURL: string;
-  public fromFav: boolean = false; 
+  public fromFav:  string = ''; 
 
 	/* FOR LIKING A COMMENT */
 	public likeOnTheWay: boolean = false;
 
 	constructor(private location: Location, public router:Router, public appService: AppServicesService, private route: ActivatedRoute, public sanitizer: DomSanitizer/*, public winRef: WindowRef*/) {
 	}
-	
+	navigateTopage(){
+		if(this.fromFav == 'fav'){
+			this.router.navigate(['/MyProfile']);
+		}else if(this.fromFav == 'newNotify'){
+			this.router.navigate(['/newcontent']);
+		}
+	}
+
 	ngOnInit() {
     this.backUrl = window.localStorage.getItem('backPath');
 		// window.localStorage.removeItem('backPath');
@@ -64,8 +71,8 @@ export class WorkoutSingleComponent implements OnInit {
 			if(params['type'] && params['type'] == "exercise"){
 				this.rouType = "exercise";
 			}
-			if(params['from'] && params['from'] == "fav"){
-				this.fromFav = true;
+			if(params['from'] && params['from'] != ""){
+				this.fromFav = params['from'];
 			}
 			self.appService.loadArticles(self.baseUrl).subscribe(res => {
 				console.log(res);

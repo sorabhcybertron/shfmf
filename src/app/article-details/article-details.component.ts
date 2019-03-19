@@ -27,7 +27,7 @@ export class ArticleDetailsComponent implements OnInit {
 	public articleID: any;
 	public myId: any = '';
 	public author_id : any = 0;
-	public fromFav : boolean = false;
+	public fromFav : string = '';
 	/* FOR LIKING A COMMENT */
 	/*public dbTable: any = 'LIKE_COMMENT';
 	public commentLikeAction: any = 'LIKE_COMMENT';
@@ -108,6 +108,14 @@ export class ArticleDetailsComponent implements OnInit {
 	    }
     }
 
+    navigateTopage(){
+		if(this.fromFav == 'fav'){
+			this.router.navigate(['/MyProfile']);
+		}else if(this.fromFav == 'newNotify'){
+			this.router.navigate(['/newcontent']);
+		}
+	}
+
 	ngOnInit() {
 		let self = this;
 		this.myId = this.appService.getUserInfo('User Id');
@@ -115,8 +123,8 @@ export class ArticleDetailsComponent implements OnInit {
 		this.sub = this.route.params.subscribe(params => {
             self.articleID = params['id'];
             this.appService.MarkNewContentsViewded('articles',self.articleID);
-            if(params['from'] && params['from'] == "fav"){
-				this.fromFav = true;
+            if(params['from'] && params['from'] != ""){
+				this.fromFav = params['from'];
 			}
 			self.appService.loadArticles('http://muscularstrength.com/article_viewer_json.php?rID='+params['id']).subscribe(res => {
 				if(res.result === "SUCCESS"){

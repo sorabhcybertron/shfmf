@@ -41,7 +41,7 @@ export class RecipeDetailsComponent implements OnInit {
 	public replyToID: any;
 	public articleID: any;
 	public myId: any = '';
-	public fromFav: boolean = false;
+	public fromFav: string = '';
 
 	/* FOR LIKING A COMMENT */
 	public likeOnTheWay: boolean = false;
@@ -115,13 +115,22 @@ export class RecipeDetailsComponent implements OnInit {
 		}
 	}
 
+	navigateTopage(){
+		if(this.fromFav == 'fav'){
+			this.router.navigate(['/MyProfile']);
+		}else if(this.fromFav == 'newNotify'){
+			this.router.navigate(['/newcontent']);
+		}
+	}
+
+
 	ngOnInit() {
 		let self = this;
 		this.myId = this.appService.getUserInfo('User Id');
 	    // Subscribe to route params
 		this.sub = this.route.params.subscribe(params => {
-			if(params['from'] && params['from'] == "fav"){
-				this.fromFav = true;
+			if(params['from'] && params['from'] != ""){
+				this.fromFav = params['from'];
 			}
 			self.articleID = params['id'];
 			this.appService.MarkNewContentsViewded('recipes',self.articleID);

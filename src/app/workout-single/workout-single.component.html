@@ -1,6 +1,6 @@
 <div class="wrap cyan pagewrapper prog-routine">
 	<div class="backlink-container">
-		<span *ngIf="fromFav" class="workouts-back" [routerLink]="'/MyProfile'">&#x3008; Back</span>
+		<span *ngIf="fromFav" class="workouts-back" (click)="navigateTopage()">&#x3008; Back</span>
 		<span *ngIf="!fromFav" class="workouts-back" [routerLink]="'/'+[backUrl]">&#x3008; Back to Workouts</span>
 		<p *ngIf="!loading && error == ''" class="author">By {{routine.posted_by.name}}</p>
 	</div>
