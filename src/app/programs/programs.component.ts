@@ -55,6 +55,13 @@ export class ProgramsComponent implements OnInit {
 								}
 							}
 						}
+						for(var i in this.allData){
+							if(this.allData[i]['term'] == 'Muscle_Gain'){
+								this.allLoadedPrograms = this.allData[i]['data'];
+								break;
+							}
+							console.log(this.allData);
+						}
 					}else
 						scope.noResults = res.msg;
 					scope.isLoading = false;
