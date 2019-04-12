@@ -42,6 +42,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
   OpenInAppBrowser() {
     this.iFrameBaseSource =
