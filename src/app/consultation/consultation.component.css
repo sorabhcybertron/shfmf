@@ -7,7 +7,7 @@
     color: #12a5f4;
 }
 /deep/ .consultation-popup, /deep/ .consultation-popup *:not(.fa) {
-    font-family: Open Sans !important;
+    font-family: Roboto !important;
 }
 /deep/ .consultation-popup *{
     box-sizing: border-box;

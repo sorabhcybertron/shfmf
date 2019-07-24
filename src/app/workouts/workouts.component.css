@@ -1,7 +1,7 @@
 .text-center {
     text-align: center;
 }
-/deep/ .wrap.workouts #workoutslisthere .filters {
+/deep/ .wrap.workouts .filters {
     position: fixed;
     top: 100%;
     height: calc(100vh - 40px);
@@ -10,34 +10,34 @@
     background-color: #fff;
     transition: all 0.4s ease;
 }
-/deep/ .wrap.workouts #workoutslisthere .filters.show {
+/deep/ .wrap.workouts .filters.show {
     top: 40px;
 }
-/deep/ .wrap.workouts #workoutslisthere .filters .filtersarea {
+/deep/ .wrap.workouts .filters .filtersarea {
     display: inline-block;
     width: 100%;
     height: calc(100% - 130px);
     overflow: auto;
 }
-/deep/ .wrap.workouts #workoutslisthere .filters ul {
+/deep/ .wrap.workouts .filters ul {
     list-style: none;
     padding: 0 20px;
     margin: 10px 0 0;
 }
-/deep/ .wrap.workouts #workoutslisthere .filters ul li {
+/deep/ .wrap.workouts .filters ul li {
     margin: 0 0 8px;
 }
-/deep/ .wrap.workouts #workoutslisthere .filters ul li input {
+/deep/ .wrap.workouts .filters ul li input {
     vertical-align: middle;
 }
 /deep/ .wrap.workouts #workoutslisthere .filters ul li label {
     text-transform: capitalize;
     padding-left: 6px;
     color: #AA7C41;
-    font: 14px Open Sans;
+    font: 14px Roboto;
     line-height: 1;
     vertical-align: middle;
-    font: 16px Open Sans;
+    font: 16px Roboto;
 }
 /deep/ .fltrworks {
     background: #ffcb00;
@@ -61,7 +61,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font: 24px Open Sans;
+    font: 24px Roboto;
 }
 .failed{
     float: left;
@@ -71,7 +71,7 @@
     text-align: center;
     padding: 10px 1%;
     font-weight: 600;
-    font: 20px Open Sans;
+    font: 20px Roboto;
     box-sizing: border-box;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -95,7 +95,7 @@
     outline: 0 none;
     border-radius: 0;
     background: transparent;
-    font: 22px Open Sans;
+    font: 22px Roboto;
     border: 0 none;
     -webkit-appearance: none;
     appearance: none;
@@ -116,14 +116,14 @@
     width: 26px;
     z-index: -1;
 }
-/deep/ #workoutslisthere .card .get-btn a{
+/* /deep/ #workoutslisthere .card .get-btn a{
     background-color: #ffcb00;
-}
+} */
 /deep/ #workoutslisthere .page-title.small {
     padding: 10px 20px 5px;
 }
 /deep/ #workoutslisthere .page-title.small h1 {
-    font: 20px Open Sans;
+    font: 20px Roboto;
 }
 
 /*smay*/
@@ -178,7 +178,11 @@ p.filter-toggel span.toggel-icon{
 
 app-like-button {
     float: left;
-    font-size: 30px;
+    font-size: 14px;
     position: relative;
     top: 0px;
+}
+
+app-like-button span i {
+    font-size: 16px !important;
 }

@@ -1,6 +1,6 @@
 /* Uses styles.css, recipe-details css */
 p, h2, h3, div, span, a {
-	font-family: Open Sans;
+	font-family: Roboto;
 }
 .programs-back{
     color: #5bc8fa;
@@ -8,7 +8,7 @@ p, h2, h3, div, span, a {
     padding: 5px 0px;
     display: inline-block;
     font-size: 20px;
-    font-family: Open Sans;
+    font-family: Roboto;
     margin-top: 10px;
     cursor: pointer;
     float: right;
@@ -93,7 +93,7 @@ p, h2, h3, div, span, a {
     border-bottom: 1px solid #5C5C5C;*/
     margin: 0 0;
     padding: 10px 0 20px;
-    font-family: Open Sans;
+    font-family: Roboto;
     font-weight: 600;
     font-size: 20px;
     color: #AAA;

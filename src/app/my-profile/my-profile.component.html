@@ -29,16 +29,10 @@
 			<button (click)="postComment()" class="postnewp">POST</button>
 		</div>
 	</div>
-	<div class="ma-tab-head">
-		<span [ngClass]="{'tab': true, 'active': activeTab == 'Board'}" (click)="activeTab = 'Board';checkInAppEventAttached();">Board</span>
-		<span [ngClass]="{'tab': true, 'active': activeTab == 'Photos'}" (click)="activeTab = 'Photos';checkInAppEventAttached();">Photos</span>
-		<span [ngClass]="{'tab': true, 'active': activeTab == 'Videos'}" (click)="activeTab = 'Videos';checkInAppEventAttached();">Videos</span>
-		<span [ngClass]="{'tab': true, 'active': activeTab == 'Gains'}" (click)="activeTab = 'Gains';checkInAppEventAttached();">Gains</span>
-		<span [ngClass]="{'tab': true, 'active': activeTab == 'Favorites'}" (click)="activeTab = 'Favorites';checkInAppEventAttached();">Favorites</span>
-	</div>
+	
 	<div class="ma-tab-content" [ngSwitch]="activeTab">
 		<div *ngSwitchCase="'Board'" class="board" id="board">
-			<div class="tb-content">FULL BOARD FUNCTIONS COMING IN NEXT APP UPDATE!</div>
+			<!-- <div class="tb-content">FULL BOARD FUNCTIONS COMING IN NEXT APP UPDATE!</div> -->
 			<p *ngIf="error" class="ma_red">Some error occurred!</p>
 			<div *ngIf="!loaded && !error" class="gifcont ptop">
 				<img src="assets/images/Infinity-myaccount.svg" class="loading-gif">
@@ -46,7 +40,7 @@
 			<div class="tb-content" *ngIf="loaded && !error">
 				<div *ngIf="data.board.has_results">
 					<div *ngFor=" let d of data.board.data; let i = index; " class="feedscont">
-						<div class="feed-top">
+						<!-- <div class="feed-top">
 							<div class="profimg">
 								<img src="{{d.userimage}}" alt="image">
 							</div>
@@ -56,11 +50,11 @@
 									<p class="time">{{d.time}}</p>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<div class="feed-copy" [innerHtml]="d.commentText | safeHtml"></div>
 						<div class="like-comnt">
-							<span class="like" [ngClass]="{'likecmnt': true, 'liked': d.userHasLiked}" (click)=" !d.userHasLiked ? likeComment(d.postid, 'LIKE') : likeComment(d.postid, 'UNLIKE')" >{{ d.like!=0?d.like+" ":'' }}Like</span>
-							<span class="reply" (click)="CommentPopupOpen =true; postId=d.postid; replyTo=d.username; CommentText='@'+d.username+' '" ><i class="fa fa-reply"></i> Reply</span>
+							<span class="like" [ngClass]="{'likecmnt': true, 'liked': d.userHasLiked}" (click)=" !d.userHasLiked ? likeComment(d.postid, 'LIKE') : likeComment(d.postid, 'UNLIKE')" >{{ d.like!=0?d.like+" ":'' }}<img src="assets/images/muscular-like.png"/> Like</span>
+							<span class="reply" (click)="CommentPopupOpen =true; postId=d.postid; replyTo=d.username; CommentText='@'+d.username+' '" ><img src="assets/images/muscular-reply.png"/> Reply</span>
 						</div>
 						<p class="viewallreplies" (click)="commentsArray[i].open = !commentsArray[i].open">
 							<span *ngIf="!commentsArray[i].open && commentsArray[i].hasChildComments">
@@ -121,34 +115,30 @@
 				<img src="assets/images/Infinity-myaccount.svg" class="loading-gif">
 			</div>
 			<div class="tb-content" *ngIf="loaded && !error">
-				<div class="fullw">
-					<span class="flag">Location: {{data.gain.location}}
-						<em class="flag {{data.gain.country}}"></em>
-					</span>
-				</div>
 				<div class="two">
-					<span>Gender: <b>{{data.gain.gender}}</b></span>
-					<span>Hip: <b>{{data.gain.measurement_hip}}</b></span>
-					<span>Arm: <b>{{data.gain.measurement_arm}}</b></span>
-					<span>Neck: <b>{{data.gain.measurement_neck}}</b></span>
-					<span>Age: <b>{{data.gain.age}}</b></span>
-					<span>Waist: <b>{{data.gain.measurement_waist}}</b></span>
-					<span>Chest: <b>{{data.gain.measurement_chest}}</b></span>
-					<span>Calve: <b>{{data.gain.measurement_calve}}</b></span>
-					<span>Weight: <b>{{data.gain.weight}}</b></span>
-					<span>Goal: <b>{{data.gain.goal}}</b></span>
-					<span>Shoulder: <b>{{data.gain.measurement_shoulder}}</b></span>
-					<span>Thigh: <b>{{data.gain.measurement_thigh}}</b></span>
-					<span>Forearm: <b>{{data.gain.measurement_forearm}}</b></span>
-					<span>Height: <b>{{data.gain.height}}</b></span>
-					<span>Body Fat: <b>{{data.gain.measurement_bf}}</b></span>
+					<span><b>Location:</b> {{data.gain.location}}</span>
+					<span><b>Gender:</b> {{data.gain.gender}}</span>
+					<span><b>Hip:</b> {{data.gain.measurement_hip}}</span>
+					<span><b>Arm:</b> {{data.gain.measurement_arm}}</span>
+					<span><b>Neck:</b> {{data.gain.measurement_neck}}</span>
+					<span><b>Age:</b> {{data.gain.age}}</span>
+					<span><b>Waist:</b> {{data.gain.measurement_waist}}</span>
+					<span><b>Chest:</b> {{data.gain.measurement_chest}}</span>
+					<span><b>Calve:</b> {{data.gain.measurement_calve}}</span>
+					<span><b>Weight:</b> {{data.gain.weight}}</span>
+					<span><b>Goal:</b> {{data.gain.goal}}</span>
+					<span><b>Shoulder:</b> {{data.gain.measurement_shoulder}}</span>
+					<span><b>Thigh:</b> {{data.gain.measurement_thigh}}</span>
+					<span><b>Forearm:</b> {{data.gain.measurement_forearm}}</span>
+					<span><b>Height:</b> {{data.gain.height}}</span>
+					<span><b>Body Fat:</b> {{data.gain.measurement_bf}}</span>
 				</div>
 			</div>
 		</div>
 		<div *ngSwitchCase="'Favorites'" class="favorites">
 			<!-- <div class="tb-content">COMING IN NEXT APP UPDATE!</div> -->
 			<div *ngIf="appService.favorites">
-				<div *ngIf="appService.favorites.programs" class="favorite-items programs">
+				<div *ngIf="appService.favorites.programs && appService.favorites.programs.length > 0" class="favorite-items programs">
 				 	<h2 class="fav-title">Programs</h2>
 				 	<div class="card" *ngFor="let program of appService.favorites.programs">
 				 		<div class="inner">
@@ -164,7 +154,7 @@
 				 		</div>
 				 	</div>
 				 </div>
-				<div *ngIf="appService.favorites.routines && getuserPlatinum()" class="favorite-items routines">
+				<div *ngIf="(appService.favorites.routines && appService.favorites.routines.length > 0) && getuserPlatinum()" class="favorite-items routines">
 				 	<h2 class="fav-title">Routines</h2>
 				 	<div class="card" *ngFor="let routine of appService.favorites.routines">
 				 		<div class="inner">
@@ -180,7 +170,7 @@
 				 		</div>
 				 	</div>
 				 </div>
-				 <div *ngIf="appService.favorites.exercises && getuserPlatinum()" class="favorite-items exercises">
+				 <div *ngIf="(appService.favorites.exercises && appService.favorites.exercises.length > 0) && getuserPlatinum()" class="favorite-items exercises">
 				 	<h2 class="fav-title">Exercise</h2>
 				 	<div class="card" *ngFor="let exercise of appService.favorites.exercises">
 				 		<div class="inner">
@@ -196,7 +186,7 @@
 				 		</div>
 				 	</div>
 				 </div>
-				 <div *ngIf="appService.favorites.recipes" class="favorite-items recipes">
+				 <div *ngIf="appService.favorites.recipes && appService.favorites.recipes.length > 0" class="favorite-items recipes">
 				 	<h2 class="fav-title">Recipes</h2>
 				 	<div class="card" *ngFor="let recipe of appService.favorites.recipes" >
 				 		<div class="inner">
@@ -212,7 +202,7 @@
 				 		</div>
 				 	</div>
 				 </div>
-				 <div *ngIf="appService.favorites.article" class="favorite-items article">
+				 <div *ngIf="appService.favorites.article && appService.favorites.article.length > 0" class="favorite-items article">
 					 <h2 class="fav-title">Articles</h2>
 				 	<div class="card" *ngFor="let articl of appService.favorites.article">
 				 		<div class="inner">
@@ -230,5 +220,12 @@
 				 </div>
 			</div>
 		</div>
+	</div>
+	<div class="ma-tab-head">
+			<span [ngClass]="{'tab': true, 'active': activeTab == 'Board'}" (click)="activeTab = 'Board';checkInAppEventAttached();"><img src="assets/images/news-filled-100.png" /></span>
+			<span [ngClass]="{'tab': true, 'active': activeTab == 'Photos'}" (click)="activeTab = 'Photos';checkInAppEventAttached();"><img src="assets/images/screenshot-filled-100.png" /></span>
+			<span [ngClass]="{'tab': true, 'active': activeTab == 'Videos'}" (click)="activeTab = 'Videos';checkInAppEventAttached();"><img src="assets/images/movies-folder-filled-100.png" /></span>
+			<span [ngClass]="{'tab': true, 'active': activeTab == 'Gains'}" (click)="activeTab = 'Gains';checkInAppEventAttached();"><img src="assets/images/chart-filled-100.png" /></span>
+			<span [ngClass]="{'tab': true, 'active': activeTab == 'Favorites'}" (click)="activeTab = 'Favorites';checkInAppEventAttached();"><img src="assets/images/star-filled-100.png" /></span>
 	</div>
 </div>

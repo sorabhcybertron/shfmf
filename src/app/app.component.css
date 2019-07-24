@@ -42,11 +42,16 @@ app-header .header-top{
 .new-content-count{
     float: right;
     font-size: 18px;
-    border-top: 5px solid;
-    border-bottom: 5px solid;
     padding: 0px 5px;
     border-color: white;
     color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: auto;
+    min-width: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 15px;
 }
 .new-content-count.green{
     background-color: #4dd964 !important;

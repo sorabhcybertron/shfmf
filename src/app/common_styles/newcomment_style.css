@@ -5,7 +5,7 @@
     border-color: #458DD4;
     margin: 8px auto;
     text-transform: uppercase;
-    font: 16px/1.5 Open Sans;
+    font: 16px/1.5 Roboto;
     font-weight: 600;
     padding: 6px 16px 6px 16px;
     border-radius:3px;
@@ -41,7 +41,7 @@
     text-align:  center;
     margin-bottom: 20px;
     font-size:  16px;
-    font-family: Open Sans;
+    font-family: Roboto;
     color: #ff2d55;
 }
 .art-newcomm span {

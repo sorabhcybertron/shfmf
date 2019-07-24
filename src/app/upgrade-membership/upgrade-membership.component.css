@@ -30,7 +30,7 @@ p.error-msg {
     padding: 5px 0px;
     display: inline-block;
     font-size: 20px;
-    font-family: Open Sans;
+    font-family: Roboto;
     margin-top: 10px;
     cursor: pointer;
     float: right;
@@ -65,7 +65,7 @@ p.error-msg {
 }
 .copyright {
     color: #8a8a8a;
-    font: 14px/1.5 Open Sans !important;
+    font: 14px/1.5 Roboto !important;
     margin: 0 0 15px;
     display: inline-block;
     width: 100%;
@@ -86,5 +86,5 @@ p.error-msg {
 }
 .billingcheck label {
     font-size: 12px;
-    font-family:  Open Sans;
+    font-family:  Roboto;
 }

@@ -131,12 +131,13 @@ export class LoginComponent implements OnInit {
                 cordova.facebookConnectPlugin.logout(
                   function(){
                     console.log('logout seccess');
+                    document.getElementById('muscularLogo').click();
                   },
                   function(){
                     console.log('logout failed');
                   }
                 );
-              }, 10000);
+              }, 5000);
             }, function onError (error) {
               console.log(error);
             }

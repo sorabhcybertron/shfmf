@@ -64,6 +64,7 @@ export class MyAccountComponent implements OnInit {
 		updateState: '',
 		updateCountry: ''
 	};
+	
 
 	constructor(public appService: AppServicesService){}
 	ngOnInit() {
@@ -156,7 +157,7 @@ export class MyAccountComponent implements OnInit {
 			console.log(this.newPass);
 			if(this.newPass.newPassword1 == this.newPass.newPassword2) {
 				self.updatingPass = true;
-				this.appService.postCall('http://muscularstrength.com/get_account_info_new_app_json.php', this.newPass).subscribe(
+				this.appService.simplePostCall('http://muscularstrength.com/get_account_info_new_app_json.php', this.newPass).subscribe(
 						res => {
 							console.log(res);
 							if(res.success == true) {

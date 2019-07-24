@@ -4,7 +4,7 @@
     padding: 5px 0px;
     display: inline-block;
     font-size: 15px;
-    font-family: Open Sans;
+    font-family: Roboto;
     margin-top: 18px;
     cursor: pointer;
     float: right;
@@ -13,7 +13,7 @@
 }
 
 /deep/ .myaccount {
-    font-family: Open Sans;
+    font-family: Roboto;
     padding: 38px 20px 0;
     max-height: 100vh;
     box-sizing: border-box;
@@ -24,7 +24,7 @@
 /deep/ .feed-copy * {
     max-width: 100%;
     color: #000 !important;
-    font: 18px Open Sans !important;
+    font: 18px Roboto !important;
 }
 /deep/ .feed-copy a {
     color: #ff3136 !important;
@@ -166,7 +166,7 @@
 }
 /* BOARD */
 /deep/ .board {
-    font-family: Open Sans;
+    font-family: Roboto;
 }
 /deep/ .board a{
     color: #428bca;
@@ -647,7 +647,7 @@ span.like.likecmnt.liked {
     border-color: #458DD4;
     margin: 8px auto;
     text-transform: uppercase;
-    font: 16px/1.5 Open Sans;
+    font: 16px/1.5 Roboto;
     font-weight: 600;
     padding: 6px 16px 6px 16px;
     border-radius:3px;
@@ -704,7 +704,7 @@ span.like.likecmnt.liked {
     width: 100%;
     margin-top: 0;
     margin-bottom: 0;
-    font: 18px Open Sans !important;
+    font: 18px Roboto !important;
 }
 .board .child-comment .like-etc{
     float: left;
@@ -741,7 +741,7 @@ span.like.likecmnt.liked {
     float: right;
 }
 #board {
-    width: 95%!important;
+    width: 100%!important;
 }
 .backlink-container {
     background-color: #fff;

@@ -23,7 +23,7 @@
     /*float: left;
     width: 100%;*/
     border-radius: 3px;
-    font: 25px/1 Open Sans;
+    font: 25px/1 Roboto;
     /*background: rgba(0, 0, 0, 0.05);*/
     position: -webkit-sticky;
     position: sticky;
@@ -36,7 +36,7 @@
 }
 .friendspage .ma-tab-head .tab {
 	width: 25%;
-    font: 12px/1 Open Sans;
+    font: 12px/1 Roboto;
     word-wrap: break-word;
 }
 .friendspage .ma-tab-head {
@@ -104,7 +104,7 @@
 }
 .friendslist .card .inner .upname {
 	padding-left: 3%;
-	font: 16px Open Sans;
+	font: 16px Roboto;
 	display:  inline-block;
 	vertical-align:  middle;
 	width: calc(100% - 120px);
@@ -142,7 +142,7 @@
     color: red;
 }
 .accdeny-actions span {
-    font: 13px Open Sans;
+    font: 13px Roboto;
 }
 .friendslist .card.req .inner .upname {
     width: 100%;
@@ -155,7 +155,7 @@
 .friendspage .loadingerror{
 	color: red;
 	text-align: center;
-	font: 18px Open Sans;
+	font: 18px Roboto;
 	float: left;
 	width: 100%;
 }
@@ -174,7 +174,7 @@
     position: absolute;
     top: calc(50% - 6px);
     right: 0;
-    font: 12px Open Sans;
+    font: 12px Roboto;
 	color: red;
 }
 .friendslist .unfriendme.unblock {

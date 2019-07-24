@@ -23,7 +23,6 @@ export class DashboardComponent implements OnInit {
   counts : any = {  workouts : 0, articles : 0, recipes : 0, programs : 0};
   constructor(router: Router,public appService: AppServicesService) {
     if (!appService.checkLogin()) router.navigate(["Login"]);
-
     this.un = atob(window.localStorage.getItem("key1"));
     this.ps = atob(window.localStorage.getItem("key2"));
     let urlString : string = appService.siteBaseUrl+'whats_new_app_json.php';

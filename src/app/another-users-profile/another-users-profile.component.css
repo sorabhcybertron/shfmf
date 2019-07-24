@@ -75,7 +75,7 @@
 .myaccount.another .loadingerror{
 	color: red;
 	text-align: center;
-	font: 18px Open Sans;
+	font: 18px Roboto;
 }
 .myaccount.another .backlink-container {
 	background-color: #fff;
@@ -93,7 +93,7 @@
 	padding: 10px 0;
 	display: inline-block;
 	font-size: 20px;
-	font-family: Open Sans;
+	font-family: Roboto;
 	float: right;
 }
 .myaccount.another .user-info {

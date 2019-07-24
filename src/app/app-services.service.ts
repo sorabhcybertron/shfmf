@@ -59,12 +59,12 @@ export class AppServicesService {
 		return this.http.get(url).map( res => res.json());
 	}
 
-	public loginUser(un,ps){	// Login call
-		un = encodeURI(un);
-		ps = encodeURI(ps);
-		let data = {user : un, pass : ps, app:1, action:'appLogin'}
-		return this.postCall(this.siteBaseUrl+'checkUser.php',data);
-		// return this.http.get(this.siteBaseUrl+'checkUser.php?user='+un+'&pass='+ps+'&app=1').map(res => res.json());
+	public loginUser(un,ps) {	// Login call
+		un = un;
+        ps = ''+ps;
+        let data = {user : un, pass : ps, app:1, action:'appLogin'}
+        return this.http.post(this.siteBaseUrl+'checkUser.php', data).map(res => res.json());
+        // return this.postCall(this.siteBaseUrl+'checkUser.php',data);
 	}
 
 	public appExit(currentUrl){
@@ -283,4 +283,9 @@ export class AppServicesService {
 	      );
 	    }
 	}
+
+	simplePostCall(url, data, map?) {
+		url = this.filterulr(url);
+		return this.http.post(url, data).map(res => res.json());
+	 }
 }
