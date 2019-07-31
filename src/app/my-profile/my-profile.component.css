@@ -805,6 +805,25 @@ span.like.likecmnt.liked img {
     color: #ff2d55;
 }
 
+.favorite-items.exercises .morebutton{
+    color: #ffcb00;
+}
+
+.favorite-items.recipes .morebutton{
+    color: #4dd964;
+}
+
+.favorite-items.programs .morebutton{
+    color: #5bc8fa;
+}
+
+.favorite-items.routines .morebutton{
+    color: #ffcb00;
+}
+
+.favorite-items.article .morebutton{
+    color: #ff2d55;
+}
 
 
 .favorites .card {
@@ -834,6 +853,7 @@ span.like.likecmnt.liked img {
 .favorites app-like-button{
     float: right;
     font-size: 14px;
+    margin-top: 10px;
 }
 
 .favorites h2.fav-title {
@@ -844,4 +864,18 @@ span.like.likecmnt.liked img {
 .favorites .item_descc{
     color: #8a8a8a;
     font: 14px/1.5 Roboto;
+}
+.morebutton{
+    color: #6accfa;
+    background-color: #fff;
+    display: inline-block;
+    font: 700 14px/1.2 Roboto;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d7d7d7;
+    text-transform: uppercase;
+    max-width: 87px;
 }
