@@ -90,7 +90,7 @@
     background-color: white;
 }
 .myaccount .ma-tab-head .tab img {
-    height: 25px;
+    height: 25px!important;
     opacity: 0.5;
 }
 /* .myaccount .ma-tab-head .tab:first-child {
@@ -636,7 +636,7 @@ span.like.likecmnt.liked img {
     margin-right: 14px;
 }
 .board .like-comnt span img {
-    height: 15px;
+    height: 15px!important;
     opacity: 0.6;
 }
 

@@ -12,22 +12,29 @@
     right: 10px;
 }
 
-/deep/ .myaccount {
+/deep/ .myaccount.author-details {
     font-family: Roboto;
-    padding: 38px 20px 0;
-    max-height: 100vh;
+    padding-top: 40px;
+    min-height: 100vh;
     box-sizing: border-box;
+    position: relative;
+    background-color: #f9f9f9;
 }
-/deep/ .myaccount.ovh {
+/deep/ .myaccount.author-details.ovh {
     overflow: hidden;
 }
 /deep/ .feed-copy * {
     max-width: 100%;
     color: #000 !important;
-    font: 18px Roboto !important;
+    font: 22px Roboto !important;
+    font-weight: 600 !important;
 }
 /deep/ .feed-copy a {
     color: #ff3136 !important;
+}
+
+.feed-copy p {
+
 }
 .usr-socials {
     margin-top: 10px;
@@ -51,8 +58,9 @@
     margin-top: 0;
 }
 .user-info{
-    padding: 15px 0;
-    margin-top: 30px;
+    padding: 45px 20px 15px;
+    background-color: white;
+    /* margin-top: 30px; */
 }
 .userprofimgcont, .userprofname {
     display: inline-block;
@@ -79,8 +87,14 @@
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    z-index: 99;
+    border-top: 2px solid lightgray;
+    
 }
-.myaccount .ma-tab-head .tab {
+.myaccount.author-details .ma-tab-head .tab {
     width:  20%;
     float:  left;
     padding: 8px 4px;
@@ -89,35 +103,47 @@
     border: 1px solid #d7d7d7;
     font-size: 0.7em;
     transition: all 0.4s ease;
+    background-color: white;
 }
-.myaccount .ma-tab-head .tab:first-child {
+.myaccount.author-details .ma-tab-head .tab img {
+    height: 25px!important;
+    opacity: 0.5;
+}
+/* .myaccount.author-details .ma-tab-head .tab:first-child {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
-.myaccount .ma-tab-head .tab:last-child {
+.myaccount.author-details .ma-tab-head .tab:last-child {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-}
-.myaccount .ma-tab-head .tab:not(:first-child){
+} */
+.myaccount.author-details .ma-tab-head .tab:not(:first-child){
     border-left: none;
 }
-.myaccount .ma-tab-head .tab.active {
+/* .myaccount.author-details .ma-tab-head .tab.active {
     color: #fff;
     background: #292929;
     border-color: #292929;
+} */
+.myaccount.author-details .ma-tab-head .tab.active img {
+    opacity: 0.9;
 }
-.myaccount .ma-tab-content {
-    padding: 15px 0 0;
+.myaccount.author-details .ma-tab-content {
+    padding: 15px 0 30px;
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
     /*height: calc(100vh - 210px);
     overflow: auto;*/
+    background-color: #f9f9f9;
+    position: absolute;
 }
 .newpost {
     text-align: center;
     margin: 0 0 15px;
     font-size: 18px;
+    background-color: white;
+    padding: 15px 0;
 }
 .newpost .dashicon-cont {
     width: 28px;
@@ -129,7 +155,7 @@
     vertical-align: middle;
     margin-right: 5px;
 }
-.myaccount .dash_icons {
+.myaccount.author-details .dash_icons {
     max-width: 25px;
     max-height: 25px;
     line-height: 1;
@@ -148,6 +174,7 @@
 }
 .newpost-popover.show {
     bottom: 0;
+    z-index: 100;
 }
 .postloading {
     position: absolute;
@@ -179,14 +206,14 @@
     max-width: 100%;
 }
 .feedscont {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     float: left;
     width: 100%;
     /*border: solid #dcdcdc 1px;*/
-    box-shadow: 0px 2px 8px #e0e0e0;
     padding: 10px;
     box-sizing: border-box;
-    border-radius: 3px;
+    box-shadow: 0px 2px 4px lightgray;
+    background-color: white;
 }
 .noboardresults {
     color:  red;
@@ -222,10 +249,9 @@
     border-radius: 50%;
 }
 .feedscont .feed-copy {
-    width: 85%;
-    float: left;
-    padding-top: 0px;
-    padding-left: 15%;
+    /* width: 100%; */
+
+    padding: 10px;
     word-break: break-all;
 }
 /deep/ .feedscont .feed-copy p {
@@ -233,27 +259,40 @@
     padding-top: 10px;
 }
 /* GAINS */
+.gains {
+    background-color: white;
+    box-shadow: 0 2px 3px lightgray;
+    position: absolute;
+    padding: 10px 10px;
+}
+.gains div {
+    background-color: white;
+}
+.gains .tb-content {
+    background-color: white;
+}
 .gains span{
     /*background-color: #151515;
     color: gray;*/
-    border: 1px solid #d7d7d7;
+    border: none;
     border-radius: 3px;
     box-sizing: border-box;
     display: inline-block;
     font-size: 1em;
-    margin-bottom: 8px;
     padding: 8px;
+    background-color: white;
     float: left;
 }
 .gains .two span{
-    width: 49.5%;
+    width: 50%;
+    padding: 5px 15px;
 }
 .gains .fullw span{
     width: 100%;
 }
-.gains .two span:nth-child(odd) {
+/* .gains .two span:nth-child(odd) {
     margin-right: 1%;
-}
+} */
 span.flag {
     position: relative;
 }
@@ -277,6 +316,11 @@ span.flag {
 span.like.likecmnt.liked {
     color: #e29236;
 }
+
+span.like.likecmnt.liked img {
+    opacity: 0.8 !important;
+}
+
 .States{background-image:url(http://muscularstrength.com/css_am/48/United%20States%20of%20AmericaUSA.png)}
 .Afghanistan{background-image:url(http://muscularstrength.com/css_am/48/Afghanistan.png)}
 .Albania{background-image:url(http://muscularstrength.com/css_am/48/Albania.png)}
@@ -594,25 +638,33 @@ span.like.likecmnt.liked {
 }
 .board .like-comnt, .board .viewallreplies {
     float: left;
-    padding-left: 15%;
     max-width: 100%;
     width: 100%;
 }
-.board .like-comnt{
+.board .like-comnt {
+    padding: 0 10px 0 10px;
     font-size: 14px;
-    margin-top: 10px;   
+    margin-top: 10px; 
+    box-sizing: border-box; 
 }
 
 .board .like-comnt span{
     margin-right: 14px;
 }
+.board .like-comnt span img {
+    height: 15px!important;
+    opacity: 0.6;
+}
 
 /deep/ .board .like-comnt.liked{
     width: 100%;
     color: #e29236;
-
+    padding: 0 10px 0 10px;
 }
 
+/deep/ .board span.liked img {
+   opacity: 1;
+}
 
 .board .newcomment-reply-popup {
     position:  fixed;
@@ -664,6 +716,7 @@ span.like.likecmnt.liked {
     max-width: 100%;
     width: 100%;
     margin-top: 20px;
+    box-sizing: border-box;
 }
 
 .board .child-comment .member-img{
@@ -674,9 +727,11 @@ span.like.likecmnt.liked {
     text-align: center;
 }
 
+
+
 .board .child-comment .msg-block{
     float:left;
-    width: 60%;
+    width: 75%;
     padding-left: 2%;
 }
 .board .child-comment .member-img img{
@@ -716,6 +771,130 @@ span.like.likecmnt.liked {
     margin-right: 10px;
     font-size: 14px;
 }
+
+
+.lessmarg {
+    position: relative;
+}
+
+.lessmarg span.image-box img {
+    float: left;
+    margin-right: 9px;
+}
+
+.lessmarg h2 {
+    font-size: 14px;
+    color: #000;
+    margin:0px; 
+}
+
+.favorites {
+    display: table;
+    position: relative;
+    padding: 0 0 30px 0;
+}
+
+
+.favorite-items .fav-title {
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.favorite-items.exercises h2{
+    color: #ffcb00;
+}
+
+.favorite-items.recipes h2{
+    color: #4dd964;
+}
+
+.favorite-items.programs h2{
+    color: #5bc8fa;
+}
+
+.favorite-items.routines h2{
+    color: #ffcb00;
+}
+
+.favorite-items.article h2{
+    color: #ff2d55;
+}
+
+.favorite-items.exercises .morebutton{
+    color: #ffcb00;
+}
+
+.favorite-items.recipes .morebutton{
+    color: #4dd964;
+}
+
+.favorite-items.programs .morebutton{
+    color: #5bc8fa;
+}
+
+.favorite-items.routines .morebutton{
+    color: #ffcb00;
+}
+
+.favorite-items.article .morebutton{
+    color: #ff2d55;
+}
+
+
+.favorites .card {
+    padding: 10px 20px !important;
+    float: left;
+    display: inherit;
+    width: 100%;
+    padding-bottom: 10px;
+    /* border-bottom: 1px solid lightgray; */
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0 2px 3px lightgray;
+}
+.favorites .card .inner a{
+    float: left;
+    width: 100%;
+    text-decoration: none;
+}
+.favorites .card .inner a span.image-box{
+    float: left;
+    width: 40%;
+    padding-right: 10px;
+}
+.favorites .card .inner a span.image-box img{
+    width: 100%;
+}
+.favorites app-like-button{
+    float: right;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.favorites h2.fav-title {
+    float: left;
+    width: 100%;
+    margin: 15px 0px;
+}
+.favorites .item_descc{
+    color: #8a8a8a;
+    font: 14px/1.5 Roboto;
+}
+.morebutton{
+    color: #6accfa;
+    background-color: #fff;
+    display: inline-block;
+    font: 700 14px/1.2 Roboto;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d7d7d7;
+    text-transform: uppercase;
+    max-width: 87px;
+}
+
 .musclehand{
     right : -20%!important;
 }

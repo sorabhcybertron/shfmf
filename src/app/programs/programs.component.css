@@ -75,3 +75,10 @@ app-like-button {
 app-like-button span i {
   font-size: 16px !important;
 }
+
+.alltext{
+    padding-left: 3%; 
+}
+.alltext h2{
+    padding-left: unset!important; 
+}

@@ -53,7 +53,7 @@
 						</div> -->
 						<div class="feed-copy" [innerHtml]="d.commentText | safeHtml"></div>
 						<div class="like-comnt">
-							<span class="like" [ngClass]="{'likecmnt': true, 'liked': d.userHasLiked}" (click)=" !d.userHasLiked ? likeComment(d.postid, 'LIKE') : likeComment(d.postid, 'UNLIKE')" >{{ d.like!=0?d.like+" ":'' }}<img src="assets/images/muscular-like.png"/> Like</span>
+							<span class="like" [ngClass]="{'likecmnt': true, 'liked': d.userHasLiked}" (click)=" !d.userHasLiked ? likeComment(d.postid, 'LIKE') : likeComment(d.postid, 'UNLIKE')" ><img src="assets/images/muscular-like.png"/> {{ d.like!=0?d.like+" ":'' }} Like</span>
 							<span class="reply" (click)="CommentPopupOpen =true; postId=d.postid; replyTo=d.username; CommentText='@'+d.username+' '" ><img src="assets/images/muscular-reply.png"/> Reply</span>
 						</div>
 						<p class="viewallreplies" (click)="commentsArray[i].open = !commentsArray[i].open">
