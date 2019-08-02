@@ -15,7 +15,11 @@
 		    	</p>
 		        <ul *ngIf="routineCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['body_part']}">
 		            <li *ngFor="let c of routineCats;">
-		                <input type="checkbox" name="m{{c.id}}" id="m{{c.id}}"><label for="m{{c.id}}">{{c.name}}</label>
+		            	<div class="formrow check">
+							<input class="checkbox" type="checkbox" name="m{{c.id}}" id="m{{c.id}}">
+							<label class="checklabel" for="m{{c.id}}">{{c.name}}</label>
+						</div>
+		                <!-- <input type="checkbox" name="m{{c.id}}" id="m{{c.id}}"><label for="m{{c.id}}">{{c.name}}</label> -->
 		            </li>
 		        </ul>
 	    	</div>
@@ -26,7 +30,11 @@
 		        </p>
 		        <ul *ngIf="routineworkoutCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['workout_goal']}">
 		            <li *ngFor="let c of routineworkoutCats;">
-		                <input type="checkbox" name="r{{c.id}}" id="r{{c.id}}"><label for="r{{c.id}}">{{c.name}}</label>
+		            	<div class="formrow check">
+							<input class="checkbox" type="checkbox" name="r{{c.id}}" id="r{{c.id}}">
+							<label class="checklabel" for="r{{c.id}}">{{c.name}}</label>
+						</div>
+		                <!-- <input type="checkbox" name="r{{c.id}}" id="r{{c.id}}"><label for="r{{c.id}}">{{c.name}}</label> -->
 		            </li>
 		        </ul>
 		    </div>

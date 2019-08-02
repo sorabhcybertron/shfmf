@@ -23,7 +23,7 @@
 /deep/ .wrap.workouts .filters ul {
     list-style: none;
     padding: 0 20px;
-    margin: 10px 0 0;
+    margin: 0;
 }
 /deep/ .wrap.workouts .filters ul li {
     margin: 0 0 8px;
@@ -174,7 +174,13 @@ p.filter-toggel span.toggel-icon{
 }
 
 .filter-section ul.show-me {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-section ul li{
+    float: left;
+    margin: 1px 0 4px 3px;
 }
 
 app-like-button {
@@ -186,4 +192,50 @@ app-like-button {
 
 app-like-button span i {
     font-size: 16px !important;
+}
+
+.formrow.check {
+    box-sizing: border-box;
+    overflow:hidden;
+    position:relative;
+    max-width:fit-content;
+    margin:auto;
+    padding:3px 0;
+    background:#f9f9f9; 
+}
+.formrow.check .checklabel {
+    display:block;
+    width:100%;
+    border:1px solid grey;
+    background:#f2f2f2;
+    border-radius:10px;
+    text-align:center;
+    padding:5px 15px 5px 10px;
+    font-size:12px;
+}
+.formrow.check .checkbox {
+    position:absolute;
+    right: 10px;
+    top:15px;
+    width: 12px;
+    height: 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    border:none;
+    padding:0;
+    border-radius:0;
+    vertical-align: middle;
+    transition:.3s ease;
+    outline:0;
+}
+.formrow.check .checkbox:checked {
+    background-position: 0 0;
+}
+
+.formrow.check .checkbox:checked + label {
+  border:1px solid #000;
+  background: #AA7C41;
+  color: #f2f2f2!important;
 }
