@@ -1,4 +1,4 @@
-<div [ngClass]="{'wrap cyan pagewrapper myaccount': true, 'ovh': showNewPostPopOver}">
+<div [ngClass]="{'wrap cyan pagewrapper myaccount author-details': true, 'ovh': showNewPostPopOver}">
 	<div class="backlink-container">	
 		<a (click)="goBack()" class="author-back">&#x3008; Go Back</a>
 	</div>
@@ -32,16 +32,9 @@
 			<button (click)="postComment()" class="postnewp">POST</button>
 		</div>
 	</div>
-	<div class="ma-tab-head">
-		<span [ngClass]="{'tab': true, 'active': activeTab == 'Board'}" (click)="activeTab = 'Board';checkInAppEventAttached();">Board</span>
-		<span [ngClass]="{'tab': true, 'active': activeTab == 'Photos'}" (click)="activeTab = 'Photos';checkInAppEventAttached();">Photos</span>
-		<span [ngClass]="{'tab': true, 'active': activeTab == 'Videos'}" (click)="activeTab = 'Videos';checkInAppEventAttached();">Videos</span>
-		<span [ngClass]="{'tab': true, 'active': activeTab == 'Gains'}" (click)="activeTab = 'Gains';checkInAppEventAttached();">Gains</span>
-		<span [ngClass]="{'tab': true, 'active': activeTab == 'Favorites'}" (click)="activeTab = 'Favorites';checkInAppEventAttached();">Favorites</span>
-	</div>
 	<div class="ma-tab-content" [ngSwitch]="activeTab">
 		<div *ngSwitchCase="'Board'" class="board" id="board">
-			<div class="tb-content">FULL BOARD FUNCTIONS COMING IN NEXT APP UPDATE!</div>
+			<!-- <div class="tb-content">FULL BOARD FUNCTIONS COMING IN NEXT APP UPDATE!</div> -->
 			<p *ngIf="error" class="ma_red">Some error occurred!</p>
 			<div *ngIf="!loaded && !error" class="gifcont ptop">
 				<img src="assets/images/Infinity-myaccount.svg" class="loading-gif">
@@ -62,8 +55,8 @@
 						</div>
 						<div class="feed-copy" [innerHtml]="d.commentText | safeHtml"></div>
 						<div class="like-comnt">
-							<span class="like" [ngClass]="{'likecmnt': true, 'liked': d.userHasLiked}" (click)=" !d.userHasLiked ? likeComment(d.postid, 'LIKE') : likeComment(d.postid, 'UNLIKE')">{{ d.like!=0?d.like+" ":'' }}Like</span>
-							<span class="reply" (click)="CommentPopupOpen =true; postId=d.postid; replyTo=d.username; CommentText='@'+d.username+' '" ><i class="fa fa-reply"></i> Reply</span>
+							<span class="like" [ngClass]="{'likecmnt': true, 'liked': d.userHasLiked}" (click)=" !d.userHasLiked ? likeComment(d.postid, 'LIKE') : likeComment(d.postid, 'UNLIKE')"><img src="assets/images/muscular-like.png"/> {{ d.like!=0?d.like+" ":'' }} Like</span>
+							<span class="reply" (click)="CommentPopupOpen =true; postId=d.postid; replyTo=d.username; CommentText='@'+d.username+' '" ><img src="assets/images/muscular-reply.png"/> Reply</span>
 						</div>
 						<p class="viewallreplies" (click)="commentsArray[i].open = !commentsArray[i].open">
 							<span *ngIf="!commentsArray[i].open && commentsArray[i].hasChildComments">
@@ -172,5 +165,12 @@
 		<div *ngSwitchCase="'Favorites'" class="favorites">
 			<div class="tb-content">COMING IN NEXT APP UPDATE!</div>
 		</div>
+	</div>
+	<div class="ma-tab-head">
+			<span [ngClass]="{'tab': true, 'active': activeTab == 'Board'}" (click)="activeTab = 'Board';checkInAppEventAttached();"><img src="assets/images/news-filled-100.png" /></span>
+			<span [ngClass]="{'tab': true, 'active': activeTab == 'Photos'}" (click)="activeTab = 'Photos';checkInAppEventAttached();"><img src="assets/images/screenshot-filled-100.png" /></span>
+			<span [ngClass]="{'tab': true, 'active': activeTab == 'Videos'}" (click)="activeTab = 'Videos';checkInAppEventAttached();"><img src="assets/images/movies-folder-filled-100.png" /></span>
+			<span [ngClass]="{'tab': true, 'active': activeTab == 'Gains'}" (click)="activeTab = 'Gains';checkInAppEventAttached();"><img src="assets/images/chart-filled-100.png" /></span>
+			<span [ngClass]="{'tab': true, 'active': activeTab == 'Favorites'}" (click)="activeTab = 'Favorites';checkInAppEventAttached();"><img src="assets/images/star-filled-100.png" /></span>
 	</div>
 </div>

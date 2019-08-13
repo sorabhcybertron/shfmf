@@ -19,10 +19,12 @@
                 <app-new-content-badge [colorName]="'blue'" [type]="'programs'" [item_id]="dt.id"></app-new-content-badge>
                 <div class="program-title">
                     <span class="image-box large"><img src="{{dt.img}}" alt=""></span>                    
-                    <h2 class="bolder">{{dt.mc_w_c_t}}</h2>
+                    <div class="alltext">
+                        <h2 class="bolder">{{dt.mc_w_c_t}}</h2>
+                        <p class="subtitle"></p>
+                        <p class="lessmarg" [innerHtml]="dt.mc_w_c_p"></p>
+                    </div>
                 </div>
-                <p class="subtitle"></p>
-                <p class="lessmarg" [innerHtml]="dt.mc_w_c_p"></p>
                 <div class="get-btn">
                     <a class="lesspd" *ngIf="dt.app_url != null" [routerLink]="['/Programs', dt.app_url, dt.recordLinkID, dt.dbTable,dt.id]" (click)="appService.MarkNewContentsViewded('programs',dt.id)">Get Started</a>
                     <a class="lesspd" *ngIf="dt.app_url == null" [routerLink]="['/Programs', dt.app_url, dt.recordLinkID, dt.dbTable,dt.id]" href="javascript:void(0);">Get Started</a>
