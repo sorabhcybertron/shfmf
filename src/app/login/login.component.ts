@@ -77,74 +77,74 @@ export class LoginComponent implements OnInit {
     }*/
   }
 
-  FBPugin(){
-    let scope = this;
-    console.log('scopeee');
-    console.log(scope);
-    cordova.facebookConnectPlugin.login(["public_profile","email"], function(res){
-      console.log('fb res');
-      console.log(res);
-      if(res.status && res.status == "connected" && res.authResponse && res.authResponse.userID != '')
-        if(res.authResponse){
-          // this.userFBID = res.authResponse.userID;
-          cordova.facebookConnectPlugin.api(res.authResponse.userID+"/?fields=id,email,first_name", ["public_profile"],//, "user_birthday"
-            function onSuccess (result) {
-              console.log("Result: ", result);
-              if(result.email && result.email != ''){
-                console.log('SCOPE');
-                console.log(scope);
-                console.log('before login call');
-                scope.appService.postCall('http://muscularstrength.com/checkUser.php', {action: 'fblogin', email: result.email}).subscribe(
-                    res => {
-                      console.log('login call DATA------');
-                      console.log(res);
-                      if(res.status){
-                        window.localStorage.setItem('userInfo', JSON.stringify(res));
-                        scope.loginSuccess = true;
-                        // window.localStorage.setItem('login', 'true');
-                        window.localStorage.setItem
-                        scope.appService.setLogin(true);
-                        scope.checkToken(res);
-                        scope.router.navigate(['/Dashboard']);
-                      } else{
-                        window.localStorage.setItem('userInfo', '');
-                        // window.localStorage.setItem('login', '');
-                        scope.appService.setLogin(false);
-                        scope.loginSuccess = false;
-                        setTimeout(function () {
-                          scope.loginSuccess = '';
-                        }, 2000);
-                      }
-                    },
-                    err => {
-                      console.log('fb login call err');
-                    }
-                  );
-                console.log('after login call');
-              }
-              console.log(result);
-              /* logs: {
-                "id": "000000123456789",
-                "email": "myemail@example.com"
-              } */
-              setTimeout(function(){
-                cordova.facebookConnectPlugin.logout(
-                  function(){
-                    console.log('logout seccess');
-                    document.getElementById('muscularLogo').click();
-                  },
-                  function(){
-                    console.log('logout failed');
-                  }
-                );
-              }, 5000);
-            }, function onError (error) {
-              console.log(error);
-            }
-          );
-        }
-    }, this.fbFailure);  //, "user_birthday"
-  }
+  // FBPugin(){
+  //   let scope = this;
+  //   console.log('scopeee');
+  //   console.log(scope);
+  //   cordova.facebookConnectPlugin.login(["public_profile","email"], function(res){
+  //     console.log('fb res');
+  //     console.log(res);
+  //     if(res.status && res.status == "connected" && res.authResponse && res.authResponse.userID != '')
+  //       if(res.authResponse){
+  //         // this.userFBID = res.authResponse.userID;
+  //         cordova.facebookConnectPlugin.api(res.authResponse.userID+"/?fields=id,email,first_name", ["public_profile"],//, "user_birthday"
+  //           function onSuccess (result) {
+  //             console.log("Result: ", result);
+  //             if(result.email && result.email != ''){
+  //               console.log('SCOPE');
+  //               console.log(scope);
+  //               console.log('before login call');
+  //               scope.appService.postCall('http://muscularstrength.com/checkUser.php', {action: 'fblogin', email: result.email}).subscribe(
+  //                   res => {
+  //                     console.log('login call DATA------');
+  //                     console.log(res);
+  //                     if(res.status){
+  //                       window.localStorage.setItem('userInfo', JSON.stringify(res));
+  //                       scope.loginSuccess = true;
+  //                       // window.localStorage.setItem('login', 'true');
+  //                       window.localStorage.setItem
+  //                       scope.appService.setLogin(true);
+  //                       scope.checkToken(res);
+  //                       scope.router.navigate(['/Dashboard']);
+  //                     } else{
+  //                       window.localStorage.setItem('userInfo', '');
+  //                       // window.localStorage.setItem('login', '');
+  //                       scope.appService.setLogin(false);
+  //                       scope.loginSuccess = false;
+  //                       setTimeout(function () {
+  //                         scope.loginSuccess = '';
+  //                       }, 2000);
+  //                     }
+  //                   },
+  //                   err => {
+  //                     console.log('fb login call err');
+  //                   }
+  //                 );
+  //               console.log('after login call');
+  //             }
+  //             console.log(result);
+  //             /* logs: {
+  //               "id": "000000123456789",
+  //               "email": "myemail@example.com"
+  //             } */
+  //             setTimeout(function(){
+  //               cordova.facebookConnectPlugin.logout(
+  //                 function(){
+  //                   console.log('logout seccess');
+  //                   document.getElementById('muscularLogo').click();
+  //                 },
+  //                 function(){
+  //                   console.log('logout failed');
+  //                 }
+  //               );
+  //             }, 5000);
+  //           }, function onError (error) {
+  //             console.log(error);
+  //           }
+  //         );
+  //       }
+  //   }, this.fbFailure);  //, "user_birthday"
+  // }
 
   fbFailure(err){
     console.log('err');
