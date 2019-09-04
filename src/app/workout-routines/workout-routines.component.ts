@@ -23,6 +23,7 @@ export class WorkoutRoutinesComponent implements OnInit {
 	public loadError: any = '';
 	public loadErrorMsg: any = '';
 	public showFilterSectionUl : any = [];
+	public CheckElems : any = [];
 	public dt: any = {
 		serializedData: [],
 		mid: this.appService.getUserInfo('User Id')
@@ -151,7 +152,20 @@ export class WorkoutRoutinesComponent implements OnInit {
 		console.log('workouts comp destroyed');
 		window.removeEventListener('scroll', this.loadWorkoutsScrollMethod);
 	}
+	checkInput(id, ev) {
+		if(ev && ev.target.checked) {
+			this.CheckElems.push(ev.target.id);
+		} else if(ev && !ev.target.checked){
+			let o = this.CheckElems.findIndex((e)=> { return e == ev.target.id });
+			if(o > -1){
+				this.CheckElems.splice(o, 1);
+			}
+		}
+	}
 
+	checkIfInput(id){
+		return (this.CheckElems.findIndex((e)=> { return e == id }) > -1) ? true: false;
+	}
 	filterWorkouts(){
 		let self = this;
 		let inps = document.querySelectorAll('.filters input') as HTMLCollectionOf<HTMLInputElement>;
