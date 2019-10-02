@@ -32,7 +32,7 @@ export class WorkoutExercisesComponent implements OnInit {
 
 	constructor(router: Router, public appService: AppServicesService, public zone: NgZone, public route: ActivatedRoute) {
 		this.routineCatsLink = this.appService.siteBaseUrl+this.routineCatsLink;
-		this.showFilterSectionUl['body_part'] = false;
+		this.showFilterSectionUl['body_part'] = true;
 		this.showFilterSectionUl['workout_goal'] = false;
 		if(!appService.checkLogin())
 	  		router.navigate(['Login']);
@@ -228,4 +228,15 @@ export class WorkoutExercisesComponent implements OnInit {
 		}
 	}
 
+	changeSelection(event) {
+		console.log(event.target.value);
+	}	
+
+	uncheckAll1() {
+		let inputs = document.querySelectorAll('.checkbox') as HTMLCollectionOf<HTMLInputElement>;
+		console.log('ddd', inputs);
+		for (let i = 0; i < inputs.length; i++) {
+		  inputs[i].checked = false;
+		}
+	}
 }

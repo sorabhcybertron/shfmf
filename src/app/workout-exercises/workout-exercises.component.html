@@ -8,22 +8,29 @@
 	        <span class="dashicon-cont"><img src="assets/images/new_icons/svg/workouts-icon.svg" alt="" class="dash_icons"></span><h1>Filter Exercises<span class="filterworksicon close" (click)="showFilters = false;">&#x2715;</span></h1>
 	    </div>
 	    <div class="filtersarea">
-	    	<div class="filter-section">
-		    	<p class="filter-toggel" (click)="showfilterlist('body_part')">Body Part
-		    		<span class="toggel-icon" *ngIf="showFilterSectionUl['body_part']" >-</span>
-		        	<span class="toggel-icon" *ngIf="!showFilterSectionUl['body_part']" >+</span>
-		    	</p>
-		        <ul *ngIf="routineCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['body_part']}">
-		            <li *ngFor="let c of routineCats;">
-		            	<div class="formrow check" [ngClass]="{'checked-label': checkIfInput('m'+c.id)}">
-							<input class="checkbox" type="checkbox" name="m{{c.id}}" id="m{{c.id}}" (change)="checkInput(id, $event)">
-							<label class="checklabel" for="m{{c.id}}">{{c.name}}</label>
-						</div>
-		                <!-- <input type="checkbox" name="m{{c.id}}" id="m{{c.id}}"><label for="m{{c.id}}">{{c.name}}</label> -->
-		            </li>
-		        </ul>
+			<div class="filter-section">
+		    	<div class="select-box">
+					<select (change)="changeSelection($event)">
+						<option value="body_part">Filter by Body Part</option>
+					</select>
+					<div class="button-container">
+						<span class="clear filter-button" (click)="uncheckAll1()">Clear</span>
+						<span class="view filter-button" (click)="filterWorkouts()">View</span>
+					</div>
+				</div>
+				<div class="selection-list">
+					<ul *ngIf="routineCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['body_part']}">
+						<li *ngFor="let c of routineCats; let k = index;">
+							<div class="check" [ngClass]="{'selectedChekbox':k.checked ? true : false}">
+								<input class="checkbox" #k type="checkbox" name="m{{c.id}}" id="m{{c.id}}" (change)="!k['checked']">
+								<label class="checklabel" for="m{{c.id}}">{{c.name}}</label>
+								<img src="assets/images/checkgreen.png">	
+							</div>
+						</li>
+					</ul>
+				</div>
 		    </div>
-	        <div *ngIf="routineCats.length == 0" class="text-center">No Filters loaded yet!</div>
+	        <!-- <div *ngIf="routineCats.length == 0" class="text-center">No Filters loaded yet!</div> -->
 	    </div>
 	    <div class="text-center">
 	        <button class="fltrworks" (click)="filterWorkouts()">Search</button>
