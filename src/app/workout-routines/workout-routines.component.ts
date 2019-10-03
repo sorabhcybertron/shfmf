@@ -34,7 +34,7 @@ export class WorkoutRoutinesComponent implements OnInit {
 
 	constructor(router: Router, public appService: AppServicesService, public zone: NgZone, public route: ActivatedRoute) {
 		this.routineCatsLink = this.appService.siteBaseUrl+this.routineCatsLink;
-		this.showFilterSectionUl['body_part'] = false;
+		this.showFilterSectionUl['body_part'] = true;
 		this.showFilterSectionUl['workout_goal'] = false;
 		if(!appService.checkLogin())
 	  		router.navigate(['Login']);
@@ -235,5 +235,24 @@ export class WorkoutRoutinesComponent implements OnInit {
 		if (a.name > b.name)
 		  return 1;
 		return 0;
+	}
+	
+	changeSelection(event) {
+		if(event.target.value == 'body_part') {
+			this.showFilterSectionUl['body_part'] = true;
+			this.showFilterSectionUl['workout_goal'] = false;
+		}
+		if(event.target.value == 'workout_goal') {
+			this.showFilterSectionUl['body_part'] = false;
+			this.showFilterSectionUl['workout_goal'] = true;
+		}
+	}
+
+	uncheckAll() {
+		let inputs = document.querySelectorAll('.checkbox') as HTMLCollectionOf<HTMLInputElement>;
+		console.log(inputs);
+		for (let i = 0; i < inputs.length; i++) {
+		  inputs[i].checked = false;
+		}
 	}
 }
