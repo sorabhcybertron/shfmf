@@ -17,7 +17,7 @@
 /deep/ .wrap.workouts .filters .filtersarea {
     display: inline-block;
     width: 100%;
-    height: calc(100% - 130px);
+    height: calc(100% - 65px);
     overflow: auto;
 }
 /deep/ .wrap.workouts .filters ul {
