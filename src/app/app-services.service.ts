@@ -92,6 +92,10 @@ export class AppServicesService {
 		url = this.filterulr(url);
 		return this.http.get(url).map(res => res.json());
 	}
+	public loadArticlesPost(url, data){	// loads Articles, Recipes
+		url = this.filterulr(url);
+		return this.http.post(url, data).map(res => res.json());
+	}
 	public filterulr(url){
 		return url.replace('http://muscularstrength.com',this.siteBaseUrl);
 	}
