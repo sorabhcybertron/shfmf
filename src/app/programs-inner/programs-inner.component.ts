@@ -223,7 +223,8 @@ export class ProgramsInnerComponent implements OnInit {
 				dbTable: scope.dbTable,
 				recordLinkID: scope.recordLinkID,
 				contentText: text,
-				commentID: scope.replyToID
+				commentID: scope.replyToID,
+				programID: scope.programID
 			};
 			console.log('data');
 			console.log(dt);
