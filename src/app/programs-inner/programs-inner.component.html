@@ -36,10 +36,10 @@
 				<div *ngFor=" let months of data.data; let i = index; " class="routines-listing">
 					<h3 *ngIf="data.month && months.data.length > 0" class="month-head">{{months.month}}</h3>
 					<div *ngFor=" let d of months.data; let j = index; " class="routine-img">
-						<a *ngIf="!d.plat || (d.plat && isUserPlatium == 'Platinum')" [routerLink]="['/Routine', d.link.split('/routine/')[1], programID]">
+						<a *ngIf="!d.plat || (d.plat && (isUserPlatium == 'Platinum' || isUserPlatium == 'Platinum Plus'))" [routerLink]="['/Routine', d.link.split('/routine/')[1], programID]">
 							<img src="{{d.img}}" alt="{{months.month}} Routine">
 						</a>
-						<a *ngIf="d.plat && isUserPlatium != 'Platinum'" [routerLink]="['/UpgradeMembership']">
+						<a *ngIf="d.plat && (isUserPlatium != 'Platinum' && isUserPlatium != 'Platinum Plus')" [routerLink]="['/UpgradeMembership']">
 							<img src="{{d.img}}">
 							<img src="{{data.plat_img}}" class="plat_img" alt="Routine (for Platinum users)">
 						</a>

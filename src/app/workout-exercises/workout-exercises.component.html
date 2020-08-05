@@ -1,6 +1,6 @@
 <div id="workoutslisthere" class="wrap yellow pagewrapper">
 	<div class="page-title small">
-		<!-- <span class="dashicon-cont"><img src="assets/images/new_icons/svg/workouts-icon.svg" alt="" class="dash_icons"></span> --><h1>Exercises<span class="filterworksicon" (click)="showFilters = true;" *ngIf="isUserPlatinum == 'Platinum'"><img src="assets/images/new_icons/svg/filter-icon.svg"></span></h1>
+		<!-- <span class="dashicon-cont"><img src="assets/images/new_icons/svg/workouts-icon.svg" alt="" class="dash_icons"></span> --><h1>Exercises<span class="filterworksicon" (click)="showFilters = true;" *ngIf="isUserPlatinum == 'Platinum' || isUserPlatinum == 'Platinum Plus'"><img src="assets/images/new_icons/svg/filter-icon.svg"></span></h1>
 	</div>
 	<!-- Checkbox Filters -->
 	<div [ngClass]="{'filters': true, 'show': showFilters}">

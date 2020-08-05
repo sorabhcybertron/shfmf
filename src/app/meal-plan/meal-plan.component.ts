@@ -47,7 +47,7 @@ export class MealPlanComponent implements OnInit {
 	
 	getuserPlatinum(){
 		this.userinfo = JSON.parse(window.localStorage.getItem('userInfo'));
-		if(this.userinfo['account type'] == 'Platinum'){
+		if(this.userinfo['account type'] == 'Platinum' || this.userinfo['account type'] == 'Platinum Plus'){
 			return true;
 		}else{
 			return false;

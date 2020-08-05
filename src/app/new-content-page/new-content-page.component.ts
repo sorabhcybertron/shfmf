@@ -17,7 +17,7 @@ export class NewContentPageComponent implements OnInit {
   }
 
   getuserPlatinum(){
-		if(this.userinfo && this.userinfo['account type'] == 'Platinum'){
+		if(this.userinfo && (this.userinfo['account type'] == 'Platinum' || this.userinfo['account type'] == 'Platinum Plus')){
 			return true;
 		}else{
 			return false;
