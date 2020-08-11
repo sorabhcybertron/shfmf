@@ -1,5 +1,5 @@
 /deep/ .myaccount {
-    font-family: Open Sans;
+    font-family: Roboto;
     padding: 38px 20px 0;
     max-height: 100vh;
     box-sizing: border-box;
@@ -10,7 +10,7 @@
 /deep/ .feed-copy * {
     max-width: 100%;
     color: #000 !important;
-    font: 18px Open Sans !important;
+    font: 18px Roboto !important;
 }
 /deep/ .feed-copy a {
     color: #ff3136 !important;
@@ -214,7 +214,7 @@
     border-color: #458DD4;
     margin: 8px auto;
     text-transform: uppercase;
-    font: 16px/1.5 Open Sans;
+    font: 16px/1.5 Roboto;
     font-weight: 600;
     padding: 6px 16px 6px 16px;
     border-radius:3px;
@@ -273,7 +273,7 @@
     width: 100%;
     margin-top: 0;
     margin-bottom: 0;
-    font: 18px Open Sans !important;
+    font: 18px Roboto !important;
 }
 .board .child-comment .like-etc{
     float: left;
@@ -331,7 +331,7 @@
 }
 .favorites app-like-button{
     float: right;
-    font-size: 25px;
+    font-size: 14px;
 }
 
 .favorites h2.fav-title {
@@ -341,13 +341,13 @@
 }
 .favorites .item_descc{
     color: #8a8a8a;
-    font: 14px/1.5 Open Sans;
+    font: 14px/1.5 Roboto;
 }
 .read-all-btn{
     background: goldenrod;
     color: #fff;
     display: inline-block;
-    font: 14px/1.2 Open Sans;
+    font: 14px/1.2 Roboto;
     padding: 5px;
     text-decoration: none;
     border-radius: 3px;

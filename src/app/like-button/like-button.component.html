@@ -1,1 +1,3 @@
-<span title="Favorite" (click)="likeClicked()" [ngClass]="{'favorited':appService.checkIfFavorite(type,item_id)}"><i class="fa fa-star"></i></span>
+<span title="Favorite" (click)="likeClicked()" [ngClass]="{'favorited':appService.checkIfFavorite(type,item_id)}"><i *ngIf="!appService.checkIfFavorite(type,item_id)" class="fa fa-star-o" style="font-size: 16px"></i></span>
+<span title="Favorite" (click)="likeClicked()" [ngClass]="{'favorited':appService.checkIfFavorite(type,item_id)}"><i *ngIf="appService.checkIfFavorite(type,item_id)" class="fa fa-star" style="font-size: 16px;color: gold;"></i></span>
+<span (click)="likeClicked()">{{ appService.checkIfFavorite(type,item_id) ? 'FAVORITE' : 'ADD FAVORITE' }}</span>

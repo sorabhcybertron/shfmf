@@ -1,7 +1,9 @@
 .wrap.myaccountnew {
-    font-family: Open Sans;
+    font-family: Roboto;
     line-height: 1;
     padding-top: 40px;
+    background-color: #fafafa;
+    padding-bottom: 20px;
 }
 .wrap.myaccountnew .initialloaderr {
     text-align: center;
@@ -29,9 +31,11 @@
 
 .wrap.myaccountnew .page-title h1 {
     color: #000;
-    font: 28px Open Sans;
+    font: 28px Roboto;
+    font-weight: 400; 
     margin: 0;
     line-height: 30px;
+    text-align: center;
 }
 .wrap.myaccountnew .gifcont {
     text-align: center;
@@ -45,9 +49,12 @@
     height: auto;
 }
 .wrap.myaccountnew .pers-dets {
-    padding-bottom: 30px;
+    padding: 20px 0 20px;
     transition: all 0.5s ease;
     transform-style: preserve-3d;
+    background-color: white;
+    box-shadow: grey 0px 1px 4px;
+    margin-bottom: 20px;
 }
 .wrap.myaccountnew .pers-dets.scale {
     transform: scale(0.8) rotateX(90deg);
@@ -60,10 +67,9 @@
     font-size: 14px;
 }
 .wrap.myaccountnew .pers-dets ul li {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 5px 0;
     word-wrap: break-word;
-    line-height: 1.4;
+    line-height: 1.2;
     color: #000;
     position: relative;
 }
@@ -94,12 +100,17 @@
     font-size: 13px;
 }
 .wrap.myaccountnew .pers-dets h3 {
-    background: rgba(0,0,0,0.05);
-    padding: 10px 20px;
+    padding: 0 20px 10px;
     margin: 0;
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
+}
+.wrap.myaccountnew .pers-dets h3 span {
+    float: right;
+    font-size: 14px;
+    font-weight: normal;
+    color: #4a90e2;
 }
 /* Email update form */
 .wrap.myaccountnew .email-update {
@@ -108,12 +119,9 @@
     z-index: 11;
     width: 100%;
     height: calc(100% - 40px);
-    background: #fff;
-    padding: 20px;
+    background: #fafafa;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
-    align-items: center;
     transition: all 0.4s ease;
 }
 .wrap.myaccountnew .edit--icon {
@@ -135,17 +143,41 @@
     top: 40px;
 }
 .wrap.myaccountnew .email-updform {
-    text-align: center;
-    height: 100%;
+    background-color: #fff;
+    height: min-content;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
     overflow: auto;
+    box-shadow: gray 0px 1px 4px;
+    padding: 20px;
+    margin-top: 20px;
+
 }
 .wrap.myaccountnew .email-updform.block {
     display: block;
+    width: 100%;
 }
+
+.wrap.myaccountnew .email-updform h3 {
+    padding: 0px 0px 10px;
+    margin: 0px;
+}
+
+.wrap.myaccountnew .email-updform h3 span {
+    float: right;
+    font-size: 14px;
+    font-weight: normal;
+    color: #4a90e2;
+}
+.wrap.myaccountnew .email-updform h3 span.cancel-btn {
+    float: right;
+    font-size: 14px;
+    font-weight: normal;
+    color: #4a90e2;
+    margin-right: 10px;
+}
+
+
 .wrap.myaccountnew .email-updform .emailerrmsg {
     color: red;
 }
@@ -170,14 +202,38 @@
     width: 240px;
     color: #4c4c4c;
 }
+.wrap.myaccountnew .email-updform .email-updform-inner {
+    display: flex;
+    align-items: center;
+    margin-top: 1px;
+}
+.wrap.myaccountnew .email-updform input {
+    /* padding: 6px 8px; */
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    font-size: 14px;
+    /* width: 240px; */
+    flex: 1;
+    color: #7c7c7c;
+}
+.wrap.myaccountnew .email-updform input::placeholder {
+    color: lightgray;
+}
 .wrap.myaccountnew .email-updform .countryselect {
-    width: 240px;
-    padding: 6px 8px;
+  /* width: 240px; */
+    /* padding: 6px 8px; */
+    flex: 1;
+    border: none;
+    color: #7c7c7c;
+    font-size: 14px;
 }
 .wrap.myaccountnew .email-updform .label-cont {
-    display: inline-block;
+    /* display: inline-block; */
     width: 240px;
     text-align: left;
+    margin-right: 5px;
 }
 .wrap.myaccountnew .email-updform label {
     font-size: 14px;
@@ -225,7 +281,7 @@
     border-color: #458DD4;
     margin: 8px auto;
     text-transform: uppercase;
-    font: 14px/1.5 Open Sans;
+    font: 14px/1.5 Roboto;
     border-radius: 15px;
     padding: 6px 25px;
     border: none;
@@ -243,11 +299,14 @@
     color: #fff;
     margin: 15px auto 25px;
     text-transform: uppercase;
-    font: 13px/1.5 Open Sans;
+    font: 13px/1.5 Roboto;
     border-radius: 15px;
     padding: 6px 20px;
     border: none;
     -webkit-transition: opacity 0.4s ease;
     transition: opacity 0.4s ease;
     outline: none !important;
+}
+.email-update.vis {
+    top : 10% !important;
 }

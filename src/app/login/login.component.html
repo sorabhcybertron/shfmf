@@ -1,26 +1,47 @@
 <div ng-show="!isLoggedIn" class="wrapper login">
-    <div class="container">
-        <div class="logo">
-            <img src="assets/images/logo.png" alt="logo">
-        </div>
-        <div class="title">
-            <h1>Let’s Get Started!</h1>
-        </div>
-        <div class="form clearfix">
-            <form>
-                <input type="text" name="Username" placeholder="Username" [(ngModel)]="un" [ngClass]="showUnameError">
-                <input type="password" name="password" placeholder="Password" [(ngModel)]="ps" [ngClass]="showPassError">
-                <button type="button" (click)="loginHandler()">LOGIN</button>
-                <!-- <label [ngClass]="{ 'label hide': true, 'show success': loginSuccess }">Login Success</label> -->
-                <label [ngClass]="{ 'label hide': true, 'show failed': loginSuccess === false }">Login Failed</label>
-            </form>
-        </div>
-        <div class="signup">
-            <h6>No account? <a [routerLink]="['/Register']">Sign Up</a></h6>
-        </div>
-        <div class="log-fb">
-            <a href="javascript:void(0);"><img src="assets/images/login-fb.png" alt="" (click)="FBPugin()"></a>
-        </div>
+  <div class="container">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="logo" />
     </div>
+    <div class="title">
+      <h1 class="head">Let’s Get Started!</h1>
+    </div>
+    <div class="form clearfix">
+      <form>
+        <input
+          type="text"
+          name="Username"
+          placeholder="Username"
+          [(ngModel)]="un"
+          [ngClass]="showUnameError"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          [(ngModel)]="ps"
+          [ngClass]="showPassError"
+        />
+        <button type="button" (click)="loginHandler()">LOGIN</button>
+        <!-- <label [ngClass]="{ 'label hide': true, 'show success': loginSuccess }">Login Success</label> -->
+        <label
+          [ngClass]="{
+            'label hide': true,
+            'show failed': loginSuccess === false
+          }"
+          >Login Failed</label
+        >
+      </form>
+    </div>
+    <div class="signup">
+      <h6>No account? <a [routerLink]="['/Register']">Sign Up</a></h6>
+    </div>
+    <div class="signup">
+      <h6><a [routerLink]="['/Forgetpass']">Forget Password</a></h6>
+    </div>
+    <!-- <div class="log-fb">
+            <a href="javascript:void(0);"><img src="assets/images/login-fb.png" alt="" (click)="FBPugin()"></a>
+        </div>  -->
+  </div>
 </div>
 <router-outlet></router-outlet>

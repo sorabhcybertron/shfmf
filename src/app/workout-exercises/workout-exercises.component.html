@@ -1,4 +1,4 @@
-<div id="workoutslisthere">
+<div id="workoutslisthere" class="wrap yellow pagewrapper">
 	<div class="page-title small">
 		<!-- <span class="dashicon-cont"><img src="assets/images/new_icons/svg/workouts-icon.svg" alt="" class="dash_icons"></span> --><h1>Exercises<span class="filterworksicon" (click)="showFilters = true;" *ngIf="isUserPlatinum == 'Platinum'"><img src="assets/images/new_icons/svg/filter-icon.svg"></span></h1>
 	</div>
@@ -9,45 +9,52 @@
 	    </div>
 	    <div class="filtersarea">
 	    	<div class="filter-section">
-		    	<p class="filter-toggel" (click)="showfilterlist('body_part')">Body Part
-		    		<span class="toggel-icon" *ngIf="showFilterSectionUl['body_part']" >-</span>
-		        	<span class="toggel-icon" *ngIf="!showFilterSectionUl['body_part']" >+</span>
-		    	</p>
-		        <ul *ngIf="routineCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['body_part']}">
-		            <li *ngFor="let c of routineCats;">
-		                <input type="checkbox" name="m{{c.id}}" id="m{{c.id}}"><label for="m{{c.id}}">{{c.name}}</label>
-		            </li>
-		        </ul>
+		    	<div class="select-box">
+					<select (change)="changeSelection($event)">
+						<option value="body_part">Filter by Body Part</option>
+					</select>
+					<div class="button-container">
+						<span class="clear filter-button" (click)="uncheckAll1()">Clear</span>
+						<span class="view filter-button" (click)="filterWorkouts()">View</span>
+					</div>
+				</div>
+				<div class="selection-list">
+					<ul *ngIf="routineCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['body_part']}">
+						<li *ngFor="let c of routineCats; let k = index;">
+							<div class="check" [ngClass]="{'selectedChekbox':k.checked ? true : false}">
+								<input class="checkbox" #k type="checkbox" name="m{{c.id}}" id="m{{c.id}}" (change)="!k['checked']">
+								<label class="checklabel" for="m{{c.id}}">{{c.name}}</label>
+								<img src="assets/images/checkgreen.png">	
+							</div>
+						</li>
+					</ul>
+				</div>
 		    </div>
-	        <div *ngIf="routineCats.length == 0" class="text-center">No Filters loaded yet!</div>
-	    </div>
-	    <div class="text-center">
-	        <button class="fltrworks" (click)="filterWorkouts()">Search</button>
+	        <!-- <div *ngIf="routineCats.length == 0" class="text-center">No Filters loaded yet!</div> -->
 	    </div>
 	</div>
 	<!-- Content -->
-	<div class="card" *ngFor="let workout of workouts; let i = index; ">
-	    <div class="inner">
-	    	<app-new-content-badge [colorName]="'yellow'" [type]="'workouts'" [item_id]="workout.id"></app-new-content-badge>
-			<div class="workout-title">
-				<app-like-button class="fav" [type]="'exercises'" [item_id]="workout.id"></app-like-button>
-				<h2 class="bolder">{{workout.name}}</h2>
-			</div>
-	        <p class="lessmarg">
-	            <span _ngcontent-c4="" class="image-box">
-	                <img _ngcontent-c4="" alt="" [src]="workout.img">
-				</span>
-				{{workout.description.trim() != '' ? workout.description : 'No description.'}}
-	            <!-- <span class="prog-right-desc">
-	            	
-	            </span> -->
-	             
-			   </p>
-
-			   <span class="get-btn">
-				<a class="get-btn-in" [routerLink]="['/Workouts', workout.id,'exercise']">Get Started</a>
-			</span>
-	    </div>
+	<div class="articles-listing-card">
+		<div class="card" *ngFor="let workout of workouts; let i = index; ">
+		    <div class="inner">
+		    	<app-new-content-badge [colorName]="'yellow'" [type]="'workouts'" [item_id]="workout.id"></app-new-content-badge>
+				<div class="article-title">
+					<span class="image-box large"><img [src]="workout.img" alt=""></span>
+					<h2 class="bolder">{{workout.name}}</h2>
+				</div>
+				<p class="subtitle"></p>
+		        <p class="lessmarg">
+					{{workout.description.trim() != '' ? workout.description : 'No description.'}}  
+				</p>
+				<div class="get-btn">
+					<a class="lesspd" [routerLink]="['/Workouts', workout.id,'exercise']">Get Started</a>
+					<span class="addfav">
+						<app-like-button class="fav" [type]="'exercises'" [item_id]="workout.id"></app-like-button>						
+							
+					</span>
+				</div>
+		    </div>
+		</div>
 	</div>
 	<!-- Failure Message -->
 	<div class="msg failed" *ngIf=" loadError == true && loadErrorMsg != '' && loadErrorMsg != 'User should be a Platinum User' ">

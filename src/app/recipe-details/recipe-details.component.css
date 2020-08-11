@@ -24,7 +24,7 @@
 }
 .title {
     /*color: #4dd964;*/
-    font: 28px Open Sans;
+    font: 28px Roboto;
     margin: 0;
 }
 .title.bordertop {
@@ -38,7 +38,7 @@
 .author{
     text-align: center;
     color: #4a4a4a;
-    font: 17px Open Sans;
+    font: 17px Roboto;
     letter-spacing: .074em;
     margin: 0;
     float: right;
@@ -48,11 +48,11 @@
     padding: 0px 20px;
 }
 p, span {
-    font-family: Open Sans !important;
+    font-family: Roboto !important;
 }
 p span, li span {
     color: #8a8a8a;
-    font: 14px/1.5 Open Sans !important;
+    font: 14px/1.5 Roboto !important;
     margin: 0 0 15px;
 }
 span.fr-video {
@@ -102,7 +102,7 @@ strong {
     width: 100%;
     box-sizing: border-box;
     margin: 0 0 10px 0;
-    font-family: Open Sans;
+    font-family: Roboto;
 }
 .member-comments h3.lessmarg, .about-author h3.lessmarg{
     margin-bottom: 5px;
@@ -140,7 +140,7 @@ strong {
 }
 .cmnt {
     color: #8a8a8a;
-    font: 14px/1.2 Open Sans !important;
+    font: 14px/1.2 Roboto !important;
     margin: 0 0 15px;
     margin-bottom: 0;
 }
@@ -174,7 +174,7 @@ strong {
 }
 .copyright{
     color: #8a8a8a;
-    font: 14px/1.5 Open Sans !important;
+    font: 14px/1.5 Roboto !important;
     margin: 0 0 15px;
     display: inline-block;
     width: 100%;
@@ -207,7 +207,7 @@ strong {
     padding: 5px 0;
     display: inline-block;
     font-size: 20px;
-    font-family: Open Sans;
+    font-family: Roboto;
     margin-top: 10px;
     float: right;
 }
@@ -216,7 +216,7 @@ strong {
     background-color: #fff;
     width: 100%;
     position: fixed;
-    top: 0;
+    top: 4%;
     left: 0;
     padding: 44px 20px 5px;
     box-sizing: border-box;
@@ -303,7 +303,7 @@ a.authorpflink{
 }
 .about-author .online-coaching p {
     color: #8a8a8a;
-    font: 14px/1.5 Open Sans;
+    font: 14px/1.5 Roboto;
     margin: 0 0 5px;
 }
 .online-coaching.block{
@@ -318,5 +318,5 @@ app-like-button {
     position: relative;
     top: -5px;
     padding-right: 5px;
-    font-size: 28px;
+    font-size: 14px;
 }

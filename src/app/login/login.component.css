@@ -30,3 +30,6 @@ form{
     box-sizing: border-box;
     border: 1px solid red !important;
 }
+.title .head{
+    font-family: Roboto !important;
+}

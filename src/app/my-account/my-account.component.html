@@ -1,6 +1,5 @@
 <div [ngClass]="{'wrap cyan pagewrapper myaccountnew': true}">
     <div class="page-title">
-        <span class="dashicon-cont"><img src="assets/images/new_icons/svg/myaccount.png" alt="" class="dash_icons"></span>
         <h1>My Account</h1>
     </div>
 	<div *ngIf="loading && !error" class="gifcont ptop">
@@ -9,77 +8,69 @@
 	<div *ngIf="!loading && !error">
 		<!-- Initial Info Container -->
 		<div [ngClass]="{'pers-dets': true, 'scale': emailFormVisible || passFormVisible || profFormVisible}">
-			<h3>PERSONAL DETAILS:</h3>
+			<h3>Personal Details<span (click)="loadProfData();profFormVisible = true;">Edit</span></h3>
 			<ul>
-				<li><strong>Name:</strong>{{(info.first_name.trim() != '' && info.last_name.trim() != '') ? info.first_name+' '+info.last_name : 'No name available'}}</li>
-				<li class="eaddr"><strong>Email:</strong>{{info.email}}<span class="edit--icon" (click)="emailFormVisible = true;"><img src="assets/images/new_icons/svg/edit-icon.svg" alt="edit"></span></li>
-				<li><strong class="fl-left">Address:</strong>
-					<span class="fl-left">{{info.address + ' ' + info.address2}}<br><span class="add-mgtop">{{info.city+' '+info.state+(info.zip != '' ? ', '+info.zip : '')}}</span></span>
+				<li>Name: {{(info.first_name.trim() != '' && info.last_name.trim() != '') ? info.first_name+' '+info.last_name : 'No name available'}}</li>
+				<li class="eaddr">Email: {{info.email}}<span class="edit--icon" (click)="emailFormVisible = true;"><img src="assets/images/new_icons/svg/edit-icon.svg" alt="edit"></span></li>
+				<li> 
+					<span class="fl-left">Address: {{info.address + ' ' + info.address2}} {{info.city+' '+info.state+(info.zip != '' ? ', '+info.zip : '')}}</span>
 				</li>
-				<li><strong>Username:</strong>{{info.user}}</li>
-				<li class="eaddr"><strong>Password:</strong>******<span class="edit--icon" (click)="passFormVisible = true;"><img src="assets/images/new_icons/svg/edit-icon.svg" alt="edit"></span></li>
-				<li><strong>Membership ID:</strong>{{info.id}}</li>
-				<li><strong>Subscription ID:</strong>{{info.authorize_subscription}}</li>
-				<li><strong>Membership Type:</strong>{{info.membership_type}}<a class="changemship" [routerLink]="['/UpgradeMembership', 'yes']">Change</a></li>
 			</ul>
-			<div class="upd-prof-btn centertext">
-				<button type="button" (click)="loadProfData();profFormVisible = true;">Update Info</button>
-			</div>
-			<h3>PAYMENT INFORMATION:</h3>
+		</div>
+		<div [ngClass]="{'pers-dets': true, 'scale': emailFormVisible || passFormVisible || profFormVisible}">
+			<h3>Account Information</h3>
 			<ul>
-				<li><strong>Credit Card Number:</strong>xxxx-xxxx-xxxx-{{info.last_four_cc}}</li>
-				<li><strong>Expiration Date:</strong>{{info.cc_expire}}</li>
+				<li>Username: {{info.user}}</li>
+				<li class="eaddr">Password: ******<span class="edit--icon" (click)="passFormVisible = true;"><img src="assets/images/new_icons/svg/edit-icon.svg" alt="edit"></span></li>
+				<li>Membership ID: {{info.id}}</li>
+				<li>Subscription ID: {{info.authorize_subscription}}</li>
+				<li>Membership Type: {{info.membership_type}}<a class="changemship" [routerLink]="['/UpgradeMembership', 'yes']">Change</a></li>
+				<li>Credit Card: Ends in {{info.last_four_cc}}</li>
 			</ul>
 		</div>
 		<!-- Update Email Overlay -->
 		<div [ngClass]="{'email-update': true, 'vis': emailFormVisible}">
-			<div class="email-updform">
-				<span class="close-email-form" (click)="emailFormVisible = false;">x</span>
-				<h3>Update Email</h3>
+			<div class="email-updform block">
+				<h3>Update Email<span (click)="updateEmail()">Save</span><span class="cancel-btn" (click)="emailFormVisible = false;">Cancel</span></h3>
 				<div>
-					<div>
-						<div><span class="label-cont"><label>Previous E-mail</label></span></div>
+					<div class="email-updform-inner">
+						<div><span class="label-cont"><label>Previous E-mail:</label></span></div>
 						<input type="text" value="{{info.email}}" disabled="disabled">
 					</div>
-					<div>
-						<div><span class="label-cont"><label>New E-mail</label></span></div>
+					<div class="email-updform-inner">
+						<div><span class="label-cont"><label>New E-mail:</label></span></div>
 						<input type="email" (keyup)="validateMe('email1')" [ngClass]="{'err': emailErrs.email1}" [(ngModel)]="newEmail.email1">
 					</div>
-					<div>
-						<div><span class="label-cont"><label>Confirm E-mail</label></span></div>
+					<div class="email-updform-inner">
+						<div><span class="label-cont"><label>Confirm E-mail:</label></span></div>
 						<input type="email" (keyup)="validateMe('email2')" [ngClass]="{'err': emailErrs.email2}" [(ngModel)]="newEmail.email2">
 					</div>
-					<div class="centertext">
-						<button type="button" [ngClass]="{'upd-email-btn': true, 'dim': updatingEmail}" (click)="updateEmail()">Update</button>
-					</div>
+					
 					<p class="emailerrmsg" *ngIf="emailCallErrMsg != ''">{{emailCallErrMsg}}</p>
 				</div>
 			</div>
 		</div>
 		<!-- Update Password Overlay -->
 		<div [ngClass]="{'email-update': true, 'vis': passFormVisible}">
-			<div class="email-updform">
-				<span class="close-email-form" (click)="passFormVisible = false;">x</span>
-				<h3>Change Password</h3>
+			<div class="email-updform block">
+				<h3>Change Password<span (click)="updatePass()">Save</span><span class="cancel-btn" (click)="passFormVisible = false;">Cancel</span></h3>
 				<div>
-					<div>
-						<div><span class="label-cont"><label>Previous Password</label></span></div>
+					<div class="email-updform-inner">
+						<div><span class="label-cont"><label>Previous Password:</label></span></div>
 						<input (keyup)="validatePass('currentPassword')" type="{{passwordType}}" [ngClass]="{'err': passErrs.currentPassword}" [(ngModel)]="newPass.currentPassword">
 					</div>
-					<div>
-						<div><span class="label-cont"><label>New Password</label></span></div>
+					<div class="email-updform-inner">
+						<div><span class="label-cont"><label>New Password:</label></span></div>
 						<input (keyup)="validatePass('newPassword1')" type="{{passwordType}}" [ngClass]="{'err': passErrs.newPassword1}" [(ngModel)]="newPass.newPassword1">
 					</div>
-					<div>
-						<div><span class="label-cont"><label>Confirm Password</label></span></div>
+					<div class="email-updform-inner">
+						<div><span class="label-cont"><label>Confirm Password:</label></span></div>
 						<input (keyup)="validatePass('newPassword2')" type="{{passwordType}}" (keyup)="validatePass()" [ngClass]="{'err': passMatchErr || passErrs.newPassword2}" [(ngModel)]="newPass.newPassword2">
 					</div>
-					<div>
+					<div class="email-updform-inner">
 						<div><span [ngClass]="{'label-cont showpass': true, 'checked': passwordType == 'text'}" (click)="showPasswords()"><label>Show Passwords</label></span></div>
 					</div>
-					<div class="centertext">
-						<button type="button" [ngClass]="{'upd-email-btn': true, 'dim': updatingPass}" (click)="updatePass()">Change</button>
-					</div>
+					
 					<p class="emailerrmsg" *ngIf="passCallErrMsg != ''">{{passCallErrMsg}}</p>
 				</div>
 			</div>
@@ -87,41 +78,38 @@
 		<!-- Update Profile Info -->
 		<div [ngClass]="{'email-update': true, 'vis': profFormVisible}">
 			<div class="email-updform block">
-				<span class="close-email-form" (click)="profFormVisible = false;">x</span>
-				<h3>Update Personal Details</h3>
+				<h3>Personal Details<span (click)="updateProfile()">Save</span><span class="cancel-btn" (click)="profFormVisible = false;">Cancel</span></h3>
 				<div>
-					<div>
-						<div><span class="label-cont"><label>First Name</label></span></div>
+					<div class="email-updform-inner">
+						<div><span class="label-cont"><label>First Name:</label></span></div>
 						<input type="text" [(ngModel)]="profInfo.updateFirstName">
 					</div>
-					<div>
-						<div><span class="label-cont"><label>Address</label></span></div>
-						<input type="text" [(ngModel)]="profInfo.updateAddress">
-					</div>
-					<div>
-						<div><span class="label-cont"><label>Zip Code</label></span></div>
-						<input type="text" [(ngModel)]="profInfo.updateZip">
-					</div>
-					<div>
-						<div><span class="label-cont"><label>Last Name</label></span></div>
+					<div class="email-updform-inner">
+						<div><span class="label-cont"><label>Last Name:</label></span></div>
 						<input type="text" [(ngModel)]="profInfo.updateLastName">
 					</div>
-					<div>
-						<div><span class="label-cont"><label>City</label></span></div>
+					<div class="email-updform-inner">
+						<div><span class="label-cont"><label>Address:</label></span></div>
+						<input type="text" [(ngModel)]="profInfo.updateAddress">
+					</div>
+					<div class="email-updform-inner">
+						<div><span class="label-cont"><label>Zip Code:</label></span></div>
+						<input type="text" [(ngModel)]="profInfo.updateZip">
+					</div>
+					
+					<div class="email-updform-inner">
+						<div><span class="label-cont"><label>City:</label></span></div>
 						<input type="text" [(ngModel)]="profInfo.updateCity">
 					</div>
-					<div>
-						<div><span class="label-cont"><label>State</label></span></div>
+					<div class="email-updform-inner">
+						<div><span class="label-cont"><label>State:</label></span></div>
 						<input type="text" [(ngModel)]="profInfo.updateState">
 					</div>
-					<div>
-						<div><span class="label-cont"><label>Country</label></span></div>
+					<div class="email-updform-inner">
+						<div><span class="label-cont"><label>Country:</label></span></div>
 						<select [(ngModel)]="profInfo.updateCountry" class="countryselect">
 							<option *ngFor="let state of info.country_options;" [value]="state">{{state}}</option>
 						</select>
-					</div>
-					<div class="centertext">
-						<button type="button" [ngClass]="{'upd-email-btn': true, 'dim': updatingProfile}" (click)="updateProfile()">Change</button>
 					</div>
 					<p class="emailerrmsg" *ngIf="passCallErrMsg != ''">{{passCallErrMsg}}</p>
 				</div>

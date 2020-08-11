@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
     this.username = this.appService.getUserInfo("First Name");
     this.un = atob(window.localStorage.getItem("key1"));
     this.ps = atob(window.localStorage.getItem("key2"));
-    document.getElementById('muscularLogo').click();
+   //document.getElementById('muscularLogo').click();
   }
   toggleMenu() {
     this.menuOpen = true;

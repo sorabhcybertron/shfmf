@@ -8,7 +8,7 @@ var app = {
         this.receivedEvent('deviceready');
         window.cordova = cordova;
         window.cordova.socialsharing = window.plugins.socialsharing;
-        window.cordova.facebookConnectPlugin = facebookConnectPlugin;
+        // window.cordova.facebookConnectPlugin = facebookConnectPlugin;
         window.cordova.FirebasePlugin = FirebasePlugin;
         console.log('window.plugins');
         console.log(window.plugins);

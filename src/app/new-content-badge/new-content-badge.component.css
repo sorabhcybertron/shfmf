@@ -4,28 +4,28 @@ app-new-content-badge{
 
 app-new-content-badge .green{
     color: #4dd964 !important;
-    font-family: Open Sans !important;
+    font-family: Roboto !important;
 }
 app-new-content-badge .blue{
     color: #097aff !important;
-    font-family: Open Sans !important;
+    font-family: Roboto !important;
 }
 app-new-content-badge .indigo{
     color: #5bc8fa !important;
-    font-family: Open Sans !important;
+    font-family: Roboto !important;
 }
 app-new-content-badge .yellow{
     color: #ffcb00 !important;
-    font-family: Open Sans !important;
+    font-family: Roboto !important;
 }
 app-new-content-badge .orange{
     color: #ff9502 !important;
-    font-family: Open Sans !important;
+    font-family: Roboto !important;
 }
 app-new-content-badge .red{
     color: #ff2d55 !important;
-    font-family: Open Sans !important;
+    font-family: Roboto !important;
 }
 p, h2, div, span, a{
-    font-family: Open Sans;
+    font-family: Roboto;
 }

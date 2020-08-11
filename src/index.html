@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <title>MuscularStrength</title>
-  <base href="/">
+  <base href="./">
     
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script>
   <meta name="google-signin-client_id" content="YOUR_CLIENT_ID"></meta>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1 ,height=device-height ,viewport-fit=cover">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="assets/styles/fonts.css">
   <link rel="stylesheet" href="assets/styles/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles/normalize.css">
   <link href="node_modules/froala-editor/css/froala_editor.pkgd.min.css" rel="stylesheet">
   <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -19,11 +19,24 @@
     body{
       min-height: 100vh;
       margin: 0;
+      padding-top: env(safe-area-inset-top);
     }
+    .header{
+      border-top: env(safe-area-inset-top) solid #000!important;
+      border-top: 18px solid #000000;
+    }
+
+    .header-top{
+      border-top: env(safe-area-inset-top) solid #000!important;
+      border-top: 18px solid #000000;
+
+    }
+    
   </style>
 </head>
 <body>
-  <app-root>Loading...</app-root>
+   <app-root>Loading...</app-root>
+
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="assets/js/index.js"></script>
 </body>

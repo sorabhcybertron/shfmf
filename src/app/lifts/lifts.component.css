@@ -8,7 +8,7 @@
 	text-align: center;
 }
 .nolifts{
-	font-family: Open Sans;
+	font-family: Roboto;
     font-size: 14px;
     color: #4a4a4a;
     display: inline-block;
@@ -115,7 +115,7 @@ input.weight {
 }
 .lift-msg span{
 	padding: 10px;
-    font-family: Open Sans;
+    font-family: Roboto;
     font-size: 16px;
     color: #fff;
     border-radius: 3px;

@@ -1,11 +1,12 @@
 .articles-listing-card .card h2 {
     margin-bottom: 3px;
 }
-.card p.subtitle {
-    font-size: 18px;  /*ef 14px*/
-    text-transform: uppercase;
+/* .card p.subtitle {
+    font-size: 18px;   */
+    /*ef 14px*/
+    /* text-transform: uppercase;
     color: #555;
-}
+} */
 .magnifying-glass {
     width: 28px;
     height: 28px;
@@ -27,7 +28,7 @@
 }
 .noresults{
     text-align: center;
-    font-family: Open Sans;
+    font-family: Roboto;
     font-size: 14px;
     color: #4a4a4a;
     display: inline-block;
@@ -41,7 +42,7 @@
 
 app-like-button {
     float: left;
-    font-size: 30px;
+    font-size: 14px;
     position: relative;
     top: 0px;
 }
@@ -54,4 +55,10 @@ app-like-button {
 .article-title .bolder {
     display: inline-block;
     margin-left: 10px;
+    padding-top: 4px;
 }
+
+.article-title {
+    display: flex;
+  }
+  

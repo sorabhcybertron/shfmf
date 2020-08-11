@@ -1,5 +1,5 @@
 .meal-welcome {
-	font-family: Open Sans;
+	font-family: Roboto;
 	float: left;
 	width: 100%;
 	height: calc(100vh - 108px);
@@ -47,7 +47,7 @@
     text-align: center;
     padding: 10px 1%;
     font-weight: 600;
-    font: 20px Open Sans;
+    font: 20px Roboto;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 3px;

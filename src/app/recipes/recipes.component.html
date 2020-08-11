@@ -7,12 +7,17 @@
         <div class="inner">
             <app-new-content-badge [colorName]="'green'" [type]="'recipes'" [item_id]="recipe.id"></app-new-content-badge>
             <div class="recipe-title">
-                <app-like-button class="fav" [type]="'recipes'" [item_id]="recipe.id"></app-like-button>
+                <span class="image-box large"><img src="{{recipe.image}}" alt=""></span>
                 <h2 class="bolder">{{recipe.heading}}</h2>
             </div>
-            <p class="lessmarg"><span class="image-box"><img src="{{recipe.image}}" alt=""></span>{{recipe.description}}</p>
+            <p class="subtitle"></p>
+            <p class="lessmarg">{{recipe.description}}</p>
             <div class="get-btn nomargin text-right">
                 <a [routerLink]="['/Recipes', recipe.id ]" class="lesspd">Read More</a>
+                <span class="addfav">
+                    <app-like-button class="fav" [type]="'recipes'" [item_id]="recipe.id"></app-like-button>
+                
+                </span>
             </div>
         </div>
     </div>

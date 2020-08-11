@@ -1,4 +1,4 @@
-<div id="workoutslisthere">
+<div id="workoutslisthere" class="wrap yellow pagewrapper">
 	<div class="page-title small">
 		<!-- <span class="dashicon-cont"><img src="assets/images/new_icons/svg/workouts-icon.svg" alt="" class="dash_icons"></span> --><h1>Routines<span class="filterworksicon" (click)="showFilters = true;" *ngIf="isUserPlatinum == 'Platinum'"><img src="assets/images/new_icons/svg/filter-icon.svg"></span></h1>
 	</div>
@@ -8,49 +8,63 @@
 	        <span class="dashicon-cont"><img src="assets/images/new_icons/svg/workouts-icon.svg" alt="" class="dash_icons"></span><h1>Filter Exercises<span class="filterworksicon close" (click)="showFilters = false;">&#x2715;</span></h1>
 	    </div>
 	    <div class="filtersarea">
-	    	<div class="filter-section">
-		    	<p class="filter-toggel" (click)="showfilterlist('body_part')">Body Part
-		    		<span class="toggel-icon" *ngIf="showFilterSectionUl['body_part']" >-</span>
-		        	<span class="toggel-icon" *ngIf="!showFilterSectionUl['body_part']" >+</span>
-		    	</p>
-		        <ul *ngIf="routineCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['body_part']}">
-		            <li *ngFor="let c of routineCats;">
-		                <input type="checkbox" name="m{{c.id}}" id="m{{c.id}}"><label for="m{{c.id}}">{{c.name}}</label>
-		            </li>
-		        </ul>
-	    	</div>
-	    	<div class="filter-section">
-		        <p class="filter-toggel" (click)="showfilterlist('workout_goal')">Workout Goal
-		        	<span class="toggel-icon" *ngIf="showFilterSectionUl['workout_goal']" >-</span>
-		        	<span class="toggel-icon" *ngIf="!showFilterSectionUl['workout_goal']" >+</span>
-		        </p>
-		        <ul *ngIf="routineworkoutCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['workout_goal']}">
-		            <li *ngFor="let c of routineworkoutCats;">
-		                <input type="checkbox" name="r{{c.id}}" id="r{{c.id}}"><label for="r{{c.id}}">{{c.name}}</label>
-		            </li>
-		        </ul>
-		    </div>
-	        <div *ngIf="routineCats.length == 0 && routineworkoutCats.length == 0" class="text-center">No Filters loaded yet!</div>
-	    </div>
-	    <div class="text-center">
-	        <button class="fltrworks" (click)="filterWorkouts()">Search</button>
+	    	<div class="select-box">
+				<select (change)="changeSelection($event)">
+					<option value="body_part">Filter by Body Part</option>
+					<option value="workout_goal">Filter by Workout Goals</option>
+				</select>
+				<div class="button-container">
+					<span class="clear filter-button" (click)="uncheckAll()">Clear</span>
+					<span class="view filter-button" (click)="filterWorkouts()">View</span>
+				</div>
+			</div>
+			<div class="selection-list" *ngIf="showFilterSectionUl['body_part']">
+				<ul *ngIf="routineCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['body_part']}">
+					<li *ngFor="let c of routineCats;  let k = index;">
+						<div class="check" [ngClass]="{'checked-label':k.checked ? true : false}">
+							<input class="checkbox" #k type="checkbox" name="m{{c.id}}" id="m{{c.id}}" (change)="checkInput(id, $event)">
+							<label class="checklabel" for="m{{c.id}}">{{c.name}}</label>
+							<img src="assets/images/checkgreen.png">
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="selection-list" *ngIf="showFilterSectionUl['workout_goal']">
+					<ul *ngIf="routineworkoutCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['workout_goal']}">
+						<li *ngFor="let c of routineworkoutCats; let i = index;">
+							<div class="check" [ngClass]="{'checked-label':i.checked ? true : false}">
+								<input class="checkbox" #i type="checkbox" name="r{{c.id}}" id="r{{c.id}}" (change)="checkInput(id, $event)">
+								<label class="checklabel" for="r{{c.id}}">{{c.name}}</label>
+								<img src="assets/images/checkgreen.png">
+							</div>
+						</li>
+					</ul>
+				</div>
+		<div *ngIf="routineCats.length == 0 && routineworkoutCats.length == 0" class="text-center">No Filters loaded yet!</div>
 	    </div>
 	</div>
 	<!-- Content -->
-	<div class="card" *ngFor="let workout of workouts; let i = index; ">
-	    <div class="inner">
-	    	<app-new-content-badge [colorName]="'yellow'" [type]="'workouts'" [item_id]="workout.id"></app-new-content-badge>
-	        <h2>{{workout.name}}</h2>
-	        <p>
-	            <span _ngcontent-c4="" class="image-box large">
-	                <img _ngcontent-c4="" alt="" [src]="workout.img">
-	            </span>
-	        {{workout.description.trim() != '' ? workout.description : 'No description.'}}</p>
-	        <div class="get-btn">
-	        	<app-like-button [type]="'routines'" [item_id]="workout.id"></app-like-button>
-	        	<a class="get-btn-in" [routerLink]="['/Workouts', workout.id ]">Get Started</a>
-	        </div>
-	    </div>
+	<div class="articles-listing-card">
+		<div class="card" *ngFor="let workout of workouts; let i = index; ">
+			<div class="inner">
+				<app-new-content-badge [colorName]="'yellow'" [type]="'workouts'" [item_id]="workout.id"></app-new-content-badge>
+				<div class="article-title">
+					<span class="image-box large"><img alt="" [src]="workout.img"></span>
+					<h2 class="bolder">{{workout.name}}</h2>
+				</div>
+				<p class="subtitle"></p>
+				<p class="lessmarg">
+					{{workout.description.trim() != '' ? workout.description : 'No description.'}}
+				</p>
+				<div class="get-btn">
+					<a class="lesspd" [routerLink]="['/Workouts', workout.id ]">Get Started</a>
+					<span class="addfav">
+						<app-like-button [type]="'routines'" [item_id]="workout.id"></app-like-button>
+						
+					</span>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!-- Failure Message -->
 	<div class="msg failed" *ngIf=" loadError == true && loadErrorMsg != '' && loadErrorMsg != 'User should be a Platinum User' ">

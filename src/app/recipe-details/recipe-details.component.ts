@@ -65,7 +65,12 @@ export class RecipeDetailsComponent implements OnInit {
 		let text = this.appService.ChangeuserCommentLinks(this.CommentText);
 		if(text != '') {
 			console.log('reply to called'+ this.appService.getUserInfo('User Id'));
-			this.appService.loadArticles('http://muscularstrength.com/recipes_reply_json.php?userid=' + this.appService.getUserInfo('User Id') + '&content=' + text + '&articleid=' + this.articleID + '&commentid=' + this.replyToID).subscribe(
+			this.appService.loadArticlesPost('http://muscularstrength.com/recipes_reply_json.php',{
+                userid: this.appService.getUserInfo('User Id'),
+                content: text,
+                articleid: this.articleID,
+                commentid: this.replyToID,
+            }).subscribe(
 				res => {
 					console.log(res);
 					if(res.result == "SUCCESS"){

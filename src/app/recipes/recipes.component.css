@@ -19,7 +19,7 @@
 }
 .noresults{
     text-align: center;
-    font-family: Open Sans;
+    font-family: Roboto;
     font-size: 14px;
     color: #4a4a4a;
     display: inline-block;
@@ -31,7 +31,7 @@
 
 app-like-button {
     float: left;
-    font-size: 30px;
+    font-size: 14px;
     position: relative;
     top: 0px;
 }
@@ -44,4 +44,5 @@ app-like-button {
 .recipe-title .bolder {
     display: inline-block;
     margin-left: 10px;
+    padding-top: 4px;
 }

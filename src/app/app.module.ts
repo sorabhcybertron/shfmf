@@ -1,6 +1,9 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
+import { CommonModule }  from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -48,10 +51,14 @@ import { ViewVideoAlbumComponent } from './view-video-album/view-video-album.com
 import { LikeButtonComponent } from './like-button/like-button.component';
 import { NewContentBadgeComponent } from './new-content-badge/new-content-badge.component';
 import { NewContentPageComponent } from './new-content-page/new-content-page.component';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { RestpasswordComponent } from './restpassword/restpassword.component';
+//import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
    { path: 'Login', component: LoginComponent }, 
    { path: 'Register', component: JoinComponent },
+   { path: 'Forgetpass', component: ForgetpasswordComponent },
    { path: 'Dashboard', component: DashboardComponent },
    { path: 'Articles', component: ArticlesComponent },
    { path: 'Articles/:id', component: ArticleDetailsComponent },
@@ -87,7 +94,8 @@ const appRoutes: Routes = [
    { path: 'AboutAuthor/:url', component: AboutAuthorComponent },
    { path: 'view-album/photos/:id/:profileid', component: ViewPhotoAlbumComponent },
    { path: 'view-album/videos/:id/:profileid', component: ViewVideoAlbumComponent },
-   { path: 'newcontent', component: NewContentPageComponent }
+   { path: 'newcontent', component: NewContentPageComponent },
+   { path: 'restpassword/:uname', component: RestpasswordComponent}
    // { path: 'Friends', component: FriendsComponent },
    // { path:'', redirectTo: '/Dashboard', pathMatch: 'full'},
 ];
@@ -131,12 +139,16 @@ const appRoutes: Routes = [
     ViewVideoAlbumComponent,
     LikeButtonComponent,
     NewContentBadgeComponent,
-    NewContentPageComponent
+    NewContentPageComponent,
+    ForgetpasswordComponent,
+    RestpasswordComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot()

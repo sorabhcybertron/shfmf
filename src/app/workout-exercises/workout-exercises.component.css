@@ -2,12 +2,3 @@
     float: right!important;
 }
 
-.workout-title .fav {
-    display: inline-block;
-    font-size: 30px;
-}
-
-.workout-title .bolder {
-    display: inline-block;
-    margin-left: 10px;
-}

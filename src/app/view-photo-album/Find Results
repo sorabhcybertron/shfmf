@@ -1,0 +1,125 @@
+Searching 268 files for "backlink-container"
+
+/Users/cybertron/Desktop/shfmf/src/app/another-users-profile/another-users-profile.component.css:
+   78  	font: 18px Roboto;
+   79  }
+   80: .myaccount.another .backlink-container {
+   81  	background-color: #fff;
+   82  	width: 100%;
+
+/Users/cybertron/Desktop/shfmf/src/app/another-users-profile/another-users-profile.component.html:
+    1  <div [ngClass]="{'wrap cyan pagewrapper myaccount another': true, 'ovh': showNewPostPopOver}">
+    2: 	<div class="backlink-container">
+    3  		<a class="usprofback" [routerLink]="['/Friends']"><!-- (click)="goback()" -->&#x3008; Back</a>
+    4  	</div>
+
+/Users/cybertron/Desktop/shfmf/src/app/app.component.css:
+  101      text-align: center;
+  102  }
+  103: .backlink-container{
+  104      margin-top: 20px !important;
+  105  }
+
+/Users/cybertron/Desktop/shfmf/src/app/article-details/article-details.component.css:
+   29      text-transform: uppercase;
+   30  }
+   31: .backlink-container{
+   32      /*background-color: #f9f9f9;*/
+   33      background-color: #fff;
+   ..
+  279      margin-right: 10px;
+  280  }
+  281: .backlink-container .author {
+  282      display: none;
+  283  }
+
+/Users/cybertron/Desktop/shfmf/src/app/article-details/article-details.component.html:
+    1  <div class="wrap crimson pagewrapper">
+    2: 	<div class="backlink-container">
+    3  		<a *ngIf="fromFav" class="articles-back" (click)="navigateTopage()">&#x3008; Back</a>
+    4  		<a *ngIf="!fromFav" [routerLink]="['/Articles']" class="articles-back">&#x3008; Back to Articles</a>
+
+/Users/cybertron/Desktop/shfmf/src/app/author-detail/author-detail.component.css:
+  744      width: 95%!important;
+  745  }
+  746: .backlink-container {
+  747      background-color: #fff;
+  748      width: 100%;
+
+/Users/cybertron/Desktop/shfmf/src/app/author-detail/author-detail.component.html:
+    1  <div [ngClass]="{'wrap cyan pagewrapper myaccount': true, 'ovh': showNewPostPopOver}">
+    2: 	<div class="backlink-container">	
+    3  		<a (click)="goBack()" class="author-back">&#x3008; Go Back</a>
+    4  	</div>
+
+/Users/cybertron/Desktop/shfmf/src/app/programs-inner/programs-inner.component.html:
+    1  <div class="wrap pagewrapper">
+    2: 	<div class="backlink-container">
+    3  		<a *ngIf="fromFav" class="programs-back" (click)="navigateTopage()">&#x3008; Back</a>
+    4  		<a *ngIf="!fromFav" [routerLink]="['/Programs']" class="programs-back">&#x3008; Back to Programs</a>
+
+/Users/cybertron/Desktop/shfmf/src/app/recipe-details/recipe-details.component.css:
+  212      float: right;
+  213  }
+  214: .backlink-container{
+  215      /*background-color: #f9f9f9;*/
+  216      background-color: #fff;
+  ...
+  226      color: #4dd964;
+  227  }*/
+  228: .backlink-container .author {
+  229      display: none;
+  230  }
+
+/Users/cybertron/Desktop/shfmf/src/app/recipe-details/recipe-details.component.html:
+    1  <div class="wrap green pagewrapper">
+    2: 	<div class="backlink-container">
+    3  		<a *ngIf="fromFav" class="recipes-back" (click)="navigateTopage()">&#x3008; Back</a>
+    4  		<a *ngIf="!fromFav" [routerLink]="['/Recipes']" class="recipes-back">&#x3008; Back to Recipes</a>
+
+/Users/cybertron/Desktop/shfmf/src/app/routine-single/routine-single.component.html:
+    1  <div class="wrap cyan pagewrapper prog-routine">
+    2: 	<div class="backlink-container">
+    3  		<span class="programs-back" [routerLink]="'/'+[backUrl]">&#x3008; Back to Program</span>
+    4  		<p *ngIf="!loading && error == ''" class="author">By {{routine.posted_by.name}}</p>
+
+/Users/cybertron/Desktop/shfmf/src/app/upgrade-membership/upgrade-membership.component.css:
+    9  }
+   10  
+   11: .upgradepage .backlink-container {
+   12      background-color: #fff;
+   13      width: 100%;
+
+/Users/cybertron/Desktop/shfmf/src/app/upgrade-membership/upgrade-membership.component.html:
+    1  <div class="wrap crimson pagewrapper upgradepage">
+    2:     <div class="backlink-container">
+    3          <a href="javascript:void(0);" (click)="goback()" class="upgrade-back">&#x3008; Back</a>
+    4      </div>
+
+/Users/cybertron/Desktop/shfmf/src/app/view-photo-album/view-photo-album.component.css:
+  208  }
+  209  
+  210: .backlink-container {
+  211      background-color: #fff;
+  212      width: 100%;
+
+/Users/cybertron/Desktop/shfmf/src/app/view-photo-album/view-photo-album.component.html:
+    1  <div class="wrap pagewrapper">
+    2:     <div class="backlink-container">
+    3          <a class="programs-back">&#x3008; Back to Programs</a>
+    4      </div>
+
+/Users/cybertron/Desktop/shfmf/src/app/workout-single/workout-single.component.html:
+    1  <div class="wrap cyan pagewrapper prog-routine">
+    2: 	<div class="backlink-container">
+    3  		<span *ngIf="fromFav" class="workouts-back" (click)="navigateTopage()">&#x3008; Back</span>
+    4  		<span *ngIf="!fromFav" class="workouts-back" [routerLink]="'/'+[backUrl]">&#x3008; Back to Workouts</span>
+
+/Users/cybertron/Desktop/shfmf/src/assets/styles/css.css:
+ 1137    color: #000;
+ 1138  }
+ 1139: .backlink-container .author {
+ 1140      display: none;
+ 1141  }
+
+19 matches across 17 files

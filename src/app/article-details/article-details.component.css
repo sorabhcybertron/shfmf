@@ -33,7 +33,7 @@
     background-color: #fff;
     width: 100%;
     position: fixed;
-    top: 0;
+    top: 4%;
     left: 0;
     padding: 44px 20px 5px;
     box-sizing: border-box;
@@ -41,7 +41,7 @@
 }
 .title {
     /*color: #ff2d55;*/
-    font: 28px/1.3 Open Sans;
+    font: 28px/1.3 Roboto;
     margin: 0;
 }
 .card {
@@ -51,7 +51,7 @@
 .author{
 	text-align: center;
     color: #4a4a4a;
-    font: 14px Open Sans;
+    font: 14px Roboto;
     letter-spacing: .074em;
     margin: 20px 0;
     float: right;
@@ -63,7 +63,7 @@
 }
 /deep/ .article-details p{
     color: #555;
-    font: 14px Open Sans;
+    font: 14px Roboto;
 }
 span.fr-video {
     text-align: center;
@@ -79,11 +79,11 @@ iframe{
     display: inline-block;
 }
 p, span {
-    font-family: Open Sans !important;
+    font-family: Roboto !important;
 }
 p span, li span{
     color: #8a8a8a;
-    font: 14px/1.5 Open Sans !important;
+    font: 14px/1.5 Roboto !important;
     margin: 0 0 15px;
 }
 .pagewrapper{
@@ -123,7 +123,7 @@ strong {
     width: 100%;
     box-sizing: border-box;
     margin: 0 0 10px 0;
-    font-family: Open Sans;
+    font-family: Roboto;
 }
 .member-comments h3.lessmarg, .about-author h3.lessmarg {
     margin-bottom: 5px;
@@ -158,7 +158,7 @@ strong {
 }
 .cmnt {
     color: #8a8a8a;
-    font: 14px/1.2 Open Sans !important;
+    font: 14px/1.2 Roboto !important;
     margin: 0 0 15px;
     margin-bottom: 0;
 }
@@ -170,7 +170,7 @@ strong {
 }
 .copyright{
     color: #8a8a8a;
-    font: 14px/1.5 Open Sans !important;
+    font: 14px/1.5 Roboto !important;
     margin: 0 0 15px;
     display: inline-block;
     width: 100%;
@@ -203,7 +203,7 @@ strong {
     padding: 5px 0;
     display: inline-block;
     font-size: 20px;
-    font-family: Open Sans;
+    font-family: Roboto;
     margin-top: 10px;
     float: right;
 }
@@ -315,7 +315,7 @@ a.authorpflink{
 }
 .about-author .online-coaching p {
     color: #8a8a8a;
-    font: 14px/1.5 Open Sans;
+    font: 14px/1.5 Roboto;
     margin: 0 0 5px;
 }
 .online-coaching.block{
@@ -328,7 +328,7 @@ a.authorpflink{
     border-color: #458DD4;
     margin: 8px auto;
     text-transform: uppercase;
-    font: 16px/1.5 Open Sans;
+    font: 16px/1.5 Roboto;
     font-weight: 600;
     padding: 6px 16px 6px 16px;
     border-radius:3px;
@@ -393,5 +393,5 @@ app-like-button {
     position: relative;
     top: -5px;
     padding-right: 5px;
-    font-size: 28px;
+    font-size: 14px;
 }

@@ -34,7 +34,7 @@ export class JoinComponent implements OnInit {
     let self = this;
     if(!self.signingup && this.form.frmSubmitRegisterApp && this.form.user != '' && this.form.email != '' && this.form.pass != '' && this.form.first_name != '' && this.form.last_name != '') {
       self.signingup = true;
-      this.appService.postCall(url, this.form).subscribe(
+      this.appService.simplePostCall(url, this.form).subscribe(
         res => {
           console.log(res);
           if(res.success){  // Signup Success, login user
