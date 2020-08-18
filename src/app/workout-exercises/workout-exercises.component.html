@@ -9,20 +9,28 @@
 	    </div>
 	    <div class="filtersarea">
 	    	<div class="filter-section">
-		    	<p class="filter-toggel" (click)="showfilterlist('body_part')">Body Part
-		    		<span class="toggel-icon" *ngIf="showFilterSectionUl['body_part']" >-</span>
-		        	<span class="toggel-icon" *ngIf="!showFilterSectionUl['body_part']" >+</span>
-		    	</p>
-		        <ul *ngIf="routineCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['body_part']}">
-		            <li *ngFor="let c of routineCats;">
-		                <input type="checkbox" name="m{{c.id}}" id="m{{c.id}}"><label for="m{{c.id}}">{{c.name}}</label>
-		            </li>
-		        </ul>
+		    	<div class="select-box">
+					<select (change)="changeSelection($event)">
+						<option value="body_part">Filter by Body Part</option>
+					</select>
+					<div class="button-container">
+						<span class="clear filter-button" (click)="uncheckAll1()">Clear</span>
+						<span class="view filter-button" (click)="filterWorkouts()">View</span>
+					</div>
+				</div>
+				<div class="selection-list">
+					<ul *ngIf="routineCats.length > 0" [ngClass]="{'show-me':showFilterSectionUl['body_part']}">
+						<li *ngFor="let c of routineCats; let k = index;">
+							<div class="check" [ngClass]="{'selectedChekbox':k.checked ? true : false}">
+								<input class="checkbox" #k type="checkbox" name="m{{c.id}}" id="m{{c.id}}" (change)="!k['checked']">
+								<label class="checklabel" for="m{{c.id}}">{{c.name}}</label>
+								<img src="assets/images/checkgreen.png">	
+							</div>
+						</li>
+					</ul>
+				</div>
 		    </div>
-	        <div *ngIf="routineCats.length == 0" class="text-center">No Filters loaded yet!</div>
-	    </div>
-	    <div class="text-center">
-	        <button class="fltrworks" (click)="filterWorkouts()">Search</button>
+	        <!-- <div *ngIf="routineCats.length == 0" class="text-center">No Filters loaded yet!</div> -->
 	    </div>
 	</div>
 	<!-- Content -->
@@ -42,6 +50,7 @@
 					<a class="lesspd" [routerLink]="['/Workouts', workout.id,'exercise']">Get Started</a>
 					<span class="addfav">
 						<app-like-button class="fav" [type]="'exercises'" [item_id]="workout.id"></app-like-button>						
+							
 					</span>
 				</div>
 		    </div>

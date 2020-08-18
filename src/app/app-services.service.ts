@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers,RequestOptions } from '@angular/http';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
 
@@ -54,17 +54,34 @@ export class AppServicesService {
         return this.http.post(url, toSend, { headers: hdr }).map(res => res.json());
 	}
 
+	public forgetpassword(un){ 
+        return this.http.get(this.siteBaseUrl+'app_forget_password.php?frm_get_password=1&frm_email='+un).map(res => res.json());
+  } 
+
+  public resetpassword(uname,pass,otp){
+	// var headers = new Headers();
+    // headers.append("Accept", 'application/json');
+    // headers.append('Content-Type', 'application/json' );
+    // const requestOptions = new RequestOptions({ headers: headers });
+  	 let data = {frm_set_password :1, frm_email : uname, new_password: pass, otp:otp};
+      return this.http.post(this.siteBaseUrl+'app_forget_password.php', data).map(res => res.json());
+  }
+
 	public getCall(url: string){
 		url = this.filterulr(url);
 		return this.http.get(url).map( res => res.json());
 	}
 
-	public loginUser(un,ps) {	// Login call
+	public loginUser(un,ps){	// Login call
+		// un = encodeURI(un);
+		// ps = encodeURI(ps);
+		// let data = {user : un, pass : ps, app:1, action:'appLogin'}
+		// return this.postCall(this.siteBaseUrl+'checkUser.php',data);
+		// return this.http.get(this.siteBaseUrl+'checkUser.php?user='+un+'&pass='+ps+'&app=1').map(res => res.json());
 		un = un;
         ps = ''+ps;
         let data = {user : un, pass : ps, app:1, action:'appLogin'}
         return this.http.post(this.siteBaseUrl+'checkUser.php', data).map(res => res.json());
-        // return this.postCall(this.siteBaseUrl+'checkUser.php',data);
 	}
 
 	public appExit(currentUrl){
@@ -75,6 +92,11 @@ export class AppServicesService {
 		url = this.filterulr(url);
 		return this.http.get(url).map(res => res.json());
 	}
+	public loadArticlesPost(url, data){    // loads Articles, Recipes
+        url = this.filterulr(url);
+        return this.http.post(url, data).map(res => res.json());
+    }
+    
 	public filterulr(url){
 		return url.replace('http://muscularstrength.com',this.siteBaseUrl);
 	}
@@ -284,8 +306,10 @@ export class AppServicesService {
 	    }
 	}
 
-	simplePostCall(url, data, map?) {
-		url = this.filterulr(url);
-		return this.http.post(url, data).map(res => res.json());
-	 }
+	simplePostCall(url, data, map?){
+       url = this.filterulr(url);
+       return this.http.post(url, data).map(res => res.json());
+    }
+
+
 }

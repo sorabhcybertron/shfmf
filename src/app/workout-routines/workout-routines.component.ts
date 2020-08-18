@@ -23,6 +23,7 @@ export class WorkoutRoutinesComponent implements OnInit {
 	public loadError: any = '';
 	public loadErrorMsg: any = '';
 	public showFilterSectionUl : any = [];
+	public CheckElems : any = [];
 	public dt: any = {
 		serializedData: [],
 		mid: this.appService.getUserInfo('User Id')
@@ -33,7 +34,7 @@ export class WorkoutRoutinesComponent implements OnInit {
 
 	constructor(router: Router, public appService: AppServicesService, public zone: NgZone, public route: ActivatedRoute) {
 		this.routineCatsLink = this.appService.siteBaseUrl+this.routineCatsLink;
-		this.showFilterSectionUl['body_part'] = false;
+		this.showFilterSectionUl['body_part'] = true;
 		this.showFilterSectionUl['workout_goal'] = false;
 		if(!appService.checkLogin())
 	  		router.navigate(['Login']);
@@ -151,7 +152,20 @@ export class WorkoutRoutinesComponent implements OnInit {
 		console.log('workouts comp destroyed');
 		window.removeEventListener('scroll', this.loadWorkoutsScrollMethod);
 	}
+	checkInput(id, ev) {
+		if(ev && ev.target.checked) {
+			this.CheckElems.push(ev.target.id);
+		} else if(ev && !ev.target.checked){
+			let o = this.CheckElems.findIndex((e)=> { return e == ev.target.id });
+			if(o > -1){
+				this.CheckElems.splice(o, 1);
+			}
+		}
+	}
 
+	checkIfInput(id){
+		return (this.CheckElems.findIndex((e)=> { return e == id }) > -1) ? true: false;
+	}
 	filterWorkouts(){
 		let self = this;
 		let inps = document.querySelectorAll('.filters input') as HTMLCollectionOf<HTMLInputElement>;
@@ -221,5 +235,24 @@ export class WorkoutRoutinesComponent implements OnInit {
 		if (a.name > b.name)
 		  return 1;
 		return 0;
+	}
+	
+	changeSelection(event) {
+		if(event.target.value == 'body_part') {
+			this.showFilterSectionUl['body_part'] = true;
+			this.showFilterSectionUl['workout_goal'] = false;
+		}
+		if(event.target.value == 'workout_goal') {
+			this.showFilterSectionUl['body_part'] = false;
+			this.showFilterSectionUl['workout_goal'] = true;
+		}
+	}
+
+	uncheckAll() {
+		let inputs = document.querySelectorAll('.checkbox') as HTMLCollectionOf<HTMLInputElement>;
+		console.log(inputs);
+		for (let i = 0; i < inputs.length; i++) {
+		  inputs[i].checked = false;
+		}
 	}
 }

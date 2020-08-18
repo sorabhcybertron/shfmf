@@ -19,13 +19,15 @@
 .pagewrapper{
     padding-top: 44px;
 }
-app-header .header{
-    /* border-top: 18px solid #000000 !important;    */
+/*app-header .header{
+    border-top: env(safe-area-inset-top) solid #000!important;
+    border-top: 18px solid #000000;
 }
 
 app-header .header-top{
-    /* border-top: 18px solid #000000 !important; */
-}
+    border-top: env(safe-area-inset-top) solid #000!important;
+    border-top: 18px solid #000000;
+}*/
 
 .freefitnesscode {
     font-size: 20px;
@@ -45,14 +47,14 @@ app-header .header-top{
     padding: 0px 5px;
     border-color: white;
     color: #fff;
+
     display: inline-block;
     vertical-align: top;
     margin-left: auto;
     min-width: 30px;
     text-align: center;
     box-sizing: border-box;
-    font-size: 15px;
-}
+    font-size: 15px  }
 .new-content-count.green{
     background-color: #4dd964 !important;
 }
@@ -103,3 +105,9 @@ app-new-content-badge .red{
     width: 90%;
     text-align: center;
 }
+.loginBorder{
+    margin-top: -45px;
+background: black;
+height: 34px;
+}
+

@@ -1,756 +1,1269 @@
-.author-back{
-    color: #4dd964 !important;
-    text-decoration: none;
-    padding: 5px 0px;
-    display: inline-block;
-    font-size: 15px;
-    font-family: Roboto;
-    margin-top: 18px;
-    cursor: pointer;
-    float: right;
-    /* position: absolute; */
-    right: 10px;
+.author-back {
+  color: #4dd964 !important;
+  text-decoration: none;
+  padding: 5px 0px;
+  display: inline-block;
+  font-size: 15px;
+  font-family: Roboto;
+  margin-top: 18px;
+  cursor: pointer;
+  float: right;
+  /* position: absolute; */
+  right: 10px;
 }
 
-/deep/ .myaccount {
-    font-family: Roboto;
-    padding: 38px 20px 0;
-    max-height: 100vh;
-    box-sizing: border-box;
+/deep/ .myaccount.author-details {
+  font-family: Roboto;
+  padding: 38px 20px 0;
+  max-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #f9f9f9;
 }
-/deep/ .myaccount.ovh {
-    overflow: hidden;
+/deep/ .myaccount.author-details.ovh {
+  overflow: hidden;
 }
 /deep/ .feed-copy * {
-    max-width: 100%;
-    color: #000 !important;
-    font: 18px Roboto !important;
+  max-width: 100%;
+  color: #000 !important;
+  font: 22px Roboto !important;
+  font-weight: 600 !important;
 }
 /deep/ .feed-copy a {
-    color: #ff3136 !important;
+  color: #ff3136 !important;
 }
 .usr-socials {
-    margin-top: 10px;
-    display:  block;
-    float:  left;
+  margin-top: 10px;
+  display: block;
+  float: left;
 }
 .usr-socials span {
-    width: 45px;
-    max-height: 25px;
-    float:  left;
+  width: 45px;
+  max-height: 25px;
+  float: left;
 }
 .usr-socials span img {
-    max-width: 100%;
+  max-width: 100%;
 }
 .gifcont {
-    text-align: center;
+  text-align: center;
 }
 .ma_red {
-    color: red;
-    text-align:  center;
-    margin-top: 0;
+  color: red;
+  text-align: center;
+  margin-top: 0;
 }
-.user-info{
-    padding: 15px 0;
-    margin-top: 30px;
+.user-info {
+  padding: 45px 20px 15px;
+  background-color: white;
+  margin-top: 36px;
 }
-.userprofimgcont, .userprofname {
-    display: inline-block;
-    line-height: 1;
-    vertical-align: middle;
-    box-sizing: border-box;
+.userprofimgcont,
+.userprofname {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  box-sizing: border-box;
 }
 .userprofimgcont {
-    width: 15%;
-    margin-right: 3%;
-    text-align: center;
+  width: 15%;
+  margin-right: 3%;
+  text-align: center;
 }
 .userprofimgcont img {
-    max-width: 100%;
+  max-width: 100%;
 }
-.userprofname{
-    width: 80%;
-    padding-left: 3%;
-    vertical-align: top;
-    font-size: 16px;
+.userprofname {
+  width: 80%;
+  padding-left: 3%;
+  vertical-align: top;
+  font-size: 16px;
 }
 .ma-tab-head {
-    padding: 1% 0;
-    display: inline-block;
-    width: 100%;
-    box-sizing: border-box;
+  padding: 1% 0;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+    bottom: 0;
+    background-color: white;
+    z-index: 99;
+    border-top: 2px solid lightgray;
 }
-.myaccount .ma-tab-head .tab {
-    width:  20%;
-    float:  left;
-    padding: 8px 4px;
-    box-sizing:  border-box;
-    text-align:  center;
-    border: 1px solid #d7d7d7;
-    font-size: 0.7em;
-    transition: all 0.4s ease;
+.myaccount.author-details .ma-tab-head .tab {
+  width: 20%;
+  float: left;
+  padding: 8px 4px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid #d7d7d7;
+  font-size: 0.7em;
+  transition: all 0.4s ease;
+  background-color: white;
 }
-.myaccount .ma-tab-head .tab:first-child {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.myaccount.author-details .ma-tab-head .tab img {
+  height: 25px!important;	   
+  opacity: 0.5;
+}		
+/* .myaccount .ma-tab-head .tab:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .myaccount .ma-tab-head .tab:last-child {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-.myaccount .ma-tab-head .tab:not(:first-child){
-    border-left: none;
-}
-.myaccount .ma-tab-head .tab.active {
-    color: #fff;
-    background: #292929;
-    border-color: #292929;
-}
-.myaccount .ma-tab-content {
-    padding: 15px 0 0;
-    display: inline-block;
-    width: 100%;
-    box-sizing: border-box;
-    /*height: calc(100vh - 210px);
-    overflow: auto;*/
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+} */
+.myaccount.author-details .ma-tab-head .tab:not(:first-child){
+  border-left: none;
+}		
+.myaccount.author-details .ma-tab-head .tab.active img {
+  opacity: 0.9;
+}		
+/* .myaccount .ma-tab-head .tab.active {
+  color: #fff;
+  background: #292929;
+  border-color: #292929;
+} */
+.myaccount.author-details .ma-tab-content {
+  padding: 15px 0 0;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+    position: absolute;
 }
 .newpost {
-    text-align: center;
-    margin: 0 0 15px;
-    font-size: 18px;
+  text-align: center;
+  margin: 0 0 15px;
+  font-size: 18px;
+  background-color: white;
+  padding: 15px 0;
 }
 .newpost .dashicon-cont {
-    width: 28px;
-    height: 25px;
-    display: inline-block;
-    text-align: center;
+  width: 28px;
+  height: 25px;
+  display: inline-block;
+  text-align: center;
 }
 .newpost span {
-    vertical-align: middle;
-    margin-right: 5px;
+  vertical-align: middle;
+  margin-right: 5px;
 }
-.myaccount .dash_icons {
-    max-width: 25px;
-    max-height: 25px;
-    line-height: 1;
+.myaccount.author-details .dash_icons {
+  max-width: 25px;
+  max-height: 25px;
+  line-height: 1;
 }
 /* NEW POST POPOVER */
 .newpost-popover {
-    height: calc(100vh - 40px);
-    position: fixed;
-    left: 0;
-    width: 100%;
-    bottom: calc(-100vh + 38px);
-    background: #fff;
-    border-top: 2px solid #097aff;
-    transition: bottom .4s ease-in-out;
-    z-index: 11;
+  height: calc(100vh - 40px);
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: calc(-100vh + 38px);
+  background: #fff;
+  border-top: 2px solid #097aff;
+  transition: bottom 0.4s ease-in-out;
+  z-index: 11;
 }
 .newpost-popover.show {
-    bottom: 0;
+  bottom: 0;
+  z-index: 100;
 }
 .postloading {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 111;
-    background: rgba(255, 255, 255, 0.6);
-    justify-content: center;
-    align-items: center;
-    display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 111;
+  background: rgba(255, 255, 255, 0.6);
+  justify-content: center;
+  align-items: center;
+  display: none;
 }
 .postloading.show {
-    display: flex;
+  display: flex;
 }
 /* BOARD */
 /deep/ .board {
-    font-family: Roboto;
+  font-family: Roboto;
 }
-/deep/ .board a{
-    color: #428bca;
-    text-decoration: none;
+/deep/ .board a {
+  color: #428bca;
+  text-decoration: none;
 }
 /deep/ .board .feed-copy img {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 /deep/ .board img {
-    max-width: 100%;
+  max-width: 100%;
 }
 .feedscont {
-    margin-bottom: 15px;
-    float: left;
-    width: 100%;
-    /*border: solid #dcdcdc 1px;*/
-    box-shadow: 0px 2px 8px #e0e0e0;
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 3px;
+  margin-bottom: 25px;
+  float: left;
+  width: 100%;
+  /*border: solid #dcdcdc 1px;*/
+  box-shadow: 0px 2px 8px lightgray;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: white;
 }
 .noboardresults {
-    color:  red;
-    text-align:  center;
+  color: red;
+  text-align: center;
 }
 .feed-top {
-    float:  left;
-    width: 100%;
+  float: left;
+  width: 100%;
 }
 .feed-top .userinfo {
-    width:  85%;
-    float:  left;
+  width: 85%;
+  float: left;
 }
 .feed-top .userinfo p {
-    margin: 0 0 8px 0;
-    padding-left: 5px;
+  margin: 0 0 8px 0;
+  padding-left: 5px;
 }
 .feed-top .userinfo p.time {
-    color: gray;
-    font-size: 12px;
+  color: gray;
+  font-size: 12px;
 }
 .feed-top .userinfo p.uname {
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #CB0000;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #CB0000;
 }
 .feed-top .profimg {
-    width:  15%;
-    float:  left;
-    text-align: center;
+  width: 15%;
+  float: left;
+  text-align: center;
 }
 .profimg img {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 .feedscont .feed-copy {
-    width: 85%;
-    float: left;
-    padding-top: 0px;
-    padding-left: 15%;
-    word-break: break-all;
+  padding: 15%;		
+  word-break: break-all;
 }
 /deep/ .feedscont .feed-copy p {
-    margin:  0;
-    padding-top: 10px;
+  margin: 0;
+  padding-top: 10px;
 }
 /* GAINS */
-.gains span{
-    /*background-color: #151515;
+.gains {
+  background-color: white;
+  box-shadow: 0 2px 3px lightgray;
+  position: absolute;
+  padding: 10px 10px;
+}
+.gains div {
+  background-color: white;
+}
+.gains .tb-content {
+  background-color: white;
+}
+.gains span {
+  /*background-color: #151515;
     color: gray;*/
-    border: 1px solid #d7d7d7;
-    border-radius: 3px;
-    box-sizing: border-box;
-    display: inline-block;
-    font-size: 1em;
-    margin-bottom: 8px;
-    padding: 8px;
-    float: left;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 1em;
+  padding: 8px;
+  background-color: white;
+  float: left;
 }
-.gains .two span{
-    width: 49.5%;
+.gains .two span {
+  width: 50%;
+  padding: 5px 15px;
 }
-.gains .fullw span{
-    width: 100%;
+.gains .fullw span {
+  width: 100%;
 }
 .gains .two span:nth-child(odd) {
-    margin-right: 1%;
+  margin-right: 1%;
 }
 span.flag {
-    position: relative;
+  position: relative;
 }
 .flag em.flag {
-    position: absolute;
-    left: auto;
-    right: 0;
-    top: -3px;
-    height: 40px;
-    width: 45px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 42px;
+  position: absolute;
+  left: auto;
+  right: 0;
+  top: -3px;
+  height: 40px;
+  width: 45px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 42px;
 }
-.child-comments{
-    display: none;
+.child-comments {
+  display: none;
 }
-.child-comments.show{
-    display: block;
+.child-comments.show {
+  display: block;
 }
 span.like.likecmnt.liked {
-    color: #e29236;
+  color: #e29236;
 }
-.States{background-image:url(http://muscularstrength.com/css_am/48/United%20States%20of%20AmericaUSA.png)}
-.Afghanistan{background-image:url(http://muscularstrength.com/css_am/48/Afghanistan.png)}
-.Albania{background-image:url(http://muscularstrength.com/css_am/48/Albania.png)}
-.Algeria{background-image:url(http://muscularstrength.com/css_am/48/Algeria.png)}
-.American{background-image:url(http://muscularstrength.com/css_am/48/American%20Samoa.png)}
-.Andorra{background-image:url(http://muscularstrength.com/css_am/48/Andorra.png)}
-.Angola{background-image:url(http://muscularstrength.com/css_am/48/Angola.png)}
-.Anguilla{background-image:url(http://muscularstrength.com/css_am/48/Anguilla.png)}
-.Antarctica{background-image:url(http://muscularstrength.com/css_am/48/Antarctica.png)}
-.Antigua{background-image:url(http://muscularstrength.com/css_am/48/Antigua%20&%20Barbuda.png)}
-.Argentina{background-image:url(http://muscularstrength.com/css_am/48/Argentina.png)}
-.Armenia{background-image:url(http://muscularstrength.com/css_am/48/Armenia.png)}
-.Aruba{background-image:url(http://muscularstrength.com/css_am/48/Aruba.png)}
-.Australia{background-image:url(http://muscularstrength.com/css_am/48/Australia.png)}
-.Austria{background-image:url(http://muscularstrength.com/css_am/48/Austria.png)}
-.Azerbaijan{background-image:url(http://muscularstrength.com/css_am/48/Azerbaijan.png)}
-.Bahamas{background-image:url(http://muscularstrength.com/css_am/48/Bahamas.png)}
-.Bahrain{background-image:url(http://muscularstrength.com/css_am/48/Bahrain.png)}
-.Bangladesh{background-image:url(http://muscularstrength.com/css_am/48/Bangladesh.png)}
-.Barbados{background-image:url(http://muscularstrength.com/css_am/48/Barbados.png)}
-.Belarus{background-image:url(http://muscularstrength.com/css_am/48/Belarus.png)}
-.Belgium{background-image:url(http://muscularstrength.com/css_am/48/Belgium.png)}
-.Belize{background-image:url(http://muscularstrength.com/css_am/48/Belize.png)}
-.Benin{background-image:url(http://muscularstrength.com/css_am/48/Benin.png)}
-.Bermuda{background-image:url(http://muscularstrength.com/css_am/48/Bermuda.png)}
-.Bhutan{background-image:url(http://muscularstrength.com/css_am/48/Bhutan.png)}
-.Bolivia{background-image:url(http://muscularstrength.com/css_am/48/Bolivia.png)}
-.Bosnia{background-image:url(http://muscularstrength.com/css_am/48/Bosnia%20&%20Herzegovina.png)}
-.Botswana{background-image:url(http://muscularstrength.com/css_am/48/Botswana.png)}
-.Brazil{background-image:url(http://muscularstrength.com/css_am/48/Brazil.png)}
-.Brunei{background-image:url(http://muscularstrength.com/css_am/48/Brunei.png)}
-.Bulgaria{background-image:url(http://muscularstrength.com/css_am/48/Bulgaria.png)}
-.Burkina{background-image:url(http://muscularstrength.com/css_am/48/Burkina%20Faso.png)}
-.Burundi{background-image:url(http://muscularstrength.com/css_am/48/Burundi.png)}
-.Cambodia{background-image:url(http://muscularstrength.com/css_am/48/Cambodja.png)}
-.Cameroon{background-image:url(http://muscularstrength.com/css_am/48/Cameroon.png)}
-.Canada{background-image:url(http://muscularstrength.com/css_am/48/Canada.png)}
-.Cayman{background-image:url(http://muscularstrength.com/css_am/48/Cayman%20Islands.png)}
-.Central{background-image:url(http://muscularstrength.com/css_am/48/Central%20African%20Republic.png)}
-.Chad{background-image:url(http://muscularstrength.com/css_am/48/Chad.png)}
-.Chile{background-image:url(http://muscularstrength.com/css_am/48/Chile.png)}
-.China{background-image:url(http://muscularstrength.com/css_am/48/China.png)}
-.Colombia{background-image:url(http://muscularstrength.com/css_am/48/Colombia.png)}
-.Comoros{background-image:url(http://muscularstrength.com/css_am/48/Comoros.png)}
-.Congo{background-image:url(http://muscularstrength.com/css_am/48/Congo-Brazzaville.png)}
-.Democratic{background-image:url(/css_am/48/Congo-KinshasaZaire.png)}
-.Cook{background-image:url(http://muscularstrength.com/css_am/48/Cook%20Islands.png)}
-.Rica{background-image:url(http://muscularstrength.com/css_am/48/Costa%20Rica.png)}
-.Cote{background-image:url(http://muscularstrength.com/css_am/48/Cote%20d%27Ivoire.png)}
-.Croatia{background-image:url(http://muscularstrength.com/css_am/48/Croatia.png)}
-.Cuba{background-image:url(http://muscularstrength.com/css_am/48/Cuba.png)}
-.Cyprus{background-image:url(http://muscularstrength.com/css_am/48/Cyprus.png)}
-.Czech{background-image:url(http://muscularstrength.com/css_am/48/Czech%20Republic.png)}
-.Denmark{background-image:url(http://muscularstrength.com/css_am/48/Denmark.png)}
-.Djibouti{background-image:url(http://muscularstrength.com/css_am/48/Djibouti.png)}
-.Dominica{background-image:url(http://muscularstrength.com/css_am/48/Dominica.png)}
-.Dominican{background-image:url(http://muscularstrength.com/css_am/48/Dominican%20Republic.png)}
-.Ecuador{background-image:url(http://muscularstrength.com/css_am/48/Ecuador.png)}
-.Egypt{background-image:url(http://muscularstrength.com/css_am/48/Egypt.png)}
-.Salvador{background-image:url(http://muscularstrength.com/css_am/48/El%20Salvador.png)}
-.Equatorial{background-image:url(http://muscularstrength.com/css_am/48/Equatorial%20Guinea.png)}
-.Eritrea{background-image:url(http://muscularstrength.com/css_am/48/Eritrea.png)}
-.Estonia{background-image:url(http://muscularstrength.com/css_am/48/Estonia.png)}
-.Ethiopia{background-image:url(http://muscularstrength.com/css_am/48/Ethiopia.png)}
-.Faroe{background-image:url(http://muscularstrength.com/css_am/48/Faroes.png)}
-.Fiji{background-image:url(http://muscularstrength.com/css_am/48/Fiji.png)}
-.Finland{background-image:url(http://muscularstrength.com/css_am/48/Finland.png)}
-.France{background-image:url(http://muscularstrength.com/css_am/48/France.png)}
-.Gabon{background-image:url(http://muscularstrength.com/css_am/48/Gabon.png)}
-.Gambia{background-image:url(http://muscularstrength.com/css_am/48/Gambia.png)}
-.Germany{background-image:url(http://muscularstrength.com/css_am/48/Germany.png)}
-.Ghana{background-image:url(http://muscularstrength.com/css_am/48/Ghana.png)}
-.Gibraltar{background-image:url(http://muscularstrength.com/css_am/48/Gibraltar.png)}
-.Greece{background-image:url(http://muscularstrength.com/css_am/48/Greece.png)}
-.Greenland{background-image:url(http://muscularstrength.com/css_am/48/Greenland.png)}
-.Grenada{background-image:url(http://muscularstrength.com/css_am/48/Grenada.png)}
-.Guadeloupe{background-image:url(http://muscularstrength.com/css_am/48/Guadeloupe.png)}
-.Guam{background-image:url(http://muscularstrength.com/css_am/48/Guam.png)}
-.Guatemala{background-image:url(http://muscularstrength.com/css_am/48/Guatemala.png)}
-.Guernsey{background-image:url(http://muscularstrength.com/css_am/48/Guernsey.png)}
-.Guinea{background-image:url(http://muscularstrength.com/css_am/48/Guinea.png)}
-.Bissau{background-image:url(http://muscularstrength.com/css_am/48/Guinea-Bissau.png)}
-.Guyana{background-image:url(http://muscularstrength.com/css_am/48/Guyana.png)}
-.Haiti{background-image:url(http://muscularstrength.com/css_am/48/Haity.png)}
-.Honduras{background-image:url(http://muscularstrength.com/css_am/48/Honduras.png)}
-.Hong{background-image:url(http://muscularstrength.com/css_am/48/Hong%20Kong.png)}
-.Hungary{background-image:url(http://muscularstrength.com/css_am/48/Huruguay.png)}
-.Iceland{background-image:url(http://muscularstrength.com/css_am/48/Iceland.png)}
-.India{background-image:url(http://muscularstrength.com/css_am/48/India.png)}
-.Indonesia{background-image:url(http://muscularstrength.com/css_am/48/Indonezia.png)}
-.Iran{background-image:url(http://muscularstrength.com/css_am/48/Iran.png)}
-.Ireland{background-image:url(http://muscularstrength.com/css_am/48/Ireland.png)}
-.Isle{background-image:url(http://muscularstrength.com/css_am/48/Isle%20of%20Man.png)}
-.Israel{background-image:url(http://muscularstrength.com/css_am/48/Israel.png)}
-.Italy{background-image:url(http://muscularstrength.com/css_am/48/Italy.png)}
-.Jamaica{background-image:url(http://muscularstrength.com/css_am/48/Jamaica.png)}
-.Japan{background-image:url(http://muscularstrength.com/css_am/48/Japan.png)}
-.Jersey{background-image:url(http://muscularstrength.com/css_am/48/Jersey.png)}
-.Juan{background-image:url(http://muscularstrength.com/css_am/48/Juan.png)}
-.Kazakhstan{background-image:url(http://muscularstrength.com/css_am/48/Kazakhstan.png)}
-.Kenya{background-image:url(http://muscularstrength.com/css_am/48/Kenya.png)}
-.Kiribati{background-image:url(http://muscularstrength.com/css_am/48/Kiribati.png)}
-.Korea{background-image:url(http://muscularstrength.com/css_am/48/South%20Korea.png)}
-.Kuwait{background-image:url(http://muscularstrength.com/css_am/48/Kuwait.png)}
-.Kyrgyzstan{background-image:url(http://muscularstrength.com/css_am/48/Kyrgyzstan.png)}
-.Laos{background-image:url(http://muscularstrength.com/css_am/48/Laos.png)}
-.Latvia{background-image:url(http://muscularstrength.com/css_am/48/Lativia.png)}
-.Lebanon{background-image:url(http://muscularstrength.com/css_am/48/Lebanon.png)}
-.Lesotho{background-image:url(http://muscularstrength.com/css_am/48/Lesotho.png)}
-.Liberia{background-image:url(http://muscularstrength.com/css_am/48/Liberia.png)}
-.Libya{background-image:url(http://muscularstrength.com/css_am/48/Libya.png)}
-.Liechtenstein{background-image:url(http://muscularstrength.com/css_am/48/Liechtenshein.png)}
-.Lithuania{background-image:url(http://muscularstrength.com/css_am/48/Lithuania.png)}
-.Luxembourg{background-image:url(http://muscularstrength.com/css_am/48/Luxembourg.png)}
-.Macau{background-image:url(http://muscularstrength.com/css_am/48/Macao.png)}
-.Macedonia{background-image:url(http://muscularstrength.com/css_am/48/Macedonia.png)}
-.Madagascar{background-image:url(http://muscularstrength.com/css_am/48/Madagascar.png)}
-.Malawi{background-image:url(http://muscularstrength.com/css_am/48/Malawi.png)}
-.Malaysia{background-image:url(http://muscularstrength.com/css_am/48/Malaysia.png)}
-.Maldives{background-image:url(http://muscularstrength.com/css_am/48/Maldives.png)}
-.Mali{background-image:url(http://muscularstrength.com/css_am/48/Mali.png)}
-.Malta{background-image:url(http://muscularstrength.com/css_am/48/Malta.png)}
-.Marshall{background-image:url(http://muscularstrength.com/css_am/48/Marshall%20Islands.png)}
-.Martinique{background-image:url(http://muscularstrength.com/css_am/48/Martinique.png)}
-.Mauritania{background-image:url(http://muscularstrength.com/css_am/48/Mauritania.png)}
-.Mauritius{background-image:url(http://muscularstrength.com/css_am/48/Mauritius.png)}
-.Mexico{background-image:url(http://muscularstrength.com/css_am/48/Mexico.png)}
-.Micronesia{background-image:url(http://muscularstrength.com/css_am/48/Micronesia.png)}
-.Moldova{background-image:url(http://muscularstrength.com/css_am/48/Moldova.png)}
-.Monaco{background-image:url(http://muscularstrength.com/css_am/48/Monaco.png)}
-.Mongolia{background-image:url(http://muscularstrength.com/css_am/48/Mongolia.png)}
-.Montserrat{background-image:url(http://muscularstrength.com/css_am/48/Montserrat.png)}
-.Morocco{background-image:url(http://muscularstrength.com/css_am/48/Morocco.png)}
-.Mozambique{background-image:url(http://muscularstrength.com/css_am/48/Mozambique.png)}
-.Namibia{background-image:url(http://muscularstrength.com/css_am/48/Namibia.png)}
-.Nauru{background-image:url(http://muscularstrength.com/css_am/48/Nauru.png)}
-.Nepal{background-image:url(http://muscularstrength.com/css_am/48/Nepal.png)}
-.Netherlands{background-image:url(http://muscularstrength.com/css_am/48/Netherlands.png)}
-.Antilles{background-image:url(http://muscularstrength.com/css_am/48/Netherlands%20Antilles.png)}
-.Caledonia{background-image:url(http://muscularstrength.com/css_am/48/New%20Caledonia.png)}
-.Zealand{background-image:url(http://muscularstrength.com/css_am/48/New%20Zealand.png)}
-.Nicaragua{background-image:url(http://muscularstrength.com/css_am/48/Nicaragua.png)}
-.Niger{background-image:url(http://muscularstrength.com/css_am/48/Niger.png)}
-.Nigeria{background-image:url(http://muscularstrength.com/css_am/48/Nigeria.png)}
-.Norway{background-image:url(http://muscularstrength.com/css_am/48/Norway.png)}
-.Oman{background-image:url(http://muscularstrength.com/css_am/48/Oman.png)}
-.Pakistan{background-image:url(http://muscularstrength.com/css_am/48/Pakistan.png)}
-.Palau{background-image:url(http://muscularstrength.com/css_am/48/Palau.png)}
-.Panama{background-image:url(http://muscularstrength.com/css_am/48/Panama.png)}
-.Papua{background-image:url(http://muscularstrength.com/css_am/48/Papua%20New%20Guinea.png)}
-.Paraguay{background-image:url(http://muscularstrength.com/css_am/48/Paraguay.png)}
-.Peru{background-image:url(http://muscularstrength.com/css_am/48/Peru.png)}
-.Philippines{background-image:url(http://muscularstrength.com/css_am/48/Philippines.png)}
-.Poland{background-image:url(http://muscularstrength.com/css_am/48/Poland.png)}
-.Portugal{background-image:url(http://muscularstrength.com/css_am/48/Portugal.png)}
-.Puerto{background-image:url(http://muscularstrength.com/css_am/48/Puerto%20Rico.png)}
-.Qatar{background-image:url(http://muscularstrength.com/css_am/48/Qatar.png)}
-.Reunion{background-image:url(http://muscularstrength.com/css_am/48/Reunion.png)}
-.Romania{background-image:url(http://muscularstrength.com/css_am/48/Romania.png)}
-.Russia{background-image:url(http://muscularstrength.com/css_am/48/Russian%20Federation.png)}
-.Rwanda{background-image:url(http://muscularstrength.com/css_am/48/Rwanda.png)}
-.Nevis{background-image:url(http://muscularstrength.com/css_am/48/St%20Kitts%20&%20Nevis.png)}
-.Lucia{background-image:url(http://muscularstrength.com/css_am/48/Saint%20Lucia.png)}
-.Vincent{background-image:url(http://muscularstrength.com/css_am/48/St%20Vincent%20&%20the%20Grenadines.png)}
-.Samoa{background-image:url(http://muscularstrength.com/css_am/48/Samoa.png)}
-.Marino{background-image:url(http://muscularstrength.com/css_am/48/San%20Marino.png)}
-.Principe{background-image:url(http://muscularstrength.com/css_am/48/Sao%20Tome%20&%20Principe.png)}
-.Arabia{background-image:url(http://muscularstrength.com/css_am/48/Saudi%20Arabia.png)}
-.Senegal{background-image:url(http://muscularstrength.com/css_am/48/Senegal.png)}
-.Montenegro{background-image:url(http://muscularstrength.com/css_am/48/Montenegro.png)}
-.Seychelles{background-image:url(http://muscularstrength.com/css_am/48/Seychelles.png)}
-.Leone{background-image:url(http://muscularstrength.com/css_am/48/Sierra%20Leone.png)}
-.Singapore{background-image:url(http://muscularstrength.com/css_am/48/Singapore.png)}
-.Slovakia{background-image:url(http://muscularstrength.com/css_am/48/Slovakia.png)}
-.Slovenia{background-image:url(http://muscularstrength.com/css_am/48/Slovenia.png)}
-.Solomon{background-image:url(http://muscularstrength.com/css_am/48/Solomon%20Islands.png)}
-.Somalia{background-image:url(http://muscularstrength.com/css_am/48/Somalia.png)}
-.Georgia{background-image:url(http://muscularstrength.com/css_am/48/Georgia.png)}
-.Spain{background-image:url(http://muscularstrength.com/css_am/48/Spain.png)}
-.Sudan{background-image:url(http://muscularstrength.com/css_am/48/Sudan.png)}
-.Suriname{background-image:url(http://muscularstrength.com/css_am/48/Suriname.png)}
-.Swaziland{background-image:url(http://muscularstrength.com/css_am/48/Swaziland.png)}
-.Sweden{background-image:url(http://muscularstrength.com/css_am/48/Sweden.png)}
-.Switzerland{background-image:url(http://muscularstrength.com/css_am/48/Switzerland.png)}
-.Syria{background-image:url(http://muscularstrength.com/css_am/48/Syria.png)}
-.Taiwan{background-image:url(http://muscularstrength.com/css_am/48/Taiwan.png)}
-.Tajikistan{background-image:url(http://muscularstrength.com/css_am/48/Tajikistan.png)}
-.Tanzania{background-image:url(http://muscularstrength.com/css_am/48/Tanzania.png)}
-.Thailand{background-image:url(http://muscularstrength.com/css_am/48/Thailand.png)}
-.Timor-Leste{background-image:url(http://muscularstrength.com/css_am/48/Timor-Leste.png)}
-.Togo{background-image:url(http://muscularstrength.com/css_am/48/Togo.png)}
-.Tonga{background-image:url(http://muscularstrength.com/css_am/48/Tonga.png)}
-.Tobago{background-image:url(http://muscularstrength.com/css_am/48/Trinidad%20&%20Tobago.png)}
-.Tunisia{background-image:url(http://muscularstrength.com/css_am/48/Tunisia.png)}
-.Turkey{background-image:url(http://muscularstrength.com/css_am/48/Turkey.png)}
-.Turkmenistan{background-image:url(http://muscularstrength.com/css_am/48/Turkmenistan.png)}
-.Caicos{background-image:url(http://muscularstrength.com/css_am/48/Turks%20and%20Caicos%20Islands.png)}
-.Tuvalu{background-image:url(http://muscularstrength.com/css_am/48/Tuvalu.png)}
-.Uganda{background-image:url(http://muscularstrength.com/css_am/48/Uganda.png)}
-.Ukraine{background-image:url(http://muscularstrength.com/css_am/48/Ukraine.png)}
-.Emirates{background-image:url(http://muscularstrength.com/css_am/48/United%20Arab%20Emirates.png)}
-.Uruguay{background-image:url(http://muscularstrength.com/css_am/48/Uruguay.png)}
-.Uzbekistan{background-image:url(http://muscularstrength.com/css_am/48/Uzbekistan.png)}
-.Venezuela{background-image:url(http://muscularstrength.com/css_am/48/Venezuela.png)}
-.Vietnam{background-image:url(http://muscularstrength.com/css_am/48/Viet%20Nam.png)}
-.Virgin{background-image:url(http://muscularstrength.com/css_am/48/Virgin%20Islands%20US.png)}
-.Sahara{background-image:url(http://muscularstrength.com/css_am/48/Western%20Sahara.png)}
-.Yemen{background-image:url(http://muscularstrength.com/css_am/48/Yemen.png)}
-.Zambia{background-image:url(http://muscularstrength.com/css_am/48/Zambia.png)}
-.Zimbabwe{background-image:url(http://muscularstrength.com/css_am/48/Zimbabwe.png)}
-.Kingdom{background-image:url(http://muscularstrength.com/css_am/48/United%20KingdomGreat%20Britain.png)}
+
+span.like.likecmnt.liked img {
+  opacity: 0.8 !important;
+}
+
+.States {
+  background-image: url(http://muscularstrength.com/css_am/48/United%20States%20of%20AmericaUSA.png);
+}
+.Afghanistan {
+  background-image: url(http://muscularstrength.com/css_am/48/Afghanistan.png);
+}
+.Albania {
+  background-image: url(http://muscularstrength.com/css_am/48/Albania.png);
+}
+.Algeria {
+  background-image: url(http://muscularstrength.com/css_am/48/Algeria.png);
+}
+.American {
+  background-image: url(http://muscularstrength.com/css_am/48/American%20Samoa.png);
+}
+.Andorra {
+  background-image: url(http://muscularstrength.com/css_am/48/Andorra.png);
+}
+.Angola {
+  background-image: url(http://muscularstrength.com/css_am/48/Angola.png);
+}
+.Anguilla {
+  background-image: url(http://muscularstrength.com/css_am/48/Anguilla.png);
+}
+.Antarctica {
+  background-image: url(http://muscularstrength.com/css_am/48/Antarctica.png);
+}
+.Antigua {
+  background-image: url(http://muscularstrength.com/css_am/48/Antigua%20&%20Barbuda.png);
+}
+.Argentina {
+  background-image: url(http://muscularstrength.com/css_am/48/Argentina.png);
+}
+.Armenia {
+  background-image: url(http://muscularstrength.com/css_am/48/Armenia.png);
+}
+.Aruba {
+  background-image: url(http://muscularstrength.com/css_am/48/Aruba.png);
+}
+.Australia {
+  background-image: url(http://muscularstrength.com/css_am/48/Australia.png);
+}
+.Austria {
+  background-image: url(http://muscularstrength.com/css_am/48/Austria.png);
+}
+.Azerbaijan {
+  background-image: url(http://muscularstrength.com/css_am/48/Azerbaijan.png);
+}
+.Bahamas {
+  background-image: url(http://muscularstrength.com/css_am/48/Bahamas.png);
+}
+.Bahrain {
+  background-image: url(http://muscularstrength.com/css_am/48/Bahrain.png);
+}
+.Bangladesh {
+  background-image: url(http://muscularstrength.com/css_am/48/Bangladesh.png);
+}
+.Barbados {
+  background-image: url(http://muscularstrength.com/css_am/48/Barbados.png);
+}
+.Belarus {
+  background-image: url(http://muscularstrength.com/css_am/48/Belarus.png);
+}
+.Belgium {
+  background-image: url(http://muscularstrength.com/css_am/48/Belgium.png);
+}
+.Belize {
+  background-image: url(http://muscularstrength.com/css_am/48/Belize.png);
+}
+.Benin {
+  background-image: url(http://muscularstrength.com/css_am/48/Benin.png);
+}
+.Bermuda {
+  background-image: url(http://muscularstrength.com/css_am/48/Bermuda.png);
+}
+.Bhutan {
+  background-image: url(http://muscularstrength.com/css_am/48/Bhutan.png);
+}
+.Bolivia {
+  background-image: url(http://muscularstrength.com/css_am/48/Bolivia.png);
+}
+.Bosnia {
+  background-image: url(http://muscularstrength.com/css_am/48/Bosnia%20&%20Herzegovina.png);
+}
+.Botswana {
+  background-image: url(http://muscularstrength.com/css_am/48/Botswana.png);
+}
+.Brazil {
+  background-image: url(http://muscularstrength.com/css_am/48/Brazil.png);
+}
+.Brunei {
+  background-image: url(http://muscularstrength.com/css_am/48/Brunei.png);
+}
+.Bulgaria {
+  background-image: url(http://muscularstrength.com/css_am/48/Bulgaria.png);
+}
+.Burkina {
+  background-image: url(http://muscularstrength.com/css_am/48/Burkina%20Faso.png);
+}
+.Burundi {
+  background-image: url(http://muscularstrength.com/css_am/48/Burundi.png);
+}
+.Cambodia {
+  background-image: url(http://muscularstrength.com/css_am/48/Cambodja.png);
+}
+.Cameroon {
+  background-image: url(http://muscularstrength.com/css_am/48/Cameroon.png);
+}
+.Canada {
+  background-image: url(http://muscularstrength.com/css_am/48/Canada.png);
+}
+.Cayman {
+  background-image: url(http://muscularstrength.com/css_am/48/Cayman%20Islands.png);
+}
+.Central {
+  background-image: url(http://muscularstrength.com/css_am/48/Central%20African%20Republic.png);
+}
+.Chad {
+  background-image: url(http://muscularstrength.com/css_am/48/Chad.png);
+}
+.Chile {
+  background-image: url(http://muscularstrength.com/css_am/48/Chile.png);
+}
+.China {
+  background-image: url(http://muscularstrength.com/css_am/48/China.png);
+}
+.Colombia {
+  background-image: url(http://muscularstrength.com/css_am/48/Colombia.png);
+}
+.Comoros {
+  background-image: url(http://muscularstrength.com/css_am/48/Comoros.png);
+}
+.Congo {
+  background-image: url(http://muscularstrength.com/css_am/48/Congo-Brazzaville.png);
+}
+.Democratic {
+  background-image: url(/css_am/48/Congo-KinshasaZaire.png);
+}
+.Cook {
+  background-image: url(http://muscularstrength.com/css_am/48/Cook%20Islands.png);
+}
+.Rica {
+  background-image: url(http://muscularstrength.com/css_am/48/Costa%20Rica.png);
+}
+.Cote {
+  background-image: url(http://muscularstrength.com/css_am/48/Cote%20d%27Ivoire.png);
+}
+.Croatia {
+  background-image: url(http://muscularstrength.com/css_am/48/Croatia.png);
+}
+.Cuba {
+  background-image: url(http://muscularstrength.com/css_am/48/Cuba.png);
+}
+.Cyprus {
+  background-image: url(http://muscularstrength.com/css_am/48/Cyprus.png);
+}
+.Czech {
+  background-image: url(http://muscularstrength.com/css_am/48/Czech%20Republic.png);
+}
+.Denmark {
+  background-image: url(http://muscularstrength.com/css_am/48/Denmark.png);
+}
+.Djibouti {
+  background-image: url(http://muscularstrength.com/css_am/48/Djibouti.png);
+}
+.Dominica {
+  background-image: url(http://muscularstrength.com/css_am/48/Dominica.png);
+}
+.Dominican {
+  background-image: url(http://muscularstrength.com/css_am/48/Dominican%20Republic.png);
+}
+.Ecuador {
+  background-image: url(http://muscularstrength.com/css_am/48/Ecuador.png);
+}
+.Egypt {
+  background-image: url(http://muscularstrength.com/css_am/48/Egypt.png);
+}
+.Salvador {
+  background-image: url(http://muscularstrength.com/css_am/48/El%20Salvador.png);
+}
+.Equatorial {
+  background-image: url(http://muscularstrength.com/css_am/48/Equatorial%20Guinea.png);
+}
+.Eritrea {
+  background-image: url(http://muscularstrength.com/css_am/48/Eritrea.png);
+}
+.Estonia {
+  background-image: url(http://muscularstrength.com/css_am/48/Estonia.png);
+}
+.Ethiopia {
+  background-image: url(http://muscularstrength.com/css_am/48/Ethiopia.png);
+}
+.Faroe {
+  background-image: url(http://muscularstrength.com/css_am/48/Faroes.png);
+}
+.Fiji {
+  background-image: url(http://muscularstrength.com/css_am/48/Fiji.png);
+}
+.Finland {
+  background-image: url(http://muscularstrength.com/css_am/48/Finland.png);
+}
+.France {
+  background-image: url(http://muscularstrength.com/css_am/48/France.png);
+}
+.Gabon {
+  background-image: url(http://muscularstrength.com/css_am/48/Gabon.png);
+}
+.Gambia {
+  background-image: url(http://muscularstrength.com/css_am/48/Gambia.png);
+}
+.Germany {
+  background-image: url(http://muscularstrength.com/css_am/48/Germany.png);
+}
+.Ghana {
+  background-image: url(http://muscularstrength.com/css_am/48/Ghana.png);
+}
+.Gibraltar {
+  background-image: url(http://muscularstrength.com/css_am/48/Gibraltar.png);
+}
+.Greece {
+  background-image: url(http://muscularstrength.com/css_am/48/Greece.png);
+}
+.Greenland {
+  background-image: url(http://muscularstrength.com/css_am/48/Greenland.png);
+}
+.Grenada {
+  background-image: url(http://muscularstrength.com/css_am/48/Grenada.png);
+}
+.Guadeloupe {
+  background-image: url(http://muscularstrength.com/css_am/48/Guadeloupe.png);
+}
+.Guam {
+  background-image: url(http://muscularstrength.com/css_am/48/Guam.png);
+}
+.Guatemala {
+  background-image: url(http://muscularstrength.com/css_am/48/Guatemala.png);
+}
+.Guernsey {
+  background-image: url(http://muscularstrength.com/css_am/48/Guernsey.png);
+}
+.Guinea {
+  background-image: url(http://muscularstrength.com/css_am/48/Guinea.png);
+}
+.Bissau {
+  background-image: url(http://muscularstrength.com/css_am/48/Guinea-Bissau.png);
+}
+.Guyana {
+  background-image: url(http://muscularstrength.com/css_am/48/Guyana.png);
+}
+.Haiti {
+  background-image: url(http://muscularstrength.com/css_am/48/Haity.png);
+}
+.Honduras {
+  background-image: url(http://muscularstrength.com/css_am/48/Honduras.png);
+}
+.Hong {
+  background-image: url(http://muscularstrength.com/css_am/48/Hong%20Kong.png);
+}
+.Hungary {
+  background-image: url(http://muscularstrength.com/css_am/48/Huruguay.png);
+}
+.Iceland {
+  background-image: url(http://muscularstrength.com/css_am/48/Iceland.png);
+}
+.India {
+  background-image: url(http://muscularstrength.com/css_am/48/India.png);
+}
+.Indonesia {
+  background-image: url(http://muscularstrength.com/css_am/48/Indonezia.png);
+}
+.Iran {
+  background-image: url(http://muscularstrength.com/css_am/48/Iran.png);
+}
+.Ireland {
+  background-image: url(http://muscularstrength.com/css_am/48/Ireland.png);
+}
+.Isle {
+  background-image: url(http://muscularstrength.com/css_am/48/Isle%20of%20Man.png);
+}
+.Israel {
+  background-image: url(http://muscularstrength.com/css_am/48/Israel.png);
+}
+.Italy {
+  background-image: url(http://muscularstrength.com/css_am/48/Italy.png);
+}
+.Jamaica {
+  background-image: url(http://muscularstrength.com/css_am/48/Jamaica.png);
+}
+.Japan {
+  background-image: url(http://muscularstrength.com/css_am/48/Japan.png);
+}
+.Jersey {
+  background-image: url(http://muscularstrength.com/css_am/48/Jersey.png);
+}
+.Juan {
+  background-image: url(http://muscularstrength.com/css_am/48/Juan.png);
+}
+.Kazakhstan {
+  background-image: url(http://muscularstrength.com/css_am/48/Kazakhstan.png);
+}
+.Kenya {
+  background-image: url(http://muscularstrength.com/css_am/48/Kenya.png);
+}
+.Kiribati {
+  background-image: url(http://muscularstrength.com/css_am/48/Kiribati.png);
+}
+.Korea {
+  background-image: url(http://muscularstrength.com/css_am/48/South%20Korea.png);
+}
+.Kuwait {
+  background-image: url(http://muscularstrength.com/css_am/48/Kuwait.png);
+}
+.Kyrgyzstan {
+  background-image: url(http://muscularstrength.com/css_am/48/Kyrgyzstan.png);
+}
+.Laos {
+  background-image: url(http://muscularstrength.com/css_am/48/Laos.png);
+}
+.Latvia {
+  background-image: url(http://muscularstrength.com/css_am/48/Lativia.png);
+}
+.Lebanon {
+  background-image: url(http://muscularstrength.com/css_am/48/Lebanon.png);
+}
+.Lesotho {
+  background-image: url(http://muscularstrength.com/css_am/48/Lesotho.png);
+}
+.Liberia {
+  background-image: url(http://muscularstrength.com/css_am/48/Liberia.png);
+}
+.Libya {
+  background-image: url(http://muscularstrength.com/css_am/48/Libya.png);
+}
+.Liechtenstein {
+  background-image: url(http://muscularstrength.com/css_am/48/Liechtenshein.png);
+}
+.Lithuania {
+  background-image: url(http://muscularstrength.com/css_am/48/Lithuania.png);
+}
+.Luxembourg {
+  background-image: url(http://muscularstrength.com/css_am/48/Luxembourg.png);
+}
+.Macau {
+  background-image: url(http://muscularstrength.com/css_am/48/Macao.png);
+}
+.Macedonia {
+  background-image: url(http://muscularstrength.com/css_am/48/Macedonia.png);
+}
+.Madagascar {
+  background-image: url(http://muscularstrength.com/css_am/48/Madagascar.png);
+}
+.Malawi {
+  background-image: url(http://muscularstrength.com/css_am/48/Malawi.png);
+}
+.Malaysia {
+  background-image: url(http://muscularstrength.com/css_am/48/Malaysia.png);
+}
+.Maldives {
+  background-image: url(http://muscularstrength.com/css_am/48/Maldives.png);
+}
+.Mali {
+  background-image: url(http://muscularstrength.com/css_am/48/Mali.png);
+}
+.Malta {
+  background-image: url(http://muscularstrength.com/css_am/48/Malta.png);
+}
+.Marshall {
+  background-image: url(http://muscularstrength.com/css_am/48/Marshall%20Islands.png);
+}
+.Martinique {
+  background-image: url(http://muscularstrength.com/css_am/48/Martinique.png);
+}
+.Mauritania {
+  background-image: url(http://muscularstrength.com/css_am/48/Mauritania.png);
+}
+.Mauritius {
+  background-image: url(http://muscularstrength.com/css_am/48/Mauritius.png);
+}
+.Mexico {
+  background-image: url(http://muscularstrength.com/css_am/48/Mexico.png);
+}
+.Micronesia {
+  background-image: url(http://muscularstrength.com/css_am/48/Micronesia.png);
+}
+.Moldova {
+  background-image: url(http://muscularstrength.com/css_am/48/Moldova.png);
+}
+.Monaco {
+  background-image: url(http://muscularstrength.com/css_am/48/Monaco.png);
+}
+.Mongolia {
+  background-image: url(http://muscularstrength.com/css_am/48/Mongolia.png);
+}
+.Montserrat {
+  background-image: url(http://muscularstrength.com/css_am/48/Montserrat.png);
+}
+.Morocco {
+  background-image: url(http://muscularstrength.com/css_am/48/Morocco.png);
+}
+.Mozambique {
+  background-image: url(http://muscularstrength.com/css_am/48/Mozambique.png);
+}
+.Namibia {
+  background-image: url(http://muscularstrength.com/css_am/48/Namibia.png);
+}
+.Nauru {
+  background-image: url(http://muscularstrength.com/css_am/48/Nauru.png);
+}
+.Nepal {
+  background-image: url(http://muscularstrength.com/css_am/48/Nepal.png);
+}
+.Netherlands {
+  background-image: url(http://muscularstrength.com/css_am/48/Netherlands.png);
+}
+.Antilles {
+  background-image: url(http://muscularstrength.com/css_am/48/Netherlands%20Antilles.png);
+}
+.Caledonia {
+  background-image: url(http://muscularstrength.com/css_am/48/New%20Caledonia.png);
+}
+.Zealand {
+  background-image: url(http://muscularstrength.com/css_am/48/New%20Zealand.png);
+}
+.Nicaragua {
+  background-image: url(http://muscularstrength.com/css_am/48/Nicaragua.png);
+}
+.Niger {
+  background-image: url(http://muscularstrength.com/css_am/48/Niger.png);
+}
+.Nigeria {
+  background-image: url(http://muscularstrength.com/css_am/48/Nigeria.png);
+}
+.Norway {
+  background-image: url(http://muscularstrength.com/css_am/48/Norway.png);
+}
+.Oman {
+  background-image: url(http://muscularstrength.com/css_am/48/Oman.png);
+}
+.Pakistan {
+  background-image: url(http://muscularstrength.com/css_am/48/Pakistan.png);
+}
+.Palau {
+  background-image: url(http://muscularstrength.com/css_am/48/Palau.png);
+}
+.Panama {
+  background-image: url(http://muscularstrength.com/css_am/48/Panama.png);
+}
+.Papua {
+  background-image: url(http://muscularstrength.com/css_am/48/Papua%20New%20Guinea.png);
+}
+.Paraguay {
+  background-image: url(http://muscularstrength.com/css_am/48/Paraguay.png);
+}
+.Peru {
+  background-image: url(http://muscularstrength.com/css_am/48/Peru.png);
+}
+.Philippines {
+  background-image: url(http://muscularstrength.com/css_am/48/Philippines.png);
+}
+.Poland {
+  background-image: url(http://muscularstrength.com/css_am/48/Poland.png);
+}
+.Portugal {
+  background-image: url(http://muscularstrength.com/css_am/48/Portugal.png);
+}
+.Puerto {
+  background-image: url(http://muscularstrength.com/css_am/48/Puerto%20Rico.png);
+}
+.Qatar {
+  background-image: url(http://muscularstrength.com/css_am/48/Qatar.png);
+}
+.Reunion {
+  background-image: url(http://muscularstrength.com/css_am/48/Reunion.png);
+}
+.Romania {
+  background-image: url(http://muscularstrength.com/css_am/48/Romania.png);
+}
+.Russia {
+  background-image: url(http://muscularstrength.com/css_am/48/Russian%20Federation.png);
+}
+.Rwanda {
+  background-image: url(http://muscularstrength.com/css_am/48/Rwanda.png);
+}
+.Nevis {
+  background-image: url(http://muscularstrength.com/css_am/48/St%20Kitts%20&%20Nevis.png);
+}
+.Lucia {
+  background-image: url(http://muscularstrength.com/css_am/48/Saint%20Lucia.png);
+}
+.Vincent {
+  background-image: url(http://muscularstrength.com/css_am/48/St%20Vincent%20&%20the%20Grenadines.png);
+}
+.Samoa {
+  background-image: url(http://muscularstrength.com/css_am/48/Samoa.png);
+}
+.Marino {
+  background-image: url(http://muscularstrength.com/css_am/48/San%20Marino.png);
+}
+.Principe {
+  background-image: url(http://muscularstrength.com/css_am/48/Sao%20Tome%20&%20Principe.png);
+}
+.Arabia {
+  background-image: url(http://muscularstrength.com/css_am/48/Saudi%20Arabia.png);
+}
+.Senegal {
+  background-image: url(http://muscularstrength.com/css_am/48/Senegal.png);
+}
+.Montenegro {
+  background-image: url(http://muscularstrength.com/css_am/48/Montenegro.png);
+}
+.Seychelles {
+  background-image: url(http://muscularstrength.com/css_am/48/Seychelles.png);
+}
+.Leone {
+  background-image: url(http://muscularstrength.com/css_am/48/Sierra%20Leone.png);
+}
+.Singapore {
+  background-image: url(http://muscularstrength.com/css_am/48/Singapore.png);
+}
+.Slovakia {
+  background-image: url(http://muscularstrength.com/css_am/48/Slovakia.png);
+}
+.Slovenia {
+  background-image: url(http://muscularstrength.com/css_am/48/Slovenia.png);
+}
+.Solomon {
+  background-image: url(http://muscularstrength.com/css_am/48/Solomon%20Islands.png);
+}
+.Somalia {
+  background-image: url(http://muscularstrength.com/css_am/48/Somalia.png);
+}
+.Georgia {
+  background-image: url(http://muscularstrength.com/css_am/48/Georgia.png);
+}
+.Spain {
+  background-image: url(http://muscularstrength.com/css_am/48/Spain.png);
+}
+.Sudan {
+  background-image: url(http://muscularstrength.com/css_am/48/Sudan.png);
+}
+.Suriname {
+  background-image: url(http://muscularstrength.com/css_am/48/Suriname.png);
+}
+.Swaziland {
+  background-image: url(http://muscularstrength.com/css_am/48/Swaziland.png);
+}
+.Sweden {
+  background-image: url(http://muscularstrength.com/css_am/48/Sweden.png);
+}
+.Switzerland {
+  background-image: url(http://muscularstrength.com/css_am/48/Switzerland.png);
+}
+.Syria {
+  background-image: url(http://muscularstrength.com/css_am/48/Syria.png);
+}
+.Taiwan {
+  background-image: url(http://muscularstrength.com/css_am/48/Taiwan.png);
+}
+.Tajikistan {
+  background-image: url(http://muscularstrength.com/css_am/48/Tajikistan.png);
+}
+.Tanzania {
+  background-image: url(http://muscularstrength.com/css_am/48/Tanzania.png);
+}
+.Thailand {
+  background-image: url(http://muscularstrength.com/css_am/48/Thailand.png);
+}
+.Timor-Leste {
+  background-image: url(http://muscularstrength.com/css_am/48/Timor-Leste.png);
+}
+.Togo {
+  background-image: url(http://muscularstrength.com/css_am/48/Togo.png);
+}
+.Tonga {
+  background-image: url(http://muscularstrength.com/css_am/48/Tonga.png);
+}
+.Tobago {
+  background-image: url(http://muscularstrength.com/css_am/48/Trinidad%20&%20Tobago.png);
+}
+.Tunisia {
+  background-image: url(http://muscularstrength.com/css_am/48/Tunisia.png);
+}
+.Turkey {
+  background-image: url(http://muscularstrength.com/css_am/48/Turkey.png);
+}
+.Turkmenistan {
+  background-image: url(http://muscularstrength.com/css_am/48/Turkmenistan.png);
+}
+.Caicos {
+  background-image: url(http://muscularstrength.com/css_am/48/Turks%20and%20Caicos%20Islands.png);
+}
+.Tuvalu {
+  background-image: url(http://muscularstrength.com/css_am/48/Tuvalu.png);
+}
+.Uganda {
+  background-image: url(http://muscularstrength.com/css_am/48/Uganda.png);
+}
+.Ukraine {
+  background-image: url(http://muscularstrength.com/css_am/48/Ukraine.png);
+}
+.Emirates {
+  background-image: url(http://muscularstrength.com/css_am/48/United%20Arab%20Emirates.png);
+}
+.Uruguay {
+  background-image: url(http://muscularstrength.com/css_am/48/Uruguay.png);
+}
+.Uzbekistan {
+  background-image: url(http://muscularstrength.com/css_am/48/Uzbekistan.png);
+}
+.Venezuela {
+  background-image: url(http://muscularstrength.com/css_am/48/Venezuela.png);
+}
+.Vietnam {
+  background-image: url(http://muscularstrength.com/css_am/48/Viet%20Nam.png);
+}
+.Virgin {
+  background-image: url(http://muscularstrength.com/css_am/48/Virgin%20Islands%20US.png);
+}
+.Sahara {
+  background-image: url(http://muscularstrength.com/css_am/48/Western%20Sahara.png);
+}
+.Yemen {
+  background-image: url(http://muscularstrength.com/css_am/48/Yemen.png);
+}
+.Zambia {
+  background-image: url(http://muscularstrength.com/css_am/48/Zambia.png);
+}
+.Zimbabwe {
+  background-image: url(http://muscularstrength.com/css_am/48/Zimbabwe.png);
+}
+.Kingdom {
+  background-image: url(http://muscularstrength.com/css_am/48/United%20KingdomGreat%20Britain.png);
+}
 
 /* New Post Popover Styling*/
-/deep/ .fr-box{
-    display: flex;
-    flex-direction: column-reverse;
-    height: calc(100% - 45px);
+/deep/ .fr-box {
+  display: flex;
+  flex-direction: column-reverse;
+  height: calc(100% - 45px);
 }
 /deep/ .fr-popup.fr-active {
-    z-index: 11 !important;
+  z-index: 11 !important;
 }
 /deep/ .fr-popup.fr-active .fr-arrow {
-    display: none;
+  display: none;
 }
 /*/deep/ .fr-element.fr-view {*/
 /deep/ .fr-wrapper {
-    height: calc(100% - 43px) !important;
+  height: calc(100% - 43px) !important;
 }
 /deep/ .fr-wrapper {
-    overflow: auto;
+  overflow: auto;
 }
-/deep/ .fr-toolbar, .fr-wrapper {
-    width: 100%;
-    /*height: calc(100% - 43px);*/
+/deep/ .fr-toolbar,
+.fr-wrapper {
+  width: 100%;
+  /*height: calc(100% - 43px);*/
 }
 /deep/ .fr-box.fr-basic .fr-element {
-    min-height: 100% !important;
+  min-height: 100% !important;
 }
 /deep/ .fr-box.fr-basic .fr-element img {
-    max-width: 100%;
+  max-width: 100%;
 }
 /deep/ .fr-popup.fr-active {
-    display: block;
-    bottom: 42px;
-    top: initial !important;
-    border-bottom: 5px solid #222;
-    border-top: none;
+  display: block;
+  bottom: 42px;
+  top: initial !important;
+  border-bottom: 5px solid #222;
+  border-top: none;
 }
-/deep/ .fr-popup .fr-arrow{
-    top: initial !important;
-    bottom: -10px;
-    transform: rotate(180deg);
+/deep/ .fr-popup .fr-arrow {
+  top: initial !important;
+  bottom: -10px;
+  transform: rotate(180deg);
 }
-/deep/ button[id*='insertImage'] {
-    border: solid #007167 1px !important;
-    color: #FFFFFD!important;
-    background-color: #009688 !important;
-    border-radius: 50% !important;
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
-    width: 32px !important;
-    height: 32px !important;
+/deep/ button[id*="insertImage"] {
+  border: solid #007167 1px !important;
+  color:  #FFFFFD!important;
+  background-color: #009688 !important;
+  border-radius: 50% !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  width: 32px !important;
+  height: 32px !important;
 }
-/deep/ button[id*='insertVideo'] {
-    color: #FFFFFF !important;
-    border: solid #d40000 1px !important;
-    background-color: red !important;
-    border-radius:  50% !important;
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
-    width: 32px !important;
-    height: 32px !important;
+/deep/ button[id*="insertVideo"] {
+  color:  #FFFFFD!important;
+  border: solid #d40000 1px !important;
+  background-color: red !important;
+  border-radius: 50% !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  width: 32px !important;
+  height: 32px !important;
 }
-/deep/ button[id*='emoticons'] {
-    background-color: #FFC107 !important;
-    color: #000!important;
-    border: solid #e8af00 1px !important;
-    border-radius: 50% !important;
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
-    width: 32px !important;
-    height: 32px !important;
+/deep/ button[id*="emoticons"] {
+  background-color: #ffc107 !important;
+  color: #000 !important;
+  border: solid #e8af00 1px !important;
+  border-radius: 50% !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  width: 32px !important;
+  height: 32px !important;
 }
 /deep/ .fr-toolbar button i.fa {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 0 !important;
-    padding:  0 !important;
-    width: 100% !important;
-    height: 100%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100%;
 }
 /deep/ .newpostbtn {
-    text-align:  center;
-    margin-top: 10px;
+  text-align: center;
+  margin-top: 10px;
 }
-/deep/ .newpostbtn button{
-    border: none;
-    padding: 6px 10px;
-    color:  #fff;
-    border-radius: 2px;
-    font-size: 16px;
+/deep/ .newpostbtn button {
+  border: none;
+  padding: 6px 10px;
+  color: #fff;
+  border-radius: 2px;
+  font-size: 16px;
 }
 /deep/ .newpostbtn button.postnewp {
-    background: green;
+  background: green;
 }
 /deep/ .newpostbtn button.cancelpost {
-    background: red;
-    margin-right: 10px;
+  background: red;
+  margin-right: 10px;
 }
 
 /*may*/
-/deep/ app-my-profile button[id^=emoticons-] {
-    display: none !important;
+/deep/ app-my-profile button[id^="emoticons-"] {
+  display: none !important;
 }
-.board .like-comnt, .board .viewallreplies {
-    float: left;
-    padding-left: 15%;
-    max-width: 100%;
-    width: 100%;
+.board .like-comnt,
+.board .viewallreplies {
+  float: left;
+  /* padding-left: 15%; */
+  max-width: 100%;
+  width: 100%;
 }
-.board .like-comnt{
-    font-size: 14px;
-    margin-top: 10px;   
-}
-
-.board .like-comnt span{
-    margin-right: 14px;
-}
-
-/deep/ .board .like-comnt.liked{
-    width: 100%;
-    color: #e29236;
-
+.board .like-comnt {
+  padding: 0 10px 0 10px;
+  font-size: 14px;
+    margin-top: 10px; 
+    box-sizing: border-box; 
 }
 
+.board .like-comnt span {
+  margin-right: 14px;
+}
+.board .like-comnt span img {
+  height: 15px!important;
+  opacity: 0.6;
+}		
 
+/deep/ .board .like-comnt.liked {
+  width: 100%;
+  color: #e29236;
+  padding: 0 10px 0 10px;
+}
+/deep/ .board span.liked img {
+  opacity: 1;
+}
 .board .newcomment-reply-popup {
-    position:  fixed;
-    top: 87px;
-    height:  calc(100vh - 87px);
-    display:  flex;
-    justify-content:  center;
-    align-items:  center;
-    flex-direction:  column;
-    width:  100%;
-    background: rgba(255,255,255,0.9);
-    left:  0;
+  position: fixed;
+  top: 87px;
+  height: calc(100vh - 87px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  left: 0;
 }
 .board .newcomment-reply-popup .close-pop {
-    position:  absolute;
-    top: 10px;
-    right: 10px;
-    font-size:  30px;
-    width:  30px;
-    height:  30px;
-    display: flex;
-    justify-content:  center;
-    align-items:  center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.board .newcomtext{
-    width: 90%;
-    border: 1px solid black;
+.board .newcomtext {
+  width: 90%;
+  border: 1px solid black;
 }
 .board .addCommentBtn {
-    background: #458DD4;
-    color: #fff;
-    border-color: #458DD4;
-    margin: 8px auto;
-    text-transform: uppercase;
-    font: 16px/1.5 Roboto;
-    font-weight: 600;
-    padding: 6px 16px 6px 16px;
-    border-radius:3px;
+  background: #458dd4;
+  color: #fff;
+  border-color: #458dd4;
+  margin: 8px auto;
+  text-transform: uppercase;
+  font: 16px/1.5 Roboto;
+  font-weight: 600;
+  padding: 6px 16px 6px 16px;
+  border-radius: 3px;
 }
-.board .viewallreplies{
-    margin: auto;
-    font-size: 14px;
-    color: grey;
-    margin-top: 14px;
+.board .viewallreplies {
+  margin: auto;
+  font-size: 14px;
+  color: grey;
+  margin-top: 14px;
 }
-.board .child-comment{
-    float: left;
-    padding-left: 10%;
-    max-width: 100%;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.board .child-comment .member-img{
-    float: left;
-    padding-left: 2%;
-    max-width: 10%;
-    width: 10%;
-    text-align: center;
+.board .child-comment {
+  float: left;
+  padding-left: 10%;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 20px;
 }
 
-.board .child-comment .msg-block{
-    float:left;
-    width: 60%;
-    padding-left: 2%;
-}
-.board .child-comment .member-img img{
-    border-radius: 50%;
-}
-.board .child-comment .name{
-    float: left;
-    width: 100%;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #CB0000;
-    margin-top: 0px;
-}
-.board .child-comment .name .time{
-    color: gray;
-    font-size: 12px;
-    text-transform: lowercase;
-    width:100%;
-    float: left;
-    margin-top: 7px;
+.board .child-comment .member-img {
+  float: left;
+  padding-left: 2%;
+  max-width: 10%;
+  width: 10%;
+  text-align: center;
 }
 
-.board .child-comment .cmnt{
-    float: left;
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
-    font: 18px Roboto !important;
+.board .child-comment .msg-block {
+  float: left;
+  width: 60%;
+  padding-left: 2%;
 }
-.board .child-comment .like-etc{
-    float: left;
-    font-size: 16px;
-    width: 100%;
+.board .child-comment .member-img img {
+  border-radius: 50%;
+}
+.board .child-comment .name {
+  float: left;
+  width: 100%;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #cb0000;
+  margin-top: 0px;
+}
+.board .child-comment .name .time {
+  color: gray;
+  font-size: 12px;
+  text-transform: lowercase;
+  width: 100%;
+  float: left;
+  margin-top: 7px;
 }
 
-.board .child-comment .like-etc span{
-    margin-right: 10px;
-    font-size: 14px;
+.board .child-comment .cmnt {
+  float: left;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 18px Roboto !important;
 }
-.musclehand{
-    right : -20%!important;
+.board .child-comment .like-etc {
+  float: left;
+  font-size: 16px;
+  width: 100%;
+}
+
+.board .child-comment .like-etc span {
+  margin-right: 10px;
+  font-size: 14px;
+}
+.musclehand {
+  right: -20% !important;
 }
 
 .photo-album .cover img {
-    max-height: 200px;
-    max-width: 100%;
+  max-height: 200px;
+  max-width: 100%;
 }
 
 .photo-album .cover {
-    text-align: center;
+  text-align: center;
 }
 
 .photo-album .details {
-    position: relative;
+  position: relative;
 }
 
 .photo-album .details span.name {
-    float: left;
+  float: left;
 }
 
 .photo-album .details span.date {
-    float: right;
+  float: right;
 }
 #board {
-    width: 100%!important;
+  /* width: 95%!important; */
 }
 .backlink-container {
-    background-color: #fff;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 32px 15px 0px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    z-index: 11;
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 4%;
+  left: 0;
+  padding: 32px 15px 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 11;
 }
+
+.board .viewallreplies{
+  margin: auto;
+  font-size: 14px;
+  color: grey;
+  margin-top: 14px;
+}
+.board .child-comment{
+  float: left;
+  padding-left: 10%;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+.board .child-comment .member-img{
+  float: left;
+  padding-left: 2%;
+  max-width: 10%;
+  width: 10%;
+  text-align: center;
+}
+.board .child-comment .msg-block{
+  float:left;
+  width: 75%;
+  padding-left: 2%;
+}
+.board .child-comment .member-img img{
+  border-radius: 50%;
+}
+.board .child-comment .name{
+  float: left;
+  width: 100%;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #CB0000;
+  margin-top: 0px;
+}
+.board .child-comment .name .time{
+  color: gray;
+  font-size: 12px;
+  text-transform: lowercase;
+  width:100%;
+  float: left;
+  margin-top: 7px;
+}		

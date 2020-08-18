@@ -4,14 +4,109 @@
   padding: 10px;
   position: fixed;
   width: 100%;
-  top: 0;
   left: 0;
   border-bottom: 2px solid #097aff;
   z-index: 12;
 }
 
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .header,
+  .header-top {
+    top: -12px !important;
+  }
+  .overlay-close[_ngcontent-c8]{
+    top: 60px !important;
+  }
+  .user-info[_ngcontent-c10] {
+    padding: 35px 0 !important;
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  header,
+  .header-top {
+    top: 0px !important;
+  }
+  .overlay-close[_ngcontent-c8]{
+    top: 60px !important
+  }
+  .user-info[_ngcontent-c10] {
+    padding: 40px 0 !important;
+  }
+}
+
+@media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+  header,
+  .header-top {
+    top: 0px !important;
+  }
+  .overlay-close[_ngcontent-c8]{
+    top: 60px !important
+  }
+  .user-info[_ngcontent-c10] {
+    padding: 40px 0 !important;
+  }
+}
+
+/* iphone XR */
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  .header,
+  .header-top {
+    top: -10px !important;
+  }
+  .overlay-close[_ngcontent-c8]{
+    top: 60px !important
+  }
+  .user-info[_ngcontent-c10] {
+    padding: 30px 0 !important;
+  }
+}
+
+/* iphone XS */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .header,
+  .header-top {
+    top: -12px !important;
+  }
+  .overlay-close[_ngcontent-c8]{
+    top: 60px !important
+  }
+  .user-info[_ngcontent-c10] {
+    padding: 30px 0 !important;
+  }
+}
+
+/* iphone XS Max */
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+  .header,
+  .header-top {
+    top: -12px !important;
+  }
+  .overlay-close[_ngcontent-c8]{
+    top: 60px !important
+  }
+  .user-info[_ngcontent-c10] {
+    padding: 30px 0 !important;
+  }
+}
+
+/* iPad Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  header,
+  .header-top {
+    top: 0px !important;
+  }
+  .overlay-close[_ngcontent-c8]{
+    top: 60px !important
+  }
+  .user-info[_ngcontent-c10] {
+    padding: 30px 0 !important;
+  }
+
+}
+
 /deep/ .purple .header {
-  border-bottom: 2px solid #BE10E0;
+  border-bottom: 2px solid #be10e0;
 }
 
 .header.noborder {
@@ -152,11 +247,12 @@
 .wrapper.login .container .form input {
   border: 0 none;
   color: #666;
-  font: 17px robotoregular;
+  font: 17px;
   margin-bottom: 10px;
   padding: 10px 0;
   text-align: center;
   width: 100%;
+  font-family: robotoregular !important;
 }
 
 .wrapper.login .container .form form.joinform input {
@@ -167,9 +263,10 @@
   background: #ffcc00;
   border: 0 none;
   color: #fff;
-  font: 17px robotoregular;
+  font: 17px;
   padding: 10px 0;
   width: 100%;
+  font-family: robotoregular !important;
 }
 
 .wrapper.login .container .form button.signingup {
@@ -182,8 +279,9 @@
 
 .wrapper.login .container .signup h6 {
   color: #fff;
-  font: 17px/1 robotoregular;
+  font: 17px/1;
   margin: 35px 0 15px;
+  font-family: robotoregular !important;
 }
 
 .wrapper.login .container .signup h6 a {
@@ -215,8 +313,9 @@
 
 .title h1 {
   color: #fff;
-  font: 32px/1 robotoregular;
-  font-family: "Josefin Sans", Sans serif;
+  font: 32px/1;
+  /*font-family: "Josefin Sans", Sans serif;*/
+  font-family: robotoregular !important;
   font-weight: 600;
 }
 
@@ -242,7 +341,7 @@
 .menu ul li a .box {
   color: #fff;
   float: left;
-  font: 16px/30px robotoregular;
+  font: 16px/30px;
   height: 30px;
   margin-right: 15px;
   text-align: center;
@@ -250,17 +349,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: robotoregular !important;
 }
 
 .menu ul li a .right-text {
   color: #000;
   float: right;
-  font: 12px robotoregular;
+  font: 12px;
   margin-top: 10px;
+  font-family: robotoregular !important;
 }
 
 .menu ul li a h2 {
-  font: 28px/30px Roboto;
+  font: 28px/30px robotoregular;
   margin: 0;
   color: #000;
   padding: 0 0 0 50px;
@@ -268,7 +369,7 @@
 
 .menu-cont .menu ul li a h2 {
   /*font: 23px/20px robotoregular;*/
-  font: 28px/30px Roboto;
+  font: 28px/30px robotoregular !important;
   color: #000;
 }
 
@@ -407,7 +508,6 @@
   /*background: #f9f9f9;
   border-top: 2px solid #097aff;*/
   float: left;
-  /* padding: 30px 20px 10px; */
   padding: 30px 4% 10px;
   width: 100%;
   z-index: 10;
@@ -416,9 +516,12 @@
 .page-title h1 {
   color: #000;
   /*font: 28px robotoregular;*/
-  font: 28px Roboto;
+  font: 28px roboto;
   margin: 0;
   line-height: 30px;
+}
+.article-title {
+  display: flex;
 }
 
 .article-title {
@@ -445,7 +548,6 @@
   padding-top: 0;
 }
 
-
 /*.card.noshdw {
   box-shadow: none;
 }*/
@@ -453,14 +555,13 @@
 .card .inner {
   float: left;
   width: 100%;
-  /* border-bottom: 1px solid #d7d7d7; */
   padding: 20px 0;
   position: relative;
 }
 
 .card .inner:after {
   position: absolute;
-  content: '';
+  content: "";
   width: 108%;
   height: 1px;
   background-color: #d7d7d7;
@@ -486,14 +587,12 @@
   font: 3.2vw/1.7 Roboto;
   margin: 0 0 15px;
 }
-
 .card p.subtitle {
   font: 3.85vw Roboto;
   text-transform: uppercase;
   color: #555;
   margin: 15px 0 10px;
 }
-
 .card p.flex {
   display: flex;
 }
@@ -512,7 +611,6 @@
   flex: 0 0 40%;
   max-width: 40%;
   margin: 0;
-  /* margin-top: 4px; */
 }
 
 .card .image-box img {
@@ -541,6 +639,18 @@
 
 .card .get-btn a.lesspd {
   padding: 8px 20px;
+}
+.card .get-btn .addfav {
+  color: #565656;
+  display: flex;
+  margin-left: 15px;
+  font: 700 14px Roboto;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.card .get-btn .addfav .fav {
+  margin-right: 5px;
 }
 
 .card .get-btn .addfav {
@@ -571,18 +681,20 @@
   background: #097aff;
   border-radius: 50%;
   color: #fff;
-  font: 10px/25px robotoregular;
+  font: 10px/25px;
   height: 25px;
   margin: 0;
   text-align: center;
   width: 25px;
+  font-family: robotoregular !important;
 }
 
 .card .copy h3 {
   color: #333;
-  font: 13px/1.5 robotoregular;
+  font: 13px/1.5;
   margin: 0;
   padding-left: 45px;
+  font-family: robotoregular !important;
 }
 
 .card .copy h3 a {
@@ -592,16 +704,18 @@
 
 .card .copy.forum h3 {
   color: #4a4a4a;
-  font: 17px robotoregular;
+  font: 17px;
   letter-spacing: 0.0052em;
   margin: 0 0 5px;
   padding: 0;
+  font-family: robotoregular !important;
 }
 
 .card .copy.forum h4 {
   color: #9c9ca0;
-  font: 10px/1.5 robotoregular;
+  font: 10px/1.5;
   margin: 0;
+  font-family: robotoregular !important;
 }
 
 .card .copy.forum h4 a {
@@ -611,8 +725,9 @@
 
 .card .copy.forum h5 {
   color: #8a8a8a;
-  font: 13px/1.5 robotoregular;
+  font: 13px/1.5;
   margin: 0 0 15px;
+  font-family: robotoregular !important;
 }
 
 .card .copy.forum .reply a {
@@ -626,7 +741,8 @@
 
 .card .copy.forum .reply a p {
   color: #0091ff;
-  font: 13px robotoregular;
+  font: 13px;
+  font-family: robotoregular !important;
 }
 
 .card .next-down {
@@ -668,7 +784,7 @@
   cursor: pointer;
 }
 
-.accor.open+.guide {
+.accor.open + .guide {
   max-height: 1000px;
   padding-top: 25px;
 }
@@ -683,8 +799,9 @@
 
 .card.accordian .guide h3 {
   color: #097aff;
-  font: 14px robotoregular;
-  margin: 0 0 15px
+  font: 14px;
+  margin: 0 0 15px;
+  font-family: robotoregular !important;
 }
 
 .card.accordian .guide ul {
@@ -692,11 +809,6 @@
   margin: 0;
   padding: 0;
 }
-
-
-
-
-
 
 /*.card.accordian .guide h3, .card.accordian .guide ul {
     transition: all 0.4s ease-in-out;
@@ -710,8 +822,9 @@
 .card.accordian .guide ul li {
   margin-bottom: 15px;
   color: #8a8a8f;
-  font: 14px robotoregular;
+  font: 14px;
   text-align: center;
+  font-family: robotoregular !important;
 }
 
 .card.accordian .guide ul ul li {
@@ -748,7 +861,7 @@
 }
 
 .return a {
-  text-decoration: none
+  text-decoration: none;
 }
 
 .return .icon {
@@ -758,8 +871,9 @@
 
 .return h2 {
   color: #0091ff;
-  font: 20px/1 robotoregular;
+  font: 20px/1;
   margin: 0;
+  font-family: robotoregular !important;
 }
 
 .footer-bar {
@@ -787,8 +901,9 @@
 
 .footer-bar a h3 {
   color: #000;
-  font: 17px robotoregular;
+  font: 17px;
   margin: 0;
+  font-family: robotoregular !important;
 }
 
 html {
@@ -820,11 +935,6 @@ html body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-
-
-
-
 
 /*# sourceMappingURL=css.css.map */
 
@@ -876,13 +986,14 @@ html body {
 }
 
 .hi-user {
-  font: 20px robotoregular;
+  font: 20px;
   float: left;
   font-weight: 800;
   letter-spacing: 1px;
   max-width: 230px;
   width: 100%;
   display: none;
+  font-family: robotoregular !important;
 }
 
 .close-menu {
@@ -903,13 +1014,7 @@ html body {
   border-bottom: 1px solid #000;
 }
 
-
-
-
-
-
 /*Blue Scrollbar*/
-
 
 /*::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -925,9 +1030,7 @@ html body {
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgb(122, 153, 217)), color-stop(0.72, rgb(73, 125, 189)), color-stop(0.86, rgb(28, 58, 148)));
 }*/
 
-
 /*Green ScrollBar in Menu*/
-
 
 /*::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
@@ -943,7 +1046,6 @@ html body {
     background-color: #FFF;
     background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(#4D9C41), to(#19911D), color-stop(.6, #54DE5D))
 }*/
-
 
 /* Articles Page */
 
@@ -979,11 +1081,6 @@ html body {
 .iframe.video iframe {
   width: 100%;
 }
-
-
-
-
-
 
 /* online coaching */
 
@@ -1060,7 +1157,7 @@ html body {
 
 /deep/ .program-descrip h5.mc_a_fw_ma_t {
   /*font-family: "Josefin Sans", Sans Serif;*/
-  font-family: Roboto;
+  font-family: robotoregular;
   font-weight: 600;
   margin-bottom: 20px;
   letter-spacing: normal;
@@ -1069,7 +1166,7 @@ html body {
 
 /deep/ .program-descrip p {
   /*font-family: "Gafata", Sans Serif;*/
-  font-family: Roboto;
+  font-family: robotoregular;
   line-height: 1.5;
   letter-spacing: normal;
 }
@@ -1078,11 +1175,9 @@ html body {
   text-align: right;
 }
 
-
 /*.card .get-btn.nomargin {
   margin: 0;
 }*/
-
 
 /*.card .get-btn.padbtm {
   padding: 0px 0 40px;
@@ -1100,7 +1195,6 @@ html body {
   background: #3c599b;
   border-radius: 3px;
 }
-
 
 .gpluscounter {
   display: inline-block;
@@ -1125,11 +1219,6 @@ html body {
 .page-title.ptop {
   padding-top: 50px;
 }
-
-
-
-
-
 
 /* Comments Like etc */
 
@@ -1165,22 +1254,25 @@ html body {
   margin: 25px 0;
 }
 
-.menu ul li.whatsnew {}
+.menu ul li.whatsnew {
+}
 
 .menu ul li.whatsnew .wncopy {
   padding: 0 0 0 50px;
 }
 
 .menu ul li.whatsnew .wncopy h2 {
-  font: 28px/30px robotoregular;
+  font: 28px/30px;
   margin: 0;
   color: #000;
+  font-family: robotoregular !important;
 }
 
 .menu ul li.whatsnew .wncopy p {
-  font: 14px robotoregular;
+  font: 14px;
   margin: 15px 0 0;
   color: #000;
+  font-family: robotoregular !important;
 }
 
 .backlink-container .author {
@@ -1188,7 +1280,7 @@ html body {
 }
 
 .pagewrapper .title {
-  border-top: 1px solid #DDD;
+  border-top: 1px solid #ddd;
   padding-top: 10px;
 }
 
@@ -1219,7 +1311,6 @@ a.authorpflink {
 /deep/ .card {
   /* padding-top: 10px !important; */
 }
-
 /deep/ .card .inner {
   /* padding-bottom: 5px !important; */
 }
@@ -1229,7 +1320,7 @@ a.authorpflink {
 /deep/ .workouts-back,
 /deep/ .articles-back,
 /deep/ .recipes-back {
-  font-size: 15px !important;
+  font-size: 15px !important  ;
   padding: 11px 0 5px 0 !important;
 }
 
@@ -1238,7 +1329,7 @@ a.authorpflink {
 }
 
 /deep/ .ma-tab-content #board {
-  width: 100% !important;
+  /* width:95%!important; */
 }
 
 .like-button-fav {
@@ -1246,21 +1337,16 @@ a.authorpflink {
   text-align: center;
 }
 
+.common-title {
+  display: flex;
+}
+.page-title {
+  top: 4% !important;
+}
 app-new-content-badge {
   transform: rotateZ(35deg);
 }
 
 app-new-content-badge span {
   font-size: 14px !important;
-}
-
-app-like-button {
-  float: left;
-  font-size: 14px;
-  position: relative;
-  top: 0px;
-}
-
-app-like-button span i {
-  font-size: 16px !important;
 }

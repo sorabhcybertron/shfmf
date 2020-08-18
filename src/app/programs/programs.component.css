@@ -64,6 +64,25 @@ p, h2, div, span, a{
 .program-title {
     display: flex;
 }
+app-like-button {
+    float: left;
+    font-size: 14px;
+    position: relative;
+    top: 0px;
+}
+app-like-button span i {
+  font-size: 16px !important;
+}
+.alltext{
+    padding-left: 3%; 
+}
+.alltext h2{
+    padding-left: unset!important; 
+}
+
+.program-title {
+    display: flex;
+}
 
 app-like-button {
     float: left;

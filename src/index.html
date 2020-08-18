@@ -3,16 +3,15 @@
 <head>
   <meta charset="utf-8">
   <title>MuscularStrength</title>
-  <base href="/">
+  <base href="./">
     
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script>
   <meta name="google-signin-client_id" content="YOUR_CLIENT_ID"></meta>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1 ,height=device-height ,viewport-fit=cover">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="assets/styles/fonts.css">
   <link rel="stylesheet" href="assets/styles/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700&display=swap" rel="stylesheet"> 
-  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles/normalize.css">
   <link href="node_modules/froala-editor/css/froala_editor.pkgd.min.css" rel="stylesheet">
   <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -20,69 +19,24 @@
     body{
       min-height: 100vh;
       margin: 0;
+      padding-top: env(safe-area-inset-top);
+    }
+    .header{
+      border-top: env(safe-area-inset-top) solid #000!important;
+      border-top: 18px solid #000000;
     }
 
-/*body, html {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-      }*/
+    .header-top{
+      border-top: env(safe-area-inset-top) solid #000!important;
+      border-top: 18px solid #000000;
 
- .app-loading {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-      }
-      .app-loading .spinner {
-        height: 50px;
-        width: 50px;
-        animation: rotate 2s linear infinite;
-        transform-origin: center center;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-
-      }
-      .app-loading .spinner .path {
-        stroke-dasharray: 1, 200;
-        stroke-dashoffset: 0;
-        animation: dash 1.5s ease-in-out infinite;
-        stroke-linecap: round;
-        stroke: #2ECBA7;
-      }
-      @keyframes rotate {
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-      @keyframes dash {
-        0% {
-          stroke-dasharray: 1, 200;
-          stroke-dashoffset: -35px;
-        }
-        50% {
-          stroke-dasharray: 89, 200;
-          stroke-dashoffset: -35px;
-        }
-        100% {
-          stroke-dasharray: 89, 200;
-          stroke-dashoffset: -35px;
-        }
-      }
+    }
+    
   </style>
 </head>
 <body>
-  <app-root>  
- <div class="app-loading">
-        <div class="app-loading">
-        <div class="logo"></div>
-        <svg class="spinner" viewBox="25 25 50 50">
-          <circle class="path" stroke="green" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
-        </svg>
-      </div> </app-root>
+   <app-root>Loading...</app-root>
+
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="assets/js/index.js"></script>
 </body>

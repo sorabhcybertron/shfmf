@@ -40,8 +40,11 @@ export class DashboardComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-    
+  ngOnInit(){
+    document.getElementById('muscularLogo').click();
+    console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+      console.log('..... inside the dashboard.......');
+    console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
   }
   OpenInAppBrowser() {
     this.iFrameBaseSource =

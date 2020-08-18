@@ -216,7 +216,7 @@ strong {
     background-color: #fff;
     width: 100%;
     position: fixed;
-    top: 0;
+    top: 4%;
     left: 0;
     padding: 44px 20px 5px;
     box-sizing: border-box;
@@ -318,5 +318,5 @@ app-like-button {
     position: relative;
     top: -5px;
     padding-right: 5px;
-    font-size: 28px;
+    font-size: 14px;
 }

@@ -1,0 +1,18 @@
+ private addaccountproduct: ActionButton;
+onProvideActions(): ActionButton[] {
+
+
+ return [
+      this.addaccountproduct,
+    ];
+  }
+
+  this.deleteSelectedAction = {
+      title: 'Add Product',
+      icon: 'add',
+      cssClass: 'action-green',
+      disabled: true,
+      handler: () => this.addAccountprod(),
+    };
+
+     this.deleteSelectedAction.disabled = false;

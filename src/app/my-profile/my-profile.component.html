@@ -53,7 +53,7 @@
 						</div> -->
 						<div class="feed-copy" [innerHtml]="d.commentText | safeHtml"></div>
 						<div class="like-comnt">
-							<span class="like" [ngClass]="{'likecmnt': true, 'liked': d.userHasLiked}" (click)=" !d.userHasLiked ? likeComment(d.postid, 'LIKE') : likeComment(d.postid, 'UNLIKE')" >{{ d.like!=0?d.like+" ":'' }}<img src="assets/images/muscular-like.png"/> Like</span>
+							<span class="like" [ngClass]="{'likecmnt': true, 'liked': d.userHasLiked}" (click)=" !d.userHasLiked ? likeComment(d.postid, 'LIKE') : likeComment(d.postid, 'UNLIKE')" ><img src="assets/images/muscular-like.png"/> {{ d.like!=0?d.like+" ":'' }} Like</span>
 							<span class="reply" (click)="CommentPopupOpen =true; postId=d.postid; replyTo=d.username; CommentText='@'+d.username+' '" ><img src="assets/images/muscular-reply.png"/> Reply</span>
 						</div>
 						<p class="viewallreplies" (click)="commentsArray[i].open = !commentsArray[i].open">
@@ -149,7 +149,8 @@
 						 		<h2 *ngIf="program.title && program.title.length < 50">{{program.title}}</h2>
 						 		<p class="item_descc">{{program.description}}</p>
 					 		 </div>
-						 	</a>
+							 </a>
+							 <a [routerLink]="['/Programs/'+program.app_url+'/'+program.recordLinkID+'/'+program.dbTable+'/'+program.fav_item_id+'/fav']" class="morebutton">Read More</a>
 						 	<app-like-button [type]="program.fav_item_type" [item_id]="program.fav_item_id"></app-like-button>
 				 		</div>
 				 	</div>
@@ -165,7 +166,8 @@
 						 		<h2 *ngIf="routine.title && routine.title.length < 50">{{routine.title}}</h2>
 						 		<p class="item_descc">{{routine.description}}</p>
 					 		 </div>
-						 	</a>
+							 </a>
+							 <a [routerLink]="['/Workouts/'+routine.fav_item_id+'/routines/fav']" class="morebutton">Read More</a>
 						 	<app-like-button [type]="routine.fav_item_type" [item_id]="routine.fav_item_id"></app-like-button>
 				 		</div>
 				 	</div>
@@ -181,7 +183,8 @@
 						 		<h2 *ngIf="exercise.title && exercise.title.length < 50">{{exercise.title}}</h2>
 						 		<p class="item_descc">{{exercise.description}}</p>
 					 		 </div>
-						 	</a>
+							 </a>
+							 <a [routerLink]="['/Workouts/'+exercise.fav_item_id+'/exercise/fav']" class="morebutton">Read More</a>
 						 	<app-like-button [type]="exercise.fav_item_type" [item_id]="exercise.fav_item_id"></app-like-button>
 				 		</div>
 				 	</div>
@@ -197,7 +200,8 @@
 					 		 	<h2 *ngIf="recipe.title && recipe.title.length < 50">{{recipe.item_title}}</h2>
 					 		 	<p class="item_descc">{{recipe.description}}</p>
 					 		 </div>
-						 	</a>
+							 </a>
+							 <a [routerLink]="['/Recipes/'+recipe.fav_item_id+'/fav']" class="morebutton">Read More</a>
 						 	<app-like-button [type]="recipe.fav_item_type" [item_id]="recipe.fav_item_id"></app-like-button>
 				 		</div>
 				 	</div>
@@ -213,7 +217,8 @@
 						 		<h2 *ngIf="articl.title && articl.title.length < 50" >{{articl.title}}</h2>
 						 		<p class="item_descc">{{articl.description}}</p>
 					 		 </div>
-						 	</a>
+							 </a>
+							 <a [routerLink]="['/Articles/'+articl.fav_item_id+'/fav']" class="morebutton">Read More</a>
 						 	<app-like-button [type]="articl.fav_item_type" [item_id]="articl.fav_item_id"></app-like-button>
 				 		</div>
 				 	</div>

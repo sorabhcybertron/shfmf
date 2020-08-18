@@ -81,11 +81,12 @@
 	background-color: #fff;
 	width: 100%;
 	position: fixed;
-	top: 0;
+	top: 4%;
 	left: 0;
 	padding: 44px 20px 5px;
 	box-sizing: border-box;
 	z-index: 11;
+
 }
 .usprofback {
 	color: #097aff;

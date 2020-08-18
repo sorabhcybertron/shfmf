@@ -9,20 +9,21 @@
     left: 0;
     background-color: #fff;
     transition: all 0.4s ease;
+    z-index: 1;
 }
 /deep/ .wrap.workouts .filters.show {
-    top: 40px;
+    top: 60px;
 }
 /deep/ .wrap.workouts .filters .filtersarea {
     display: inline-block;
     width: 100%;
-    height: calc(100% - 130px);
+    height: calc(100% - 65px);
     overflow: auto;
 }
 /deep/ .wrap.workouts .filters ul {
     list-style: none;
     padding: 0 20px;
-    margin: 10px 0 0;
+    margin: 0;
 }
 /deep/ .wrap.workouts .filters ul li {
     margin: 0 0 8px;
@@ -117,7 +118,7 @@
     z-index: -1;
 }
 /* /deep/ #workoutslisthere .card .get-btn a{
-    background-color: #ffcb00;
+    color: #ffcb00;
 } */
 /deep/ #workoutslisthere .page-title.small {
     padding: 10px 20px 5px;
@@ -153,7 +154,7 @@
 
 
 .filter-section {
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
 p.filter-toggel {
@@ -174,6 +175,12 @@ p.filter-toggel span.toggel-icon{
 
 .filter-section ul.show-me {
     display: block;
+    flex-wrap: wrap;
+}
+​
+.filter-section ul li{
+    /* float: left; */
+    margin: 1px 0 4px 3px;
 }
 
 app-like-button {
@@ -185,4 +192,116 @@ app-like-button {
 
 app-like-button span i {
     font-size: 16px !important;
+}
+
+.formrow.check {
+    box-sizing: border-box;
+    overflow:hidden;
+    position:relative;
+    max-width:fit-content;
+    margin:auto;
+    padding:3px 0;
+    background:#f9f9f9; 
+}
+.formrow.check .checklabel {
+    display: inline-block;
+    width:100%;
+    border:1px solid grey;
+    background:#f2f2f2;
+    border-radius:10px;
+    text-align:center;
+    padding:5px 15px 5px 10px;
+    font-size:12px;
+}
+.formrow.check .checkbox {
+    position:absolute;
+    right: 10px;
+    top:15px;
+    width: 12px;
+    height: 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    border:none;
+    padding:0;
+    border-radius:0;
+    vertical-align: middle;
+    transition:.3s ease;
+    outline:0;
+}
+.formrow.check .checkbox:checked {
+    background-position: 0 0;
+}
+​
+.formrow.check .checkbox:checked + label, .formrow.check.checked-label label {
+  border:1px solid #000;
+  background: #AA7C41;
+  color: #f2f2f2!important;
+}
+/* New  */
+.select-box {
+    text-align: center;
+    margin: 0 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid; 
+    border-top: 1px solid; 
+    border-color: #e3e3e3;
+}
+
+.select-box  select {
+    width: 100%;
+    max-width: 767px;
+    font-size: 21px;
+    padding: 5px;
+    background: #f9f9f9;
+    -webkit-appearance: none;
+    background: url(assets/images/Triangle.png) no-repeat right white;
+    background-position: 98% 50%;
+    background-size: 20px;
+}
+
+.select-box .button-container {
+    text-align: right;
+    margin: 15px 0 0 0;
+}
+
+.select-box .button-container span.filter-button {
+    padding: 5px 10px;
+    border: 1px solid;
+    border-radius: 3px;
+    background: #ededed;
+}
+
+.select-box .button-container span.filter-button.view {
+    background: #f8cb01;
+}
+
+.selection-list ul li{
+    border-bottom: 1px solid #ededed;
+    padding: 5px 0;
+}
+.selection-list ul li input {
+    display: none;
+    min-width: 100%!important;
+}
+.selection-list ul li .check label{
+    color: #000!important;
+    padding-left:0px!important; 
+    font-size: 18px!important;
+    min-width: 100%!important;
+}
+.selection-list ul li .check img{
+    display: none;
+}
+.selection-list ul li .selectedChekbox, .selection-list ul li .checked-label{
+    display: inline-flex;
+    position: relative;
+    width: 100%;
+}
+.selection-list ul li .selectedChekbox img, .selection-list ul li .checked-label img{
+    display: block;
+    width: 20px;
+    position: absolute;
+    right: 0;
 }

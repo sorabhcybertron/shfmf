@@ -99,14 +99,13 @@
     color: #666;
     font-size: 13px;
 }
-.wrap.myaccountnew .pers-dets h3 {  
+.wrap.myaccountnew .pers-dets h3 {
     padding: 0 20px 10px;
     margin: 0;
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
 }
-
 .wrap.myaccountnew .pers-dets h3 span {
     float: right;
     font-size: 14px;
@@ -152,6 +151,7 @@
     box-shadow: gray 0px 1px 4px;
     padding: 20px;
     margin-top: 20px;
+
 }
 .wrap.myaccountnew .email-updform.block {
     display: block;
@@ -176,6 +176,7 @@
     color: #4a90e2;
     margin-right: 10px;
 }
+
 
 .wrap.myaccountnew .email-updform .emailerrmsg {
     color: red;
@@ -212,14 +213,32 @@
 .wrap.myaccountnew .email-updform input::placeholder {
     color: lightgray;
 }
-.wrap.myaccountnew .email-updform .countryselect {
+.wrap.myaccountnew .email-updform .email-updform-inner {
+    display: flex;
+    align-items: center;
+    margin-top: 1px;
+}
+.wrap.myaccountnew .email-updform input {
+    /* padding: 6px 8px; */
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    font-size: 14px;
     /* width: 240px; */
+    flex: 1;
+    color: #7c7c7c;
+}
+.wrap.myaccountnew .email-updform input::placeholder {
+    color: lightgray;
+}
+.wrap.myaccountnew .email-updform .countryselect {
+  /* width: 240px; */
     /* padding: 6px 8px; */
     flex: 1;
     border: none;
     color: #7c7c7c;
     font-size: 14px;
-
 }
 .wrap.myaccountnew .email-updform .label-cont {
     /* display: inline-block; */
@@ -298,4 +317,7 @@
     -webkit-transition: opacity 0.4s ease;
     transition: opacity 0.4s ease;
     outline: none !important;
+}
+.email-update.vis {
+    top : 10% !important;
 }

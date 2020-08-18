@@ -13,10 +13,12 @@
                 </div>
                 <p class="subtitle">{{article.title}}</p>
                 <p class="lessmarg">{{article.description}}</p>
-                <div class="get-btn">
+                <div class="get-btn text-right">
+                    
                     <a [routerLink]="['/Articles', article.id]" class="lesspd">Read More</a>
                     <span class="addfav">
                         <app-like-button class="fav" [type]="'article'" [item_id]="article.id"></app-like-button>
+                      
                     </span>
                 </div>
             </div>
