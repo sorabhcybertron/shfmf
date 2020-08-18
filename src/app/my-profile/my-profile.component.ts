@@ -365,7 +365,7 @@ export class MyProfileComponent implements OnInit {
 
 	getuserPlatinum(){
 		let userinfo = JSON.parse(window.localStorage.getItem('userInfo'));
-		if(userinfo['account type'] == 'Platinum'){
+		if(userinfo['account type'] == 'Platinum' || userinfo['account type'] == 'Platinum Plus'){
 			return true;
 		}else{
 			return false;

@@ -50,7 +50,7 @@ export class UpgradeMembershipComponent implements OnInit {
                 console.log(res);
                 if(res.status)
                     for(var i in res.membership_list)
-                        if(res.membership_list[i].name == 'Platinum' || (scope.showGold && res.membership_list[i].name == 'Gold'))
+                        if((res.membership_list[i].name == 'Platinum' || res.membership_list[i].name == 'Platinum Plus') || (scope.showGold && res.membership_list[i].name == 'Gold'))
                             scope.memberships.push(res.membership_list[i]);
             },
             err => {
